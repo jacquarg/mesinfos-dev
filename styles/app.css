@@ -1,0 +1,49 @@
+#typologies {
+  float: left;
+  width: 200px;
+
+}
+
+#typologies .subset {
+  cursor: pointer;
+}
+
+#container {
+  margin-left: 220px;
+}
+.doctype {
+}
+
+.doctype .fields {
+  padding-left: 2em;
+}
+
+.doctype .field {
+  font-family: "monospace";
+}
+
+.doctype .field .name {
+  font-weight: bold;
+}
+
+.doctype .field .toggle:after {
+  cursor: pointer;
+  fnt-size: 50%;
+  position: relative;
+  left: 8px;
+  bottom: 1px;  
+}
+.doctype .field.compact .toggle:after {
+  content: '◢';
+  cursor: pointer;
+}
+.doctype .field.expanded .toggle:after {
+  content: '▲';
+}
+.doctype .field.expanded .details {
+  
+}
+
+.doctype .field.compact .details  {
+  display: none;
+}

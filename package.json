@@ -4,5 +4,9 @@
   "cozy-displayName": "MesInfos Data Playground",
   "version": "0.0.1",
   "description": "Une application pour les développeurs, pour visualiser et tester l'accès aux données du Pilote MesInfos.",
-  "icon-path": "main_icon.png"
+  "icon-path": "main_icon.png",
+  "cozy-permissions": {
+    "Contact": {
+        "description": "To easily find your contact when talking about someone."
+    }
 }

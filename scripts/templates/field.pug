@@ -1,0 +1,17 @@
+.field.compact(class=Nature)
+  span.name= Nom
+  |:&nbsp;
+  span.value= value
+  span.toggle ,
+
+  if Attention
+    span.caution //&nbsp;
+     |= Attention
+
+  ul.details
+    li
+      b Description :&nbsp;
+      = Description
+    li
+      b Format :&nbsp;
+      = Format
