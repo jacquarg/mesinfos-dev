@@ -1,39 +1,89 @@
+var metadata = null;
 
-function queryView() {
-    var docType = $('#inputdoctype').val();
-    return cozysdk.run(docType, 'all', { limit: 10 });
+
+function init() {
+    // Fetch data :
+    Promise.resolve($.getJSON('data/list_data.json'))
+        .then(function(data) {
+      metadata = data["export"];
+      var subsets = metadata.filter(function(field) {
+        return field.Nature === 'Subset';
+      });
+
+      displaySubsetsPanel(subsets);
+      // TODO return initSubsetsViews(subsets);
+      return Promise.resolve();
+    }).then(function() {
+        setListeners();
+    });
+}
+
+function initSubsetsViews(subsets) {
+    var initPromises = subsets.map(function(subset) {
+        return updateView(subset.docType,
+            convertToSlug(subset.Nom), testToMapFunction(subset.Format));
+    });
+
+    return Promise.all(initPromises);
+}
+
+function setListeners() {
+    $('#inputsend').click(doThings);
+}
+
+function queryView(docType, name) {
+    return cozysdk.run(docType, name,
+        { include_docs: true, limit: 10 });
 }
 
 // Delete views ?
 
-function updateView() {
-    var docType = $('#inputdoctype').val();
-    var name = "playgroundcustom";
-    var mapFunction = $('#inputmap').val();
-
+function updateView(docType, name, mapFunction) {
     return cozysdk.defineView(docType, name, mapFunction)
         .then(function() {
-             return cozysdk.run(docType, name, {
-                 limit: 10,
-                 include_docs: true,
-             });
+             return cozysdk.run(docType, name, { limit: 1 });
         });
 }
 
-function updateViewMock () {
-    return Promise.resolve($.getJSON('data/ex_data_event.json'));
-}
+// function updateView() {
+//     var docType = $('#inputdoctype').val();
+//     var name = "playgroundcustom";
+//     var mapFunction = $('#inputmap').val();
 
-function updateFields(docType, mapFunction) {
+//     return cozysdk.defineView(docType, name, mapFunction)
+//         .then(function() {
+//              return cozysdk.run(docType, name, {
+//                  limit: 1,
+//                  include_docs: true,
+//              });
+//         });
+// }
+
+// function updateViewMock () {
+//     return Promise.resolve($.getJSON('data/ex_data_event.json'));
+// }
+
+function updateFields(docType, name, mapFunction) {
     $('#inputdoctype').val(docType);
+    $('#inputname').val(name);
     $('#inputmap').val(mapFunction);
 }
 
 
-function doThings () {
+function doThings() {
 
-    // updateView().then(function(results) {
-    updateViewMock().then(function(results) {
+    updateView(
+        $('#inputdoctype').val(),
+        $('#inputname').val(),
+        $('#inputmap').val()
+    ).then(function() {
+        return queryView(
+        $('#inputdoctype').val(),
+        $('#inputname').val(),
+        $('#inputmap').val()
+        );
+    }).then(function(results) {
+    //updateViewMock().then(function(results) {
         return results.map(addMetadata);
 
     }).then(function(results) {
@@ -109,12 +159,9 @@ function addMetadata(result) {
 
 }
 
-function subsetPanel() {
-    var subsets = metadata.filter(function(field) {
-        return field.Nature === 'Subset';
-    });
+function displaySubsetsPanel(subsets) {
 
-    var byTypologies = groupByKey(subsets, 'Typologie', 'Nom');
+  var byTypologies = groupByKey(subsets, 'Typologie', 'Nom');
 
   var typos = Object.keys(byTypologies).sort();
   typos.forEach(function(typology) {
@@ -128,15 +175,16 @@ function subsetPanel() {
             return field.Nom === subset;
         });
 
-        var format = "function(doc) { emit(doc._id); }";
-        updateFields(data.DocType, format);
-        // updateView();
+        updateFields(data.DocType,
+            convertToSlug(data.Nom),
+            testToMapFunction(data.Format));
+        // var format = "function(doc) { emit(doc._id); }";
+        queryView(data.DocType, convertToSlug(data.Nom));
+
         doThings();
 
     })
   });
-
-
 }
 
 // Split list by values of given key, in by[Key] field.
@@ -169,16 +217,14 @@ groupByKey = function(list, key, sortKey) {
   return res;
 };
 
-
-function init() {
-    // Fetch data :
-    Promise.resolve($.getJSON('data/list_data.json'))
-        .then(function(data) {
-      metadata = data["export"];
-      setListeners();
-      subsetPanel();
-    });
+function convertToSlug(Text) {
+    return Text
+        .toLowerCase()
+        .replace(/ /g,'-')
+        .replace(/[^\w-]+/g,'')
+        ;
 }
-function setListeners() {
-    $('#inputsend').click(doThings);
+
+function testToMapFunction(test) {
+    return "function(doc) {\n  " + test + "\n}\n";
 }

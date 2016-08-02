@@ -6,7 +6,7 @@
   "description": "Une application pour les développeurs, pour visualiser et tester l'accès aux données du Pilote MesInfos.",
   "icon-path": "main_icon.png",
   "cozy-permissions": {
-    "Contact": {
-        "description": "To easily find your contact when talking about someone."
+    "all": {
+        "description": "Visualize all the data format, and test request on the datasystem."
     }
 }
