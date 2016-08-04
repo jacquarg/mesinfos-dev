@@ -26,9 +26,18 @@
   font-weight: bold;
 }
 
+.doctype .field.compact .value {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 60%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+
 .doctype .field .toggle:after {
   cursor: pointer;
-  fnt-size: 50%;
+  font-size: 50%;
   position: relative;
   left: 8px;
   bottom: 1px;  

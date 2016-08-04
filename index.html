@@ -2,25 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <script src="./scripts/vendors/jquery-3.0.0.min.js" ></script>
-  <script src="./scripts/vendors/cozysdk-client.js" ></script>
-  <script src="./scripts/templates/field.js" ></script>
-  <script src="./scripts/templates/doctype.js" ></script>
-  <script src="./scripts/templates/typology.js" ></script>
+  <script src="./public/vendor.js"></script>
+  <script src="./public/app.js"></script>
   <link href="./styles/app.css"  rel="stylesheet" type="text/css"/>
   <title>Your app !</title>
 </head>
 <body>
-    <h1>My contact app</h1>
-    <input type="text" placeholder="DocType" name="doctype" id="inputdoctype" value="Event" >
-    <input type="text" placeholder="Name" name="name" id="inputname" value="MyRequest" >
-
-    <textarea placeholder="" row="5" id="inputmap" >function(doc) {
-emit(doc._id);
-}</textarea>
-    <button id="inputsend"  >Envoyer</button>
-    <div id="typologies"></div>
-    <div id="container"></div>
-    <script src="./scripts/app.js"></script>
+  <div role="application"></div>
+  <script>require('application');</script>
 </body>
 </html>

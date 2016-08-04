@@ -1,0 +1,8 @@
+input#inputdoctype(type="text", placeholder="DocType", name="doctype", value="Event")
+input#inputname(type="text", placeholder="Name", name="name", value="MyRequest")
+textarea#inputmap(placeholder="", row="5")
+  | function(doc) {
+  |   emit(doc._id);
+  | }
+
+button#inputsend Envoyer
