@@ -65,7 +65,6 @@ module.exports = Backbone.Collection.extend({
   // override sync
 
   sync: function(method, collection, options) {
-    var onError = options.error;
     if (method !== 'read') {
       console.error('Only read is available on this collection.');
       if (options.error) {

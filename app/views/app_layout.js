@@ -31,7 +31,8 @@ module.exports = Mn.LayoutView.extend({
   },
 
   onRender: function() {
-    this.dsViewsList.show(new DSViewsList({ collection: app.subsets }));
+    // this.dsViewsList.show(new DSViewsList({ collection: app.subsets }));
+    this.dsViewsList.show(new DSViewsList({ collection: app.dsViews, }))
     this.requestForm.show(new RequestForm({ model: new DSView() }));
     this.documents.show(new Documents({ collection: app.documents }));
   },

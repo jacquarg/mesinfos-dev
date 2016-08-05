@@ -1,4 +1,6 @@
 var app = undefined;
+var DSView = require('models/dsview');
+
 
 module.exports = Mn.ItemView.extend({
 
@@ -12,18 +14,15 @@ module.exports = Mn.ItemView.extend({
   },
 
   events: {
-    'change @ui.name': 'updateModel',
-    'change @ui.mapFunction': 'updateModel',
-    'change @ui.docType': 'updateModel',
+    'change @ui.name': 'setParams',
+    'change @ui.mapFunction': 'setParams',
+    'change @ui.docType': 'setParams',
     'click #inputsend': 'send',
   },
 
   initialize: function() {
     app = require('application');
-    console.log('initialize');
-    console.log(app);
 
-    // TODO : accept 'View Model' .
     this.listenTo(app, 'requestform:setView', this.setDSView)
   },
 
@@ -35,23 +34,32 @@ module.exports = Mn.ItemView.extend({
     this.ui.mapFunction.val(this.model.getMapFunction());
   },
 
-  updateModel: function() {
+  setParams: function() {
     console.debug('updateModel');
-    this.model.set({
+    this.model = new DSView({
       name: this.ui.name.val(),
       mapFunction: this.ui.mapFunction.val(),
-      docType: this.ui.docType.val(),
+      docTypeOfView: this.ui.docType.val(),
+      createdAt: new Date().toISOString(),
     });
 
     this.model.updateDSView();
   },
 
   send: function() {
-    console.debug('send');
-    console.log(this.model);
-    //TODO this.updateModel();
-    this.model.updateDSView();
-    app.trigger('documents:fetch', this.model);
+    new Promise(function(resolve, reject) {
+      console.log(this);
+      console.log(this.model);
+      this.model.save({success: resolve, erro: reject });
+    }.bind(this)).then(this.model.updateDSView.bind(this))
+      .then(function() {
+        app.trigger('documents:fetch', this.model);
+      });
+    // console.debug('send');
+    // console.log(this.model);
+    // //TODO this.updateModel();
+    // this.model.updateDSView();
+    // app.trigger('documents:fetch', this.model);
   },
 
 

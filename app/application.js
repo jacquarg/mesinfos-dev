@@ -6,25 +6,34 @@ var AppLayout = require('views/app_layout');
 
 var DocumentsCollection = require('collections/documents');
 var SubsetsCollection = require('collections/subsets');
+var DSViewsCollection = require('collections/dsviews');
 
 var Application = Mn.Application.extend({
 
   prepare: function() {
-    var self = this;
     return Promise.resolve($.getJSON('data/list_data.json'))
-    .then(function(data) {
+      .then(this._parseMetadata.bind(this))
+      // .then(this._defineViews.bind(this));
+  },
+
+  _parseMetadata: function(data) {
       var metadata = data["export"];
-      self.subsets = new SubsetsCollection(metadata.filter(function(field) {
+      this.subsets = new SubsetsCollection(metadata.filter(function(field) {
         return field.Nature === 'Subset';
       }));
-      self.docTypes = new Backbone.Collection(metadata.filter(function(field) {
+      this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
         return field.Nature === 'Doctype';
 
       }));
-      self.fields = metadata.filter(function(field) {
+      this.fields = metadata.filter(function(field) {
         return field.Nature !== 'Subset' && field.Nature !== 'Doctype';
       });
-    });
+  },
+
+  _defineViews: function() {
+    return Promise.all(this.subsets.map(function(subset) {
+      return subset.updateDSView();
+    }));
   },
 
   onBeforeStart: function() {
@@ -32,6 +41,8 @@ var Application = Mn.Application.extend({
     this.router = new Router();
 
     this.documents = new DocumentsCollection();
+    this.dsViews = new DSViewsCollection();
+    this.dsViews.fetch();
 
     if (typeof Object.freeze === 'function') {
       Object.freeze(this);
