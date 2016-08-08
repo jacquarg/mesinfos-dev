@@ -43,8 +43,8 @@ module.exports = Backbone.Model.extend({
 
     if (method === 'create') {
       return cozysdk.create('DSView', model.attributes, callback);
-    } else if (method === 'update' || method === 'patch') {
-      return cozysdk.updateAttributes('DSView', model.attributes, callback);
+    // } else if (method === 'update' || method === 'patch') {
+      // return cozysdk.updateAttributes('DSView', model.attributes, callback);
     } else if (method === 'delete') {
       return cozysdk.destroy('DSView', model.attributes._id, callback);
     } else if (method === 'read') {

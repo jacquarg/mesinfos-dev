@@ -3864,7 +3864,7 @@
 {
       "Nom" : "Mon agenda",
       "Description" : "Un événement des agendas de mon Cozy",
-      "Exemple" : "",
+      "Exemple" : "mon_agenda",
       "Typologie" : "Communication",
       "DocType" : "Event",
       "Nature" : "Subset",

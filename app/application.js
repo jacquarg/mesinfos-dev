@@ -8,14 +8,18 @@ var DocumentsCollection = require('collections/documents');
 var SubsetsCollection = require('collections/subsets');
 var DSViewsCollection = require('collections/dsviews');
 
+var Properties = require('models/properties');
 require('views/behaviors');
 
 var Application = Mn.Application.extend({
 
   prepare: function() {
+    var self = this;
     return Promise.resolve($.getJSON('data/list_data.json'))
       .then(this._parseMetadata.bind(this))
+      .then(this._initProperties.bind(this))
       // .then(this._defineViews.bind(this));
+      ;
   },
 
   _parseMetadata: function(data) {
@@ -36,6 +40,14 @@ var Application = Mn.Application.extend({
     return Promise.all(this.subsets.map(function(subset) {
       return subset.updateDSView();
     }));
+  },
+
+  _initProperties: function() {
+    return Properties.then(function(properties) {
+      this.properties = properties;
+
+      this.subsets.applySynthSetsStatus(this.properties.get('synthSets'));
+    }.bind(this));
   },
 
   onBeforeStart: function() {
