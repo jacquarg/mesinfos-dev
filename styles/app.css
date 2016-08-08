@@ -56,3 +56,7 @@
 .doctype .field.compact .details  {
   display: none;
 }
+
+.dsviewslist .compact .history {
+  display: none;
+}

@@ -4,7 +4,6 @@ module.exports = Backbone.Collection.extend({
   model: DSView,
 
   sync: function(method, collection, options) {
-
     if (method !== 'read') {
       console.error('Only read is available on this collection.');
       if (options.error) {
@@ -22,4 +21,5 @@ module.exports = Backbone.Collection.extend({
       return options.success(results.map(function(res) { return res.doc; }));
     });
   },
+
 });

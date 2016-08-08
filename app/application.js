@@ -8,6 +8,8 @@ var DocumentsCollection = require('collections/documents');
 var SubsetsCollection = require('collections/subsets');
 var DSViewsCollection = require('collections/dsviews');
 
+require('views/behaviors');
+
 var Application = Mn.Application.extend({
 
   prepare: function() {
@@ -44,6 +46,8 @@ var Application = Mn.Application.extend({
     this.dsViews = new DSViewsCollection();
     this.dsViews.fetch();
 
+
+
     if (typeof Object.freeze === 'function') {
       Object.freeze(this);
     }
@@ -51,7 +55,6 @@ var Application = Mn.Application.extend({
 
   onStart: function() {
     this.layout.render();
-    console.debug('here');
     // prohibit pushState because URIs mapped from cozy-home
     // rely on fragment
     if (Backbone.history) {
@@ -69,3 +72,4 @@ document.addEventListener('DOMContentLoaded', function() {
   application.prepare()
     .then(application.start.bind(application));
 });
+

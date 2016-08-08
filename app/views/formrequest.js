@@ -35,7 +35,6 @@ module.exports = Mn.ItemView.extend({
   },
 
   setParams: function() {
-    console.debug('updateModel');
     this.model = new DSView({
       name: this.ui.name.val(),
       mapFunction: this.ui.mapFunction.val(),
@@ -47,19 +46,18 @@ module.exports = Mn.ItemView.extend({
   },
 
   send: function() {
+    var model = this.model;
     new Promise(function(resolve, reject) {
-      console.log(this);
-      console.log(this.model);
-      this.model.save({success: resolve, erro: reject });
-    }.bind(this)).then(this.model.updateDSView.bind(this))
-      .then(function() {
-        app.trigger('documents:fetch', this.model);
-      });
-    // console.debug('send');
-    // console.log(this.model);
-    // //TODO this.updateModel();
-    // this.model.updateDSView();
-    // app.trigger('documents:fetch', this.model);
+      if (model instanceof require('models/subset')) {
+        return resolve();
+      }
+
+      app.dsViews.create(model, {success: resolve, erro: reject });
+    })
+    .then(model.updateDSView.bind(model))
+    .then(function() {
+      app.trigger('documents:fetch', model);
+    });
   },
 
 

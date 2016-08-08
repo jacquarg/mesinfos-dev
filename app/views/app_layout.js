@@ -1,8 +1,10 @@
-var DSViewsList = require('views/dsviewslist');
+var GroupsDSView = require('views/groupsdsviews');
 var RequestForm = require('views/formrequest');
 var Documents = require('views/documents');
+var Typologies = require('views/typologies');
 
 var DSView = require('models/dsview');
+
 
 var app = undefined;
 
@@ -13,14 +15,9 @@ module.exports = Mn.LayoutView.extend({
 
   behaviors: {},
 
-  // ui: {
-  //   dsViewsList: 'aside .dsviewslist',
-  //   dataContent: '.datacontent',
-  //   requestForm: '.requestform',
-  // },
-
   regions: {
-    dsViewsList: 'aside.dsviewslist',
+    dsViewsList: 'aside .dsviewslist',
+    typologies: 'aside .typologies',
     documents: '.documents',
     requestForm: '.requestform',
 
@@ -30,9 +27,10 @@ module.exports = Mn.LayoutView.extend({
     app = require('application');
   },
 
+
   onRender: function() {
-    // this.dsViewsList.show(new DSViewsList({ collection: app.subsets }));
-    this.dsViewsList.show(new DSViewsList({ collection: app.dsViews, }))
+    this.typologies.show(new Typologies({ collection: app.subsets }));
+    this.dsViewsList.show(new GroupsDSView({ collection: app.dsViews}));
     this.requestForm.show(new RequestForm({ model: new DSView() }));
     this.documents.show(new Documents({ collection: app.documents }));
   },

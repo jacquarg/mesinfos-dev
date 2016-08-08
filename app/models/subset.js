@@ -3,7 +3,7 @@ var utils = require('lib/utils');
 
 
 module.exports = DSView.extend({
-
+  type: 'Subset',
   getDocType: function() {
     return this.get('DocType');
   },
@@ -13,8 +13,11 @@ module.exports = DSView.extend({
   },
 
   getMapFunction: function() {
-    console.log('right here::');
     return utils.test2MapFunction(this.get('Format'));
-  }
+  },
 
+  // Readonly!
+  save: function(options) {
+    return options.success();
+  },
 });

@@ -8,10 +8,7 @@ module.exports = Mn.CompositeView.extend({
   childViewContainer: '.fields',
 
   initialize: function() {
-    console.log('here');
-    // console.log(this.model)
     this.collection = new Backbone.Collection(this.model.get('fields'));
-    console.log(this);
   },
 
 

@@ -9,7 +9,6 @@ module.exports = Backbone.Collection.extend({
   },
 
   fetchDSView: function(dsView) {
-    console.log(arguments);
     this.setDSView(dsView);
     this.fetch({ reset: true });
   },
@@ -58,7 +57,6 @@ module.exports = Backbone.Collection.extend({
       }
     });
     doc.fields = fields;
-    console.log(doc);
     return doc;
   },
 

@@ -22,13 +22,17 @@ module.exports = Backbone.Model.extend({
   },
 
   updateDSView: function() {
-    console.debug('updateDSView');
     var self = this;
     return cozysdk.defineView(this.getDocType(),
       this.getName(),
       this.getMapFunction()).then(function(err) {
         cozysdk.run(self.getDocType(), self.getName(), { limit: 1 });
       });
+  },
+
+  parse: function(raw) {
+    raw.id = raw._id;
+    return raw;
   },
 
   sync: function(method, model, options) {

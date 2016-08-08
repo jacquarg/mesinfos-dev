@@ -5,14 +5,8 @@ module.exports = Mn.ItemView.extend({
   },
   template: require('views/templates/field'),
 
-  events: {
-    // TODO : create a behaviour
-    'click .toggle': 'toggleExpand',
-  },
+  behaviors: {
+    Toggle: {},
+  }
 
-  toggleExpand: function() {
-    console.debug('toggleExpand');
-    this.$el.toggleClass('compact');
-    this.$el.toggleClass('expanded');
-  },
 });
