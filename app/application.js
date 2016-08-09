@@ -43,9 +43,12 @@ var Application = Mn.Application.extend({
   },
 
   _defineViews: function() {
-    return Promise.all(this.subsets.map(function(subset) {
-      return subset.updateDSView();
-    }));
+    // return Promise.all(this.subsets.map(function(subset) {
+    //   return subset.updateDSView();
+    // }));
+    return this.subsets.reduce(function(agg, subset) {
+      return agg.then(subset.updateDSView());
+    }, Promise.resolve());
   },
 
   onBeforeStart: function() {

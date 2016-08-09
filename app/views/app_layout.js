@@ -1,3 +1,4 @@
+var MessageView = require('views/message');
 var GroupsDSView = require('views/groupsdsviews');
 var RequestForm = require('views/formrequest');
 var Documents = require('views/documents');
@@ -20,6 +21,7 @@ module.exports = Mn.LayoutView.extend({
     typologies: 'aside .typologies',
     documents: '.documents',
     requestForm: '.requestform',
+    message: '.message',
   },
 
   initialize: function() {
@@ -28,6 +30,7 @@ module.exports = Mn.LayoutView.extend({
 
 
   onRender: function() {
+    this.message.show(new MessageView());
     this.dsViewsList.show(new GroupsDSView({ collection: app.dsViews}));
     this.typologies.show(new Typologies({ collection: app.subsets }));
     this.requestForm.show(new RequestForm({ model: new DSView() }));

@@ -54,8 +54,12 @@ module.exports = Mn.ItemView.extend({
 
       app.dsViews.create(model, {success: resolve, error: reject });
     })
+    .then(function() {
+      app.trigger('message:display', 'Creation de la vue ' + model.getName());
+    })
     .then(model.updateDSView.bind(model))
     .then(function() {
+      app.trigger('message:hide');
       app.trigger('documents:fetch', model);
     });
   },
