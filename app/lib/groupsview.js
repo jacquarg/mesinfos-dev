@@ -9,7 +9,7 @@ module.exports = Mn.ItemView.extend({
   comparator: undefined,
 
   initialize: function() {
-    this.listenTo(this.collection, "sync remove add", this.render);
+    this.listenTo(this.collection, "sync remove add change", this.render);
   },
 
   onRender: function() {

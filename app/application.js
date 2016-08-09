@@ -13,13 +13,19 @@ require('views/behaviors');
 
 var Application = Mn.Application.extend({
 
+  initialize: function() {
+    this.properties = Properties;
+  },
+
   prepare: function() {
-    var self = this;
     return Promise.resolve($.getJSON('data/list_data.json'))
       .then(this._parseMetadata.bind(this))
-      .then(this._initProperties.bind(this))
-      // .then(this._defineViews.bind(this));
-      ;
+  },
+
+  prepareInBackground: function() {
+    this.properties.fetch();
+
+    return this._defineViews();
   },
 
   _parseMetadata: function(data) {
@@ -42,14 +48,6 @@ var Application = Mn.Application.extend({
     }));
   },
 
-  _initProperties: function() {
-    return Properties.then(function(properties) {
-      this.properties = properties;
-
-      this.subsets.applySynthSetsStatus(this.properties.get('synthSets'));
-    }.bind(this));
-  },
-
   onBeforeStart: function() {
     this.layout = new AppLayout();
     this.router = new Router();
@@ -57,8 +55,6 @@ var Application = Mn.Application.extend({
     this.documents = new DocumentsCollection();
     this.dsViews = new DSViewsCollection();
     this.dsViews.fetch();
-
-
 
     if (typeof Object.freeze === 'function') {
       Object.freeze(this);
@@ -82,6 +78,7 @@ module.exports = application;
 
 document.addEventListener('DOMContentLoaded', function() {
   application.prepare()
+    .then(function() { application.prepareInBackground();})
     .then(application.start.bind(application));
 });
 
