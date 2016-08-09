@@ -28,6 +28,6 @@ module.exports = {
   plugins: {
     jade: {
       globals: ['moment', '_']
-    }
+    },
   }
 }

@@ -10,6 +10,9 @@
       "description": "Visualize all the data format, and test request on the datasystem."
     }
   },
+  "scripts": {
+    "build": "brunch build --production"
+  },
   "dependencies": {},
   "devDependencies": {
     "auto-reload-brunch": "^2.0.0",
