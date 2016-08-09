@@ -26,7 +26,9 @@ module.exports = Mn.ItemView.extend({
       model: new Backbone.Model({groupTitle: groupName}),
     });
     view.render();
-    this.$el.append(view.$el);
+    var containerEl = this.childViewContainer ? this.$el.find(this.childViewContainer) : this.$el;
+
+    containerEl.append(view.$el);
   },
 
 

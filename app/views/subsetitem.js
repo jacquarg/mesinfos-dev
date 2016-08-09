@@ -4,7 +4,7 @@ module.exports = Mn.ItemView.extend({
     template: require('views/templates/subsetitem'),
 
     events: {
-      'click li': 'setDSView',
+      'click h4': 'setDSView',
       'click .insert': 'insertSynthSet',
     },
 
@@ -21,6 +21,7 @@ module.exports = Mn.ItemView.extend({
     },
 
     setDSView: function() {
+      console.log('here!')
       require('application').trigger('requestform:setView', this.model);
     },
 

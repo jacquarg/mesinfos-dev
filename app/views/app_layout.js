@@ -16,11 +16,10 @@ module.exports = Mn.LayoutView.extend({
   behaviors: {},
 
   regions: {
-    dsViewsList: 'aside .dsviewslist',
+    dsViewsList: '.dsviewshistory',
     typologies: 'aside .typologies',
     documents: '.documents',
     requestForm: '.requestform',
-
   },
 
   initialize: function() {
@@ -29,8 +28,8 @@ module.exports = Mn.LayoutView.extend({
 
 
   onRender: function() {
-    this.typologies.show(new Typologies({ collection: app.subsets }));
     this.dsViewsList.show(new GroupsDSView({ collection: app.dsViews}));
+    this.typologies.show(new Typologies({ collection: app.subsets }));
     this.requestForm.show(new RequestForm({ model: new DSView() }));
     this.documents.show(new Documents({ collection: app.documents }));
   },

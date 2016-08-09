@@ -1,8 +1,23 @@
-input#inputdoctype(type="text", placeholder="DocType", name="doctype", value="Event")
-input#inputname(type="text", placeholder="Name", name="name", value="MyRequest")
-textarea#inputmap(placeholder="", row="5")
-  | function(doc) {
-  |   emit(doc._id);
-  | }
+h2 Requêtes au datasystem
+
+.defineview
+  .method cozysdk.
+    b defineView
+    |(
+  ul
+    li
+      input#inputdoctype.param(type="text", placeholder="DocType", name="doctype", value="Event")
+      span ,
+    li
+      input#inputname.param(type="text", placeholder="Name", name="name", value="MyRequest")
+      span ,
+    li
+      //-span "
+      textarea#inputmap(placeholder="", row="5")
+        | function(doc) {
+        |   emit(doc._id);
+        | }
+      span ");
+.queryview
 
 button#inputsend Envoyer

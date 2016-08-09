@@ -23,17 +23,17 @@ var Application = Mn.Application.extend({
   },
 
   _parseMetadata: function(data) {
-      var metadata = data["export"];
-      this.subsets = new SubsetsCollection(metadata.filter(function(field) {
-        return field.Nature === 'Subset';
-      }));
-      this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
-        return field.Nature === 'Doctype';
+    var metadata = data["export"];
+    this.subsets = new SubsetsCollection(metadata.filter(function(field) {
+      return field.Nature === 'Subset';
+    }));
+    this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
+      return field.Nature === 'Doctype';
 
-      }));
-      this.fields = metadata.filter(function(field) {
-        return field.Nature !== 'Subset' && field.Nature !== 'Doctype';
-      });
+    }));
+    this.fields = metadata.filter(function(field) {
+      return field.Nature !== 'Subset' && field.Nature !== 'Doctype';
+    });
   },
 
   _defineViews: function() {

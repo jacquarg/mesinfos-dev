@@ -48,17 +48,15 @@ module.exports = Mn.ItemView.extend({
   send: function() {
     var model = this.model;
     new Promise(function(resolve, reject) {
-      if (model instanceof require('models/subset')) {
+      if (model instanceof require('models/subset') || !model.isNew()) {
         return resolve();
       }
 
-      app.dsViews.create(model, {success: resolve, erro: reject });
+      app.dsViews.create(model, {success: resolve, error: reject });
     })
     .then(model.updateDSView.bind(model))
     .then(function() {
       app.trigger('documents:fetch', model);
     });
   },
-
-
 });

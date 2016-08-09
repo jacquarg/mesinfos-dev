@@ -1,2 +1,2 @@
-span= createdAt
-span.delete x
+span(title=createdAt)= moment(createdAt).fromNow()
+span.iconicstroke-trash-stroke.delete(title='Supprimer du Cozy')

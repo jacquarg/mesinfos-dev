@@ -15,10 +15,19 @@ module.exports = {
           'vendor/marionette/backbone.radio.js',
           'vendor/marionette/backbone.marionette.js',
           'vendor/marionette/radio.shim.js',
+          'vendor/moment.min.js',
+          'vendor/moment_locale-fr.js',
           ]
       }
     },
     stylesheets: {joinTo: 'app.css'},
-    templates: {joinTo: 'app.js'}
+    templates: {
+      joinTo: 'app.js'
+    },
   },
+  plugins: {
+    jade: {
+      globals: ['moment', '_']
+    }
+  }
 }
