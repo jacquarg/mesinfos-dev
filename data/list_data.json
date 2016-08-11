@@ -1381,7 +1381,6 @@
 {
       "Nom" : "Devis Maif",
       "Description" : "Un devis pour une assurance Maif",
-      "Exemple" : "TODO",
       "Typologie" : "Finance",
       "DocType" : "Quote",
       "Nature" : "Subset",
@@ -3656,7 +3655,7 @@
 {
       "Nom" : "Carnet d'adresse",
       "Description" : "Mon carnet d'adresse dans mon Cozy",
-      "Exemple" : "",
+      "Exemple" : "carnet_d_adresse",
       "Typologie" : "Communication",
       "DocType" : "Contact",
       "Nature" : "Subset",
@@ -4709,7 +4708,7 @@
 {
       "Nom" : "Opérations bancaires",
       "Description" : "Mes relevé de comptes bancaires (libellé, date, montant pour chaque opération), que je récupère auprès de ma banque, et visualise grace à l'application Cozy Kresus.",
-      "Exemple" : "",
+      "Exemple" : "operations_bancaires",
       "Typologie" : "Finance",
       "DocType" : "BankOperation",
       "Nature" : "Subset",
@@ -5086,11 +5085,11 @@
 {
       "Nom" : "Une tâche Tasky",
       "Description" : "Une tâche créée via l'application Tasky",
-      "Exemple" : "",
+      "Exemple" : "tasky",
       "Typologie" : "Loisir",
       "DocType" : "Tasky",
-      "Nature" : "DocType",
-      "Format" : "",
+      "Nature" : "Subset",
+      "Format" : "emit(doc._id);",
       "Détenteur" : "Cozy",
       "Fréquence" : "",
       "Latence" : "",

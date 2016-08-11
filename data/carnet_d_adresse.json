@@ -1,0 +1,14 @@
+[
+    {
+    "_id": "b24a4f14e7f1a2ee3b507b2ba900459a",
+    "bday": "1956-07-15",
+    "datapoints": [{"name":"tel","value":"+33 3 12 34 56 78","type":"main"}],
+    "docType": "contact",
+    "fn": "Germaine Martin",
+    "note": "\"Données complémentaires sur le contact.\"",
+    "accounts": [],
+    "n": "Martin;Germaine;;;",
+    "revision": "2016-08-11T12:10:24.221Z",
+    "tags": [],
+    }
+]
