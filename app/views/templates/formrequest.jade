@@ -18,6 +18,25 @@ h2 Requêtes au datasystem
         |   emit(doc._id);
         | }
       span ");
+
 .queryview
+  .method cozysdk.
+    b queryView
+    |(
+  ul
+    li
+      input#querydoctype.param(type="text", readonly="readonly")
+      span ,
+    li
+      input#queryname.param(type="text", readonly="readonly")
+      span ,
+    li
+      //-span "
+      textarea#queryparams(placeholder="", row="5")
+        | {
+        |   include_docs: true,
+        |   limit: 5,
+        | }
+      span ");
 
 button#inputsend Envoyer

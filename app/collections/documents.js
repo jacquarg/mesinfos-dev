@@ -72,8 +72,7 @@ module.exports = Backbone.Collection.extend({
       return;
     }
 
-    cozysdk.run(this.dsView.getDocType(), this.dsView.getName(),
-      { include_docs: true, limit: 10 },
+    cozysdk.run(this.dsView.getDocType(), this.dsView.getName(), this.dsView.getQueryParams(),
       function(err, results) {
         if (err) {
           if (options.error) { options.error(err); }

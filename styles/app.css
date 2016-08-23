@@ -191,6 +191,11 @@ aside .typologies {
   bottom: 2em;
 }
 
+.requestform .defineview,
+.requestform .queryview {
+  float: left;
+}
+
 /* Historique (dsviews) */
 .dsviewshistory {
   width: 200px;

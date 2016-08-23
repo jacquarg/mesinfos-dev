@@ -1,0 +1,32 @@
+[
+    {
+    "_id": "ccc54fab54837ffbd62c041003008c69",
+    "albumid": "ccc54fab54837ffbd62c041003007083",
+    "docType": "photo",
+    "binary": {"raw":{"id":"ccc54fab54837ffbd62c041003009364","rev":"2-cf028f65ff36a5e48b193b7aec883039"},"screen":{"id":"ccc54fab54837ffbd62c04100300a032","rev":"2-cee0304222c2527f507388e1d624d98e"},"thumb":{"id":"ccc54fab54837ffbd62c04100300a678","rev":"2-2ae9ec492914c98abdb8c667aa18c599"}},
+    "description": "undefined",
+    "gps": {},
+    "orientation": 1,
+    "title": "FIN3.jpg",
+    },
+    {
+    "_id": "ccc54fab54837ffbd62c04100300b33a",
+    "albumid": "ccc54fab54837ffbd62c041003007083",
+    "docType": "photo",
+    "binary": {"raw":{"id":"ccc54fab54837ffbd62c04100300b7b1","rev":"2-5605cff74bddebaf5f17f105d9b61142"},"screen":{"id":"ccc54fab54837ffbd62c04100300bb3f","rev":"2-8118173de6f3ced507faba1019a63cab"},"thumb":{"id":"ccc54fab54837ffbd62c04100300cadf","rev":"2-384760007e83db7041e0d71e02bd48a4"}},
+    "description": "undefined",
+    "gps": {},
+    "orientation": 1,
+    "title": "finlande.jpg",
+    },
+    {
+    "_id": "ccc54fab54837ffbd62c04100300d099",
+    "albumid": "ccc54fab54837ffbd62c041003007083",
+    "docType": "photo",
+    "binary": {"raw":{"id":"ccc54fab54837ffbd62c04100300d908","rev":"2-cd75175a8a9eeef445893d0a409975ab"},"screen":{"id":"ccc54fab54837ffbd62c04100300e0e9","rev":"2-c5a4306ee2c097818765738e76c8f77f"},"thumb":{"id":"ccc54fab54837ffbd62c04100300e8c9","rev":"2-1d6d8d1b6a89ec595fe2bc0cc84f50d0"}},
+    "description": "undefined",
+    "gps": {},
+    "orientation": 1,
+    "title": "helsinki_final_cover.jpg",
+    }
+    ]

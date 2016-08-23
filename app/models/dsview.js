@@ -21,6 +21,10 @@ module.exports = Backbone.Model.extend({
     return this.get('mapFunction');
   },
 
+  getQueryParams: function() {
+    return this.get('queryParams');
+  },
+
   updateDSView: function() {
     var self = this;
     return cozysdk.defineView(this.getDocType(),

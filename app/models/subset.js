@@ -14,6 +14,15 @@ module.exports = DSView.extend({
     return utils.test2MapFunction(this.get('Format'));
   },
 
+
+  getQueryParams: function() {
+    return {
+      limit: 10,
+      include_docs: true
+    };
+
+  },
+
   // Readonly!
   save: function(options) {
     return options.success();

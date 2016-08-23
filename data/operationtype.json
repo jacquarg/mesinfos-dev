@@ -1,0 +1,62 @@
+[
+{
+"_id": "b24a4f14e7f1a2ee3b507b2ba900d1d5",
+"docType": "operationtype",
+"name": "type.unknown",
+"weboobvalue": 0,
+},
+{
+"_id": "b24a4f14e7f1a2ee3b507b2ba900d6c1",
+"docType": "operationtype",
+"name": "type.transfer",
+"weboobvalue": 1,
+},
+{
+"_id": "b24a4f14e7f1a2ee3b507b2ba900ddae",
+"docType": "operationtype",
+"name": "type.order",
+"weboobvalue": 2,
+},
+{
+"_id": "b24a4f14e7f1a2ee3b507b2ba900eb4c",
+"docType": "operationtype",
+"name": "type.check",
+"weboobvalue": 3,
+},
+{
+"_id": "b24a4f14e7f1a2ee3b507b2ba900f5d5",
+"docType": "operationtype",
+"name": "type.deposit",
+"weboobvalue": 4,
+},
+{
+"_id": "b24a4f14e7f1a2ee3b507b2ba900fb9a",
+"docType": "operationtype",
+"name": "type.payback",
+"weboobvalue": 5,
+},
+{
+"_id": "b24a4f14e7f1a2ee3b507b2ba901071c",
+"docType": "operationtype",
+"name": "type.withdrawal",
+"weboobvalue": 6,
+},
+{
+"_id": "b24a4f14e7f1a2ee3b507b2ba9010a93",
+"docType": "operationtype",
+"name": "type.card",
+"weboobvalue": 7,
+},
+{
+"_id": "b24a4f14e7f1a2ee3b507b2ba901141f",
+"docType": "operationtype",
+"name": "type.loan_payment",
+"weboobvalue": 8,
+},
+{
+"_id": "b24a4f14e7f1a2ee3b507b2ba90120a5",
+"docType": "operationtype",
+"name": "type.bankfee",
+"weboobvalue": 9,
+}
+]
