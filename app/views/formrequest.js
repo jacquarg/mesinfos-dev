@@ -66,8 +66,9 @@ module.exports = Mn.ItemView.extend({
   },
 
   send: function() {
+    var self = this;
     var model = this.model;
-    new Promise(function(resolve, reject) {
+    return new Promise(function(resolve, reject) {
       if (model instanceof require('models/subset') || !model.isNew()) {
         return resolve();
       }
@@ -81,6 +82,11 @@ module.exports = Mn.ItemView.extend({
     .then(function() {
       app.trigger('message:hide');
       app.trigger('documents:fetch', model);
+    })
+    .catch(function(err) {
+      console.log(err);
+      app.trigger('message:error', 'Error. Try again or check the console.');
     });
   },
+
 });

@@ -8,12 +8,14 @@ module.exports = Mn.ItemView.extend({
       message: '.display',
     },
     events: {
+      'click .close': 'onHide',
     },
 
     initialize: function() {
       app = require('application');
       this.listenTo(app, 'message:display', this.onDisplay);
       this.listenTo(app, 'message:hide', this.onHide);
+      this.listenTo(app, 'message:error', this.onDisplay);
     },
 
     onDisplay: function(message) {

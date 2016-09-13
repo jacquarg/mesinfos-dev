@@ -17,7 +17,17 @@ module.exports = Backbone.Collection.extend({
     this.dsView = dsView;
   },
 
-  // Generate fields, with teh metadata !
+  toRawJSON: function() {
+    console.log(this);
+    return this.map(function(doc) {
+      var res = doc.toJSON();
+      console.log(res);
+      delete res.fields;
+      return res;
+    });
+  },
+
+  // Generate fields, with the metadata !
   parse: function(resp, options) {
     return resp.map(this._generateFields);
   },

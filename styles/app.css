@@ -257,7 +257,13 @@ aside .typologies {
   top: 300px;
 }
 
-.documents>ul {
+.documents #downloaddata {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.documents ul.documentslist {
   list-style: none;
   
 }

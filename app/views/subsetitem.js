@@ -21,7 +21,6 @@ module.exports = Mn.ItemView.extend({
     },
 
     setDSView: function() {
-      console.log('here!')
       require('application').trigger('requestform:setView', this.model);
     },
 

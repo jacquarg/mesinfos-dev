@@ -1,14 +1,244 @@
 [
-    {
-    "_id": "b24a4f14e7f1a2ee3b507b2ba900459a",
-    "bday": "1956-07-15",
-    "datapoints": [{"name":"tel","value":"+33 3 12 34 56 78","type":"main"}],
-    "docType": "contact",
-    "fn": "Germaine Martin",
-    "note": "\"Données complémentaires sur le contact.\"",
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad501ac03",
+    "fn": "Tijs Michiel Verwest ",
+    "n": ";Tijs Michiel Verwest ;;;",
+    "revision": "2016-09-13T11:49:00.369Z",
+    "datapoints": [],
+    "note": "Nice dj, Should definitely invite him to my next house party!",
+    "tags": [
+      "dj"
+    ],
     "accounts": [],
-    "n": "Martin;Germaine;;;",
-    "revision": "2016-08-11T12:10:24.221Z",
-    "tags": [],
+    "docType": "contact",
+    "_attachments": {
+      "picture": {
+        "content_type": "application/octet-stream",
+        "revpos": 2,
+        "digest": "md5-bO+v4EOwN8wvN6SPiDcWEg==",
+        "length": 3451,
+        "stub": true
+      }
     }
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad501ad4d",
+    "fn": "Thelonious Monk",
+    "n": ";Thelonious Monk;;;",
+    "revision": "2016-09-13T11:49:00.602Z",
+    "datapoints": [],
+    "note": "We had a few concerts together.",
+    "tags": [
+      "music"
+    ],
+    "accounts": [],
+    "docType": "contact",
+    "_attachments": {
+      "picture": {
+        "content_type": "application/octet-stream",
+        "revpos": 2,
+        "digest": "md5-MOgRBaZKL8nYpMtDpjRyvw==",
+        "length": 2737,
+        "stub": true
+      }
+    }
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad501b91c",
+    "fn": "Sonny John Moore",
+    "n": ";Sonny John Moore;;;",
+    "revision": "2016-09-13T11:49:00.818Z",
+    "datapoints": [],
+    "note": "He's playing dubstep. Pretty good at it.",
+    "tags": [
+      "dj"
+    ],
+    "accounts": [],
+    "docType": "contact",
+    "_attachments": {
+      "picture": {
+        "content_type": "application/octet-stream",
+        "revpos": 2,
+        "digest": "md5-MHrVtrnc7bkhZVfwAdwBvA==",
+        "length": 3529,
+        "stub": true
+      }
+    }
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad501bda9",
+    "fn": "Rusty Russell",
+    "n": ";Rusty Russell;;;",
+    "revision": "2016-09-13T11:49:01.023Z",
+    "datapoints": [],
+    "note": "Another Cozy Fan Boy who has some knowledge about firewalls.",
+    "tags": [
+      "developer"
+    ],
+    "accounts": [],
+    "docType": "contact",
+    "_attachments": {
+      "picture": {
+        "content_type": "application/octet-stream",
+        "revpos": 2,
+        "digest": "md5-iHmnaMKNiMzf0x47x47DsQ==",
+        "length": 2506,
+        "stub": true
+      }
+    }
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad501c841",
+    "fn": "Niklaus Wirth",
+    "n": ";Niklaus Wirth;;;",
+    "revision": "2016-09-13T11:49:01.221Z",
+    "datapoints": [],
+    "note": "Good at Pascal programming",
+    "tags": [
+      "developer"
+    ],
+    "accounts": [],
+    "docType": "contact",
+    "_attachments": {
+      "picture": {
+        "content_type": "application/octet-stream",
+        "revpos": 2,
+        "digest": "md5-zHnunDPe97+1mQaDgxC6ig==",
+        "length": 3233,
+        "stub": true
+      }
+    }
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad501d2ca",
+    "fn": "Larry Wall",
+    "n": ";Larry Wall;;;",
+    "revision": "2016-09-13T11:49:01.418Z",
+    "datapoints": [],
+    "note": "Cool guy who loves traveling",
+    "tags": [
+      "developer"
+    ],
+    "accounts": [],
+    "docType": "contact",
+    "_attachments": {
+      "picture": {
+        "content_type": "application/octet-stream",
+        "revpos": 2,
+        "digest": "md5-yPCWRyBQwlU+A5jMcdCGMA==",
+        "length": 3451,
+        "stub": true
+      }
+    }
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad501e293",
+    "fn": "Guido van Rossum",
+    "n": ";Guido van Rossum;;;",
+    "revision": "2016-09-13T11:49:01.632Z",
+    "datapoints": [],
+    "note": "He likes Python. So do I.",
+    "tags": [
+      "developer"
+    ],
+    "accounts": [],
+    "docType": "contact",
+    "_attachments": {
+      "picture": {
+        "content_type": "application/octet-stream",
+        "revpos": 2,
+        "digest": "md5-XVZoxWm5abIcNtTDK0pBAw==",
+        "length": 3680,
+        "stub": true
+      }
+    }
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad501eecc",
+    "fn": "Duke Ellington",
+    "n": ";Duke Ellington;;;",
+    "revision": "2016-09-13T11:49:01.795Z",
+    "datapoints": [],
+    "note": "Grandma's ex-boyfriend",
+    "tags": [
+      "friend"
+    ],
+    "accounts": [],
+    "docType": "contact",
+    "_attachments": {
+      "picture": {
+        "content_type": "application/octet-stream",
+        "revpos": 2,
+        "digest": "md5-HC+8Y5poRHjp+8LjKu8SUQ==",
+        "length": 2528,
+        "stub": true
+      }
+    }
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad501fb61",
+    "fn": "Brad Fitzpatrick",
+    "n": ";Brad Fitzpatrick;;;",
+    "revision": "2016-09-13T11:49:02.020Z",
+    "datapoints": [],
+    "note": "I sent him some PR on Camlistore. So he offered me a bier last time I went in SF.",
+    "tags": [
+      "developer"
+    ],
+    "accounts": [],
+    "docType": "contact",
+    "_attachments": {
+      "picture": {
+        "content_type": "application/octet-stream",
+        "revpos": 2,
+        "digest": "md5-rHqicSx7q6n0ahraN14upg==",
+        "length": 2056,
+        "stub": true
+      }
+    }
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad501fe2d",
+    "fn": "David Guetta",
+    "n": ";David Guetta;;;",
+    "revision": "2016-09-13T11:49:02.185Z",
+    "datapoints": [],
+    "note": "Nice guy. He gave me some cool tracks to listen.",
+    "tags": [
+      "dj"
+    ],
+    "accounts": [],
+    "docType": "contact",
+    "_attachments": {
+      "picture": {
+        "content_type": "application/octet-stream",
+        "revpos": 2,
+        "digest": "md5-d1Y5MxpKKAuUxcPVVuTx/w==",
+        "length": 3424,
+        "stub": true
+      }
+    }
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad501ff19",
+    "fn": "Anatoly Karatsuba",
+    "n": ";Anatoly Karatsuba;;;",
+    "revision": "2016-09-13T11:49:02.386Z",
+    "datapoints": [],
+    "note": "Met at Cozy hackathon of september 2014",
+    "tags": [
+      "developer"
+    ],
+    "accounts": [],
+    "docType": "contact",
+    "_attachments": {
+      "picture": {
+        "content_type": "application/octet-stream",
+        "revpos": 2,
+        "digest": "md5-VoMKxjQN86Nest9Zmy4AaA==",
+        "length": 4050,
+        "stub": true
+      }
+    }
+  }
 ]

@@ -1,15 +1,38 @@
-[    
+[
   {
-    "_id": "ccc54fab54837ffbd62c041003007083",
-    "description": "My Data 2016 et Helsinki.",
-    "docType": "album",
-    "id": "ccc54fab54837ffbd62c041003007083",
-    "title": "Helsinki",
-    "clearance": [],
-    "coverPicture": "ccc54fab54837ffbd62c04100300b33a",
-    "date": "2016-08-22T12:55:47.628Z",
+    "_id": "5ee6a9147b67b385a2c4abfad503c2f1",
+    "title": "Camels",
+    "description": "",
+    "date": "2016-09-13T12:04:32.660Z",
     "orientation": 1,
+    "clearance": [],
+    "docType": "album",
     "thumbsrc": "img/nophotos.gif",
-    "updated": 1471870834417,
+    "updated": 1473768293574,
+    "id": "5ee6a9147b67b385a2c4abfad503c2f1"
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad503ee41",
+    "title": "Street art",
+    "description": "",
+    "date": "2016-09-13T12:05:00.564Z",
+    "orientation": 1,
+    "clearance": [],
+    "docType": "album",
+    "thumbsrc": "img/nophotos.gif",
+    "updated": 1473768322382,
+    "id": "5ee6a9147b67b385a2c4abfad503ee41"
+  },
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad5040634",
+    "title": "Black and white",
+    "description": "",
+    "date": "2016-09-13T12:05:29.269Z",
+    "orientation": 1,
+    "clearance": [],
+    "docType": "album",
+    "thumbsrc": "img/nophotos.gif",
+    "updated": 1473768346862,
+    "id": "5ee6a9147b67b385a2c4abfad5040634"
   }
 ]

@@ -38,6 +38,7 @@ module.exports = DSView.extend({
     return this.get('Exemple');
   },
   insertSynthSet: function() {
+    var app = require('application');
     var self = this;
     if (!this.synthSetAvailable()) { return Promise.resolve(false); }
 
@@ -46,10 +47,12 @@ module.exports = DSView.extend({
       return Promise.all(raw.map(self._insertOneSynthDoc, self));
     }).then(function(ids) {
       ids = ids.map(function(obj) { return obj._id; });
-      var app = require('application');
+      
       return app.properties.addSynthSetIds(self.getSynthSetName(), ids)
+    }).catch(function(err) {
+      console.error(err);
+      app.trigger('message:error', 'Error while processing data. Retry or check console.');
     });
-    //.catch ??;
 
   },
 

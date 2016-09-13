@@ -5,6 +5,14 @@ Un outils pour les développeurs autours des données du Pilote MesInfos :
 * Visualiser les données et leur documentation.
 * Tester des requêtes pour obtenir les données.
 
+# TODO
+
+## Bugs 
+* 
+
+## Features
+* Display the true cozysdk response tree.
+
 ## Requirements
 
 You'll need a valid node.js/npm environment to develop the app. We use [Brunch](http://brunch.io/) as build tool and [bower](http://bower.io/) for the dependencies so you want them installed on your system:

@@ -1,65 +1,293 @@
 [
-    {
-    "_id": "953609d79beb68399969b7cde0005a4a",
-    "alarms": [],
-    "attendees": [],
+  {
+    "_id": "5ee6a9147b67b385a2c4abfad500cb98",
+    "start": "1900-12-31T23:00:00.000Z",
+    "end": "1900-12-31T23:00:00.000Z",
+    "place": "",
+    "details": "",
     "description": "",
-    "docType": "event",
+    "tags": [
+      "New calendar 2"
+    ],
+    "attendees": [],
+    "related": null,
+    "alarms": [],
+    "created": "2016-09-13T11:36:05.980Z",
+    "lastModification": "2016-09-13T11:36:05.983Z",
+    "docType": "event"
+  },
+  {
+    "_id": "953609d79beb68399969b7cde0005a4a",
+    "start": "1901-01-01",
     "end": "1901-01-01",
     "place": "",
+    "description": "",
+    "tags": [
+      "New calendar"
+    ],
+    "attendees": [],
     "related": null,
-    "start": "1901-01-01",
-    "start": "1901-01-01",
+    "alarms": [],
     "created": "2016-07-08T07:29:22.853Z",
     "lastModification": "2016-07-08T07:29:22.853Z",
-    "tags": ["New calendar"],
-    },
-    {
-    "_id": "b24a4f14e7f1a2ee3b507b2ba9002956",
-    "alarms": [],
-    "attendees": [],
-    "description": "Réunion scopyleft 1",
-    "details": "",
-    "docType": "event",
-    "end": "2016-09-08T09:00:00.000Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada45005000",
+    "start": "1900-12-31T23:00:00.000Z",
+    "end": "1900-12-31T23:00:00.000Z",
     "place": "",
-    "related": null,
-    "start": "2016-09-08T08:00:00.000Z",
-    "start": "2016-09-08T08:00:00.000Z",
-    "created": "2016-08-11T12:08:55.258Z",
-    "lastModification": "2016-08-11T12:08:55.265Z",
-    "tags": ["my-calendar"],
-    },
-    {
-    "_id": "b24a4f14e7f1a2ee3b507b2ba9002d66",
-    "alarms": [],
-    "attendees": [],
-    "description": "Réunion scopyleft 2",
     "details": "",
-    "docType": "event",
-    "end": "2016-09-19T09:00:00.000Z",
-    "place": "",
-    "related": null,
-    "start": "2016-09-19T08:00:00.000Z",
-    "start": "2016-09-19T08:00:00.000Z",
-    "created": "2016-08-11T12:09:10.681Z",
-    "lastModification": "2016-08-11T12:09:10.681Z",
-    "tags": ["my-calendar"],
-    },
-    {
-    "_id": "b24a4f14e7f1a2ee3b507b2ba90031a3",
-    "alarms": [],
+    "description": "",
+    "tags": [
+      "New calendar 1"
+    ],
     "attendees": [],
-    "description": "Réunion scopyleft",
-    "details": "",
-    "docType": "event",
-    "end": "2016-09-02T09:00:00.000Z",
-    "place": "",
     "related": null,
-    "start": "2016-09-02T08:00:00.000Z",
-    "start": "2016-09-02T08:00:00.000Z",
-    "created": "2016-08-11T12:09:18.315Z",
-    "lastModification": "2016-08-11T12:09:18.316Z",
-    "tags": ["my-calendar"],
-    }
+    "alarms": [],
+    "created": "2016-09-08T21:06:23.676Z",
+    "lastModification": "2016-09-08T21:06:23.677Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada45005c73",
+    "start": "2014-09-26T08:00:00.000Z",
+    "end": "2014-09-26T16:00:00.000Z",
+    "details": "",
+    "description": "Team day",
+    "rrule": "",
+    "tags": [
+      "work"
+    ],
+    "attendees": [],
+    "related": null,
+    "alarms": [],
+    "created": "2016-09-08T21:06:48.594Z",
+    "lastModification": "2016-09-08T21:06:48.594Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada45006b59",
+    "start": "2014-09-23T08:00:00.000Z",
+    "end": "2014-09-23T16:00:00.000Z",
+    "details": "",
+    "description": "Meeting with the new client",
+    "rrule": "",
+    "tags": [
+      "work"
+    ],
+    "attendees": [],
+    "related": null,
+    "alarms": [],
+    "created": "2016-09-08T21:06:48.626Z",
+    "lastModification": "2016-09-08T21:06:48.627Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada450075a6",
+    "start": "2014-10-08T08:00:00.000Z",
+    "end": "2014-10-08T16:00:00.000Z",
+    "details": "",
+    "description": "Client meeting",
+    "rrule": "",
+    "tags": [
+      "work"
+    ],
+    "attendees": [],
+    "related": null,
+    "alarms": [],
+    "created": "2016-09-08T21:06:48.694Z",
+    "lastModification": "2016-09-08T21:06:48.694Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada45008421",
+    "start": "2014-10-24T08:00:00.000Z",
+    "end": "2014-10-24T16:00:00.000Z",
+    "details": "",
+    "description": "Team day",
+    "rrule": "",
+    "tags": [
+      "work"
+    ],
+    "attendees": [],
+    "related": null,
+    "alarms": [],
+    "created": "2016-09-08T21:06:48.741Z",
+    "lastModification": "2016-09-08T21:06:48.741Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada45009eb1",
+    "start": "2014-09-10T10:00:00.000",
+    "end": "2014-09-10T12:00:00.000",
+    "details": "",
+    "description": "Go to Swimming Pool",
+    "rrule": "FREQ=WEEKLY;INTERVAL=1;BYDAY=WE,SA",
+    "tags": [
+      "Sport"
+    ],
+    "attendees": [],
+    "related": null,
+    "timezone": "Europe/Paris",
+    "alarms": [],
+    "created": "2016-09-08T21:07:17.212Z",
+    "lastModification": "2016-09-08T21:07:17.213Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada4500a6d7",
+    "start": "2014-09-08T08:00:00.000",
+    "end": "2014-09-08T09:00:00.000",
+    "details": "",
+    "description": "Running",
+    "rrule": "FREQ=WEEKLY;INTERVAL=1;BYDAY=MO,TH",
+    "tags": [
+      "Sport"
+    ],
+    "attendees": [],
+    "related": null,
+    "timezone": "Europe/Paris",
+    "alarms": [],
+    "created": "2016-09-08T21:07:17.241Z",
+    "lastModification": "2016-09-08T21:07:17.241Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada4500b807",
+    "start": "2014-10-22T08:00:00.000Z",
+    "end": "2014-10-22T16:00:00.000Z",
+    "details": "",
+    "description": "client meeting",
+    "rrule": "",
+    "tags": [
+      "my calendar"
+    ],
+    "attendees": [],
+    "related": null,
+    "alarms": [],
+    "created": "2016-09-08T21:07:33.097Z",
+    "lastModification": "2016-09-08T21:07:33.097Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada4500baf9",
+    "start": "2014-09-27T08:00:00.000Z",
+    "end": "2014-09-28T16:00:00.000Z",
+    "details": "",
+    "description": "JS Meetup @ Berlin",
+    "rrule": "",
+    "tags": [
+      "Fun"
+    ],
+    "attendees": [],
+    "related": null,
+    "alarms": [],
+    "created": "2016-09-08T21:07:45.609Z",
+    "lastModification": "2016-09-08T21:07:45.609Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada4500bb17",
+    "start": "2014-09-09T11:00:00",
+    "end": "2014-09-09T12:00:00",
+    "details": "",
+    "description": "Go to Library",
+    "rrule": "FREQ=WEEKLY;INTERVAL=1",
+    "tags": [
+      "Culture"
+    ],
+    "attendees": [],
+    "related": null,
+    "timezone": "Europe/Paris",
+    "alarms": [],
+    "created": "2016-09-08T21:08:00.552Z",
+    "lastModification": "2016-09-13T11:37:48.321Z",
+    "docType": "event",
+    "id": "ea9f2a95349dac545ed9aada4500bb17",
+    "place": ""
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada4500c7eb",
+    "start": "2014-09-16",
+    "end": "2014-09-16",
+    "details": "",
+    "description": "Pay taxes",
+    "rrule": "",
+    "tags": [
+      "Chores"
+    ],
+    "attendees": [],
+    "related": null,
+    "alarms": [
+      {
+        "trigg": "-PT10M",
+        "action": "DISPLAY"
+      }
+    ],
+    "created": "2016-09-08T21:08:13.123Z",
+    "lastModification": "2016-09-08T21:08:13.124Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada4500c856",
+    "start": "2014-10-21",
+    "end": "2014-10-21",
+    "details": "",
+    "description": "Pay taxes",
+    "rrule": "",
+    "tags": [
+      "Chores"
+    ],
+    "attendees": [],
+    "related": null,
+    "alarms": [
+      {
+        "trigg": "-PT10M",
+        "action": "DISPLAY"
+      }
+    ],
+    "created": "2016-09-08T21:08:13.150Z",
+    "lastModification": "2016-09-08T21:08:13.150Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada4500d15b",
+    "start": "2014-10-09",
+    "end": "2014-10-09",
+    "details": "",
+    "description": "Cleanup the garage",
+    "rrule": "",
+    "tags": [
+      "Chores"
+    ],
+    "attendees": [],
+    "related": null,
+    "alarms": [
+      {
+        "trigg": "-PT10M",
+        "action": "DISPLAY"
+      }
+    ],
+    "created": "2016-09-08T21:08:13.202Z",
+    "lastModification": "2016-09-08T21:08:13.202Z",
+    "docType": "event"
+  },
+  {
+    "_id": "ea9f2a95349dac545ed9aada4500d974",
+    "start": "2015-06-19T08:00:00.000Z",
+    "end": "2015-06-19T09:00:00.000Z",
+    "details": "",
+    "description": "test",
+    "rrule": "",
+    "tags": [
+      "Chores"
+    ],
+    "attendees": [],
+    "related": null,
+    "alarms": [],
+    "created": "2016-09-08T21:08:13.254Z",
+    "lastModification": "2016-09-08T21:08:13.254Z",
+    "docType": "event"
+  }
 ]
