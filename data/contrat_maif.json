@@ -1,0 +1,16 @@
+[
+{
+  "docType": "Contract",
+  "docTypeVersion": "MaifKonnector-0.0.0-draft",
+  "societaire": "1234567N",
+  "name": "VAM",
+  "formuleBase": "VAM Assistance panne 0km",
+  "startDate": "1989-04-29",
+  "montantTarifTtc": 312,
+  "objets": [
+  	{
+  		"startDate": "2013-04-12"
+  	}
+  ]
+}
+]

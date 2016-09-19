@@ -1,0 +1,147 @@
+[
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2016-01-08",
+  "endDate": "2016-07-012016-07-01",
+  "value": "648.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "REEL",
+  "statementCategory": "RELEVE_REEL_PAR_ERD_GRD",
+  "statementReason": "RELEVE_PERIODIQUE" 
+},
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2015-07-02",
+  "endDate": "2016-01-07",
+  "value": "680.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "REEL",
+  "statementCategory": "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
+},
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2015-01-08",
+  "endDate": "2015-07-01",
+  "value": "559.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "REEL",
+  "statementCategory": "RELEVE_REEL_PAR_ERD_GRD",
+  "statementReason": "RELEVE_PERIODIQUE" 
+},
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2014-07-02",
+  "endDate": "2015-01-07",
+  "value": "670.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "REEL",
+  "statementCategory": "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
+},
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2014-01-08",
+  "endDate": "2014-07-01",
+  "value": "561.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "REEL",
+  "statementCategory": "RELEVE_REEL_PAR_ERD_GRD",
+  "statementReason": "RELEVE_PERIODIQUE" 
+},
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2013-07-02",
+  "endDate": "2014-01-07",
+  "value": "643.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "REEL",
+  "statementCategory": "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
+},
+
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2013-01-08",
+  "endDate": "2013-07-01",
+  "value": "627.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "ESTIME",
+  "statementCategory": "ESTIMATION_AUTO",
+  "statementReason": "RELEVE_PERIODIQUE" 
+},
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2012-07-02",
+  "endDate": "2013-01-07",
+  "value": "656.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "REEL",
+  "statementCategory": "RELEVE_REEL_Z3_POUR_FACTURATION_COMMUNE",
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
+},
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2012-01-08",
+  "endDate": "2012-07-01",
+  "value": "502.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "REEL",
+  "statementCategory": "RELEVE_REEL_PAR_ERD_GRD",
+  "statementReason": "RELEVE_PERIODIQUE" 
+},
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2011-07-02",
+  "endDate": "2012-01-07",
+  "value": "611.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "REEL",
+  "statementCategory": "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
+},
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2011-01-08",
+  "endDate": "2011-07-01",
+  "value": "510.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "REEL",
+  "statementCategory": "RELEVE_REEL_PAR_ERD_GRD",
+  "statementReason": "RELEVE_PERIODIQUE" 
+},
+{
+  "docType": "ConsumpionStatement",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "startDate": "2010-07-02",
+  "endDate": "2011-01-07",
+  "value": "594.0",
+  "contractNumber": "12345678",
+  "invoiceNumber": "987654",
+  "statementType": "REEL",
+  "statementCategory": "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
+}
+]

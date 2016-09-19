@@ -1,0 +1,37 @@
+[
+{
+  "docType": "Contract",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "organisation": "EDF",
+  "number": "1234654321",
+  "startDate": "2016-03-01",
+  "pdl": "1324654321",
+  "energie": "ELECTRICITE",
+  "nomOffre": "TARIF_BLEU_PART",
+  "structureTarifaire": "OPTION_BASE",
+  "puissance": "PUI06",
+  "optionPrix": "Option chauffage",
+  "compteur": {
+  	"type": "EMC",
+  	"cadranType": "BASE",
+  	"nombreRoues": "005",
+  	"dernierIndex": 67481.0
+  },
+  "consommationAnnuelle": 2125,
+  "releve": {
+  	"saisieReleveConfiance": "SAISIE_IMPOSSIBLE_NON_ELIGIBLE_RC",
+  	"releve/saisieSuiviConso": "SAISIE_IMPOSSIBLE_SC_NON_SOUSCRIT"
+  },
+  "services": [
+  	{
+  		"name": "RELEVE_CONFIANCE"
+  	},
+  	{
+  		"name": "SUIVI_CONSO"
+  	},
+    {
+      "name": "PRELEVEMENT_AUTOMATIQUE"
+    }
+  ]
+}
+]

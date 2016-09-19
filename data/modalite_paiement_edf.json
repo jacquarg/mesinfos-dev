@@ -1,0 +1,35 @@
+[
+{
+  "docType": "Contract",
+  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "bankDetails": {
+  	"bank": "STE GENERALE",
+  	"bankAddress": "5 PLACE DE LA NATION PARIS 75011 France",
+  	"numeroCompte": "98760876",
+  	"codeBanque": "76300",
+  	"codeGuichet": "03",
+  	"cleRIB": "12",
+  	"titulaire": "Mme GERMAINE DUPOND"
+  },
+  "solde": 0.0,
+  "modifRibAutorisee": true,
+  "dernierReglement": {
+  	"type": "ENCAISSEMENT_PRELEVEMENT"
+  },
+  "periodiciteFacture": "ANNU",
+  "dateProchaineFacture": "2015-10-15",
+  "idPayeur": "087609078098",
+  "payeurDivergent": false,
+  "paymentSchedule": [
+  	{
+  	  "number": 1,
+  	  "receiptDate": "2016-04-11",
+  	  "scheduleDate": "2016-04-11",
+  	  "paid": true,
+  	  "amount": 69,
+  	  "amountElectricity": 69,
+  	  "amountGas": 0
+  	}
+  ]
+}
+]

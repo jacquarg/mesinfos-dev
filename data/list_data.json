@@ -1,6 +1,6 @@
 {
   "export" : [
-{
+    {
       "Nom" : "Sociétaire Maif",
       "Description" : "Identification et moyen de contact du souscripteur : Nom, prénom, adresse, date de naissance, ...",
       "Exemple" : "",
@@ -13,10 +13,10 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "name/prefix",
       "Description" : "Civilités de la personne",
-      "Exemple" : "M.",
+      "Exemple" : "Mme",
       "Typologie" : "Profil",
       "DocType" : "Client",
       "Nature" : "Caractérisation",
@@ -26,10 +26,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "name/family",
       "Description" : "Nom de la personne",
-      "Exemple" : "PRUVOT",
+      "Exemple" : "Dupond",
       "Typologie" : "Profil",
       "DocType" : "Client",
       "Nature" : "Caractérisation",
@@ -39,10 +39,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "name/given",
       "Description" : "Prénom de la personne",
-      "Exemple" : "remy",
+      "Exemple" : "Germaine",
       "Typologie" : "Profil",
       "DocType" : "Client",
       "Nature" : "Caractérisation",
@@ -52,10 +52,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "name/maiden",
       "Description" : "NomJeuneFille",
-      "Exemple" : "",
+      "Exemple" : "Martin",
       "Typologie" : "Profil",
       "DocType" : "Client",
       "Nature" : "Caractérisation",
@@ -65,10 +65,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "email",
       "Description" : "Email",
-      "Exemple" : "",
+      "Exemple" : "germainedupondmesinfos@gmail.com",
       "Typologie" : "Profil",
       "DocType" : "Client",
       "Nature" : "Caractérisation",
@@ -78,10 +78,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "telMobile",
       "Description" : "NumeroTelephonePortable",
-      "Exemple" : "",
+      "Exemple" : "33 7 23 45 67 89",
       "Typologie" : "Profil",
       "DocType" : "Client",
       "Nature" : "Caractérisation",
@@ -91,7 +91,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "telHome",
       "Description" : "NumeroTelephoneDomicile",
       "Exemple" : "",
@@ -104,7 +104,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "telPro",
       "Description" : "NumeroTelephoneProfessionnel",
       "Exemple" : "",
@@ -117,7 +117,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "telFax",
       "Description" : "NumeroFax",
       "Exemple" : "",
@@ -130,10 +130,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "birthdate",
       "Description" : "Date de naissance de la personne",
-      "Exemple" : "01/07/1947",
+      "Exemple" : "1961-01-29",
       "Typologie" : "Profil",
       "DocType" : "Client",
       "Nature" : "Caractérisation",
@@ -143,7 +143,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "birthplace/city",
       "Description" : "Commune de naissance",
       "Exemple" : "",
@@ -156,7 +156,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "birthplace/region",
       "Description" : "DepartementNaissance",
       "Exemple" : "",
@@ -169,7 +169,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "birthplace/country",
       "Description" : "PaysNaissance",
       "Exemple" : "",
@@ -182,7 +182,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "CommuneNaissanceEtranger",
       "Description" : "Commune de naissance",
       "Exemple" : "",
@@ -195,7 +195,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "CodeActif",
       "Description" : "TODO : actif / retraité",
       "Exemple" : "",
@@ -208,7 +208,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "CodeEtat",
       "Description" : "TODO",
       "Exemple" : "",
@@ -221,7 +221,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "DateEtat",
       "Description" : "TODO",
       "Exemple" : "",
@@ -234,7 +234,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "profession",
       "Description" : "Profession",
       "Exemple" : "",
@@ -247,7 +247,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "familySituation",
       "Description" : "SituationFamiliale",
       "Exemple" : "",
@@ -260,7 +260,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "referenceClient",
       "Description" : "TODO Numéro de sociétaire ?",
       "Exemple" : "5290079N",
@@ -273,7 +273,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "timestampModification",
       "Description" : "Horodatage de dernière modification",
       "Exemple" : "10/04/2011",
@@ -286,7 +286,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "Foyer",
       "Description" : "Désigne les membres du foyer et leur rôle dans le foyer",
       "Exemple" : "",
@@ -299,7 +299,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "Foyer",
       "Description" : "Désigne les membres du foyer et leur rôle dans le foyer",
       "Exemple" : "",
@@ -312,10 +312,10 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "name",
       "Description" : "Nom du foyer (nom de famille + nom de la comune)",
-      "Exemple" : "TOUZANI MONTPELLIER",
+      "Exemple" : "DUPOND LYON",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Caractérisation",
@@ -325,10 +325,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "address/street",
       "Description" : "Élément d'adresse : numéro de voie",
-      "Exemple" : "1 CHEMIN DE LA PALOMBIERE",
+      "Exemple" : "2 Boulevard des Belges",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Caractérisation",
@@ -338,7 +338,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "address/country",
       "Description" : "Pays",
       "Exemple" : "FRANCE",
@@ -351,10 +351,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "address/city",
       "Description" : "Nom de la commune",
-      "Exemple" : "CESTAS",
+      "Exemple" : "LYON",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Caractérisation",
@@ -364,10 +364,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "address/postcode",
       "Description" : "Code postal",
-      "Exemple" : "33610",
+      "Exemple" : "69006",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Caractérisation",
@@ -377,10 +377,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "address/deliveryOffice",
       "Description" : "Bureau de poste distributeur",
-      "Exemple" : "CESTAS",
+      "Exemple" : "LYON",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Metadata",
@@ -390,10 +390,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "address/inseeCode",
       "Description" : "Code INSEE de la commune",
-      "Exemple" : "33122",
+      "Exemple" : "69386",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Metadata",
@@ -403,10 +403,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/name/prefix",
       "Description" : "Civilités de la personne",
-      "Exemple" : "M.",
+      "Exemple" : "Mme ",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Caractérisation",
@@ -416,10 +416,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/name/family",
       "Description" : "Nom de la personne",
-      "Exemple" : "PRUVOT",
+      "Exemple" : "DUPOND",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Caractérisation",
@@ -429,10 +429,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/name/given",
       "Description" : "Prénom de la personne",
-      "Exemple" : "remy",
+      "Exemple" : "Germaine",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Caractérisation",
@@ -442,10 +442,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/name/maiden",
       "Description" : "Nom de jeune fille de la personne",
-      "Exemple" : "",
+      "Exemple" : "Martin",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Caractérisation",
@@ -455,10 +455,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/email",
       "Description" : "Email (seulement pour membres principaux)",
-      "Exemple" : "",
+      "Exemple" : "germainedupondmesinfos@gmail.com",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Caractérisation",
@@ -468,10 +468,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/telMobile",
       "Description" : "NumeroTelephonePortable (seulement pour membres principaux)",
-      "Exemple" : "",
+      "Exemple" : "33 7 23 45 67 89",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Caractérisation",
@@ -481,7 +481,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/telHome",
       "Description" : "NumeroTelephoneDomicile (seulement pour membres principaux)",
       "Exemple" : "",
@@ -494,7 +494,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/telPro",
       "Description" : "NumeroTelephoneProfessionnel (seulement pour membres principaux)",
       "Exemple" : "",
@@ -507,7 +507,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/telFax",
       "Description" : "NumeroFax (seulement pour membres principaux)",
       "Exemple" : "",
@@ -520,10 +520,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/birthdate",
       "Description" : "Date de naissance de la personne",
-      "Exemple" : "01/07/1947",
+      "Exemple" : "1961-01-29",
       "Typologie" : "Profil",
       "DocType" : "Foyer",
       "Nature" : "Caractérisation",
@@ -533,7 +533,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/birthplace/city",
       "Description" : "Commune de naissance (seulement pour membres principaux)",
       "Exemple" : "",
@@ -546,7 +546,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/birthplace/region",
       "Description" : "DepartementNaissance (seulement pour membres principaux)",
       "Exemple" : "",
@@ -559,7 +559,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/birthplace/country",
       "Description" : "PaysNaissance (seulement pour membres principaux)",
       "Exemple" : "",
@@ -572,7 +572,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/profession",
       "Description" : "Profession (seulement pour membres principaux)",
       "Exemple" : "",
@@ -585,7 +585,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "CodePostalEtranger",
       "Description" : "TODO",
       "Exemple" : "",
@@ -598,7 +598,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "Residence",
       "Description" : "TODO",
       "Exemple" : "",
@@ -611,7 +611,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "membres/quality",
       "Description" : "Rôle du membre membre dans le foyer (enfant, ...)",
       "Exemple" : "3 Enfant à charge",
@@ -624,20 +624,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
-      "Nom" : "Contrats d'assurance Maif",
-      "Description" : "Désigne le type de contrat d'assurance, son tarif, et les risques assurés.",
-      "Exemple" : "",
-      "Typologie" : "Finance",
-      "DocType" : "Contract",
-      "Nature" : "Subset",
-      "Format" : "",
-      "Détenteur" : "Maif",
-      "Fréquence" : "Rare",
-      "Latence" : "24h",
-      "Mise_à_disposition" : "2016-09"
-    },
-{
+    {
       "Nom" : "societaire",
       "Description" : "Numéro du sociétaire souscripteur du contrat.",
       "Exemple" : "1234567N\n",
@@ -650,7 +637,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "name",
       "Description" : "Nom du produit.",
       "Exemple" : "VAM",
@@ -663,7 +650,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "formuleBase",
       "Description" : "Formule souscrite dans le contrat",
       "Exemple" : "VAM Assistance panne 0km",
@@ -676,10 +663,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "startDate",
       "Description" : "Date de souscription au contrat",
-      "Exemple" : "1989-04-28T22:00:00.000Z",
+      "Exemple" : "1989-04-29",
       "Typologie" : "Finance",
       "DocType" : "Contract",
       "Nature" : "Caractérisation",
@@ -689,7 +676,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "MontantTarifTtc",
       "Description" : "",
       "Exemple" : "",
@@ -702,7 +689,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "objets",
       "Description" : "Objets du contrat d'assurance (véhicules assurés, ou dominciles assurés, ...",
       "Exemple" : "",
@@ -715,7 +702,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "objets/startDate",
       "Description" : "Date d'ajout, pour chaque nouvel objet (véhicule ou habitation) ajouté au contrat.",
       "Exemple" : "",
@@ -728,33 +715,33 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "Sinistre Véhicule",
       "Description" : "Un sinistre sur mon véchiule (date, lieu, immatriculation, conducteur, ...)",
       "Exemple" : "",
       "Typologie" : "Déplacement",
       "DocType" : "InsuranceClaim",
       "Nature" : "Subset",
-      "Format" : "",
+      "Format" : "if(doc.type === 'Véhicule') { emit(doc._id); }",
       "Détenteur" : "Maif",
       "Fréquence" : "",
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "Sinistre Habitation",
       "Description" : "Un sinistre, à mon domicile (date, lieu, ...)",
-      "Exemple" : "",
+      "Exemple" : "sinistre_habitation",
       "Typologie" : "Domicile",
       "DocType" : "InsuranceClaim",
       "Nature" : "Subset",
-      "Format" : "",
+      "Format" : "if(doc.type === 'Habitation') { emit(doc._id); }",
       "Détenteur" : "Maif",
       "Fréquence" : "",
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "type",
       "Description" : "Type du sinistre (véhicule, habitation, ...)",
       "Exemple" : "Véhicule",
@@ -767,7 +754,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "societaire",
       "Description" : "Le sociétaire auquel est rataché ce sinistre. ( TODO )",
       "Exemple" : "1234567N",
@@ -780,7 +767,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "horodatage",
       "Description" : "Date et heure de survenance du sinistre.",
       "Exemple" : "2015-07-20T19:00",
@@ -793,7 +780,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "heureSurvenance",
       "Description" : "",
       "Exemple" : "19",
@@ -806,7 +793,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "minuteSurvenance",
       "Description" : "",
       "Exemple" : "0",
@@ -819,7 +806,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "lieuSurvenance",
       "Description" : "Lieu de survenance (champ libre : une commune, un numéro d’autoroute, …)",
       "Exemple" : "LYON 06",
@@ -832,20 +819,20 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "ref",
       "Description" : "Référence de l’événement, communiquée au sociétaire pour les relations avec la MAIF (appels, documents …)",
       "Exemple" : "F150181177B",
       "Typologie" : "Domicile",
       "DocType" : "InsuranceClaim",
-      "Nature" : "Transaction",
+      "Nature" : "Metadata",
       "Format" : "",
       "Détenteur" : "Maif",
       "Fréquence" : "",
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "typeLieuSurvenance",
       "Description" : "Type du lieu de survenance (Sans information, Agglomération, Rase campagne)\n",
       "Exemple" : "Agglomération",
@@ -858,7 +845,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "natureLieu",
       "Description" : "Nature lieu - Si sinistre habitation",
       "Exemple" : "Appartement",
@@ -871,10 +858,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "address/street",
       "Description" : "Adresse de l'habitation assurée - Si sinistre habitation",
-      "Exemple" : "Résidence du lac\n39, rue Tronchet",
+      "Exemple" : "2, Boulevard des Belges\n",
       "Typologie" : "Domicile",
       "DocType" : "InsuranceClaim",
       "Nature" : "Transaction",
@@ -884,7 +871,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "address/postcode",
       "Description" : "Adresse de l'habitation assurée - Si sinistre habitation",
       "Exemple" : "69006",
@@ -897,7 +884,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "address/city",
       "Description" : "Adresse de l'habitation assurée - Si sinistre habitation",
       "Exemple" : "LYON 06",
@@ -910,7 +897,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "address/country",
       "Description" : "Adresse de l'habitation assurée - Si sinistre habitation",
       "Exemple" : "FRANCE",
@@ -923,8 +910,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
-      "Nom" : "ImmatriculationVehicule",
+    {
+      "Nom" : "immatriculationVehicule",
       "Description" : "Immatriculation du véhicule assurée - Si sinistre véhicule",
       "Exemple" : "AA-123-XD",
       "Typologie" : "Déplacement",
@@ -936,7 +923,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "CodeCirconstanceAggravante",
       "Description" : "",
       "Exemple" : "",
@@ -949,10 +936,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "?"
     },
-{
+    {
       "Nom" : "driver/prefix",
       "Description" : "Genre du conducteur - Si sinistre véhicule",
-      "Exemple" : "Masculin",
+      "Exemple" : "Féminin",
       "Typologie" : "Déplacement",
       "DocType" : "InsuranceClaim",
       "Nature" : "Transaction",
@@ -962,7 +949,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "IdentifiantTechniqueVEHPER",
       "Description" : "",
       "Exemple" : "",
@@ -975,7 +962,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "?"
     },
-{
+    {
       "Nom" : "IdentifiantTechniqueVEHSIN",
       "Description" : "",
       "Exemple" : "",
@@ -988,10 +975,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "?"
     },
-{
+    {
       "Nom" : "driver/family",
       "Description" : "Nom du conducteur - Si sinistre véhicule",
-      "Exemple" : "Martinez",
+      "Exemple" : "Dupond",
       "Typologie" : "Déplacement",
       "DocType" : "InsuranceClaim",
       "Nature" : "Transaction",
@@ -1001,10 +988,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "driver/given",
       "Description" : "Prénom du conducteur - Si sinistre véhicule",
-      "Exemple" : "Paul",
+      "Exemple" : "Germaine",
       "Typologie" : "Déplacement",
       "DocType" : "InsuranceClaim",
       "Nature" : "Transaction",
@@ -1014,7 +1001,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "driverNumber",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -1027,7 +1014,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "TypeConducteur",
       "Description" : "",
       "Exemple" : "",
@@ -1040,7 +1027,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "?"
     },
-{
+    {
       "Nom" : "Véhicules assurés",
       "Description" : "Qualifie le vehicule assuré (immatriculation, date de mise en circulation, modèle et marque)",
       "Exemple" : "",
@@ -1053,7 +1040,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "societaire",
       "Description" : "Numéro du sociétaire souscripteur du contrat.",
       "Exemple" : "1234567N\n",
@@ -1066,7 +1053,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "usageVehicule",
       "Description" : "Usage du véhicule",
       "Exemple" : "TODO",
@@ -1079,7 +1066,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "coeffVehicule",
       "Description" : "Coefficient clause véhicule",
       "Exemple" : "TODO",
@@ -1092,7 +1079,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "immatriculation",
       "Description" : "Immatriculation véhicule",
       "Exemple" : "AA-123-XD",
@@ -1105,7 +1092,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "dateMiseEnCirculation",
       "Description" : "date mise en circulation véhicule",
       "Exemple" : "2010-07-03",
@@ -1118,7 +1105,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "marque",
       "Description" : "Marque du véhicule",
       "Exemple" : "RENAULT CLIO",
@@ -1131,7 +1118,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "famille",
       "Description" : "Famille du véhicule",
       "Exemple" : "TODO",
@@ -1144,7 +1131,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "conducteur/Identite",
       "Description" : "Conducteur véhicule",
       "Exemple" : "Martinez Paul",
@@ -1157,7 +1144,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "conductuer/typePermis",
       "Description" : "Ttype de permis d'un conducteur du vehicule.",
       "Exemple" : "B",
@@ -1170,7 +1157,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "conducteur/datePermis",
       "Description" : "Date de permis d'un conducteur du vehicule.",
       "Exemple" : "2000-07-08",
@@ -1183,7 +1170,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "Habitations assurées",
       "Description" : "Qualifie l'habitat assuré (nombre de pièces, standing)",
       "Exemple" : "",
@@ -1196,7 +1183,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "societaire",
       "Description" : "Numéro du sociétaire souscripteur du contrat.",
       "Exemple" : "1234567N\n",
@@ -1209,7 +1196,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "address/street",
       "Description" : "Adresse du lieu assuré (rue)",
       "Exemple" : "Résidence du lac\n39, rue Tronchet",
@@ -1222,7 +1209,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "address/postcode",
       "Description" : "Adresse du lieu assuré (code postale)",
       "Exemple" : "69006",
@@ -1235,7 +1222,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "addresse/city",
       "Description" : "Adresse du lieu assuré (commune)",
       "Exemple" : "LYON 06",
@@ -1248,7 +1235,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "addresse/country",
       "Description" : "Adresse du lieu assuré (pays)",
       "Exemple" : "FRANCE",
@@ -1261,7 +1248,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "natureLieu",
       "Description" : "Nature lieu",
       "Exemple" : "Appartement",
@@ -1274,7 +1261,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "situationJuridiqueLieu",
       "Description" : "Situation juridique lieu assuré.",
       "Exemple" : "Location",
@@ -1287,7 +1274,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "nombrePieces",
       "Description" : "Tranche nombre de pièces lieu",
       "Exemple" : "Une pièce (studio)",
@@ -1300,7 +1287,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "patrimoineMobilier",
       "Description" : "Tranche patrimoine mobilier lieu",
       "Exemple" : "14000€",
@@ -1313,7 +1300,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "Modalités de paiement Maif",
       "Description" : "Qualifie le mode de paiement pour l'assuré (mensualité, RIB, échéancier, ...)",
       "Exemple" : "",
@@ -1326,7 +1313,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "societaire",
       "Description" : "Numéro du sociétaire souscripteur du contrat.",
       "Exemple" : "1234567N\n",
@@ -1339,7 +1326,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "rib/bic",
       "Description" : "Code BIC",
       "Exemple" : "TODO",
@@ -1352,7 +1339,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "rib/iban",
       "Description" : "Code IBAN",
       "Exemple" : "TODO",
@@ -1365,7 +1352,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "modePaiement",
       "Description" : "Mode de paiement",
       "Exemple" : "TODO",
@@ -1378,9 +1365,10 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "Devis Maif",
       "Description" : "Un devis pour une assurance Maif",
+      "Exemple" : "",
       "Typologie" : "Finance",
       "DocType" : "Quote",
       "Nature" : "Subset",
@@ -1390,7 +1378,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2017-01"
     },
-{
+    {
       "Nom" : "Quote",
       "Description" : "Un devis, d'un de mes fournisseur",
       "Exemple" : "",
@@ -1403,7 +1391,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016"
     },
-{
+    {
       "Nom" : "Client",
       "Description" : "Mes informations clients chez mes fournisseurs (Identité, contact, date de début de relation, ...) .",
       "Exemple" : "--",
@@ -1416,7 +1404,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "Home",
       "Description" : "Mon domicile (individuel ou collectif, taille, jardin ?, ...) ",
       "Exemple" : "--",
@@ -1429,7 +1417,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "InsuranceClaim",
       "Description" : "Mes sinistres déclarés à mon assurance.",
       "Exemple" : "--",
@@ -1442,7 +1430,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "Vehicle",
       "Description" : "Mes véhicules, auto, moto. (immatriculation, puissance, age, kilométrage, marque, ...).",
       "Exemple" : "--",
@@ -1455,7 +1443,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "Client EDF",
       "Description" : "Identification et moyen de contact du souscripteur : adresse, email, téléphone fixe et portable",
       "Exemple" : "",
@@ -1468,7 +1456,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "numeroAcc",
       "Description" : "Numéro d'accord commercial (~numéro de contrat)",
       "Exemple" : "001234567890",
@@ -1481,7 +1469,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "numeroBp",
       "Description" : "Numéro client dans CRM EDF",
       "Exemple" : "1234567890",
@@ -1494,7 +1482,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "address",
       "Description" : "Adresse du client EDF",
       "Exemple" : "8 passage Brulons 75011 Paris",
@@ -1507,7 +1495,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "name",
       "Description" : "Nom du client EDF",
       "Exemple" : "['DUPOND', 'MARTIN', '', 'MON', '']",
@@ -1520,7 +1508,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "telMobile",
       "Description" : "téléphone mobile du client",
       "Exemple" : "0123456789",
@@ -1533,7 +1521,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "telHome",
       "Description" : "téléphone fixe du client",
       "Exemple" : "",
@@ -1546,7 +1534,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "email",
       "Description" : "Email du client",
       "Exemple" : "toto@exmaple.com",
@@ -1559,7 +1547,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "loginEmail",
       "Description" : "Email de connexion à l'interface client EDF",
       "Exemple" : "toto@exmaple.com",
@@ -1572,7 +1560,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "numeroAccount",
       "Description" : "Idem  numeroAcc sans les deux premiers 00.",
       "Exemple" : "1234567890",
@@ -1585,20 +1573,20 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Modalités de paiement EDF",
       "Description" : "Mode de paiement : mensualités, échéancier, RIB, date de paiement",
-      "Exemple" : "",
+      "Exemple" : "modalites_paiement_edf",
       "Typologie" : "Finance",
       "DocType" : "PaymentTerms",
       "Nature" : "Subset",
-      "Format" : "",
+      "Format" : "emit(doc._id);",
       "Détenteur" : "EDF",
       "Fréquence" : "Annuelle",
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "PaymentTerms",
       "Description" : "Modalités de paiement chez un fournisseur (moyen de paiement, RIB, échéancier, ...)",
       "Exemple" : "",
@@ -1611,33 +1599,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "mensualite",
-      "Description" : "",
-      "Exemple" : "",
-      "Typologie" : "Finance",
-      "DocType" : "PaymentTerms",
-      "Nature" : "Caractérisation",
-      "Format" : "",
-      "Détenteur" : "EDF",
-      "Fréquence" : "",
-      "Latence" : "",
-      "Mise_à_disposition" : "2016-10"
-    },
-{
-      "Nom" : "nextSchedule",
-      "Description" : "",
-      "Exemple" : "",
-      "Typologie" : "Finance",
-      "DocType" : "PaymentTerms",
-      "Nature" : "Caractérisation",
-      "Format" : "",
-      "Détenteur" : "EDF",
-      "Fréquence" : "",
-      "Latence" : "",
-      "Mise_à_disposition" : "2016-10"
-    },
-{
+    {
       "Nom" : "bank",
       "Description" : "Nom de la banque du client (abrégé)",
       "Exemple" : "STE GENERALE",
@@ -1650,7 +1612,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "bankAddress",
       "Description" : "Adresse de domiciliation du compte bancaire",
       "Exemple" : "5 PLACE DE LA NATION PARIS 75011 France",
@@ -1663,20 +1625,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "accountNumber",
-      "Description" : "Numéro de compte",
-      "Exemple" : "",
-      "Typologie" : "Finance",
-      "DocType" : "PaymentTerms",
-      "Nature" : "Caractérisation",
-      "Format" : "",
-      "Détenteur" : "EDF",
-      "Fréquence" : "",
-      "Latence" : "",
-      "Mise_à_disposition" : "2016-10"
-    },
-{
+    {
       "Nom" : "codeBanque",
       "Description" : "Code banque",
       "Exemple" : "76300",
@@ -1689,7 +1638,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "codeGuichet",
       "Description" : "Code guichet",
       "Exemple" : "03",
@@ -1702,7 +1651,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "numeroCompte",
       "Description" : "Numéro de compte",
       "Exemple" : "",
@@ -1715,7 +1664,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "cleRib",
       "Description" : "Clé RIB",
       "Exemple" : "12",
@@ -1728,7 +1677,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "titulaire",
       "Description" : "Nom du titulaire du compte bancaire",
       "Exemple" : "M. MARTIN DUPOND",
@@ -1741,7 +1690,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "solde",
       "Description" : "Montant restant dû ou à recevoir",
       "Exemple" : "0.0",
@@ -1754,10 +1703,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "typeEncaissement",
       "Description" : "Mode d'encaissement (prélèvement, ...)",
-      "Exemple" : "",
+      "Exemple" : "TODO",
       "Typologie" : "Finance",
       "DocType" : "PaymentTerms",
       "Nature" : "Caractérisation",
@@ -1767,7 +1716,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "modifRibAutorisee",
       "Description" : "Le RIB du client peut-il être modifié ou non.",
       "Exemple" : "true",
@@ -1780,10 +1729,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "dateDernierReglement",
+    {
+      "Nom" : "dernierReglement/date",
       "Description" : "Date du dernier réglement effectué.",
-      "Exemple" : "",
+      "Exemple" : "TODO",
       "Typologie" : "Finance",
       "DocType" : "PaymentTerms",
       "Nature" : "Transaction",
@@ -1793,10 +1742,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "montantDernierReglement",
+    {
+      "Nom" : "dernierReglement/montant",
       "Description" : "Montant du dernier règlement effectué",
-      "Exemple" : "",
+      "Exemple" : "TODO",
       "Typologie" : "Finance",
       "DocType" : "PaymentTerms",
       "Nature" : "Transaction",
@@ -1806,8 +1755,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "typeDernierReglement",
+    {
+      "Nom" : "ternierReglement/type",
       "Description" : "Type du dernier réglement",
       "Exemple" : "ENCAISSEMENT_PRELEVEMENT",
       "Typologie" : "Finance",
@@ -1819,7 +1768,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "periodiciteFacture",
       "Description" : "Périodicité de la facture (mensuelle, annuelle, ...)",
       "Exemple" : "ANNU",
@@ -1832,10 +1781,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "dateProchaineFacture",
       "Description" : "Date de la prochaine facture",
-      "Exemple" : "2015-10-15\"",
+      "Exemple" : "2015-10-15",
       "Typologie" : "Finance",
       "DocType" : "PaymentTerms",
       "Nature" : "Transaction",
@@ -1845,7 +1794,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "idPayeur",
       "Description" : "NumeroBP du payeur",
       "Exemple" : "087609078098",
@@ -1858,7 +1807,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "payeurDivergent",
       "Description" : "Si le payeur n'est pas le titulaire du contrat.",
       "Exemple" : "false",
@@ -1871,12 +1820,12 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "services/nom",
       "Description" : "nom du service",
       "Exemple" : "PRELEVEMENT_AUTOMATIQUE",
       "Typologie" : "Finance",
-      "DocType" : "PaymentTerms",
+      "DocType" : "Contract",
       "Nature" : "Transaction",
       "Format" : "",
       "Détenteur" : "EDF",
@@ -1884,20 +1833,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "dateProchaineFacture",
-      "Description" : "Date de la prochaine facture",
-      "Exemple" : "",
-      "Typologie" : "Finance",
-      "DocType" : "PaymentTerms",
-      "Nature" : "Transaction",
-      "Format" : "",
-      "Détenteur" : "EDF",
-      "Fréquence" : "",
-      "Latence" : "",
-      "Mise_à_disposition" : "2016-10"
-    },
-{
+    {
       "Nom" : "Contact EDF commercial",
       "Description" : "Coordonnée du service commercial EDF qui m'est attribué (adresses postale, téléphone)",
       "Exemple" : "",
@@ -1910,7 +1846,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "contactEDFFn",
       "Description" : "Nom du contact EDF (commercial) , nom du groupe régional duquel dépend le client.",
       "Exemple" : "Paris Pyramide",
@@ -1923,7 +1859,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "contactEDFAddress",
       "Description" : "Adresse du contact EDF (commercial)",
       "Exemple" : "TSA 2001241975 BLOIS CEDEX 9",
@@ -1936,7 +1872,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "contactEDFPhone",
       "Description" : "Numéro de téléphone du contact EDF (commercial)",
       "Exemple" : "09 69 32 15 15",
@@ -1949,7 +1885,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Contact EDF dépannage",
       "Description" : "Numéro de téléphone de dépannage (électricité, gaz, ...)",
       "Exemple" : "",
@@ -1962,7 +1898,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "datapoints/[type:tel]",
       "Description" : "Numéro de téléphone de dépannage",
       "Exemple" : "09 726 750 75",
@@ -1975,7 +1911,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Prochain relevé de compteur",
       "Description" : "Date du prochain relevé de compteur (approximative)",
       "Exemple" : "",
@@ -1988,7 +1924,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "start",
       "Description" : "Date de prochain relevé",
       "Exemple" : "2017-01-11T23:00:00.000Z",
@@ -2001,8 +1937,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "paylentSchedule/number",
+    {
+      "Nom" : "paymentSchedule/number",
       "Description" : "Numéro dans l'échéancier",
       "Exemple" : "1",
       "Typologie" : "Finance",
@@ -2014,8 +1950,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "paylentSchedule/receiptDate",
+    {
+      "Nom" : "paymentSchedule/receiptDate",
       "Description" : "Date d'encaissement de l'échéance",
       "Exemple" : "2016-04-11",
       "Typologie" : "Finance",
@@ -2027,8 +1963,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "paylentSchedule/scheduleDate",
+    {
+      "Nom" : "paymentSchedule/scheduleDate",
       "Description" : "Date de l'échance",
       "Exemple" : "2016-04-11",
       "Typologie" : "Finance",
@@ -2040,8 +1976,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "paylentSchedule/paid",
+    {
+      "Nom" : "paymentSchedule/paid",
       "Description" : "Déjà payée",
       "Exemple" : "true",
       "Typologie" : "Finance",
@@ -2053,8 +1989,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "paylentSchedule/amount",
+    {
+      "Nom" : "paymentSchedule/amount",
       "Description" : "amountElectricity + amountGas",
       "Exemple" : "69",
       "Typologie" : "Finance",
@@ -2066,8 +2002,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "paylentSchedule/amountElectricity",
+    {
+      "Nom" : "paymentSchedule/amountElectricity",
       "Description" : "Montant pour l'electricité",
       "Exemple" : "69",
       "Typologie" : "Finance",
@@ -2079,8 +2015,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "paylentSchedule/amountGas",
+    {
+      "Nom" : "paymentSchedule/amountGas",
       "Description" : "Montant pour le gaz",
       "Exemple" : "0",
       "Typologie" : "Finance",
@@ -2092,7 +2028,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "ConsumptionStatement",
       "Description" : "Relevé de consommation (électricité, gaz, ...)",
       "Exemple" : "",
@@ -2105,36 +2041,36 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Consommations de Gaz",
       "Description" : "Relevé de consommation de gaz (semestriel)",
-      "Exemple" : "",
+      "Exemple" : "consommation_electrique",
       "Typologie" : "Domicile",
       "DocType" : "ConsumptionStatement",
       "Nature" : "Subset",
-      "Format" : "",
+      "Format" : "emit(doc._id);",
       "Détenteur" : "EDF",
       "Fréquence" : "Semestrielle",
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Consommations d'électricité",
       "Description" : "Relevé de consommation d'électricité (semestriel)",
       "Exemple" : "",
       "Typologie" : "Domicile",
       "DocType" : "ConsumptionStatement",
       "Nature" : "Subset",
-      "Format" : "",
+      "Format" : "emit(doc._id);",
       "Détenteur" : "EDF",
       "Fréquence" : "Semestrielle",
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "origin",
-      "Description" : "",
-      "Exemple" : "",
+    {
+      "Nom" : "docTypeVersion",
+      "Description" : "Origine du document, et version de format du document, ",
+      "Exemple" : "EDFKonnector-0.0.0-draft",
       "Typologie" : "Domicile",
       "DocType" : "ConsumptionStatement",
       "Nature" : "Metadata",
@@ -2144,10 +2080,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "contractNumber",
       "Description" : "Numéro du contrat",
-      "Exemple" : "",
+      "Exemple" : "12345678",
       "Typologie" : "Domicile",
       "DocType" : "ConsumptionStatement",
       "Nature" : "Metadata",
@@ -2157,10 +2093,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "invoiceNumber",
       "Description" : "Numéro de la facture associé à la consommation",
-      "Exemple" : "",
+      "Exemple" : "987654",
       "Typologie" : "Domicile",
       "DocType" : "ConsumptionStatement",
       "Nature" : "Metadata",
@@ -2170,10 +2106,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "startDate",
       "Description" : "Début de période de relevé de consommation",
-      "Exemple" : "",
+      "Exemple" : "2016-01-08",
       "Typologie" : "Domicile",
       "DocType" : "ConsumptionStatement",
       "Nature" : "Transaction",
@@ -2183,10 +2119,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "endDate",
       "Description" : "Fin de période de relevé de consommation",
-      "Exemple" : "",
+      "Exemple" : "2016-07-01",
       "Typologie" : "Domicile",
       "DocType" : "ConsumptionStatement",
       "Nature" : "Transaction",
@@ -2196,10 +2132,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "value",
       "Description" : "Consommation estimée ou réelle",
-      "Exemple" : "",
+      "Exemple" : "648.0",
       "Typologie" : "Domicile",
       "DocType" : "ConsumptionStatement",
       "Nature" : "Transaction",
@@ -2209,10 +2145,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "statementType",
       "Description" : "Type de relève associé à la consommation (réelle ou estimée)",
-      "Exemple" : "",
+      "Exemple" : "REEL",
       "Typologie" : "Domicile",
       "DocType" : "ConsumptionStatement",
       "Nature" : "Metadata",
@@ -2222,10 +2158,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "statementCategory",
       "Description" : "Catégorie de relève associée à la consommation (complète type de relève)",
-      "Exemple" : "",
+      "Exemple" : "RELEVE_REEL_PAR_ERD_GRD",
       "Typologie" : "Domicile",
       "DocType" : "ConsumptionStatement",
       "Nature" : "Metadata",
@@ -2235,10 +2171,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "statementReason",
       "Description" : "Motif de relève associé à la consommation",
-      "Exemple" : "",
+      "Exemple" : "RELEVE_PERIODIQUE",
       "Typologie" : "Domicile",
       "DocType" : "ConsumptionStatement",
       "Nature" : "Metadata",
@@ -2248,7 +2184,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "costValue",
       "Description" : "",
       "Exemple" : "",
@@ -2261,7 +2197,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "subscriptionCost",
       "Description" : "",
       "Exemple" : "",
@@ -2274,23 +2210,23 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Factures EDF",
       "Description" : "Mes factures EDF (notamment de régularisation annuelle)",
-      "Exemple" : "",
+      "Exemple" : "facture_electricite",
       "Typologie" : "Finance",
       "DocType" : "Bill",
       "Nature" : "Subset",
-      "Format" : "",
+      "Format" : "if (organisation === \"EDF\") { emit(doc._id);}",
       "Détenteur" : "EDF",
       "Fréquence" : "Mensuelle à Annuelle",
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "organisation",
-      "Description" : "",
-      "Exemple" : "",
+      "Description" : "Organisme émetteur de la facture.",
+      "Exemple" : "EDF",
       "Typologie" : "Finance",
       "DocType" : "Bill",
       "Nature" : "Metadata",
@@ -2300,7 +2236,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "number",
       "Description" : "Numéro de facture",
       "Exemple" : "12346897654",
@@ -2313,7 +2249,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "issueDate",
       "Description" : "Date de la facture",
       "Exemple" : "2016-03-03",
@@ -2326,7 +2262,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "amount",
       "Description" : "Montant",
       "Exemple" : "30.21",
@@ -2339,7 +2275,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "file",
       "Description" : "Fichier PDF de la facture",
       "Exemple" : "{ \n  id :\"17931c49656d8eb5a09c7ac3ea27f0a1\",\n  name :\"2016-03-03-factureEDF.pdf\",\n}",
@@ -2352,7 +2288,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Contract",
       "Description" : "Un contrat avec un fournisseur (date, objet, parties, ...)",
       "Exemple" : "",
@@ -2365,7 +2301,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Contrats gaz EDF",
       "Description" : "Les caractéristiques principales de mon contrat de Gaz chez EDF",
       "Exemple" : "",
@@ -2378,20 +2314,46 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Contrats électricité EDF",
       "Description" : "Les caractéristiques principales de contrat d'électricité chez EDF",
-      "Exemple" : "",
+      "Exemple" : "contrat_electricite",
       "Typologie" : "Finance",
       "DocType" : "Contract",
       "Nature" : "Subset",
-      "Format" : "",
+      "Format" : "if (doc.organisation === 'EDF' && doc.energie === 'ELECTRICITE') { emit(doc._id);}",
       "Détenteur" : "EDF",
       "Fréquence" : "Rare",
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
+      "Nom" : "organisation",
+      "Description" : "Organisme émetteur du contrat.",
+      "Exemple" : "EDF",
+      "Typologie" : "Finance",
+      "DocType" : "Contract",
+      "Nature" : "Metadata",
+      "Format" : "",
+      "Détenteur" : "EDF",
+      "Fréquence" : "",
+      "Latence" : "",
+      "Mise_à_disposition" : "2016-10"
+    },
+    {
+      "Nom" : "docTypeVersion",
+      "Description" : "Origine et version de la structure de donnée.",
+      "Exemple" : "EDFKonnector-0.0.0-draft",
+      "Typologie" : "Finance",
+      "DocType" : "Contract",
+      "Nature" : "Metadata",
+      "Format" : "",
+      "Détenteur" : "EDF",
+      "Fréquence" : "",
+      "Latence" : "",
+      "Mise_à_disposition" : "2016-10"
+    },
+    {
       "Nom" : "number",
       "Description" : "Numéro de contrat (différent numéroAcc, numéro d'accord commercial)",
       "Exemple" : "1234654321",
@@ -2404,7 +2366,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "startDate",
       "Description" : "Date de début de contrat",
       "Exemple" : "2016-03-01",
@@ -2417,10 +2379,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "status",
       "Description" : "Status du contrat",
-      "Exemple" : "",
+      "Exemple" : "TODO",
       "Typologie" : "Finance",
       "DocType" : "Contract",
       "Nature" : "Metadata",
@@ -2430,10 +2392,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "endDate",
       "Description" : "FIn du contrat (le cas échéant)",
-      "Exemple" : "",
+      "Exemple" : "2016-10-01",
       "Typologie" : "Finance",
       "DocType" : "Contract",
       "Nature" : "Metadata",
@@ -2443,10 +2405,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "terminationGrounds",
       "Description" : "Motif de résiliation (le cas échéant)",
-      "Exemple" : "",
+      "Exemple" : "TODO",
       "Typologie" : "Finance",
       "DocType" : "Contract",
       "Nature" : "Metadata",
@@ -2456,7 +2418,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "pdl",
       "Description" : "Point de livraison",
       "Exemple" : "1324654321",
@@ -2469,7 +2431,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "energie",
       "Description" : "Electricité ou Gaz",
       "Exemple" : "ELECTRICITE",
@@ -2482,7 +2444,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "nomOffre",
       "Description" : "Nom de l'offre commerciale",
       "Exemple" : "TARIF_BLEU_PART",
@@ -2495,7 +2457,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "structureTarifaire",
       "Description" : "Strucure tarifaire (prix constant, spécifique heures creuses, ...)",
       "Exemple" : "OPTION_BASE",
@@ -2508,7 +2470,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "puissance",
       "Description" : "Puissance compteur",
       "Exemple" : "PUI06",
@@ -2521,7 +2483,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "optionPrix",
       "Description" : "Souvent absent, option très spécifique (Outremer, Option Cuisson/eau chaude, ...)",
       "Exemple" : "Option chauffage",
@@ -2534,7 +2496,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "compteur/type",
       "Description" : "TODO : Contrat/listeCadran/type .. ?",
       "Exemple" : "BASE",
@@ -2547,7 +2509,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "compteur/nombreRoues",
       "Description" : "TODO : Contrat/listeCadran/nombreRoues.. ?",
       "Exemple" : "005",
@@ -2560,7 +2522,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "compteur/dernierIndex",
       "Description" : "TODO : dernier relevé du compteur",
       "Exemple" : "67481.0",
@@ -2573,7 +2535,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "consommationAnnuelle",
       "Description" : "Consommation annuelle (kWh)",
       "Exemple" : "2125",
@@ -2586,7 +2548,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "typeCompteur",
       "Description" : "Type du compteur",
       "Exemple" : "EMC",
@@ -2599,7 +2561,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "horrairesHeureCreuses",
       "Description" : "Horraire heures creuses",
       "Exemple" : "?",
@@ -2612,7 +2574,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "releve/saisieReleveConfiance",
       "Description" : "Releve.SaisieRc : Statut de la saisie dans le cadre de Suivi Conso",
       "Exemple" : "SAISIE_IMPOSSIBLE_NON_ELIGIBLE_RC",
@@ -2625,7 +2587,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "releve/dateFermetureReleveConfiance",
       "Description" : "Date de fermeture de la période de saisie relevé confiance en cours.",
       "Exemple" : "",
@@ -2638,7 +2600,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "releve/prochaineDateOuvertureReleveConfiance",
       "Description" : "Date d’ouverture de la prochaine période de saisie index en relevé confiance.",
       "Exemple" : "",
@@ -2651,7 +2613,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "releve/prochaineDateFermetureReleveConfiance",
       "Description" : "Date de fermeture de la prochaine période de saisie index en relevé confiance.",
       "Exemple" : "",
@@ -2664,7 +2626,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "releve/prochaineDateFermetureReelle",
       "Description" : "Date prévue de la fermeture de la prochaine relève réelle des index.",
       "Exemple" : "",
@@ -2677,7 +2639,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "releve/saisieSuiviConso",
       "Description" : "Statut de la saisie dans le cadre de Suivi Conso",
       "Exemple" : "SAISIE_IMPOSSIBLE_SC_NON_SOUSCRIT",
@@ -2690,7 +2652,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "releve/prochaineDateOuvertureSaisieConso",
       "Description" : "Date de prochaine saisie possible Suivi Conso",
       "Exemple" : "",
@@ -2703,8 +2665,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "services/Nom",
+    {
+      "Nom" : "services/name",
       "Description" : "ServiceSouscrit.NomService:  \"RELEVE_CONFIANCE\" ; \"SUIVI_CONSO\"\n",
       "Exemple" : "",
       "Typologie" : "Domicile",
@@ -2716,7 +2678,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "services/status",
       "Description" : "TODO",
       "Exemple" : "",
@@ -2729,7 +2691,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "services/start",
       "Description" : "TODO",
       "Exemple" : "",
@@ -2742,7 +2704,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "services/valeurSouscrite",
       "Description" : "TODO",
       "Exemple" : "",
@@ -2755,7 +2717,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "services/valeurPossibles",
       "Description" : "TODO",
       "Exemple" : "",
@@ -2768,7 +2730,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "tel",
       "Description" : "Numéro service client (technique)",
       "Exemple" : "09 726 750 75",
@@ -2781,7 +2743,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Historique de navigation",
       "Description" : "Titre de la page, date de consultation, URL",
       "Exemple" : "",
@@ -2794,7 +2756,7 @@
       "Latence" : "temps-réel",
       "Mise_à_disposition" : "2016-08"
     },
-{
+    {
       "Nom" : "WebHistory",
       "Description" : "Historique de navigation Web.",
       "Exemple" : "",
@@ -2807,7 +2769,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-08"
     },
-{
+    {
       "Nom" : "title",
       "Description" : "",
       "Exemple" : "",
@@ -2820,7 +2782,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-08"
     },
-{
+    {
       "Nom" : "url",
       "Description" : "",
       "Exemple" : "",
@@ -2833,7 +2795,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-08"
     },
-{
+    {
       "Nom" : "timestamp",
       "Description" : "",
       "Exemple" : "",
@@ -2846,7 +2808,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-08"
     },
-{
+    {
       "Nom" : "Historique des recherches",
       "Description" : "Mots clés, horodatage",
       "Exemple" : "",
@@ -2859,7 +2821,7 @@
       "Latence" : "temps-réel",
       "Mise_à_disposition" : "2016-08"
     },
-{
+    {
       "Nom" : "SearchHistory",
       "Description" : "Historique de recherche sur le web.",
       "Exemple" : "",
@@ -2872,7 +2834,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-08"
     },
-{
+    {
       "Nom" : "keyword",
       "Description" : "",
       "Exemple" : "",
@@ -2885,7 +2847,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-08"
     },
-{
+    {
       "Nom" : "timestamp",
       "Description" : "",
       "Exemple" : "",
@@ -2898,7 +2860,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-08"
     },
-{
+    {
       "Nom" : "GeoPoint",
       "Description" : "Point de géolocalisation",
       "Exemple" : "",
@@ -2911,20 +2873,20 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Géolocalisation Mobile",
       "Description" : "La géolocalisation de mon téléphone Mobile Orange : latitude, longitude, horodatage, rayon de précision de la position",
-      "Exemple" : "",
+      "Exemple" : "geoloc",
       "Typologie" : "Déplacement",
       "DocType" : "GeoPoint",
       "Nature" : "Subset",
-      "Format" : "",
+      "Format" : "emit(doc._id);",
       "Détenteur" : "Orange",
       "Fréquence" : "1/15min",
       "Latence" : "1h (TODO)",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "msisdn",
       "Description" : "Numéro de téléphone du mobile.",
       "Exemple" : "33684525322",
@@ -2937,7 +2899,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "timestamp",
       "Description" : "horodatage de la position récupérée.",
       "Exemple" : "",
@@ -2950,7 +2912,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "latitude",
       "Description" : "Latitude du point.",
       "Exemple" : "48.8504",
@@ -2963,7 +2925,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "longitude",
       "Description" : "Longitude du point",
       "Exemple" : "2.3799",
@@ -2976,7 +2938,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "radius",
       "Description" : "Rayon de précision de la position.",
       "Exemple" : "150",
@@ -2989,7 +2951,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "PhoneCommunicationLog",
       "Description" : "Une entrée de journal d'appel.",
       "Exemple" : "",
@@ -3002,10 +2964,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "Données d'appel  téléphonique",
       "Description" : "Type d'appel (entrant, sortant, sms..), horodatage, numéro, position géographique pendant la communication",
-      "Exemple" : "",
+      "Exemple" : "donnees_d_appel_telephonique",
       "Typologie" : "Communication",
       "DocType" : "PhoneCommunicationLog",
       "Nature" : "Subset",
@@ -3015,7 +2977,7 @@
       "Latence" : "un mois",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "type",
       "Description" : "Type de communication (appel entrant, appel sortant, SMS entrant, SMS sortant, etc)",
       "Exemple" : "SMS sortant",
@@ -3028,7 +2990,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "timestamp",
       "Description" : "Horodatage de début de communication.",
       "Exemple" : "",
@@ -3041,8 +3003,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "subscriberNumber",
+    {
+      "Nom" : "subscriber",
       "Description" : "Numéro du détenteur de la ligne.",
       "Exemple" : "",
       "Typologie" : "Communication",
@@ -3054,8 +3016,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "correspondantNumber",
+    {
+      "Nom" : "peer",
       "Description" : "Numéro du correspondant.",
       "Exemple" : "",
       "Typologie" : "Communication",
@@ -3067,7 +3029,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "chipCount",
       "Description" : "Coup de l'appel (unité définie par chipType)",
       "Exemple" : "",
@@ -3080,7 +3042,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "chipType",
       "Description" : "Unité de valorisation de l'appel (seconde, octets, ...)",
       "Exemple" : "",
@@ -3093,7 +3055,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "imsi",
       "Description" : "Numéro de la carte SIM (International Mobile Subscriber Identify)",
       "Exemple" : "",
@@ -3106,7 +3068,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "imei",
       "Description" : "Numéro du mobile (International Mobile Equipment Identity)",
       "Exemple" : "",
@@ -3119,7 +3081,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "latitude",
       "Description" : "Position géographique pendant la communication (latitude)",
       "Exemple" : "48.8504",
@@ -3132,7 +3094,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "longitude",
       "Description" : "Position géographique pendant la communication (longitude)",
       "Exemple" : "2.3799",
@@ -3145,8 +3107,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "terminationRaison",
+    {
+      "Nom" : "endReason",
       "Description" : "Cause de terminaison de l'appel si l'appel est efficace (libération normale, échec distant, incident radio...).",
       "Exemple" : "",
       "Typologie" : "Communication",
@@ -3158,7 +3120,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "returnCallNumber",
       "Description" : "Numéro vers lequel est renvoyé l'appel.",
       "Exemple" : "",
@@ -3171,7 +3133,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "callOrigin",
       "Description" : "Origine de l'appel (automatique national ou international, manuel national ou international...).",
       "Exemple" : "",
@@ -3184,8 +3146,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "correspondantType",
+    {
+      "Nom" : "peerType",
       "Description" : "Format du numéro du partenaire d'appel (n° international, n° national, n° abrégé, n° de réseu spécial...).",
       "Exemple" : "",
       "Typologie" : "Communication",
@@ -3197,8 +3159,8 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
-      "Nom" : "correspondantPlan",
+    {
+      "Nom" : "peerPlan",
       "Description" : "Plan de numérotaton correspondant au numéro partenaire de l'appel (téléphonie, data, plan national...).",
       "Exemple" : "",
       "Typologie" : "Communication",
@@ -3210,7 +3172,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "callCountry",
       "Description" : "Centre de facturation qui a transmis le CRA émis depuis l'etranger.",
       "Exemple" : "",
@@ -3223,7 +3185,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "mobileNetwork",
       "Description" : "Type de couverture. Indique la couverture réseau utilisée (GSM/GPRS ou UMTS).",
       "Exemple" : "",
@@ -3236,7 +3198,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "secondaryMSISDN",
       "Description" : "MSISDN secondaire (numéro MSISDN carte jumelle ou numéro traduit pour les numéro courts).",
       "Exemple" : "",
@@ -3249,7 +3211,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-10"
     },
-{
+    {
       "Nom" : "VOD",
       "Description" : "Les vidéos que j'ai commendées sur le portail Orange (date, prix, titre de la vidéo, ...)",
       "Exemple" : "",
@@ -3262,7 +3224,7 @@
       "Latence" : "un mois",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "IPTV",
       "Description" : "Les émissions que j'ai visionnées via ma LiveBox Orange (horodatage, chaine, ...)",
       "Exemple" : "",
@@ -3275,7 +3237,7 @@
       "Latence" : "un mois",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "VideoStream",
       "Description" : "Une entré d'historique de vidéo regardées.",
       "Exemple" : "",
@@ -3288,7 +3250,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2016-09"
     },
-{
+    {
       "Nom" : "Message",
       "Description" : "Un email",
       "Exemple" : "",
@@ -3301,10 +3263,10 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "EMail",
       "Description" : "Un email, parmi les comptes emails configurés dans Cozy (émetteur, destinataires, objet, corps du message, pièces jointes, horodatage, ...)",
-      "Exemple" : "",
+      "Exemple" : "email",
       "Typologie" : "Communication",
       "DocType" : "Message",
       "Nature" : "Subset",
@@ -3314,7 +3276,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "accountID",
       "Description" : "Id du document Account, auquel ce message est relié",
       "Exemple" : "79e8f41dc48435615f8233f54a235762",
@@ -3327,7 +3289,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "messageID",
       "Description" : "Id du message (normalisé)",
       "Exemple" : "CAP123jNbif05OLrWmPEct5OB+F4+4=wW-xJskDJAvHZp-0u56g@mail.gmail.com",
@@ -3340,7 +3302,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "normSubject",
       "Description" : "Objet du mail (normalisé (sans RE, FWD, ...)",
       "Exemple" : "Point coordination Mesinfos",
@@ -3353,7 +3315,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "conversationID",
       "Description" : "Id de la conversation",
       "Exemple" : "f570ee59-c968-446f-beff-4fa78490dc6e",
@@ -3366,7 +3328,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "mailboxIDS",
       "Description" : "mailboxes as an hash",
       "Exemple" : "{ 79e8f41dc48435615f8233f54a23b5f4: 9675, 79e8f41dc48435615f8233f54a23670b: 9675 }",
@@ -3379,7 +3341,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "hasTwin",
       "Description" : "mailboxIDs where this message has twin",
       "Exemple" : "TODO",
@@ -3392,7 +3354,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "twinMailboxIDs",
       "Description" : "mailboxes as an hash of array",
       "Exemple" : "TODO",
@@ -3405,7 +3367,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "flags",
       "Description" : "Flags du message",
       "Exemple" : "[\"\\Seen\", \"NonJunk\"]",
@@ -3418,7 +3380,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "headers",
       "Description" : "Headers du message",
       "Exemple" : "{ x-google-sender-auth :\"GZTxDTZdifi5YWZCaB1lvN5zNLg\", x-ovh-spamstate :\"OK\",mime-version :\"1.0\", ... }",
@@ -3431,7 +3393,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "from",
       "Description" : "Expéditeur",
       "Exemple" : "[{ name: \"Guillaume Jacquart\", address: \"gjacquart@fing.org\" }]",
@@ -3444,7 +3406,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "to ",
       "Description" : "Destinataires",
       "Exemple" : "[{ name: \"\", address: \"toto@example.com\" }]",
@@ -3457,7 +3419,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "cc",
       "Description" : "Destinataires en copie",
       "Exemple" : "[{ name: \"Guillaume Jacquart\", address: \"gjacquart@fing.org\" }]",
@@ -3470,7 +3432,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "bcc",
       "Description" : "Destinataires en copie caché",
       "Exemple" : "[{ name: \"Guillaume Jacquart\", address: \"gjacquart@fing.org\" }]",
@@ -3483,7 +3445,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "replyTo",
       "Description" : "Répondre à ",
       "Exemple" : "[{ name: \"Guillaume Jacquart\", address: \"gjacquart@fing.org\" }]",
@@ -3496,7 +3458,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "subject",
       "Description" : "Objet du message",
       "Exemple" : "Re: Point coordination Mesinfos",
@@ -3509,7 +3471,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "inReplyTo",
       "Description" : "messageId des messages auxquels ce message répond",
       "Exemple" : "[CAP123jNbif05OLrWmPEct5OB+F4+4=wW-xJskDJAvHZp-0u56g@mail.gmail.com]",
@@ -3522,7 +3484,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "references",
       "Description" : "messageID des messages auxquels ce message fait référence",
       "Exemple" : "[CAP123jNbif05OLrWmPEct5OB+F4+4=wW-xJskDJAvHZp-0u56g@mail.gmail.com]",
@@ -3535,7 +3497,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "text",
       "Description" : "Contenu textuel du message",
       "Exemple" : "Bonjour",
@@ -3548,7 +3510,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "html",
       "Description" : "Contenu formaté du message (html)",
       "Exemple" : "<div>Bonjour</div>",
@@ -3561,7 +3523,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "date",
       "Description" : "Date du message (TODO)",
       "Exemple" : "2016-05-17T12:56:58.000Z",
@@ -3574,7 +3536,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "priority",
       "Description" : "priorité du message (TODO)",
       "Exemple" : "normal",
@@ -3587,7 +3549,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "ignoreInCount",
       "Description" : "ignorer ce message dans le comptage du compte (TODO)",
       "Exemple" : "false",
@@ -3600,7 +3562,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "attachments",
       "Description" : "liste des pièces jointes",
       "Exemple" : "[{contentType :\"image/jpeg\",fileName :\"image003.jpg\", contentDisposition :\"inline\", transferEncoding :\"base64\", contentId :\"image003.jpg@01D1B025.F5730750\", generatedFileName :\"image003.jpg\", checksum :\"e9cb966cc221c0cf9c915d307dfa5375\", length :2239, url :\"message/17931c49656d8eb5a09c7ac3ea4ac173/attachments/image003.jpg\" }",
@@ -3613,7 +3575,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "binary",
       "Description" : "liste des documents Binary, portant les fichiers joints",
       "Exemple" : "{ image003.jpg: { id :\"17931c49656d8eb5a09c7ac3ea4ac1b3\", rev :\"2-25df978b1f5e6d26a520f177d48aaaf7\" }, ...}",
@@ -3626,7 +3588,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "alternatives",
       "Description" : "for calendar content",
       "Exemple" : "",
@@ -3639,7 +3601,7 @@
       "Latence" : 0,
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "Contact",
       "Description" : "Un contact de mon carrnet d'adresses",
       "Exemple" : "",
@@ -3652,7 +3614,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "Carnet d'adresse",
       "Description" : "Mon carnet d'adresse dans mon Cozy",
       "Exemple" : "carnet_d_adresse",
@@ -3665,7 +3627,7 @@
       "Latence" : "temps-réel",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "fn",
       "Description" : "Nom du contact (pré-formaté)",
       "Exemple" : "Martin Dupond",
@@ -3678,7 +3640,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "n",
       "Description" : "Nom , Prénom, ... du contact (structuré)",
       "Exemple" : "Dupont;Martin;;;",
@@ -3691,7 +3653,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "org",
       "Description" : "Employeur (professionnel)",
       "Exemple" : "Fing",
@@ -3704,7 +3666,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "title",
       "Description" : "Intitulé du poste (professionnel)",
       "Exemple" : "Stagiaire",
@@ -3717,7 +3679,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "department",
       "Description" : "Service (professionnel)",
       "Exemple" : "Service juridique",
@@ -3730,7 +3692,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "bday",
       "Description" : "Date d'anniversaire",
       "Exemple" : "2001-02-01",
@@ -3743,7 +3705,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "nickname",
       "Description" : "Surnom",
       "Exemple" : "Marty",
@@ -3756,7 +3718,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "url",
       "Description" : "--",
       "Exemple" : "",
@@ -3769,7 +3731,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "revision",
       "Description" : "Horodatage de dernière modification",
       "Exemple" : "2015-08-04T08:35:38.988Z",
@@ -3782,7 +3744,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "datapoints",
       "Description" : "Liste des caractéristiques du contact.",
       "Exemple" : "[\n  {\n    name :\"tel\", // Catégorie de données (tel, mail, address, ...)\n    type :\"home\", // Sous-catégorie\n    value :\"+33123456789\", // Valeur\n  },\n  {\n    name :\"adr\",\n    type :\"work\",\n    value: [\"\", \"\", \"8 passage Brulon\", \"Paris\", \"\", \"75012\", \"France\" ]\n  },\n]",
@@ -3795,7 +3757,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "note",
       "Description" : "Note à propos du contact",
       "Exemple" : "Code : A7B12 ; 5ème gauche",
@@ -3808,7 +3770,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "tags",
       "Description" : "Tag",
       "Exemple" : "['MesInfos', ]",
@@ -3821,7 +3783,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "_attachments",
       "Description" : "--",
       "Exemple" : "",
@@ -3834,7 +3796,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "accounts",
       "Description" : "Services externes à Cozy, dans lesquels ce contact est également présent.",
       "Exemple" : "[\n  {\n    type :\"com.google\", // Designation du service externe\n    name: \"martin.dupond@gmail.com\", // Compte utilisateur sur le service externe\n    id :\"4c0dd7b68cebfe28\", // Id de l'évènement dans le service externe\n    lastUpdate :\"2015-01-18T14:19:32.690Z\" // dernière mise à jour dans le service externe\n  },\n]",
@@ -3847,10 +3809,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "Event",
       "Description" : "Un évènement dans l'agenda.",
-      "Exemple" : "",
+      "Exemple" : "[ { name: \"Contacts\", url: \"https://github.com/cozy/cozy-calendar\" }]",
       "Typologie" : "Communication",
       "DocType" : "Event",
       "Nature" : "DocType",
@@ -3860,7 +3822,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "Mon agenda",
       "Description" : "Un événement des agendas de mon Cozy",
       "Exemple" : "mon_agenda",
@@ -3873,7 +3835,7 @@
       "Latence" : "temps-réel",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "start",
       "Description" : "Horadatage de début de l'évènement. Un horodatage en UTC si l'évènement est ponctuel ; si l'évènement est récurrent, consulter : https://github.com/cozy/cozy-calendar/wiki/Generalities-about-calendar-components,-iCal-and-date-handling-in-js",
       "Exemple" : "2016-05-18T18:00:00.000Z",
@@ -3886,7 +3848,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "end",
       "Description" : "Horodatage de fin de l'évènement. Un horodatage en UTC si l'évènement est ponctuel ; si l'évènement est récurrent, consulter : https://github.com/cozy/cozy-calendar/wiki/Generalities-about-calendar-components,-iCal-and-date-handling-in-js",
       "Exemple" : "2016-05-18T22:00:00.000Z",
@@ -3899,7 +3861,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "place",
       "Description" : "Lieu de l'évènement",
       "Exemple" : "8 passage Brulons 75011 Paris",
@@ -3912,7 +3874,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "details",
       "Description" : "Description de l'évènement",
       "Exemple" : "Ordre du jour : - Point , - Point 2, ...",
@@ -3925,7 +3887,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "description",
       "Description" : "Nom de l'évènement",
       "Exemple" : "Point data Pilote MesInfos",
@@ -3938,7 +3900,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "rrule",
       "Description" : "Règle de récurrence de l'évènement. (https://github.com/jkbrzt/rrule#differences-from-icalendar-rfc) seulement pour les évènements récurrents",
       "Exemple" : "FREQ=WEEKLY;INTERVAL=1;WKST=MO;BYDAY=TU",
@@ -3951,7 +3913,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "tags",
       "Description" : "Tag. Le premier tag indique le calendrier auquel cet évènement est rattaché.",
       "Exemple" : "['MesInfos', ]",
@@ -3964,7 +3926,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "attendees",
       "Description" : "Liste des invités à l'évènement",
       "Exemple" : "[\n  {\n    key :\"4op8nxm5i28qrz7vw4nt93ydgmmdxny7\",\n    status :\"INVITATION-NOT-SENT\",\n    email :\"gerard.dupondt@example.com\",\n    contactid :\"ea567fc52a7b192ffc1310f40c361632\",\n  },\n]",
@@ -3977,7 +3939,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "related",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -3990,7 +3952,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "timezone",
       "Description" : "Fuseau horraire. Uniquement pour les évènements récurrents !",
       "Exemple" : "Europe/Paris",
@@ -4003,7 +3965,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "alarms",
       "Description" : "Alarme de rappel de l'évènement",
       "Exemple" : "[\n  {\n    action :\"BOTH\", // DISPLAY, EMAIL, BOTH\n    trigg :\"-PT15M\", // iCal duration string\n  },\n]",
@@ -4016,7 +3978,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "created",
       "Description" : "Horodatage de création.",
       "Exemple" : "2016-05-23T08:32:55.321Z",
@@ -4029,7 +3991,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "caldavuri",
       "Description" : "Identifiant unique de l'évènement, (hors de la base de données du  Cozy)",
       "Exemple" : "233778870329266",
@@ -4042,7 +4004,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "uuid",
       "Description" : "-",
       "Exemple" : "",
@@ -4055,7 +4017,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "lastModification",
       "Description" : "Horodatage de dernière modification",
       "Exemple" : "2016-05-23T08:40:29.638Z",
@@ -4068,7 +4030,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "accounts",
       "Description" : "- ",
       "Exemple" : "",
@@ -4081,7 +4043,7 @@
       "Latence" : "RT",
       "Mise_à_disposition" : "2013"
     },
-{
+    {
       "Nom" : "File",
       "Description" : "Un descripteur de fichier",
       "Exemple" : "",
@@ -4094,7 +4056,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "Fichiers dans mon Cozy",
       "Description" : "Un fichier, que j'ai placé dans mon Cozy (image, pdf, ...)",
       "Exemple" : "",
@@ -4107,7 +4069,7 @@
       "Latence" : "temps-réel",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "path",
       "Description" : "Chemin du dossier parent",
       "Exemple" : "/dossier1",
@@ -4120,7 +4082,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "name",
       "Description" : "Nom du fichier",
       "Exemple" : "toto.txt",
@@ -4133,7 +4095,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "mime",
       "Description" : "Type mime du fichier",
       "Exemple" : "text/plain",
@@ -4146,7 +4108,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "creationDate",
       "Description" : "Horodatage de création du fichier",
       "Exemple" : "2016-05-23T09:47:38.870Z",
@@ -4159,7 +4121,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "lastModification",
       "Description" : "Horodatage de dernière modification du fichier",
       "Exemple" : "2015-04-03T10:08:40.000Z",
@@ -4172,7 +4134,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "class",
       "Description" : "TODO",
       "Exemple" : "document",
@@ -4185,7 +4147,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "size",
       "Description" : "Taille (octets)",
       "Exemple" : "28",
@@ -4198,7 +4160,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "binary",
       "Description" : "Liens vers le document Binary qui porte les données du fichier",
       "Exemple" : "{\n  file: {\n    id :\"2f87b10ed05135ba246b19651bb74a10\",\n    rev :\"2-2d13532aa9cc9785872ebad67fd3195b\"\n  }\n}",
@@ -4211,7 +4173,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "checksum",
       "Description" : "Some de contrôle (hash du fichier)",
       "Exemple" : "91c7db80e31e375d6504986730ee41c0e63438c6",
@@ -4224,7 +4186,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "modificationHistory",
       "Description" : "TODO",
       "Exemple" : "",
@@ -4237,7 +4199,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "clearance",
       "Description" : "Droit d'accès et partage",
       "Exemple" : "public",
@@ -4250,7 +4212,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "tags",
       "Description" : "Tag",
       "Exemple" : "['MesInfos', ]",
@@ -4263,7 +4225,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "uploading",
       "Description" : "En cours de téléversement",
       "Exemple" : "false",
@@ -4276,7 +4238,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "Folder",
       "Description" : "",
       "Exemple" : "",
@@ -4289,7 +4251,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "path",
       "Description" : "Chemin du dossier parent",
       "Exemple" : "/dossier1",
@@ -4302,7 +4264,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "name",
       "Description" : "Nom du dossier",
       "Exemple" : "dossier2",
@@ -4315,7 +4277,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "creationDate",
       "Description" : "Horodatage de création du fichier",
       "Exemple" : "2016-05-23T09:47:38.870Z",
@@ -4328,7 +4290,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "lastModification",
       "Description" : "Horodatage de dernière modification du fichier",
       "Exemple" : "2015-04-03T10:08:40.000Z",
@@ -4341,7 +4303,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "size",
       "Description" : "TODO ?",
       "Exemple" : "",
@@ -4354,7 +4316,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "modificationHistory",
       "Description" : "TODO",
       "Exemple" : "",
@@ -4367,7 +4329,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "changeNotification",
       "Description" : "Notifie  les changements venant d'individus à qui le dossier à été partagé. TODO.",
       "Exemple" : "false",
@@ -4380,7 +4342,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "clearance",
       "Description" : "Droit d'accès et partage",
       "Exemple" : "public",
@@ -4393,7 +4355,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "tags",
       "Description" : "Tag",
       "Exemple" : "['MesInfos', ]",
@@ -4406,7 +4368,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "Album",
       "Description" : "Un album photo",
       "Exemple" : "",
@@ -4419,10 +4381,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "Album Photo",
       "Description" : "Un album photo, pour organiser mes Photos dans mon Cozy",
-      "Exemple" : "",
+      "Exemple" : "album_photo",
       "Typologie" : "Loisir",
       "DocType" : "Album",
       "Nature" : "Subset",
@@ -4432,7 +4394,7 @@
       "Latence" : "temps-réel",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "title",
       "Description" : "Titre de l'album",
       "Exemple" : "Atelier créatif MesInfos",
@@ -4445,7 +4407,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "description",
       "Description" : "Description de l'album",
       "Exemple" : "Les concept imaginés pendant l'atelier  MesInfos du 12 juillet 2013",
@@ -4458,7 +4420,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "date",
       "Description" : "Horodatage de la création de l'album",
       "Exemple" : "",
@@ -4471,7 +4433,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "orientation",
       "Description" : "Orientation de l'image de courveture de l'album",
       "Exemple" : "",
@@ -4484,7 +4446,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "clearance",
       "Description" : "Droit d'accès et partage",
       "Exemple" : "public",
@@ -4497,7 +4459,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "thumbsrc",
       "Description" : "Chemin vers l'image de couverture de l'album",
       "Exemple" : "photos/thumbs/ea567fc52a7b192ffc1310f40c03c4ae.jpg",
@@ -4510,7 +4472,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "updated",
       "Description" : "",
       "Exemple" : "",
@@ -4523,7 +4485,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "coverPicture",
       "Description" : "Image de couverture de l'album (id)",
       "Exemple" : "ea567fc52a7b192ffc1310f40c03c4ae",
@@ -4536,7 +4498,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "thumb",
       "Description" : "Miniature de l'image de couverture de l'album (id)",
       "Exemple" : "",
@@ -4549,7 +4511,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "Photo",
       "Description" : "Une photo dans un album photo.",
       "Exemple" : "",
@@ -4562,10 +4524,10 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-07"
     },
-{
+    {
       "Nom" : "Photos",
       "Description" : "Une photo, sauvegardée sur mon Cozy",
-      "Exemple" : "",
+      "Exemple" : "photos",
       "Typologie" : "Loisir",
       "DocType" : "Photo",
       "Nature" : "Subset",
@@ -4575,7 +4537,7 @@
       "Latence" : "temps-réel",
       "Mise_à_disposition" : "2015-07"
     },
-{
+    {
       "Nom" : "title",
       "Description" : "Titre de la photo",
       "Exemple" : "",
@@ -4588,7 +4550,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-07"
     },
-{
+    {
       "Nom" : "description",
       "Description" : "Description de la photo",
       "Exemple" : "",
@@ -4601,7 +4563,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-07"
     },
-{
+    {
       "Nom" : "orientation",
       "Description" : "Orientation de la photo",
       "Exemple" : "1",
@@ -4614,7 +4576,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-07"
     },
-{
+    {
       "Nom" : "binary",
       "Description" : "Liens vers le document Binary qui porte les données de la photo",
       "Exemple" : "{\n  file: {\n    id :\"2f87b10ed05135ba246b19651bb74a10\",\n    rev :\"2-2d13532aa9cc9785872ebad67fd3195b\"\n  },\n  thumb: {\n    \"id\":\"39bd90dec5c33c947f99448c260e13fe\",\n    rev\":\"2-32a44b3e3b916b40903c306ae1ea4cf9\",\n  },\n  screen: {\n      \"id\":\"39bd90dec5c33c947f99448c260e1446\",\n      \"rev\":\"2-e8365f417bfce7bf151d257d1cbc5506\"\n}\n}",
@@ -4627,7 +4589,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-07"
     },
-{
+    {
       "Nom" : "albumId",
       "Description" : "Album auquel cette photo appartient",
       "Exemple" : "39bd90dec5c33c947f99448c260ddcd2",
@@ -4640,7 +4602,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-07"
     },
-{
+    {
       "Nom" : "date",
       "Description" : "Horodatage de création de cette photo.",
       "Exemple" : "2015-07-23T07:41:13.000Z",
@@ -4653,7 +4615,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-07"
     },
-{
+    {
       "Nom" : "thumbsrc",
       "Description" : "Chemin miniature TODO",
       "Exemple" : "photos/thumbs/39bd90dec5c33c947f99448c26133013.jpg",
@@ -4666,7 +4628,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-07"
     },
-{
+    {
       "Nom" : "src",
       "Description" : "Chemin vers la photo TODO",
       "Exemple" : "photos/thumbs/39bd90dec5c33c947f99448c26133013.jpg",
@@ -4679,7 +4641,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-07"
     },
-{
+    {
       "Nom" : "gps",
       "Description" : "Coordonnées de la prise de vue (extraite des données EXIFF)",
       "Exemple" : "{\n  alt: 504,\n  lat: 50.9874,\n  lon: 1.9287987,\n}",
@@ -4692,7 +4654,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-07"
     },
-{
+    {
       "Nom" : "BankOperation",
       "Description" : "Mes transactions bancaires. Les écritures sur mes comptes en banque (date, montant, ...). Origine : Société Générale, La Banque Postale, Crédit Coopératif - màj journalières",
       "Exemple" : "",
@@ -4705,7 +4667,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2016-08"
     },
-{
+    {
       "Nom" : "Opérations bancaires",
       "Description" : "Mes relevé de comptes bancaires (libellé, date, montant pour chaque opération), que je récupère auprès de ma banque, et visualise grace à l'application Cozy Kresus.",
       "Exemple" : "operations_bancaires",
@@ -4718,7 +4680,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2016-08"
     },
-{
+    {
       "Nom" : "bankAccount",
       "Description" : "Le numéro de compte lié à l'opération",
       "Exemple" : "03591928769823716936",
@@ -4731,7 +4693,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "operationTypeID",
       "Description" : "Type de mouvement bancaire (prélèvement, carte, ...)",
       "Exemple" : "ea567fc52a7b192ffc1310f40c3fe504",
@@ -4744,7 +4706,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "title",
       "Description" : "Libellé du mouvement",
       "Exemple" : "RATP",
@@ -4757,7 +4719,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "date",
       "Description" : "Date de l'opération",
       "Exemple" : "2016-05-03T00:00:00.000Z",
@@ -4770,7 +4732,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "amount",
       "Description" : "Montant de l'opération",
       "Exemple" : "-14.1",
@@ -4783,7 +4745,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "raw",
       "Description" : "Libellé brut du mouvement",
       "Exemple" : "CARTE X0615 03/05 RATP",
@@ -4796,7 +4758,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "dateImport",
       "Description" : "Date d'importation de l'opération dans le Cozy",
       "Exemple" : "",
@@ -4809,7 +4771,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "categoryId",
       "Description" : "Catégorie de classement de l'opération dans l'app Kresus",
       "Exemple" : "",
@@ -4822,7 +4784,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "Bankaccount",
       "Description" : "Mes comptes bancaires. (banque, intitulé, ...).",
       "Exemple" : "",
@@ -4835,7 +4797,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "bank",
       "Description" : "Le nom de la banque",
       "Exemple" : "societegenerale",
@@ -4848,7 +4810,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "bankAccess",
       "Description" : "Les codes d'accès pour ce compte",
       "Exemple" : "967e87cce32bbd7da2198248736417bd",
@@ -4861,7 +4823,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "title",
       "Description" : "Nom du compte bancaire",
       "Exemple" : "Livret A",
@@ -4874,7 +4836,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "accountNumber",
       "Description" : "Numéro du compte",
       "Exemple" : "03591928769823716936",
@@ -4887,7 +4849,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "iban",
       "Description" : "Code IBAN de ce compte",
       "Exemple" : "FR763000303591928769823716936",
@@ -4900,7 +4862,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "initialAount",
       "Description" : "Montant initial, au premier scrapping",
       "Exemple" : "200.12",
@@ -4913,7 +4875,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "lastChecked",
       "Description" : "Instant de dernier mise à jour des données",
       "Exemple" : "2016-05-16T06:52:47.974Z",
@@ -4926,7 +4888,7 @@
       "Latence" : "1jour",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "Note",
       "Description" : "",
       "Exemple" : "",
@@ -4939,7 +4901,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "title",
       "Description" : "Titre de la note.",
       "Exemple" : "Courses",
@@ -4952,7 +4914,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "content",
       "Description" : "Contenu de la note",
       "Exemple" : "Cacahuètes\nPommes",
@@ -4965,7 +4927,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "creationDate",
       "Description" : "Horadatage de création de la note.",
       "Exemple" : "2015-12-08T19:37:18.000Z",
@@ -4978,7 +4940,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "lastModificationDate",
       "Description" : "Horodatage de dernière modification.",
       "Exemple" : "2015-02-20T11:57:10.000Z",
@@ -4991,7 +4953,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "tags",
       "Description" : "Tag",
       "Exemple" : "[]",
@@ -5004,7 +4966,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "parent_Id",
       "Description" : "Id de la note parente",
       "Exemple" : "ea567fc52a7b192ffc1310f40c1c41e6",
@@ -5017,7 +4979,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "path",
       "Description" : "Chemin de classement de la note\n",
       "Exemple" : "['Course', 'Mardi']",
@@ -5030,7 +4992,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "humanPath",
       "Description" : "TODO",
       "Exemple" : "undefined",
@@ -5043,7 +5005,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "lastModificationValueOf",
       "Description" : "TODO",
       "Exemple" : "1419432212886",
@@ -5056,7 +5018,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "version",
       "Description" : "Version du DocType.",
       "Exemple" : "2",
@@ -5069,7 +5031,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "Tasky",
       "Description" : "",
       "Exemple" : "",
@@ -5082,7 +5044,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-06"
     },
-{
+    {
       "Nom" : "Une tâche Tasky",
       "Description" : "Une tâche créée via l'application Tasky",
       "Exemple" : "tasky",
@@ -5095,7 +5057,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-06"
     },
-{
+    {
       "Nom" : "done",
       "Description" : "Tâche accomplie ?",
       "Exemple" : "false",
@@ -5108,7 +5070,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-06"
     },
-{
+    {
       "Nom" : "completionDate",
       "Description" : "Horodatage de réalisation de la date",
       "Exemple" : "1464352157261",
@@ -5121,7 +5083,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-06"
     },
-{
+    {
       "Nom" : "description",
       "Description" : "Nom de la tâche",
       "Exemple" : "Documenter les données",
@@ -5134,7 +5096,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-06"
     },
-{
+    {
       "Nom" : "order",
       "Description" : "Ordre de classement de la tâche",
       "Exemple" : "8.988465674311579e+307",
@@ -5147,7 +5109,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-06"
     },
-{
+    {
       "Nom" : "tags",
       "Description" : "Tag",
       "Exemple" : "['Projet1',]",
@@ -5160,7 +5122,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-06"
     },
-{
+    {
       "Nom" : "isArchived",
       "Description" : "Tâche archivée ?",
       "Exemple" : "false",
@@ -5173,7 +5135,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015-06"
     },
-{
+    {
       "Nom" : "UseTracker",
       "Description" : "Trace d'usage du Cozy",
       "Exemple" : "",
@@ -5186,7 +5148,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "Traces d'usage",
       "Description" : "Trace d'usage du Cozy, notamment récolté - avec accord de l'utilisateur - pour la recherche dans le PIlote MesInfos (application utilisée, horodatage, ...)",
       "Exemple" : "",
@@ -5199,7 +5161,7 @@
       "Latence" : "temps-réel",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "app",
       "Description" : "Application utilisée (slug)",
       "Exemple" : "kresus",
@@ -5212,7 +5174,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "dateStart",
       "Description" : "Horodatage de début d'utilisation.",
       "Exemple" : "2016-03-12T10:59:11.359Z",
@@ -5225,7 +5187,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "dateEnd",
       "Description" : "Horodatage de fin d'utilisation.",
       "Exemple" : "2016-03-12T11:26:25.522Z",
@@ -5238,7 +5200,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "duration",
       "Description" : "Durée d'utilisation (en secondes)",
       "Exemple" : "1634163",
@@ -5251,7 +5213,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2014"
     },
-{
+    {
       "Nom" : "RescueTimeActivity",
       "Description" : "De Konnector",
       "Exemple" : "",
@@ -5264,7 +5226,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "Traces d'activité RescueTime",
       "Description" : "Activité, tracée avec le service Rescue Time.",
       "Exemple" : "",
@@ -5277,7 +5239,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "date",
       "Description" : "Horodatage de l'activité",
       "Exemple" : "2016-05-23T00:00:00.000Z",
@@ -5290,7 +5252,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "duration",
       "Description" : "Durée de l'activité (en secondes)",
       "Exemple" : "61",
@@ -5303,7 +5265,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "description",
       "Description" : "Description de l'activité. Nom du logiciel utilisé, nom de domaine du site consulté.",
       "Exemple" : "mesinfos.fing.org",
@@ -5316,7 +5278,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "category",
       "Description" : "Catégorie de l'activité (Email, Writing, Instant Message, ...",
       "Exemple" : "General News & Opinion",
@@ -5329,7 +5291,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "productivity",
       "Description" : "Note de productivité attributé à cette activité (selon réglage de l'utilisateur)",
       "Exemple" : "-2",
@@ -5342,7 +5304,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "people",
       "Description" : "TODO",
       "Exemple" : "1",
@@ -5355,7 +5317,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "Sleep",
       "Description" : "Sleep data from jawbone.com",
       "Exemple" : "",
@@ -5368,7 +5330,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "Données  sommeil",
       "Description" : "Données récoltées via un objet connecté Jawbone",
       "Exemple" : "",
@@ -5381,7 +5343,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "date",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5394,7 +5356,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "asleepTime",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5407,7 +5369,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "awakeTime",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5420,7 +5382,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "awakeningCount",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5433,7 +5395,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "bedTime",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5446,7 +5408,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "deepSleepDuration",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5459,7 +5421,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "lightSleepDuration",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5472,7 +5434,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "sleepDuration",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5485,7 +5447,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "sleepQuality",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5498,7 +5460,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "vendor",
       "Description" : "TODO",
       "Exemple" : "Withings",
@@ -5511,7 +5473,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "Steps",
       "Description" : "Steps data from jawbone.com",
       "Exemple" : "",
@@ -5524,7 +5486,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "Mes pas",
       "Description" : "Mes pas, récoltés avec un bracelet Jawbone",
       "Exemple" : "",
@@ -5537,7 +5499,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "date",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5550,7 +5512,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "activeTime",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5563,7 +5525,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "activeTimeCalories",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5576,7 +5538,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "distance",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5589,7 +5551,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "inactiveTime",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5602,7 +5564,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "longestActiveTime",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5615,7 +5577,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "longestIdleTime",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5628,7 +5590,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "steps",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5641,7 +5603,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "totalCalories",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5654,7 +5616,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "vendor",
       "Description" : "TODO",
       "Exemple" : "Withings",
@@ -5667,7 +5629,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "Weight",
       "Description" : "",
       "Exemple" : "",
@@ -5680,7 +5642,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "Mon poids",
       "Description" : "Mon poids, récolté par une balance connectée",
       "Exemple" : "",
@@ -5693,7 +5655,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "date",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5706,7 +5668,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "weight",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5719,7 +5681,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "leanWeight",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5732,7 +5694,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "fatWeight",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5745,7 +5707,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "user",
       "Description" : "TODO",
       "Exemple" : "TODO",
@@ -5758,7 +5720,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "vendor",
       "Description" : "TODO",
       "Exemple" : "Withings",
@@ -5771,7 +5733,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "PhoneBill",
       "Description" : "Factures de téléphone",
       "Exemple" : "",
@@ -5784,7 +5746,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "date",
       "Description" : "Date d'émission de la facture.",
       "Exemple" : "2015-05-07T00:00:00.000Z",
@@ -5797,7 +5759,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "vendor",
       "Description" : "Fournisseur.",
       "Exemple" : "Free Mobile",
@@ -5810,7 +5772,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "amount",
       "Description" : "Montant de la facture.",
       "Exemple" : "19.99",
@@ -5823,7 +5785,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "fileId",
       "Description" : "Id du document File du fichier PDF de la facture",
       "Exemple" : "b84d8e2861c1f8cfe0b8a47dfad8c6f4",
@@ -5836,7 +5798,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "binaryId",
       "Description" : "Id du document Binary du fichier PDF de la facture",
       "Exemple" : "ea567fc52a7b192ffc1310f40c2b62d7",
@@ -5849,7 +5811,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "pdfurl",
       "Description" : "Url de la facture pdf chez le fournisseur.",
       "Exemple" : "",
@@ -5862,7 +5824,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "InternetBill",
       "Description" : "Facture d'abonnement internet",
       "Exemple" : "",
@@ -5875,7 +5837,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "date",
       "Description" : "",
       "Exemple" : "2016-05-01T00:00:00.000Z",
@@ -5888,7 +5850,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "vendor",
       "Description" : "",
       "Exemple" : "",
@@ -5901,7 +5863,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "amount",
       "Description" : "",
       "Exemple" : "",
@@ -5914,7 +5876,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "filteId",
       "Description" : "Id du document File du fichier PDF de la facture",
       "Exemple" : "",
@@ -5927,7 +5889,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "Bill",
       "Description" : "Facture auprès d'un fournisseur (date, numéro, pdf, ...)",
       "Exemple" : "",
@@ -5940,7 +5902,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "Factures de téléphone",
       "Description" : "Mes factures de téléphone, scrappées chez Bouygues, SFR, Free, Orange, Sosh, Virgin Mobile.",
       "Exemple" : "",
@@ -5953,7 +5915,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "Factures Internet",
       "Description" : "Mes factures internet, scrappées chez Bouyges, Free, ...",
       "Exemple" : "",
@@ -5966,7 +5928,7 @@
       "Latence" : "24h",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "type",
       "Description" : "Type de prestation (internet, téléphone, ...)",
       "Exemple" : "TODO",
@@ -5979,7 +5941,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "subtype",
       "Description" : "Soustype de la prestation",
       "Exemple" : "TODO",
@@ -5992,7 +5954,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "date",
       "Description" : "Date d'émission de la facture",
       "Exemple" : "TODO",
@@ -6005,7 +5967,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "vendor",
       "Description" : "Fournisseur",
       "Exemple" : "TODO",
@@ -6018,7 +5980,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "amount",
       "Description" : "Montant de la facture",
       "Exemple" : "TODO",
@@ -6031,7 +5993,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "plan",
       "Description" : "Nom de l'offre commerciale",
       "Exemple" : "TODO",
@@ -6044,7 +6006,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "pdfurl",
       "Description" : "Url de la facture pdf chez le fournisseur.",
       "Exemple" : "TODO",
@@ -6057,7 +6019,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "binaryId",
       "Description" : "Id du document Binary du fichier PDF de la facture",
       "Exemple" : "TODO",
@@ -6070,7 +6032,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "fileId",
       "Description" : "Id du document File du fichier PDF de la facture",
       "Exemple" : "TODO",
@@ -6083,7 +6045,7 @@
       "Latence" : "",
       "Mise_à_disposition" : "2015"
     },
-{
+    {
       "Nom" : "content",
       "Description" : "Contenue de la facture",
       "Exemple" : "TODO",
