@@ -265,11 +265,16 @@ aside .typologies {
 
 .documents ul.documentslist {
   list-style: none;
-  
+  padding: 0px;
+}
+.result {
+  list-style: none;  
+  padding-left: 1em;
+  color: #999;
 }
 
 .doctype .fields {
-  padding-left: 2em;
+  padding-left: 1em;
 }
 
 .doctype .field {

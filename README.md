@@ -15,8 +15,6 @@ Un outils pour les développeurs autours des données du Pilote MesInfos :
 
 
 ## Features
-* Add Doctype and Subset documentation --> running
-* Display the true cozysdk response tree.
 * Detect new doctypes
 * Add a custom synth dataset
 

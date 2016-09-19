@@ -21,6 +21,7 @@ module.exports = Backbone.Collection.extend({
     return this.map(function(doc) {
       var res = doc.toJSON();
       delete res.fields;
+      delete res.result;
       return res;
     });
   },
@@ -65,6 +66,9 @@ module.exports = Backbone.Collection.extend({
       }
     });
     doc.fields = fields;
+
+    delete res.doc; // avoid circular links
+    doc._result = res;
     return doc;
   },
 

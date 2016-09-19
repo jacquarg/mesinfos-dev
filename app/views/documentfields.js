@@ -1,6 +1,6 @@
 module.exports = Mn.CompositeView.extend({
   tagName: 'li',
-  className: 'doctype',
+  className: 'result',
   template: require('views/templates/document'),
 
   childView: require('views/field'),
@@ -10,6 +10,4 @@ module.exports = Mn.CompositeView.extend({
   initialize: function() {
     this.collection = new Backbone.Collection(this.model.get('fields'));
   },
-
-
 });

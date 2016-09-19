@@ -1,3 +1,18 @@
 span.openBrace {
-.fields
+  ul.result
+    li "id":&nbsp;
+      = JSON.stringify(_result.id)
+      |,
+
+    li "key":&nbsp;
+      = JSON.stringify(_result.key)
+      |,
+
+    li "value":&nbsp;
+      = JSON.stringify(_result.value)
+      |,
+
+    li.doctype "doc": {
+      .fields 
+      span.closeBrace },
 span.closeBrace },

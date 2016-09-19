@@ -269,6 +269,7 @@ module.exports = Backbone.Collection.extend({
     return this.map(function(doc) {
       var res = doc.toJSON();
       delete res.fields;
+      delete res.result;
       return res;
     });
   },
@@ -313,6 +314,9 @@ module.exports = Backbone.Collection.extend({
       }
     });
     doc.fields = fields;
+
+    delete res.doc; // avoid circular links
+    doc._result = res;
     return doc;
   },
 
@@ -840,7 +844,7 @@ module.exports = Mn.Behavior.extend({
 require.register("views/documentfields.js", function(exports, require, module) {
 module.exports = Mn.CompositeView.extend({
   tagName: 'li',
-  className: 'doctype',
+  className: 'result',
   template: require('views/templates/document'),
 
   childView: require('views/field'),
@@ -850,8 +854,6 @@ module.exports = Mn.CompositeView.extend({
   initialize: function() {
     this.collection = new Backbone.Collection(this.model.get('fields'));
   },
-
-
 });
 
 });
@@ -878,23 +880,13 @@ module.exports = Mn.CompositeView.extend({
 
   serializeData: function() {
     var data = { docType: {}, subsets: []};
-    try {
     if (this.collection && this.collection.dsView) {
-      console.log('here');
       var model = this.collection.dsView;
-      console.log('here1');
       data.docType = app.docTypes.findWhere({ 'Nom': model.getDocType()}).toJSON();
-      console.log('here2');
-      console.log(app.subsets);
-
       data.subsets = app.subsets.where({'DocType': model.getDocType()})
         .map(function(subset) { return subset.toJSON(); });
-      console.log('here3');
-
     }
-    console.log(data);
-  } catch (e) { console.log(e);}
-     return data;
+    return data;
   },
 
   updateDownloadButton: function() {
@@ -1207,8 +1199,8 @@ var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
-
-buf.push("<span class=\"openBrace\">{</span><div class=\"fields\"></div><span class=\"closeBrace\">},</span>");;return buf.join("");
+;var locals_for_with = (locals || {});(function (JSON, _result) {
+buf.push("<span class=\"openBrace\">{<ul class=\"result\"><li>\"id\":&nbsp;" + (jade.escape(null == (jade_interp = JSON.stringify(_result.id)) ? "" : jade_interp)) + ",</li><li>\"key\":&nbsp;" + (jade.escape(null == (jade_interp = JSON.stringify(_result.key)) ? "" : jade_interp)) + ",</li><li>\"value\":&nbsp;" + (jade.escape(null == (jade_interp = JSON.stringify(_result.value)) ? "" : jade_interp)) + ",</li><li class=\"doctype\">\"doc\": {<div class=\"fields\"> </div><span class=\"closeBrace\">},</span></li></ul></span><span class=\"closeBrace\">},</span>");}.call(this,"JSON" in locals_for_with?locals_for_with.JSON:typeof JSON!=="undefined"?JSON:undefined,"_result" in locals_for_with?locals_for_with._result:typeof _result!=="undefined"?_result:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -1254,7 +1246,7 @@ jade_mixins["displaySubset"](subset);
   }
 }).call(this);
 
-buf.push("</ul></div><a id=\"downloaddata\" target=\"_blank\">Télécharger</a><ul class=\"documentslist\"></ul>");}.call(this,"docType" in locals_for_with?locals_for_with.docType:typeof docType!=="undefined"?docType:undefined,"subsets" in locals_for_with?locals_for_with.subsets:typeof subsets!=="undefined"?subsets:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
+buf.push("</ul></div><a id=\"downloaddata\" target=\"_blank\">Télécharger</a><span class=\"openBracket\">[</span><ul class=\"documentslist\"></ul><span class=\"closeBracket\">]</span>");}.call(this,"docType" in locals_for_with?locals_for_with.docType:typeof docType!=="undefined"?docType:undefined,"subsets" in locals_for_with?locals_for_with.subsets:typeof subsets!=="undefined"?subsets:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {
