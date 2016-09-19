@@ -18,10 +18,8 @@ module.exports = Backbone.Collection.extend({
   },
 
   toRawJSON: function() {
-    console.log(this);
     return this.map(function(doc) {
       var res = doc.toJSON();
-      console.log(res);
       delete res.fields;
       return res;
     });

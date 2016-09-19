@@ -7,11 +7,19 @@ Un outils pour les développeurs autours des données du Pilote MesInfos :
 
 # TODO
 
-## Bugs 
-* 
+## Bugs
+* Update UX
+* Handle big fixtures addition.
+* Better feedback while waiting for request : Chronometer "be carefull, your app will be that slow on startup"
+* Requests preload
+
 
 ## Features
+* Add Doctype and Subset documentation --> running
 * Display the true cozysdk response tree.
+* Detect new doctypes
+* Add a custom synth dataset
+
 
 ## Requirements
 

@@ -34,11 +34,11 @@ var Application = Mn.Application.extend({
       return field.Nature === 'Subset';
     }));
     this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
-      return field.Nature === 'Doctype';
+      return field.Nature === 'DocType';
 
     }));
     this.fields = metadata.filter(function(field) {
-      return field.Nature !== 'Subset' && field.Nature !== 'Doctype';
+      return field.Nature !== 'Subset' && field.Nature !== 'DocType';
     });
   },
 

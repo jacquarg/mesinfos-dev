@@ -185,11 +185,11 @@ var Application = Mn.Application.extend({
       return field.Nature === 'Subset';
     }));
     this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
-      return field.Nature === 'Doctype';
+      return field.Nature === 'DocType';
 
     }));
     this.fields = metadata.filter(function(field) {
-      return field.Nature !== 'Subset' && field.Nature !== 'Doctype';
+      return field.Nature !== 'Subset' && field.Nature !== 'DocType';
     });
   },
 
@@ -266,10 +266,8 @@ module.exports = Backbone.Collection.extend({
   },
 
   toRawJSON: function() {
-    console.log(this);
     return this.map(function(doc) {
       var res = doc.toJSON();
-      console.log(res);
       delete res.fields;
       return res;
     });
@@ -859,6 +857,8 @@ module.exports = Mn.CompositeView.extend({
 });
 
 require.register("views/documents.js", function(exports, require, module) {
+var app = null;
+
 module.exports = Mn.CompositeView.extend({
   tagName: 'div',
   template: require('views/templates/documents'),
@@ -871,16 +871,37 @@ module.exports = Mn.CompositeView.extend({
   },
 
   initialize: function() {
+    app = require('application');
   	this.listenTo(this.collection, 'reset', this.updateDownloadButton);
+    this.listenTo(this.collection, 'reset', this.render);
+  },
+
+  serializeData: function() {
+    var data = { docType: {}, subsets: []};
+    try {
+    if (this.collection && this.collection.dsView) {
+      console.log('here');
+      var model = this.collection.dsView;
+      console.log('here1');
+      data.docType = app.docTypes.findWhere({ 'Nom': model.getDocType()}).toJSON();
+      console.log('here2');
+      console.log(app.subsets);
+
+      data.subsets = app.subsets.where({'DocType': model.getDocType()})
+        .map(function(subset) { return subset.toJSON(); });
+      console.log('here3');
+
+    }
+    console.log(data);
+  } catch (e) { console.log(e);}
+     return data;
   },
 
   updateDownloadButton: function() {
-  	console.log("hereee !!");
     // Add data to the download button
     var app = require('application');
 
     var data = app.documents.toRawJSON();
-    console.log(data);
     this.ui.downloadButton.attr('href', 'data:text/json;charset=utf-8,' +
       encodeURIComponent(JSON.stringify(data, null, 2)));
     this.ui.downloadButton.attr('download', 
@@ -1205,8 +1226,35 @@ var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
+;var locals_for_with = (locals || {});(function (docType, subsets, undefined) {
+jade_mixins["displaySubset"] = jade_interp = function(s){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<li><h4>" + (jade.escape(null == (jade_interp = s.Nom) ? "" : jade_interp)) + "&nbsp;(origine :&nbsp; " + (jade.escape(null == (jade_interp = s.Détenteur) ? "" : jade_interp)) + ") </h4><p>" + (jade.escape(null == (jade_interp = s.Description) ? "" : jade_interp)) + "</p><ul class=\"caracteristics\"><li><b>Fréquence : </b>" + (jade.escape(null == (jade_interp = s.Fréquence) ? "" : jade_interp)) + "</li><li><b>Latence :</b>" + (jade.escape(null == (jade_interp = s.Latence) ? "" : jade_interp)) + "</li></ul></li>");
+};
+buf.push("<div class=\"doctypedoc\"><h4>DocType</h4>" + (jade.escape(null == (jade_interp = docType.Nom) ? "" : jade_interp)) + "<p>" + (jade.escape(null == (jade_interp = docType.Description) ? "" : jade_interp)) + "</p>Sous-ensembles du même type :<ul>");
+// iterate subsets
+;(function(){
+  var $$obj = subsets;
+  if ('number' == typeof $$obj.length) {
 
-buf.push("<a id=\"downloaddata\" target=\"_blank\">Télécharger</a><ul class=\"documentslist\"></ul>");;return buf.join("");
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var subset = $$obj[$index];
+
+jade_mixins["displaySubset"](subset);
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      var subset = $$obj[$index];
+
+jade_mixins["displaySubset"](subset);
+    }
+
+  }
+}).call(this);
+
+buf.push("</ul></div><a id=\"downloaddata\" target=\"_blank\">Télécharger</a><ul class=\"documentslist\"></ul>");}.call(this,"docType" in locals_for_with?locals_for_with.docType:typeof docType!=="undefined"?docType:undefined,"subsets" in locals_for_with?locals_for_with.subsets:typeof subsets!=="undefined"?subsets:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {

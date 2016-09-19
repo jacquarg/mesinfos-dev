@@ -1,3 +1,5 @@
+var app = null;
+
 module.exports = Mn.CompositeView.extend({
   tagName: 'div',
   template: require('views/templates/documents'),
@@ -10,7 +12,20 @@ module.exports = Mn.CompositeView.extend({
   },
 
   initialize: function() {
+    app = require('application');
   	this.listenTo(this.collection, 'reset', this.updateDownloadButton);
+    this.listenTo(this.collection, 'reset', this.render);
+  },
+
+  serializeData: function() {
+    var data = { docType: {}, subsets: []};
+    if (this.collection && this.collection.dsView) {
+      var model = this.collection.dsView;
+      data.docType = app.docTypes.findWhere({ 'Nom': model.getDocType()}).toJSON();
+      data.subsets = app.subsets.where({'DocType': model.getDocType()})
+        .map(function(subset) { return subset.toJSON(); });
+    }
+    return data;
   },
 
   updateDownloadButton: function() {
