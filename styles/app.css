@@ -1,5 +1,5 @@
 /* General */
-@import url(http://weloveiconfonts.com/api/?family=iconicstroke);
+@import url("./weloveiconfonts/iconicstroke.css");
 
 /* iconicstroke */
 [class*="iconicstroke-"]:before {

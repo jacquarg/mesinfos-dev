@@ -2,9 +2,9 @@
   "name": "mesinfosdataplayground",
   "cozy-type": "static",
   "cozy-displayName": "MesInfos Data Playground",
-  "version": "0.0.3-dev",
+  "version": "0.0.4-dev",
   "description": "Une application pour les développeurs, pour visualiser et tester l'accès aux données du Pilote MesInfos.",
-  "icon-path": "main_icon.png",
+  "icon-path": "img/icon.svg",
   "cozy-permissions": {
     "all": {
       "description": "Visualize all the data format, and test request on the datasystem."

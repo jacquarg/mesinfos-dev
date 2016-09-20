@@ -12,7 +12,7 @@ module.exports = {
     // TODO !
     // var pkg = require('package.json');
     //return pkg.name + '-' + pkg.version;
-    return 'mesinfosdataplayground' + '-' + '0.0.1';
+    return 'mesinfosdataplayground' + '-' + '0.0.4-dev';
   },
 
   generateDisplayError: function(message)  {
