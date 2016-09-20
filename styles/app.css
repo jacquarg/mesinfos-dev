@@ -255,16 +255,23 @@ aside .typologies {
 }
 
 /* Documents */
+.documentation {
+ margin-left: 300px;
+ margin-top: 300px;
+}
+  
 .documents {
-  position: absolute;
+ margin-left: 300px;
+ /* position: absolute;
   left: 300px;
-  top: 300px;
+  top: 300px;*/
 }
 
 .documents #downloaddata {
-    /*! position: absolute; */
+ 
+  /*position: absolute;
     left: 0px;
-    top: 0px;
+    top: 0px; */
     display: block;
 }
 
@@ -343,15 +350,20 @@ aside .typologies {
 /* Message */
 .message {
   position: fixed;
-  top: 250px;
+  bottom: 0px;
   padding-left: 300px;
-  height: 30px;
+  /* height: 30px; */
   background: #aaa;
   z-index: 1000;
   width: 100%;
 }
 
 .message .display {
-  font-size: 25px;
-  font-weight: bold;
+  font-size: 15px;
+  /*! font-weight: bold; */
+}
+
+.message .close {
+  margin-left: 20px;
+  
 }

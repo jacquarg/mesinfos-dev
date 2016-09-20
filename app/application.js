@@ -60,8 +60,8 @@ var Application = Mn.Application.extend({
     var count = this.subsets.length;
     
     return ap.series(this.subsets, function(subset, index) {
-      self.trigger('message:display', displayId, 'Création de la requète ' 
-        + subset.getName() + ' ' + index + '/' + count);
+      self.trigger('message:display', displayId, index + '/' + count + 
+        ' Création de la requète ' + subset.getName());
       return subset.updateDSView();
     })
     .then(function() {

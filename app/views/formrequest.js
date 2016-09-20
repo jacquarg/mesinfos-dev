@@ -31,18 +31,17 @@ module.exports = Mn.ItemView.extend({
     app = require('application');
 
     this.listenTo(app, 'requestform:setView', this.setDSView);
-
   },
 
   setDSView: function(dsView) {
     this.model = dsView;
     // TODO : behavior .. ?
     this.updateView();
+    this.send();
     
   },
 
   updateView: function() {
-    console.debug('updateView');
     this.ui.name.val(this.model.getName());
     this.ui.queryName.val(this.model.getName());
     this.ui.docType.val(this.model.getDocType());
@@ -65,6 +64,8 @@ module.exports = Mn.ItemView.extend({
   },
 
   send: function() {
+    if (!this.model) { return console.info('No DSView to request !');}
+
     var displayId = 'datarequest';
     var self = this;
     var model = this.model;
@@ -75,17 +76,17 @@ module.exports = Mn.ItemView.extend({
 
       app.dsViews.create(model, {success: resolve, error: reject });
     })
-    .then(function() {
-      app.trigger('message:display', displayId, 
-        'Creation de la vue ' + model.getName());
-    })
+    // .then(function() {
+    //   // app.trigger('message:display', displayId, 
+    //     // 'Creation de la vue ' + model.getName());
+    // })
     .then(model.updateDSView.bind(model))
     .then(function() {
-      app.trigger('message:hide', displayId);
+      // app.trigger('message:hide', displayId);
       app.trigger('documents:fetch', model);
     })
     .catch(function(err) {
-      console.log(err);
+      console.error(err);
       app.trigger('message:error', 'Error. Try again or check the console.');
     });
   },

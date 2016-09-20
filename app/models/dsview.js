@@ -1,12 +1,10 @@
-var appName = require('lib/utils').appNameNVersion;
+var utils = require('lib/utils');
 
 module.exports = Backbone.Model.extend({
   docType: 'DSView',
 
   defaults: {
-    docTypeVersion: appName(),
-  },
-  initialize: function() {
+    docTypeVersion: utils.appNameNVersion(),
   },
 
   getDocType: function() {
@@ -26,12 +24,24 @@ module.exports = Backbone.Model.extend({
   },
 
   updateDSView: function() {
+    var app = require('application');
+    var displayId = 'updateDSView';
     var self = this;
-    return cozysdk.defineView(this.getDocType(),
-      this.getName(),
-      this.getMapFunction()).then(function(err) {
+    var start = Date.now();
+    app.trigger('message:display', displayId, 'defineView ' + self.getName());
+    
+    return cozysdk.defineView(this.getDocType(), this.getName(),
+      this.getMapFunction())
+    .then(function(err) {
+      app.trigger('message:display', displayId, 'initialize ' + self.getName());
         cozysdk.run(self.getDocType(), self.getName(), { limit: 1 });
-      });
+      })
+    .then(function() {
+      app.trigger('message:display', displayId, self.getName() + ' màj en '
+       + (Date.now() - start) / 1000 + 's.');
+    })
+    .catch(utils.generateDisplayError(
+      'Erreur pendant updateView ' + self.getName()));
   },
 
   parse: function(raw) {

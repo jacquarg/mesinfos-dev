@@ -211,8 +211,8 @@ var Application = Mn.Application.extend({
     var count = this.subsets.length;
     
     return ap.series(this.subsets, function(subset, index) {
-      self.trigger('message:display', displayId, 'Création de la requète ' 
-        + subset.getName() + ' ' + index + '/' + count);
+      self.trigger('message:display', displayId, index + '/' + count + 
+        ' Création de la requète ' + subset.getName());
       return subset.updateDSView();
     })
     .then(function() {
@@ -275,7 +275,8 @@ module.exports = Backbone.Collection.extend({
 
   fetchDSView: function(dsView) {
     this.setDSView(dsView);
-    this.fetch({ reset: true });
+    this.reset(); // reset first to empty the view.
+    this.fetch(); //{ reset: true }
   },
 
   setDSView: function(dsView) {
@@ -533,15 +534,13 @@ module.exports = {
 });
 
 require.register("models/dsview.js", function(exports, require, module) {
-var appName = require('lib/utils').appNameNVersion;
+var utils = require('lib/utils');
 
 module.exports = Backbone.Model.extend({
   docType: 'DSView',
 
   defaults: {
-    docTypeVersion: appName(),
-  },
-  initialize: function() {
+    docTypeVersion: utils.appNameNVersion(),
   },
 
   getDocType: function() {
@@ -561,12 +560,24 @@ module.exports = Backbone.Model.extend({
   },
 
   updateDSView: function() {
+    var app = require('application');
+    var displayId = 'updateDSView';
     var self = this;
-    return cozysdk.defineView(this.getDocType(),
-      this.getName(),
-      this.getMapFunction()).then(function(err) {
+    var start = Date.now();
+    app.trigger('message:display', displayId, 'defineView ' + self.getName());
+    
+    return cozysdk.defineView(this.getDocType(), this.getName(),
+      this.getMapFunction())
+    .then(function(err) {
+      app.trigger('message:display', displayId, 'initialize ' + self.getName());
         cozysdk.run(self.getDocType(), self.getName(), { limit: 1 });
-      });
+      })
+    .then(function() {
+      app.trigger('message:display', displayId, self.getName() + ' màj en '
+       + (Date.now() - start) / 1000 + 's.');
+    })
+    .catch(utils.generateDisplayError(
+      'Erreur pendant updateView ' + self.getName()));
   },
 
   parse: function(raw) {
@@ -826,6 +837,7 @@ require.register("views/app_layout.js", function(exports, require, module) {
 var MessageView = require('views/message');
 var GroupsDSView = require('views/groupsdsviews');
 var RequestForm = require('views/formrequest');
+var Documentation = require('views/documentation');
 var Documents = require('views/documents');
 var Typologies = require('views/typologies');
 
@@ -844,6 +856,7 @@ module.exports = Mn.LayoutView.extend({
   regions: {
     dsViewsList: '.dsviewshistory',
     typologies: 'aside .typologies',
+    documentation: '.documentation',
     documents: '.documents',
     requestForm: '.requestform',
     message: '.message',
@@ -858,7 +871,8 @@ module.exports = Mn.LayoutView.extend({
     this.message.show(new MessageView());
     this.dsViewsList.show(new GroupsDSView({ collection: app.dsViews}));
     this.typologies.show(new Typologies({ collection: app.subsets }));
-    this.requestForm.show(new RequestForm({ model: new DSView() }));
+    this.requestForm.show(new RequestForm());
+    this.documentation.show(new Documentation());
     this.documents.show(new Documents({ collection: app.documents }));
   },
 });
@@ -924,6 +938,37 @@ module.exports = Mn.Behavior.extend({
 
 });
 
+require.register("views/documentation.js", function(exports, require, module) {
+var app = undefined;
+
+
+module.exports = Mn.ItemView.extend({
+  tagName: 'div',
+  template: require('views/templates/documentation'),
+
+  initialize: function() {
+    app = require('application');
+    this.listenTo(app, 'documents:fetch', this.setModel);
+  },
+
+  setModel: function(model) {
+    this.model = model;
+    this.render();
+  },
+
+  serializeData: function() {
+    var data = { docType: {}, subsets: []};
+    if (this.model) {
+      data.docType = app.docTypes.findWhere({ 'Nom': this.model.getDocType()}).toJSON();
+      data.subsets = app.subsets.where({'DocType': this.model.getDocType()})
+        .map(function(subset) { return subset.toJSON(); });
+    }
+    return data;
+  },
+
+});
+});
+
 require.register("views/documentfields.js", function(exports, require, module) {
 module.exports = Mn.CompositeView.extend({
   tagName: 'li',
@@ -937,6 +982,7 @@ module.exports = Mn.CompositeView.extend({
   initialize: function() {
     this.collection = new Backbone.Collection(this.model.get('fields'));
   },
+
 });
 
 });
@@ -958,18 +1004,6 @@ module.exports = Mn.CompositeView.extend({
   initialize: function() {
     app = require('application');
   	this.listenTo(this.collection, 'reset', this.updateDownloadButton);
-    this.listenTo(this.collection, 'reset', this.render);
-  },
-
-  serializeData: function() {
-    var data = { docType: {}, subsets: []};
-    if (this.collection && this.collection.dsView) {
-      var model = this.collection.dsView;
-      data.docType = app.docTypes.findWhere({ 'Nom': model.getDocType()}).toJSON();
-      data.subsets = app.subsets.where({'DocType': model.getDocType()})
-        .map(function(subset) { return subset.toJSON(); });
-    }
-    return data;
   },
 
   updateDownloadButton: function() {
@@ -1097,18 +1131,17 @@ module.exports = Mn.ItemView.extend({
     app = require('application');
 
     this.listenTo(app, 'requestform:setView', this.setDSView);
-
   },
 
   setDSView: function(dsView) {
     this.model = dsView;
     // TODO : behavior .. ?
     this.updateView();
+    this.send();
     
   },
 
   updateView: function() {
-    console.debug('updateView');
     this.ui.name.val(this.model.getName());
     this.ui.queryName.val(this.model.getName());
     this.ui.docType.val(this.model.getDocType());
@@ -1131,6 +1164,8 @@ module.exports = Mn.ItemView.extend({
   },
 
   send: function() {
+    if (!this.model) { return console.info('No DSView to request !');}
+
     var displayId = 'datarequest';
     var self = this;
     var model = this.model;
@@ -1141,17 +1176,17 @@ module.exports = Mn.ItemView.extend({
 
       app.dsViews.create(model, {success: resolve, error: reject });
     })
-    .then(function() {
-      app.trigger('message:display', displayId, 
-        'Creation de la vue ' + model.getName());
-    })
+    // .then(function() {
+    //   // app.trigger('message:display', displayId, 
+    //     // 'Creation de la vue ' + model.getName());
+    // })
     .then(model.updateDSView.bind(model))
     .then(function() {
-      app.trigger('message:hide', displayId);
+      // app.trigger('message:hide', displayId);
       app.trigger('documents:fetch', model);
     })
     .catch(function(err) {
-      console.log(err);
+      console.error(err);
       app.trigger('message:error', 'Error. Try again or check the console.');
     });
   },
@@ -1274,7 +1309,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<div class=\"header\"><div class=\"requestform\"></div></div><div class=\"dsviewshistory\"></div><div class=\"message\"></div><div class=\"documents\"></div><aside class=\"typologies\"><h2>Les données du pilote MesInfos<div class=\"subTitle\">Jeux de synthèse</div></h2><div class=\"typologies\"></div></aside>");;return buf.join("");
+buf.push("<div class=\"header\"><div class=\"requestform\"></div></div><div class=\"dsviewshistory\"></div><div class=\"message\"></div><div class=\"documentation\"></div><div class=\"documents\"></div><aside class=\"typologies\"><h2>Les données du pilote MesInfos<div class=\"subTitle\">Jeux de synthèse</div></h2><div class=\"typologies\"></div></aside>");;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -1306,7 +1341,7 @@ if (typeof define === 'function' && define.amd) {
 }
 });
 
-;require.register("views/templates/documents.jade", function(exports, require, module) {
+;require.register("views/templates/documentation.jade", function(exports, require, module) {
 var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
@@ -1316,7 +1351,7 @@ jade_mixins["displaySubset"] = jade_interp = function(s){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 buf.push("<li><h4>" + (jade.escape(null == (jade_interp = s.Nom) ? "" : jade_interp)) + "&nbsp;(origine :&nbsp; " + (jade.escape(null == (jade_interp = s.Détenteur) ? "" : jade_interp)) + ") </h4><p>" + (jade.escape(null == (jade_interp = s.Description) ? "" : jade_interp)) + "</p><ul class=\"caracteristics\"><li><b>Fréquence : </b>" + (jade.escape(null == (jade_interp = s.Fréquence) ? "" : jade_interp)) + "</li><li><b>Latence :</b>" + (jade.escape(null == (jade_interp = s.Latence) ? "" : jade_interp)) + "</li></ul></li>");
 };
-buf.push("<div class=\"doctypedoc\"><h4>DocType :&nbsp;" + (jade.escape(null == (jade_interp = docType.Nom) ? "" : jade_interp)) + "</h4><p>" + (jade.escape(null == (jade_interp = docType.Description) ? "" : jade_interp)) + "</p>Sous-ensembles du même type :<ul>");
+buf.push("<h4>DocType :&nbsp;" + (jade.escape(null == (jade_interp = docType.Nom) ? "" : jade_interp)) + "</h4><p>" + (jade.escape(null == (jade_interp = docType.Description) ? "" : jade_interp)) + "</p>Sous-ensembles du même type :<ul>");
 // iterate subsets
 ;(function(){
   var $$obj = subsets;
@@ -1339,7 +1374,26 @@ jade_mixins["displaySubset"](subset);
   }
 }).call(this);
 
-buf.push("</ul></div><a id=\"downloaddata\" target=\"_blank\">Télécharger</a><span class=\"openBracket\">[</span><ul class=\"documentslist\"></ul><span class=\"closeBracket\">]</span>");}.call(this,"docType" in locals_for_with?locals_for_with.docType:typeof docType!=="undefined"?docType:undefined,"subsets" in locals_for_with?locals_for_with.subsets:typeof subsets!=="undefined"?subsets:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
+buf.push("</ul>");}.call(this,"docType" in locals_for_with?locals_for_with.docType:typeof docType!=="undefined"?docType:undefined,"subsets" in locals_for_with?locals_for_with.subsets:typeof subsets!=="undefined"?subsets:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
+};
+if (typeof define === 'function' && define.amd) {
+  define([], function() {
+    return __templateData;
+  });
+} else if (typeof module === 'object' && module && module.exports) {
+  module.exports = __templateData;
+} else {
+  __templateData;
+}
+});
+
+;require.register("views/templates/documents.jade", function(exports, require, module) {
+var __templateData = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<a id=\"downloaddata\" target=\"_blank\">Télécharger</a><span class=\"openBracket\">[</span><ul class=\"documentslist\"></ul><span class=\"closeBracket\">]</span>");;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {

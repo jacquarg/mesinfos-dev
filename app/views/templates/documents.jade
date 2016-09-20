@@ -1,33 +1,3 @@
-mixin displaySubset(s)
-  li
-    h4= s.Nom
-     |&nbsp;(origine :&nbsp; 
-     =s.Détenteur
-     | ) 
-
-    p= s.Description
-
-    ul.caracteristics
-      li
-        b Fréquence : 
-        =s.Fréquence
-
-      li
-        b Latence :
-        =s.Latence
-
-
-.doctypedoc
-  h4 DocType :&nbsp;
-    =docType.Nom
-  
-  p= docType.Description
-
-  | Sous-ensembles du même type :
-  ul
-    each subset in subsets
-      +displaySubset(subset)
-
 a#downloaddata(target='_blank') Télécharger
 span.openBracket [
 ul.documentslist

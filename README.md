@@ -8,8 +8,6 @@ Un outils pour les développeurs autours des données du Pilote MesInfos :
 # TODO
 
 ## Bugs
-* Better feedback while waiting for request : Chronometer "be carefull, your app will be that slow on startup"
-* Requests preload
 * Update UX
 
 ## New features

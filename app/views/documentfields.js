@@ -10,4 +10,5 @@ module.exports = Mn.CompositeView.extend({
   initialize: function() {
     this.collection = new Backbone.Collection(this.model.get('fields'));
   },
+
 });
