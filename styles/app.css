@@ -155,6 +155,7 @@ aside .typologies {
   background: #fafafa;
   z-index: 100;
   
+  height: 250px;
 }
 
 .requestform {
@@ -176,7 +177,7 @@ aside .typologies {
 
 .requestform input, .requestform textarea {
   font-family: 'monospace';
-  width: 10em;
+  width: 15em;
   background: none;
   
   font-size: 16px;
@@ -186,7 +187,7 @@ aside .typologies {
 }
 
 .requestform #inputsend {
-  position: relative;
+  /*! position: relative; */
   left: 16em;
   bottom: 2em;
 }
@@ -194,6 +195,7 @@ aside .typologies {
 .requestform .defineview,
 .requestform .queryview {
   float: left;
+  margin-right: 10px;
 }
 
 /* Historique (dsviews) */
@@ -204,7 +206,9 @@ aside .typologies {
   z-index: 110;
   position: fixed;
   right: 0;
-  height: 100%;
+  height: 250px;
+  overflow-y: auto;
+  top: 0;
 }
 
 
@@ -258,9 +262,10 @@ aside .typologies {
 }
 
 .documents #downloaddata {
-    position: absolute;
+    /*! position: absolute; */
     left: 0px;
     top: 0px;
+    display: block;
 }
 
 .documents ul.documentslist {

@@ -1223,7 +1223,7 @@ jade_mixins["displaySubset"] = jade_interp = function(s){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 buf.push("<li><h4>" + (jade.escape(null == (jade_interp = s.Nom) ? "" : jade_interp)) + "&nbsp;(origine :&nbsp; " + (jade.escape(null == (jade_interp = s.Détenteur) ? "" : jade_interp)) + ") </h4><p>" + (jade.escape(null == (jade_interp = s.Description) ? "" : jade_interp)) + "</p><ul class=\"caracteristics\"><li><b>Fréquence : </b>" + (jade.escape(null == (jade_interp = s.Fréquence) ? "" : jade_interp)) + "</li><li><b>Latence :</b>" + (jade.escape(null == (jade_interp = s.Latence) ? "" : jade_interp)) + "</li></ul></li>");
 };
-buf.push("<div class=\"doctypedoc\"><h4>DocType</h4>" + (jade.escape(null == (jade_interp = docType.Nom) ? "" : jade_interp)) + "<p>" + (jade.escape(null == (jade_interp = docType.Description) ? "" : jade_interp)) + "</p>Sous-ensembles du même type :<ul>");
+buf.push("<div class=\"doctypedoc\"><h4>DocType :&nbsp;" + (jade.escape(null == (jade_interp = docType.Nom) ? "" : jade_interp)) + "</h4><p>" + (jade.escape(null == (jade_interp = docType.Description) ? "" : jade_interp)) + "</p>Sous-ensembles du même type :<ul>");
 // iterate subsets
 ;(function(){
   var $$obj = subsets;
