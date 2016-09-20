@@ -8,7 +8,6 @@ Un outils pour les développeurs autours des données du Pilote MesInfos :
 # TODO
 
 ## Bugs
-* Handle big fixtures addition.
 * Better feedback while waiting for request : Chronometer "be carefull, your app will be that slow on startup"
 * Requests preload
 * Update UX
@@ -16,6 +15,7 @@ Un outils pour les développeurs autours des données du Pilote MesInfos :
 ## New features
 * Add a custom synth dataset
 * Detect new doctypes
+* Avoid updateRequest on subset on each startup.
 
 ## Requirements
 

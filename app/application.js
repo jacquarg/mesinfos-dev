@@ -1,6 +1,9 @@
 // Main application that create a Mn.Application singleton and
 // exposes it.
 
+var utils = require('lib/utils');
+var ap = require('lib/asyncpromise');
+
 var Router = require('router');
 var AppLayout = require('views/app_layout');
 
@@ -52,9 +55,23 @@ var Application = Mn.Application.extend({
     // return this.subsets.reduce(function(agg, subset) {
     //   return agg.then(subset.updateDSView());
     // }, Promise.resolve());
+    var displayId = 'defineSubsetView';
+    var self = this;
+    var count = this.subsets.length;
+    
+    return ap.series(this.subsets, function(subset, index) {
+      self.trigger('message:display', displayId, 'Création de la requète ' 
+        + subset.getName() + ' ' + index + '/' + count);
+      return subset.updateDSView();
+    })
+    .then(function() {
+      self.trigger('message:hide', displayId);
+    })
+    .catch(utils.generateDisplayError(
+      "Erreur lors de l'initialisation des requêtes."));
 
     // Deactivate
-    return Promise.resolve();
+    // return Promise.resolve();
   },
 
   onBeforeStart: function() {

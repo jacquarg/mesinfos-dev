@@ -14,4 +14,12 @@ module.exports = {
     //return pkg.name + '-' + pkg.version;
     return 'mesinfosdataplayground' + '-' + '0.0.1';
   },
-}
+
+  generateDisplayError: function(message)  {
+    return function(err) {
+      console.error(err);
+      require('application').trigger('message:error', message);
+    };
+  },
+
+};

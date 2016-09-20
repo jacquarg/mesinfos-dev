@@ -152,6 +152,9 @@ require.register("application.js", function(exports, require, module) {
 // Main application that create a Mn.Application singleton and
 // exposes it.
 
+var utils = require('lib/utils');
+var ap = require('lib/asyncpromise');
+
 var Router = require('router');
 var AppLayout = require('views/app_layout');
 
@@ -203,9 +206,23 @@ var Application = Mn.Application.extend({
     // return this.subsets.reduce(function(agg, subset) {
     //   return agg.then(subset.updateDSView());
     // }, Promise.resolve());
+    var displayId = 'defineSubsetView';
+    var self = this;
+    var count = this.subsets.length;
+    
+    return ap.series(this.subsets, function(subset, index) {
+      self.trigger('message:display', displayId, 'Création de la requète ' 
+        + subset.getName() + ' ' + index + '/' + count);
+      return subset.updateDSView();
+    })
+    .then(function() {
+      self.trigger('message:hide', displayId);
+    })
+    .catch(utils.generateDisplayError(
+      "Erreur lors de l'initialisation des requêtes."));
 
     // Deactivate
-    return Promise.resolve();
+    // return Promise.resolve();
   },
 
   onBeforeStart: function() {
@@ -402,7 +419,28 @@ module.exports = Backbone.Collection.extend({
 
 });
 
-require.register("lib/groupbyprojection.js", function(exports, require, module) {
+require.register("lib/asyncpromise.js", function(exports, require, module) {
+module.exports = {
+  
+  series: function(iterable, callback, self) {
+    var results = [];
+    
+    return iterable.reduce(function(sequence, id, index, array) {
+      return sequence.then(function(res) {
+        results.push(res);
+        return callback.call(self, id, index, array);
+      });
+    }, Promise.resolve(true)).then(function(res) {
+      return new Promise(function(resolve, reject) {
+        results.push(res);
+        resolve(results.slice(1));
+      });
+    });
+  },
+}
+});
+
+;require.register("lib/groupbyprojection.js", function(exports, require, module) {
 var Filtered = BackboneProjections.Filtered;
 var Sorted = BackboneProjections.Sorted;
 
@@ -482,11 +520,19 @@ module.exports = {
     //return pkg.name + '-' + pkg.version;
     return 'mesinfosdataplayground' + '-' + '0.0.1';
   },
-}
+
+  generateDisplayError: function(message)  {
+    return function(err) {
+      console.error(err);
+      require('application').trigger('message:error', message);
+    };
+  },
+
+};
 
 });
 
-;require.register("models/dsview.js", function(exports, require, module) {
+require.register("models/dsview.js", function(exports, require, module) {
 var appName = require('lib/utils').appNameNVersion;
 
 module.exports = Backbone.Model.extend({
@@ -640,8 +686,14 @@ module.exports = new Properties();
 require.register("models/subset.js", function(exports, require, module) {
 var DSView = require('models/dsview');
 var utils = require('lib/utils');
+var ap = require('lib/asyncpromise');
+var app = null;
 
 module.exports = DSView.extend({
+  initialize: function() {
+    app = require('application');
+  },
+
   getDocType: function() {
     return this.get('DocType');
   },
@@ -677,19 +729,30 @@ module.exports = DSView.extend({
   getSynthSetName: function(){
     return this.get('Exemple');
   },
+
   insertSynthSet: function() {
-    var app = require('application');
+    var displayId = 'insertsynthset';
     var self = this;
     if (!this.synthSetAvailable()) { return Promise.resolve(false); }
-
+    
     return Promise.resolve($.getJSON('data/'+ self.getSynthSetName() +'.json'))
     .then(function(raw) {
-      return Promise.all(raw.map(self._insertOneSynthDoc, self));
-    }).then(function(ids) {
+      var count = raw.length;
+      return ap.series(raw, function(doc, index) {
+        app.trigger('message:display', displayId, 'Ajout de documents '
+         + self.getDocType() + ' de synthèse ' + index + '/' + count);
+        return self._insertOneSynthDoc(doc);
+      });
+    })
+    .then(function(ids) {
       ids = ids.map(function(obj) { return obj._id; });
-      
-      return app.properties.addSynthSetIds(self.getSynthSetName(), ids)
-    }).catch(function(err) {
+      app.trigger('message:display', displayId, 'Mise à jour des paramètres');
+      return app.properties.addSynthSetIds(self.getSynthSetName(), ids);
+    })
+    .then(function() { 
+      app.trigger('message:hide', displayId);
+    })
+    .catch(function(err) {
       console.error(err);
       app.trigger('message:error', 'Error while processing data. Retry or check console.');
     });
@@ -703,13 +766,33 @@ module.exports = DSView.extend({
   },
 
   cleanSynthSet: function() {
+    var displayId = 'deletesynthset';
     var self = this;
-    return Promise.all(self.get('synthSetIds').map(
-      function(id) { return cozysdk.destroy(self.getDocType(), id); })
-    ).then(console.log).catch(console.log).then(function(res) {
-      var app = require('application');
-      app.properties.cleanSynthSetIds(self.getSynthSetName());
+
+    var count = self.get('synthSetIds').length;
+    
+    return ap.series(self.get('synthSetIds'), function(id, index) {
+        app.trigger('message:display', displayId, 'Suppression des documents '
+         + self.getDocType() + ' de synthèse ' + index + '/' + count);
+        return cozysdk.destroy(self.getDocType(), id);
+    })
+    .then(function() {
+      app.trigger('message:display', displayId, 'Màj des paramètres');
+      self.unset('synthSetIds');
+      return app.properties.cleanSynthSetIds(self.getSynthSetName());
+    })
+    .then(function() {
+      app.trigger('message:hide', displayId);
+    })
+    .catch(function(err) {
+      console.error(err);
+      app.trigger('message:error', 'Erreur pendant la suppression de données de synthèse. Réessayer, ou consultez la console pour en savoir plus.')
     });
+
+    // return Promise.all(self.get('synthSetIds').map(
+    //   function(id) { return cozysdk.destroy(self.getDocType(), id); })
+    // )
+
   },
 
   synthSetInDS: function() {
@@ -984,7 +1067,6 @@ require.register("views/formrequest.js", function(exports, require, module) {
 var app = undefined;
 var DSView = require('models/dsview');
 
-
 module.exports = Mn.ItemView.extend({
 
   tagName: 'div',
@@ -1049,6 +1131,7 @@ module.exports = Mn.ItemView.extend({
   },
 
   send: function() {
+    var displayId = 'datarequest';
     var self = this;
     var model = this.model;
     return new Promise(function(resolve, reject) {
@@ -1059,11 +1142,12 @@ module.exports = Mn.ItemView.extend({
       app.dsViews.create(model, {success: resolve, error: reject });
     })
     .then(function() {
-      app.trigger('message:display', 'Creation de la vue ' + model.getName());
+      app.trigger('message:display', displayId, 
+        'Creation de la vue ' + model.getName());
     })
     .then(model.updateDSView.bind(model))
     .then(function() {
-      app.trigger('message:hide');
+      app.trigger('message:hide', displayId);
       app.trigger('documents:fetch', model);
     })
     .catch(function(err) {
@@ -1107,30 +1191,39 @@ module.exports = Mn.ItemView.extend({
       message: '.display',
     },
     events: {
-      'click .close': 'onHide',
+      'click .close': 'onClose',
     },
 
     initialize: function() {
       app = require('application');
+      this.messages = {};
       this.listenTo(app, 'message:display', this.onDisplay);
       this.listenTo(app, 'message:hide', this.onHide);
       this.listenTo(app, 'message:error', this.onDisplay);
     },
 
-    onDisplay: function(message) {
-      console.log("display");
-      console.log(arguments);
-      // this.$el.css('display', 'block');
-
-      this.ui.message.text(message);
+    serializeData: function() {
+      return { messages: this.messages  };
     },
 
-    onHide: function() {
-      console.log('hide');
-      this.ui.message.empty();
-      // $(this.el.css('display', 'none');
+    onError: function(message) {
+      this.onDisplay(Math.ceil(Math.random() * 10000), message);
+    },
+    onDisplay: function(id, message) {
+      this.messages[id] = message;
+      this.render();
+    },
 
-    }
+    onClose: function(ev) {
+      this.onHide(ev.currentTarget.dataset.messageid);
+    },
+
+    onHide: function(id) {
+      delete this.messages[id];
+      
+      this.render();
+
+    },
 
 });
 
@@ -1364,8 +1457,38 @@ var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
+;var locals_for_with = (locals || {});(function (messages, undefined) {
+jade_mixins["displayMessage"] = jade_interp = function(id, m){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<li><span class=\"display\">" + (jade.escape(null == (jade_interp = m) ? "" : jade_interp)) + "</span><span" + (jade.attr("data-messageId", id, true, false)) + " class=\"close\">X</span></li>");
+};
+if ( (messages.length != 0))
+{
+}
+buf.push("<ul>");
+// iterate messages
+;(function(){
+  var $$obj = messages;
+  if ('number' == typeof $$obj.length) {
 
-buf.push("<span class=\"close\">X</span><span class=\"display\"></span>");;return buf.join("");
+    for (var id = 0, $$l = $$obj.length; id < $$l; id++) {
+      var message = $$obj[id];
+
+jade_mixins["displayMessage"](id, message);
+    }
+
+  } else {
+    var $$l = 0;
+    for (var id in $$obj) {
+      $$l++;      var message = $$obj[id];
+
+jade_mixins["displayMessage"](id, message);
+    }
+
+  }
+}).call(this);
+
+buf.push("</ul>");}.call(this,"messages" in locals_for_with?locals_for_with.messages:typeof messages!=="undefined"?messages:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {

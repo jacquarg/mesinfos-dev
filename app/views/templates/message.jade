@@ -1,3 +1,9 @@
-span.close X
-span.display
+mixin displayMessage(id, m)
+  li
+    span.display= m
+    span.close(data-messageId=id) X
 
+if (messages.length != 0)
+ul
+  each message, id in messages
+    +displayMessage(id, message)

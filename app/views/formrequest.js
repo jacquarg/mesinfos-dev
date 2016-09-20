@@ -1,7 +1,6 @@
 var app = undefined;
 var DSView = require('models/dsview');
 
-
 module.exports = Mn.ItemView.extend({
 
   tagName: 'div',
@@ -66,6 +65,7 @@ module.exports = Mn.ItemView.extend({
   },
 
   send: function() {
+    var displayId = 'datarequest';
     var self = this;
     var model = this.model;
     return new Promise(function(resolve, reject) {
@@ -76,11 +76,12 @@ module.exports = Mn.ItemView.extend({
       app.dsViews.create(model, {success: resolve, error: reject });
     })
     .then(function() {
-      app.trigger('message:display', 'Creation de la vue ' + model.getName());
+      app.trigger('message:display', displayId, 
+        'Creation de la vue ' + model.getName());
     })
     .then(model.updateDSView.bind(model))
     .then(function() {
-      app.trigger('message:hide');
+      app.trigger('message:hide', displayId);
       app.trigger('documents:fetch', model);
     })
     .catch(function(err) {

@@ -8,29 +8,38 @@ module.exports = Mn.ItemView.extend({
       message: '.display',
     },
     events: {
-      'click .close': 'onHide',
+      'click .close': 'onClose',
     },
 
     initialize: function() {
       app = require('application');
+      this.messages = {};
       this.listenTo(app, 'message:display', this.onDisplay);
       this.listenTo(app, 'message:hide', this.onHide);
       this.listenTo(app, 'message:error', this.onDisplay);
     },
 
-    onDisplay: function(message) {
-      console.log("display");
-      console.log(arguments);
-      // this.$el.css('display', 'block');
-
-      this.ui.message.text(message);
+    serializeData: function() {
+      return { messages: this.messages  };
     },
 
-    onHide: function() {
-      console.log('hide');
-      this.ui.message.empty();
-      // $(this.el.css('display', 'none');
+    onError: function(message) {
+      this.onDisplay(Math.ceil(Math.random() * 10000), message);
+    },
+    onDisplay: function(id, message) {
+      this.messages[id] = message;
+      this.render();
+    },
 
-    }
+    onClose: function(ev) {
+      this.onHide(ev.currentTarget.dataset.messageid);
+    },
+
+    onHide: function(id) {
+      delete this.messages[id];
+      
+      this.render();
+
+    },
 
 });

@@ -1,7 +1,13 @@
 var DSView = require('models/dsview');
 var utils = require('lib/utils');
+var ap = require('lib/asyncpromise');
+var app = null;
 
 module.exports = DSView.extend({
+  initialize: function() {
+    app = require('application');
+  },
+
   getDocType: function() {
     return this.get('DocType');
   },
@@ -37,19 +43,30 @@ module.exports = DSView.extend({
   getSynthSetName: function(){
     return this.get('Exemple');
   },
+
   insertSynthSet: function() {
-    var app = require('application');
+    var displayId = 'insertsynthset';
     var self = this;
     if (!this.synthSetAvailable()) { return Promise.resolve(false); }
-
+    
     return Promise.resolve($.getJSON('data/'+ self.getSynthSetName() +'.json'))
     .then(function(raw) {
-      return Promise.all(raw.map(self._insertOneSynthDoc, self));
-    }).then(function(ids) {
+      var count = raw.length;
+      return ap.series(raw, function(doc, index) {
+        app.trigger('message:display', displayId, 'Ajout de documents '
+         + self.getDocType() + ' de synthèse ' + index + '/' + count);
+        return self._insertOneSynthDoc(doc);
+      });
+    })
+    .then(function(ids) {
       ids = ids.map(function(obj) { return obj._id; });
-      
-      return app.properties.addSynthSetIds(self.getSynthSetName(), ids)
-    }).catch(function(err) {
+      app.trigger('message:display', displayId, 'Mise à jour des paramètres');
+      return app.properties.addSynthSetIds(self.getSynthSetName(), ids);
+    })
+    .then(function() { 
+      app.trigger('message:hide', displayId);
+    })
+    .catch(function(err) {
       console.error(err);
       app.trigger('message:error', 'Error while processing data. Retry or check console.');
     });
@@ -63,13 +80,33 @@ module.exports = DSView.extend({
   },
 
   cleanSynthSet: function() {
+    var displayId = 'deletesynthset';
     var self = this;
-    return Promise.all(self.get('synthSetIds').map(
-      function(id) { return cozysdk.destroy(self.getDocType(), id); })
-    ).then(console.log).catch(console.log).then(function(res) {
-      var app = require('application');
-      app.properties.cleanSynthSetIds(self.getSynthSetName());
+
+    var count = self.get('synthSetIds').length;
+    
+    return ap.series(self.get('synthSetIds'), function(id, index) {
+        app.trigger('message:display', displayId, 'Suppression des documents '
+         + self.getDocType() + ' de synthèse ' + index + '/' + count);
+        return cozysdk.destroy(self.getDocType(), id);
+    })
+    .then(function() {
+      app.trigger('message:display', displayId, 'Màj des paramètres');
+      self.unset('synthSetIds');
+      return app.properties.cleanSynthSetIds(self.getSynthSetName());
+    })
+    .then(function() {
+      app.trigger('message:hide', displayId);
+    })
+    .catch(function(err) {
+      console.error(err);
+      app.trigger('message:error', 'Erreur pendant la suppression de données de synthèse. Réessayer, ou consultez la console pour en savoir plus.')
     });
+
+    // return Promise.all(self.get('synthSetIds').map(
+    //   function(id) { return cozysdk.destroy(self.getDocType(), id); })
+    // )
+
   },
 
   synthSetInDS: function() {
