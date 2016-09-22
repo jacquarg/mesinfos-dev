@@ -1,29 +1,37 @@
-mixin displaySubset(s)
-  li
-    h4= s.Nom
-     |&nbsp;(origine :&nbsp; 
-     =s.Détenteur
-     | ) 
+.toggle
+  h4= Nom
+  //- img(src="img/holders/logo_" + Détenteur.toLowerCase() + ".png", title=Détenteur)
 
-    p= s.Description
-
-    ul.caracteristics
-      li
-        b Fréquence : 
-        =s.Fréquence
-
-      li
-        b Latence :
-        =s.Latence
+if synthSetInsertable
+  button.insert.btn.btn-primary(type="button")
+    span.iconicstroke-cloud-upload
+    | Insérer dans le Cozy
+if synthSetInDS
+  button.delete.btn.btn-danger(type="button")
+    span.iconicstroke-trash-stroke
+    | Supprimer du Cozy
 
 
+.subset
+  p= Description
+  
+  ul.caracteristiques
+    li
+      b Fréquence :&nbsp;
+      = Fréquence
+    li
+      b Latence :&nbsp;
+      = Latence
+.doctype
+  h5 DocType :&nbsp;
+    = docType.Nom
 
-h4 DocType :&nbsp;
-  =docType.Nom
+  p= docType.Description
 
-p= docType.Description
-
-| Sous-ensembles du même type :
-ul
-  each subset in subsets
-    +displaySubset(subset)
+  .similaires
+    h6 Du même type :
+    ul
+      each s in subsets
+        li
+          a(href='?DocType=' + DocType + '#' + s.Nom)= s.Nom
+ 

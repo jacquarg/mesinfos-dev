@@ -104,7 +104,7 @@ module.exports = application;
 
 document.addEventListener('DOMContentLoaded', function() {
   application.prepare()
-    .then(function() { application.prepareInBackground();})
+    // .then(function() { application.prepareInBackground();})
     .then(application.start.bind(application));
 });
 

@@ -19,7 +19,7 @@ module.exports = Mn.LayoutView.extend({
 
   regions: {
     dsViewsList: '.dsviewshistory',
-    typologies: 'aside .typologies',
+    typologies: 'nav.typologies',
     documentation: '.documentation',
     documents: '.documents',
     requestForm: '.requestform',

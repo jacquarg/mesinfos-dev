@@ -1,5 +1,8 @@
 /* General */
-@import url("./weloveiconfonts/iconicstroke.css");
+@import url("./vendors/bootstrap/bootstrap.min.css");
+@import url("./vendors/bootstrap/bootstrap-theme.min.css");
+
+@import url("./vendors/weloveiconfonts/iconicstroke.css");
 
 /* iconicstroke */
 [class*="iconicstroke-"]:before {
@@ -194,21 +197,22 @@ aside .typologies {
 
 .requestform .defineview,
 .requestform .queryview {
-  float: left;
+
   margin-right: 10px;
 }
 
 /* Historique (dsviews) */
 .dsviewshistory {
-  width: 200px;
+/*  width: 200px;*/
   /*! margin-top: 60px; */
   /* border-left: 2px solid #444; */
-  z-index: 110;
+ /* z-index: 110;
   position: fixed;
   right: 0;
   height: 250px;
   overflow-y: auto;
   top: 0;
+  */
 }
 
 
@@ -256,8 +260,8 @@ aside .typologies {
 
 /* Documents */
 .documentation {
- margin-left: 300px;
- margin-top: 300px;
+ /*margin-left: 300px;
+ margin-top: 300px;*/
 }
   
 .documents {
