@@ -4,6 +4,6 @@ mixin displayMessage(id, m)
     span.close(data-messageId=id) X
 
 if (messages.length != 0)
-ul
-  each message, id in messages
-    +displayMessage(id, message)
+  ul
+    each message, id in messages
+      +displayMessage(id, message)

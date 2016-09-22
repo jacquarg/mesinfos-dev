@@ -1,10 +1,11 @@
 module.exports = Mn.ItemView.extend({
     tagName: 'li',
+    className: 'subset',
 
     template: require('views/templates/subsetitem'),
 
     events: {
-      'click h4': 'setDSView',
+      'click': 'setDSView',
     },
 
     setDSView: function() {

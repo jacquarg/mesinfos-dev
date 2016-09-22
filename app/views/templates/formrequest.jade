@@ -1,4 +1,4 @@
-h2 Requêtes au datasystem
+h3 Requêtes au datasystem
 
 .defineview
   .method cozysdk.
@@ -12,8 +12,8 @@ h2 Requêtes au datasystem
       input#inputname.param(type="text", placeholder="Name", name="name", value="MyRequest")
       span ,
     li
-      //-span "
-      textarea#inputmap(placeholder="", row="5")
+      //- span "
+      textarea#inputmap(placeholder="", rows="3")
         | function(doc) {
         |   emit(doc._id);
         | }
@@ -32,11 +32,11 @@ h2 Requêtes au datasystem
       span ,
     li
       //-span "
-      textarea#queryparams(placeholder="", row="5")
+      textarea#queryparams(placeholder="", rows="5")
         | {
         |   include_docs: true,
         |   limit: 5,
         | }
       span ");
 
-button#inputsend Envoyer
+button.btn.btn-success#inputsend Envoyer →

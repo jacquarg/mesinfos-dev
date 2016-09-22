@@ -1,37 +1,39 @@
-.toggle
-  h4= Nom
+.title
+  span.typologie= Typologie
+    | &nbsp;/&nbsp;
+  h2.subset= Nom
+
   //- img(src="img/holders/logo_" + Détenteur.toLowerCase() + ".png", title=Détenteur)
 
-if synthSetInsertable
-  button.insert.btn.btn-primary(type="button")
-    span.iconicstroke-cloud-upload
-    | Insérer dans le Cozy
-if synthSetInDS
-  button.delete.btn.btn-danger(type="button")
-    span.iconicstroke-trash-stroke
-    | Supprimer du Cozy
+  if synthSetInsertable
+    button.insert.btn.btn-primary(type="button")
+      span.iconicstroke-cloud-upload
+      | &nbsp;Insérer dans le Cozy
+  if synthSetInDS
+    button.delete.btn.btn-danger(type="button")
+      span.iconicstroke-trash-stroke
+      | &nbsp;Supprimer du Cozy
 
+.row  
+  .subset.col-xs-6
+    p= Description
+    
+    ul.caracteristiques
+      li
+        b Fréquence :&nbsp;
+        = Fréquence
+      li
+        b Latence :&nbsp;
+        = Latence
+  .doctype.col-xs-6
+    .well
+      | DocType :&nbsp;
+      b= docType.Nom
 
-.subset
-  p= Description
-  
-  ul.caracteristiques
-    li
-      b Fréquence :&nbsp;
-      = Fréquence
-    li
-      b Latence :&nbsp;
-      = Latence
-.doctype
-  h5 DocType :&nbsp;
-    = docType.Nom
+      p= docType.Description
 
-  p= docType.Description
-
-  .similaires
-    h6 Du même type :
-    ul
-      each s in subsets
-        li
-          a(href='?DocType=' + DocType + '#' + s.Nom)= s.Nom
- 
+      .similaires
+        | Du même type :
+        ul
+          each s in subsets
+            li= s.Nom

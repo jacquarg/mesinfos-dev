@@ -45,7 +45,7 @@ h1 {
   margin-bottom: 5px;
 }
 
-h2, h3 {
+h2 {
   text-align: center;
   font-family: 'Grand Hotel', cursive;
   font-size: 30px;
@@ -53,8 +53,15 @@ h2, h3 {
   /* line-height: 41.5px;  */
 }
 
-h4 {
+h3 {
+  /*text-align: center;*/
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  /*font-size: 30px;*/
+  /*color: #aaaaaa;*/
   
+}
+
+h4 {  
   margin: 0;
   margin-top: 15px;
   margin-bottom: 12px;
@@ -83,91 +90,62 @@ h4 {
 
 
 /* Typologies */
-aside.typologies {
-  position: fixed;
-  left: 10px;
-  width: 250px;
-  height: 90%;
-  top: 5%;
-  border: solid 5px #aaaaaaAA;
-  z-index: 1000;
-}
-
-.typologies h2 {
-  position: absolute;
-  background-color: #fdfdfd;
-  margin: 0 10px 0 0;
-  padding: 25px 0;
-  /*! z-index: 10; */
-  /*! border-bottom: 10px lineargradient(; */
-}
-
-
-aside .typologies {
-  overflow: auto;
-  height: calc(100% - 150px);
-  margin-right: -3px;
-  padding-top: 150px;
-  background-color: #fdfdfd;
-  
-  /*! z-index: 1000; */
-}
-
-
-.typologies h2 .subTitle {
+.typologies .dropdown-toggle {
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  color: #444;
+  text-transform: uppercase;
 }
 
-.typologies h3 {
-  margin-bottom: 15px;
-}
-
-.typologies h4 {
-  font-size: 16px;
-  margin: 5px;
-  line-height: 22px;
+.typologies li.subset {
+  white-space: nowrap;
+  padding: 5px;
   cursor: pointer;
+}
+.typologies li.subset .imgcontainer {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+}
   
-  clear: both;
-}
-
-.typologies h4 img {
+.typologies li.subset img {
   height: 18px;
-  float: left;
   margin-right: 5px;
-  margin-top: 2px;
+  /*! margin-top: 2px; */
 }
 
-.typologies .insert, .typologies .delete {
+/* Documentaiton */
+
+.documentation .title {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  
+}
+.documentation .typologie {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.documentation h2.subset {
+  display: inline;
+  margin-left: 10px;
+}
+
+.documentation button {
   float: right;
+  margin: 5px;
 }
-.typologies ul {
+
+.documentation .subset ul {
   list-style: none;
-  padding: 0px;
+  padding-left: 0px;
 }
+
+.documentation .doctype ul {
+  padding-left: 20px;
+}
+
 
 /* Requestform */
-.header {
-  position: fixed;
-  width: 100%;
-  top: 0px;
-  left: 0px;
-  padding-left: 300px;
-  background: #fafafa;
-  z-index: 100;
-  
-  height: 250px;
-}
-
-.requestform {
-  font-family: 'monospace';
-}
-
-.requestform h2 {
-  text-align: left;
-}
 .requestform ul {
   list-style: none;
   margin: 0px;
@@ -178,51 +156,36 @@ aside .typologies {
   margin-top: 5px;
 }
 
+.requestform .method {
+  font-family: 'monospace';
+} 
+
 .requestform input, .requestform textarea {
   font-family: 'monospace';
-  width: 15em;
+  width: 20em;
   background: none;
-  
+
   font-size: 16px;
   border: none;
   border-left: dotted 1px #999;
   border-bottom: solid 1px #333;
 }
 
+.requestform textarea {
+  overflow: hidden;
+}
+
 .requestform #inputsend {
-  /*! position: relative; */
-  left: 16em;
-  bottom: 2em;
+  /*! float: right; */
+  margin-bottom: 15px;
 }
 
 .requestform .defineview,
 .requestform .queryview {
-
-  margin-right: 10px;
+  margin: 20px 0;
 }
 
 /* Historique (dsviews) */
-.dsviewshistory {
-/*  width: 200px;*/
-  /*! margin-top: 60px; */
-  /* border-left: 2px solid #444; */
- /* z-index: 110;
-  position: fixed;
-  right: 0;
-  height: 250px;
-  overflow-y: auto;
-  top: 0;
-  */
-}
-
-
-.dsviewshistory h3 {
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  color: #999;
-  margin-bottom: 10px;
-  text-align: left;
-}
 
 .dsviewslist>ul {
   list-style: none;
@@ -264,19 +227,9 @@ aside .typologies {
  margin-top: 300px;*/
 }
   
-.documents {
- margin-left: 300px;
- /* position: absolute;
-  left: 300px;
-  top: 300px;*/
-}
-
 .documents #downloaddata {
- 
-  /*position: absolute;
-    left: 0px;
-    top: 0px; */
-    display: block;
+  float: right;
+  
 }
 
 .documents ul.documentslist {
@@ -317,7 +270,7 @@ aside .typologies {
     max-width: 60em;
     display: inline-block;
     overflow: hidden;
-    height: 1em;
+    height: 1.1em;
     /*! line-height: 1em; */
 }
 
@@ -353,15 +306,19 @@ aside .typologies {
 
 /* Message */
 .message {
-  position: fixed;
-  bottom: 0px;
-  padding-left: 300px;
-  /* height: 30px; */
-  background: #aaa;
+  padding: 5px;
+  background: #000;
+  color: green;
   z-index: 1000;
   width: 100%;
+  font-family: 'monospace';
+  margin: 15px 0;
 }
 
+.message ul {
+  list-style-type: '$ ';
+  padding-left: 20px;
+}
 .message .display {
   font-size: 15px;
   /*! font-weight: bold; */
