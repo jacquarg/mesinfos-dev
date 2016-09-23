@@ -20,6 +20,7 @@ module.exports = Mn.ItemView.extend({
 
   setModel: function(model) {
     this.model = model;
+    this.listenTo(this.model, 'change', this.render);
     this.render();
   },
 

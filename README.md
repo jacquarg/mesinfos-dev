@@ -8,7 +8,8 @@ Un outils pour les développeurs autours des données du Pilote MesInfos :
 # TODO
 
 ## Bugs
-* Update UX
+* Put messages in a appropriate place
+* Proper responsive
 
 ## New features
 * Add a custom synth dataset

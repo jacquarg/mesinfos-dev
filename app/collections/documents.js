@@ -11,7 +11,7 @@ module.exports = Backbone.Collection.extend({
   fetchDSView: function(dsView) {
     this.setDSView(dsView);
     this.reset(); // reset first to empty the view.
-    this.fetch(); //{ reset: true }
+    this.fetch({ reset: true });
   },
 
   setDSView: function(dsView) {

@@ -18,8 +18,6 @@ module.exports = Mn.CompositeView.extend({
 
   updateDownloadButton: function() {
     // Add data to the download button
-    var app = require('application');
-
     var data = app.documents.toRawJSON();
     this.ui.downloadButton.attr('href', 'data:text/json;charset=utf-8,' +
       encodeURIComponent(JSON.stringify(data, null, 2)));
@@ -27,5 +25,4 @@ module.exports = Mn.CompositeView.extend({
         app.documents.dsView.getDocType() + '-' +
         app.documents.dsView.getName() + '.json');
   },
-
 });

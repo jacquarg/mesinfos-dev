@@ -66,20 +66,7 @@ var Properties = Backbone.Model.extend({
     delete sets[setName];
     return this._promiseSave({ synthSets: sets});
   },
-// },
-// {// Class properties
 
-//   fetchSingleton: function() {
-//     var self = this;
-//     return cozysdk.defineView(Properties.prototype.docType, 'all',
-//       'function(doc) { emit(doc._id);}'
-//     ).then(function() {
-//         return cozysdk.queryView(Properties.prototype.docType, 'all', {limit: 1, include_docs: true}); }
-//     ).then(function(res) {
-//       return new Properties((res && res.length !== 0) ? res[0].doc : {});
-//     });
-//   },
 });
-
 
 module.exports = new Properties();
