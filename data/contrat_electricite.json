@@ -4,34 +4,66 @@
   "docTypeVersion": "EDFKonnector-0.0.0-draft",
   "organisation": "EDF",
   "number": "1234654321",
-  "startDate": "2016-03-01",
-  "pdl": "1324654321",
+  "startDate": "2013-03-01",
+  "status": "CONTRAT_ACTIF",
+  "endDate": null,
+  "terminationGrounds": null,
+  "pdl": "01324654321236",
   "energie": "ELECTRICITE",
   "nomOffre": "TARIF_BLEU_PART",
   "structureTarifaire": "OPTION_BASE",
+  "numeroDepannage": "09 726 750 75",
+  "prochainReleve": "2017-01-12",
   "puissance": "PUI06",
-  "optionPrix": "Option chauffage",
-  "compteur": {
-  	"type": "EMC",
-  	"cadranType": "BASE",
-  	"nombreRoues": "005",
-  	"dernierIndex": 67481.0
-  },
-  "consommationAnnuelle": 2125,
+  "horrairesHeureCreuses": null,
   "releve": {
-  	"saisieReleveConfiance": "SAISIE_IMPOSSIBLE_NON_ELIGIBLE_RC",
-  	"releve/saisieSuiviConso": "SAISIE_IMPOSSIBLE_SC_NON_SOUSCRIT"
-  },
-  "services": [
-  	{
-  		"name": "RELEVE_CONFIANCE"
-  	},
-  	{
-  		"name": "SUIVI_CONSO"
-  	},
-    {
-      "name": "PRELEVEMENT_AUTOMATIQUE"
-    }
-  ]
-}
+    "saisieReleveConfiance": "SAISIE_IMPOSSIBLE_NON_ELIGIBLE_RC",
+    "dateFermetureReleveConfiance": null,
+    "prochaineDateOuvertureReleveConfiance": null,
+    "prochaineDateFermetureReleveConfiance": null,
+    "prochaineDateFermetureReelle": "2017-01-12",
+    "saisieSuiviConso": "SAISIE_IMPOSSIBLE_SC_NON_SOUSCRIT",
+    "prochaineDateOuvertureSaisieConso": null
+    },
+    "services": [
+      {
+        "name": "PRELEVEMENT_AUTOMATIQUE",
+        "status": "true",
+        "valeurSouscrite": "10",
+        "valeurPossibles": [
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11"
+        ]
+      },
+      {
+        "name": "FACTURE_ELECTRONIQUE",
+        "status": "true",
+        "valeurSouscrite": null
+      },
+      {
+        "name": "MENS_ANNUELLE",
+        "status": "true",
+        "valeurSouscrite": null
+      },
+      {
+        "name": "MENS_MENSUELLE",
+        "status": "false",
+        "valeurSouscrite": null
+      },
+      {
+        "name": "MENS_ELECTRICITE",
+        "status": "true",
+        "valeurSouscrite": "OUI"
+      },
+      {
+        "name": "MENS_GAZ",
+        "status": "false",
+        "valeurSouscrite": "NON"
+      }
 ]
