@@ -26,7 +26,8 @@ module.exports = Mn.ItemView.extend({
 
   serializeData: function() {
     var data = { docType: {}, subsets: []};
-    if (this.model) {
+    // Test here if model is not null ; and model is a subset.
+    if (this.model && this.model.synthSetAvailable) {
       data = this.model.toJSON();
       data.synthSetInsertable = this.model.synthSetAvailable();
       data.synthSetInDS = this.model.synthSetInDS();

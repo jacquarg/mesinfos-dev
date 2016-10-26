@@ -1,10 +1,13 @@
 [
 {
-  "docType": "Contract",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "organisation": "EDF",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "docType": "bill",
+  "vendor": "EDF",
+  "clientId": "6012345678",
   "number": "12346897654",
-  "issueDate": "2016-03-03",
-  "amount": 30.21
+  "date": "2016-03-03",
+  "amount": 30.21,
+  "fileId": "b8f5547a6ce775b04ee7ea101b011ce9",
+  "binaryId": "b8f5547a6ce775b04ee7ea101b011cd2"
 }
 ]

@@ -22,7 +22,7 @@ module.exports = Backbone.Collection.extend({
     return this.map(function(doc) {
       var res = doc.toJSON();
       delete res.fields;
-      delete res.result;
+      delete res._result;
       return res;
     });
   },

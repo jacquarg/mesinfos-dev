@@ -38,7 +38,7 @@ module.exports = Mn.ItemView.extend({
     // TODO : behavior .. ?
     this.updateView();
     this.send();
-    
+
   },
 
   updateView: function() {
@@ -61,6 +61,7 @@ module.exports = Mn.ItemView.extend({
     });
 
     this.model.updateDSView();
+    this.updateView();
   },
 
   send: function() {
@@ -77,7 +78,7 @@ module.exports = Mn.ItemView.extend({
       app.dsViews.create(model, {success: resolve, error: reject });
     })
     // .then(function() {
-    //   // app.trigger('message:display', displayId, 
+    //   // app.trigger('message:display', displayId,
     //     // 'Creation de la vue ' + model.getName());
     // })
     .then(model.updateDSView.bind(model))

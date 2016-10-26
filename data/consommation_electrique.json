@@ -1,147 +1,428 @@
 [
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2016-01-08",
-  "endDate": "2016-07-012016-07-01",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2016-01-08",
+  "end": "2016-07-012016-07-01",
   "value": "648.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "REEL",
   "statementCategory": "RELEVE_REEL_PAR_ERD_GRD",
-  "statementReason": "RELEVE_PERIODIQUE" 
+  "statementReason": "RELEVE_PERIODIQUE"
 },
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2015-07-02",
-  "endDate": "2016-01-07",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2015-07-02",
+  "end": "2016-01-07",
   "value": "680.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "REEL",
   "statementCategory": "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
-  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT"
 },
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2015-01-08",
-  "endDate": "2015-07-01",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2015-01-08",
+  "end": "2015-07-01",
   "value": "559.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "REEL",
   "statementCategory": "RELEVE_REEL_PAR_ERD_GRD",
-  "statementReason": "RELEVE_PERIODIQUE" 
+  "statementReason": "RELEVE_PERIODIQUE"
 },
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2014-07-02",
-  "endDate": "2015-01-07",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2014-07-02",
+  "end": "2015-01-07",
   "value": "670.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "REEL",
   "statementCategory": "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
-  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT"
 },
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2014-01-08",
-  "endDate": "2014-07-01",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2014-01-08",
+  "end": "2014-07-01",
   "value": "561.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "REEL",
   "statementCategory": "RELEVE_REEL_PAR_ERD_GRD",
-  "statementReason": "RELEVE_PERIODIQUE" 
+  "statementReason": "RELEVE_PERIODIQUE"
 },
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2013-07-02",
-  "endDate": "2014-01-07",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2013-07-02",
+  "end": "2014-01-07",
   "value": "643.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "REEL",
   "statementCategory": "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
-  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT"
 },
 
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2013-01-08",
-  "endDate": "2013-07-01",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2013-01-08",
+  "end": "2013-07-01",
   "value": "627.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "ESTIME",
   "statementCategory": "ESTIMATION_AUTO",
-  "statementReason": "RELEVE_PERIODIQUE" 
+  "statementReason": "RELEVE_PERIODIQUE"
 },
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2012-07-02",
-  "endDate": "2013-01-07",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2012-07-02",
+  "end": "2013-01-07",
   "value": "656.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "REEL",
   "statementCategory": "RELEVE_REEL_Z3_POUR_FACTURATION_COMMUNE",
-  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT"
 },
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2012-01-08",
-  "endDate": "2012-07-01",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2012-01-08",
+  "end": "2012-07-01",
   "value": "502.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "REEL",
   "statementCategory": "RELEVE_REEL_PAR_ERD_GRD",
-  "statementReason": "RELEVE_PERIODIQUE" 
+  "statementReason": "RELEVE_PERIODIQUE"
 },
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2011-07-02",
-  "endDate": "2012-01-07",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2011-07-02",
+  "end": "2012-01-07",
   "value": "611.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "REEL",
   "statementCategory": "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
-  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT"
 },
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2011-01-08",
-  "endDate": "2011-07-01",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2011-01-08",
+  "end": "2011-07-01",
   "value": "510.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "REEL",
   "statementCategory": "RELEVE_REEL_PAR_ERD_GRD",
-  "statementReason": "RELEVE_PERIODIQUE" 
+  "statementReason": "RELEVE_PERIODIQUE"
 },
 {
   "docType": "ConsumpionStatement",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "startDate": "2010-07-02",
-  "endDate": "2011-01-07",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "start": "2010-07-02",
+  "end": "2011-01-07",
   "value": "594.0",
-  "contractNumber": "12345678",
-  "invoiceNumber": "987654",
+  "contractNumber": "1234654321",
+  "billNumber": "12346897654",
   "statementType": "REEL",
   "statementCategory": "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
-  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT" 
-}
+  "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT"
+},
+[
+  {
+    "contractNumber": "1234654321",
+    "start": "2016-03-01",
+    "end": "2016-04-01",
+    "value": 541,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-03",
+    "cost": 88,
+    "costsByCategory": {
+      "BASE": 81,
+      "standing": 7
+    },
+    "valuesByCatergory": {
+      "BASE": 541
+    },
+    "releve": [
+      {
+        "date": "2016-03-01",
+        "type": "FACTURE",
+        "indexesByLabel": {
+          "BASE": 68255
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "consumptionstatement",
+  },
+  {
+    "contractNumber": "1234654321",
+    "start": "2016-04-01",
+    "end": "2016-05-01",
+    "value": 398,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-04",
+    "cost": 67,
+    "costsByCategory": {
+      "BASE": 60,
+      "standing": 7
+    },
+    "valuesByCatergory": {
+      "BASE": 398
+    },
+    "releve": [
+      {
+        "date": "2016-04-01",
+        "indexesByLabel": {
+          "BASE": 68788
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "consumptionstatement",
+  },
+  {
+    "contractNumber": "1234654321",
+    "start": "2016-05-01",
+    "end": "2016-06-01",
+    "value": 319,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-05",
+    "cost": 55,
+    "costsByCategory": {
+      "BASE": 48,
+      "standing": 7
+    },
+    "valuesByCatergory": {
+      "BASE": 319
+    },
+    "releve": [
+      {
+        "date": "2016-05-01",
+        "indexesByLabel": {
+          "BASE": 69189
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "consumptionstatement",
+  },
+  {
+    "contractNumber": "1234654321",
+    "start": "2016-06-01",
+    "end": "2016-07-01",
+    "value": 327,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-06",
+    "cost": 56,
+    "costsByCategory": {
+      "BASE": 49,
+      "standing": 7
+    },
+    "valuesByCatergory": {
+      "BASE": 327
+    },
+    "releve": [
+      {
+        "date": "2016-06-01",
+        "indexesByLabel": {
+          "BASE": 69510
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "consumptionstatement",
+  },
+  {
+    "contractNumber": "1234654321",
+    "start": "2016-07-01",
+    "end": "2016-08-01",
+    "value": 231,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-07",
+    "cost": 42,
+    "costsByCategory": {
+      "BASE": 35,
+      "standing": 7
+    },
+    "valuesByCatergory": {
+      "BASE": 231
+    },
+    "releve": [
+      {
+        "date": "2016-07-01",
+        "indexesByLabel": {
+          "BASE": 69839
+        }
+      },
+      {
+        "date": "2016-07-15",
+        "type": "FACTURE",
+        "indexesByLabel": {
+          "BASE": 69988
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "consumptionstatement",
+  },
+  {
+    "contractNumber": "1234654321",
+    "start": "2016-08-01",
+    "end": "2016-09-01",
+    "value": 154,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-08",
+    "cost": 30,
+    "costsByCategory": {
+      "BASE": 22,
+      "standing": 8
+    },
+    "valuesByCatergory": {
+      "BASE": 154
+    },
+    "releve": [
+      {
+        "date": "2016-08-01",
+        "indexesByLabel": {
+          "BASE": 70156
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "consumptionstatement",
+  },
+  {
+    "contractNumber": "1234654321",
+    "start": "2016-09-01",
+    "end": "2016-10-01",
+    "value": 174,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-09",
+    "cost": 33,
+    "costsByCategory": {
+      "BASE": 25,
+      "standing": 8
+    },
+    "valuesByCatergory": {
+      "BASE": 174
+    },
+    "releve": [
+      {
+        "date": "2016-09-01",
+        "indexesByLabel": {
+          "BASE": 70469
+        }
+      },
+      {
+        "date": "2016-09-27",
+        "type": "RELEVE_BILAN_CONSO",
+        "indexesByLabel": {
+          "BASE": 70369
+        }
+      },
+      {
+        "date": "2016-09-29",
+        "type": "RELEVE_BILAN_CONSO",
+        "indexesByLabel": {
+          "BASE": 70385
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "consumptionstatement",
+  },
+  {
+    "_id": "81776d78af9ae7dfd7a2e28df70042f3",
+    "contractNumber": "1234654321",
+    "start": "2016-10-01",
+    "end": "2016-10-18",
+    "value": 206,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-10",
+    "cost": 34,
+    "costsByCategory": {
+      "BASE": 30,
+      "standing": 4
+    },
+    "valuesByCatergory": {
+      "BASE": 206
+    },
+    "releve": [
+      {
+        "date": "2016-10-01",
+        "indexesByLabel": {
+          "BASE": 70800
+        }
+      },
+      {
+        "date": "2016-10-18",
+        "type": "RELEVE_BILAN_CONSO",
+        "indexesByLabel": {
+          "BASE": 70604
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "consumptionstatement",
+  },
+  {
+    "contractNumber": "1234654321",
+    "start": "2016-03-01",
+    "end": "2016-10-18",
+    "value": 2350,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaYearlyElecConsumption",
+    "period": "2016",
+    "cost": 405,
+    "costsByCategory": {
+      "BASE": 350,
+      "standing": 55
+    },
+    "valuesByCatergory": {
+      "BASE": 2350
+    },
+    "similarHomes": {
+      "site": 2144,
+      "average": 2335,
+      "least": 1030
+    },
+    "releve": [],
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "consumptionstatement",
+  }
 ]

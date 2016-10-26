@@ -1,0 +1,40 @@
+[
+  {
+    "clientId": "6012345678",
+    "vendor": "EDF",
+    "numeroAcc": "00123456879",
+    "address": {
+      "formated": "2 BOULEVARD DES BELGES\n69006 LYON",
+      "street": "2 BOULEVARD DES BELGES",
+      "city": "LYON",
+      "postcode": "69006",
+      "country": "FRANCE"
+    },
+    "name": {
+      "prefix": "MME",
+      "family": "DUPOND",
+      "given": "GERMAINE",
+      "formated": "GERMAINE DUPOND"
+    },
+    "email": "germainedupondmesinfos@gmail.com",
+    "telMobile": "0665022841",
+    "loginEmail": "germainedupondmesinfos@gmail.com",
+    "coHolder": {
+      "family": "DUPOND",
+      "given": "GERARD",
+      "formated": "GERARD DUPOND"
+    },
+    "commercialContact": {
+      "title": "Paris Pyramide",
+      "phone": "09 69 32 15 15",
+      "address": {
+        "formated": "TSA 20012\n41975 BLOIS CEDEX 9",
+        "street": "TSA 20012",
+        "postcode": "41975",
+        "city": "BLOIS CEDEX 9"
+      }
+    },
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "client"
+  }
+]

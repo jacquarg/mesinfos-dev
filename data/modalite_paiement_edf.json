@@ -1,35 +1,121 @@
 [
 {
-  "docType": "Contract",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
+  "docType": "paymentterms",
+  "docTypeVersion": "konnectors_edf-0.7.2",
+  "vendor": "EDF",
+  "clientId": "6012345678",
   "bankDetails": {
   	"bank": "STE GENERALE",
-  	"bankAddress": "5 PLACE DE LA NATION PARIS 75011 France",
-  	"numeroCompte": "98760876",
-  	"codeBanque": "76300",
-  	"codeGuichet": "03",
-  	"cleRIB": "12",
+  	"bankAddress": {
+        "street": "1 BD DES BROTTEAUX",
+        "city": "LYON 69006",
+        "country": "France",
+        "formated": "1 BD DES BROTTEAUX\nLYON 69006 France"
+    },
+    "iban": "FR76300039876087612",
   	"titulaire": "Mme GERMAINE DUPOND"
   },
   "solde": 0.0,
   "modifRibAutorisee": true,
+  "typeEncaissement": "PRELEVEMENT",
   "dernierReglement": {
   	"type": "ENCAISSEMENT_PRELEVEMENT"
   },
   "periodiciteFacture": "ANNU",
   "dateProchaineFacture": "2015-10-15",
-  "idPayeur": "087609078098",
+  "idPayeur": "6012345678",
   "payeurDivergent": false,
   "paymentSchedule": [
-  	{
-  	  "number": 1,
-  	  "receiptDate": "2016-04-11",
-  	  "scheduleDate": "2016-04-11",
-  	  "paid": true,
-  	  "amount": 69,
-  	  "amountElectricity": 69,
-  	  "amountGas": 0
-  	}
+    {
+      "number": 1,
+      "receiptDate": "2016-04-11",
+      "scheduleDate": "2016-04-11",
+      "paid": true,
+      "amount": 69,
+      "amountGas": 0,
+      "amountElectricity": 69
+    },
+    {
+      "number": 2,
+      "receiptDate": "2016-05-10",
+      "scheduleDate": "2016-05-10",
+      "paid": true,
+      "amount": 69,
+      "amountGas": 0,
+      "amountElectricity": 69
+    },
+    {
+      "number": 3,
+      "receiptDate": "2016-06-10",
+      "scheduleDate": "2016-06-10",
+      "paid": true,
+      "amount": 69,
+      "amountGas": 0,
+      "amountElectricity": 69
+    },
+    {
+      "number": 4,
+      "receiptDate": "2016-07-11",
+      "scheduleDate": "2016-07-11",
+      "paid": true,
+      "amount": 69,
+      "amountGas": 0,
+      "amountElectricity": 69
+    },
+    {
+      "number": 5,
+      "receiptDate": "2016-08-10",
+      "scheduleDate": "2016-08-10",
+      "paid": true,
+      "amount": 69,
+      "amountGas": 0,
+      "amountElectricity": 69
+    },
+    {
+      "number": 6,
+      "receiptDate": "2016-09-12",
+      "scheduleDate": "2016-09-12",
+      "paid": true,
+      "amount": 69,
+      "amountGas": 0,
+      "amountElectricity": 69
+    },
+    {
+      "number": 7,
+      "receiptDate": "2016-10-10",
+      "scheduleDate": "2016-10-10",
+      "paid": true,
+      "amount": 69,
+      "amountGas": 0,
+      "amountElectricity": 69
+    },
+    {
+      "number": 8,
+      "receiptDate": null,
+      "scheduleDate": "2016-11-10",
+      "paid": false,
+      "amount": 69,
+      "amountGas": 0,
+      "amountElectricity": 69
+    },
+    {
+      "number": 9,
+      "receiptDate": null,
+      "scheduleDate": "2016-12-12",
+      "paid": false,
+      "amount": 69,
+      "amountGas": 0,
+      "amountElectricity": 69
+    },
+    {
+      "number": 10,
+      "receiptDate": null,
+      "scheduleDate": "2017-01-10",
+      "paid": false,
+      "amount": 69,
+      "amountGas": 0,
+      "amountElectricity": 69
+    }
   ]
 }
 ]

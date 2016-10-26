@@ -1,0 +1,18 @@
+[
+  {
+    "pdl": "01324654321236",
+    "beginTs": "2016-10-19T14:27:36Z",
+    "isProfileValidated": true,
+    "housingType": "Appartement",
+    "residenceType": "Principale",
+    "occupationType": "Locataire",
+    "constructionDate": 2001,
+    "isBBC": true,
+    "surface": 69,
+    "occupantsCount": 4,
+    "principalHeatingSystemType": "Electricite",
+    "sanitoryHotWaterType": "Electrique",
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "home"
+  }
+]

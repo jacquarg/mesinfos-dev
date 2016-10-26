@@ -1,31 +1,42 @@
 [
-{
-  "docType": "Contract",
-  "docTypeVersion": "EDFKonnector-0.0.0-draft",
-  "organisation": "EDF",
-  "number": "1234654321",
-  "startDate": "2013-03-01",
-  "status": "CONTRAT_ACTIF",
-  "endDate": null,
-  "terminationGrounds": null,
-  "pdl": "01324654321236",
-  "energie": "ELECTRICITE",
-  "nomOffre": "TARIF_BLEU_PART",
-  "structureTarifaire": "OPTION_BASE",
-  "numeroDepannage": "09 726 750 75",
-  "prochainReleve": "2017-01-12",
-  "puissance": "PUI06",
-  "horrairesHeureCreuses": null,
-  "releve": {
-    "saisieReleveConfiance": "SAISIE_IMPOSSIBLE_NON_ELIGIBLE_RC",
-    "dateFermetureReleveConfiance": null,
-    "prochaineDateOuvertureReleveConfiance": null,
-    "prochaineDateFermetureReleveConfiance": null,
-    "prochaineDateFermetureReelle": "2017-01-12",
-    "saisieSuiviConso": "SAISIE_IMPOSSIBLE_SC_NON_SOUSCRIT",
-    "prochaineDateOuvertureSaisieConso": null
+ {
+    "vendor": "EDF",
+    "clientId": "6012345678",
+    "number": "1234654321",
+    "start": "2013-03-01",
+    "status": "CONTRAT_ACTIF",
+    "pdl": "01324654321236",
+    "energie": "Électricité",
+    "nomOffre": "Tarif Bleu",
+    "puissance": "6 kVA",
+    "structureTarifaire": "OPTION_BASE",
+    "compteur": {
+      "comptage": "BASE",
+      "nombreRoues": "005",
+      "dernierIndex": "69988.0",
+      "type": "CBE"
+    },
+    "consommationAnnuelle": "6006",
+    "releve": {
+      "prochaineReleve": "2017-01-12",
+      "saisieReleveConfiance": "SAISIE_IMPOSSIBLE_NON_ELIGIBLE_RC",
+      "dateFermetureReleveConfiance": null,
+      "prochaineDateOuvertureReleveConfiance": null,
+      "prochaineDateFermetureReleveConfiance": null,
+      "prochaineDateFermetureReelle": "2017-01-12",
+      "saisieSuiviConso": "SAISIE_IMPOSSIBLE_SC_NON_SOUSCRIT",
+      "prochaineDateOuvertureSaisieConso": null
     },
     "services": [
+      {
+        "nom": "SUIVI_CONSO",
+        "activ": "true"
+      },
+      {
+        "nom": "SER_BILANCONSO",
+        "start": "2016-05-18T00:00:00+02:00",
+        "activ": "true"
+      },
       {
         "name": "PRELEVEMENT_AUTOMATIQUE",
         "status": "true",
@@ -66,4 +77,12 @@
         "status": "false",
         "valeurSouscrite": "NON"
       }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.2",
+    "docType": "contract",
+    "end": null,
+    "terminationGrounds": null,
+    "numeroDepannage": "09 726 750 75",
+    "horrairesHeureCreuses": null,
+  }
 ]

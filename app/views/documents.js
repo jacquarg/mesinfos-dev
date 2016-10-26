@@ -21,7 +21,7 @@ module.exports = Mn.CompositeView.extend({
     var data = app.documents.toRawJSON();
     this.ui.downloadButton.attr('href', 'data:text/json;charset=utf-8,' +
       encodeURIComponent(JSON.stringify(data, null, 2)));
-    this.ui.downloadButton.attr('download', 
+    this.ui.downloadButton.attr('download',
         app.documents.dsView.getDocType() + '-' +
         app.documents.dsView.getName() + '.json');
   },
