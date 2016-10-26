@@ -1,18 +1,16 @@
-span "
 span.name= Nom
-span "
 |:&nbsp;
-span.value(class=typeof(value))= JSON.stringify(value)
-span.toggle ,
-
-if Attention
-  span.caution //&nbsp;
-   |= Attention
-
-ul.details
-  li
-    b Description :&nbsp;
-    = Description
-  li
-    b Format :&nbsp;
-    = Format
+span.value(class=typeof(value))= JSON.stringify(value, null, 2)
+span ,
+if Description || Format
+  span.toggle
+  ul.details
+    span.comment //&nbsp;
+    if Description
+      li
+        b.descriptionLabel Description :&nbsp;
+        = Description
+    if Format
+      li
+        b Format :&nbsp;
+        = Format

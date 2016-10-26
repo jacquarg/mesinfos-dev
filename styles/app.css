@@ -13,7 +13,7 @@
 html {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-weight: normal;
-  font-size: 14px; 
+  font-size: 14px;
   color: #666;
   background-color: white;$
   z-index: 0;
@@ -40,7 +40,7 @@ h1 {
   margin: 0;
   text-align: center;
   margin-top: 33px;
- 
+
   margin-top: 50px;
   margin-bottom: 5px;
 }
@@ -58,10 +58,10 @@ h3 {
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   /*font-size: 30px;*/
   /*color: #aaaaaa;*/
-  
+
 }
 
-h4 {  
+h4 {
   margin: 0;
   margin-top: 15px;
   margin-bottom: 12px;
@@ -74,7 +74,7 @@ h4 {
 }
 
 .toggle {
-  cursor: pointer;  
+  cursor: pointer;
   padding: 5px;
   font-size: 70%;
 }
@@ -105,7 +105,7 @@ h4 {
   width: 30px;
   text-align: center;
 }
-  
+
 .typologies li.subset img {
   height: 18px;
   margin-right: 5px;
@@ -117,7 +117,7 @@ h4 {
 .documentation .title {
   margin-top: 15px;
   margin-bottom: 15px;
-  
+
 }
 .documentation .typologie {
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
@@ -158,7 +158,7 @@ h4 {
 
 .requestform .method {
   font-family: 'monospace';
-} 
+}
 
 .requestform input, .requestform textarea {
   font-family: 'monospace';
@@ -226,10 +226,10 @@ h4 {
  /*margin-left: 300px;
  margin-top: 300px;*/
 }
-  
+
 .documents #downloaddata {
   float: right;
-  
+
 }
 
 .documents ul.documentslist {
@@ -237,17 +237,34 @@ h4 {
   padding: 0px;
 }
 .result {
-  list-style: none;  
-  padding-left: 1em;
+  list-style: none;
+  /*! padding-left: 1em; */
   color: #999;
 }
 
+ul.result {
+  padding-left: 0.5em;
+}
+
 .doctype .fields {
-  padding-left: 1em;
+  padding-left: 0.5em;
 }
 
 .doctype .field {
   font-family: "monospace";
+  width: 100%;
+  padding-right: 2em;
+  overflow-x: hidden;
+  min-height: 1.2em;
+}
+
+.doctype .field.compact {
+  white-space: nowrap;
+}
+
+.doctype .field .toggle {
+  position: absolute;
+  right: 0px;
 }
 
 .doctype .field .name {
@@ -262,46 +279,71 @@ h4 {
   color: #3B5BB5;
 }
 
+.doctype .field .value.boolean {
+  color: #3B5BB5;
+}
 
+.doctype .field .value.object {
+  color: #444;
+}
+
+.doctype .field.expanded .value.object {
+  white-space: pre;
+}
 
 .doctype .field.compact .value {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 60em;
+    /* text-overflow: ellipsis;
+    max-width: 70%;
     display: inline-block;
-    overflow: hidden;
+    overflow: hidden; */
     height: 1.1em;
-    /*! line-height: 1em; */
+    white-space: nowrap;  
+  /*! line-height: 1em; */
 }
 
 /*
 .doctype .field .toggle:after {
   position: relative;
   left: 8px;
-  bottom: 1px;  
+  bottom: 1px;
 }*/
 
-.doctype .field.expanded .details {
-  
+.doctype .field.expanded .details {}
+
+.doctype .field.compact ul.details {
+  padding-left: 1em;
+  display: inline;
+  height: 1.1em;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.doctype .field.compact .details  {
+.doctype .field.compact .details li  {
+  display: inline;
+  margin-left: 5px;
+}
+
+.doctype .field.compact .details .descriptionLabel  {
   display: none;
 }
 
 
-.doctype .field .details {
+.doctype .field.expanded .details {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   background: #ddd;
   padding: 5px;
 }
 
-.doctype .field ul.details {
+.doctype .field.expanded ul.details {
   padding-left: 25px;
   margin-bottom: 20px;
 }
-.doctype .field .details li {
+.doctype .field.expanded .details li {
   margin: 5px 0px;
+}
+
+.doctype .field.expanded .details .comment {
+  display: none;  
 }
 
 /* Message */
@@ -326,5 +368,5 @@ h4 {
 
 .message .close {
   margin-left: 20px;
-  
+
 }

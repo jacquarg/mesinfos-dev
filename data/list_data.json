@@ -2659,7 +2659,7 @@
       "Typologie" : "Domicile",
       "DocType" : "Home",
       "Nature" : "Subset",
-      "Format" : "if (docTypeVersion && docTypeVersion.indexOf('konnector_edf') !== -1) { emit(doc._id); }",
+      "Format" : "if (doc.docTypeVersion && doc.docTypeVersion.indexOf('konnectors_edf') !== -1) { emit(doc._id); }",
       "Détenteur" : "EDF",
       "Fréquence" : "Rare",
       "Latence" : "24h",
