@@ -40,11 +40,13 @@ module.exports = Mn.ItemView.extend({
 
   insertSynthSet: function() {
     this.model.insertSynthSet();
+    this.listenToOnce(this.model, 'synthsetInserted', function() {
+      app.trigger('requestform:setView', this.model);
+    }.bind(this));
   },
 
   destroySynthSet: function() {
     this.model.cleanSynthSet();
   },
-
 
 });

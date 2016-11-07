@@ -48,7 +48,7 @@ module.exports = DSView.extend({
     var displayId = 'insertsynthset';
     var self = this;
     if (!this.synthSetAvailable()) { return Promise.resolve(false); }
-    
+
     return Promise.resolve($.getJSON('data/'+ self.getSynthSetName() +'.json'))
     .then(function(raw) {
       var count = raw.length;
@@ -63,8 +63,9 @@ module.exports = DSView.extend({
       app.trigger('message:display', displayId, 'Mise à jour des paramètres');
       return app.properties.addSynthSetIds(self.getSynthSetName(), ids);
     })
-    .then(function() { 
+    .then(function() {
       app.trigger('message:hide', displayId);
+      self.trigger('synthsetInserted');
     })
     .catch(function(err) {
       console.error(err);
@@ -84,7 +85,7 @@ module.exports = DSView.extend({
     var self = this;
 
     var count = self.get('synthSetIds').length;
-    
+
     return ap.series(self.get('synthSetIds'), function(id, index) {
         app.trigger('message:display', displayId, 'Suppression des documents '
          + self.getDocType() + ' de synthèse ' + index + '/' + count);

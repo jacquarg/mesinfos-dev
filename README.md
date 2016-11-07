@@ -60,6 +60,7 @@ Open source, développée par la Fing, sous licence AGPL v3.
 * Améliorer affichage des valeurs de type Objet, ou Array.
 * Affichage 'responsif'
 * Rafraichir Données après l'ajout.
+* Fléche "+", pas toujours visible.
 
 ### Nouvelles fonctionnalités
 * Bouton pour ajouter facilement un jeu de donnée custom
