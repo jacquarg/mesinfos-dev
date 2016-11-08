@@ -58,9 +58,6 @@ Open source, développée par la Fing, sous licence AGPL v3.
 ### Bug
 * Afficher les messages, et les messages d'erreur à un lieu approprié.
 * Améliorer affichage des valeurs de type Objet, ou Array.
-* Affichage 'responsif'
-* Rafraichir Données après l'ajout.
-* Fléche "+", pas toujours visible.
 
 ### Nouvelles fonctionnalités
 * Bouton pour ajouter facilement un jeu de donnée custom

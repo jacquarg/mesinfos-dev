@@ -9,7 +9,8 @@ module.exports = {
       order: {
         before: [
           'vendor/marionette/lodash.js',
-          'vendor/marionette/jquery.js',
+          //'vendor/marionette/jquery.js',
+          'vendor/jquery.min.js',
           'vendor/marionette/backbone.js',
           'vendor/marionette/backbone.babysitter.js',
           'vendor/marionette/backbone.radio.js',

@@ -1,5 +1,10 @@
 .navbar-header
-  img(src='img/logo_mesinfos.png')
-  
-.collapse.navbar-collapse
+  button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#thenavbar", aria-expanded="false")
+    span.sr-only Toggle navigation
+    span.icon-bar
+    span.icon-bar
+    span.icon-bar
+  img.navbar-brand(src='img/logo_mesinfos.png')
+
+.collapse.navbar-collapse#thenavbar
   ul.typologies.nav.navbar-nav
