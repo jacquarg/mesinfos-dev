@@ -7,7 +7,7 @@
     "description": "undefined",
     "gps": {},
     "orientation": 1,
-    "title": "FIN3.jpg",
+    "title": "FIN3.jpg"
     },
     {
     "_id": "ccc54fab54837ffbd62c04100300b33a",
@@ -17,7 +17,7 @@
     "description": "undefined",
     "gps": {},
     "orientation": 1,
-    "title": "finlande.jpg",
+    "title": "finlande.jpg"
     },
     {
     "_id": "ccc54fab54837ffbd62c04100300d099",
@@ -27,6 +27,6 @@
     "description": "undefined",
     "gps": {},
     "orientation": 1,
-    "title": "helsinki_final_cover.jpg",
+    "title": "helsinki_final_cover.jpg"
     }
     ]

@@ -144,7 +144,6 @@
   "statementCategory": "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
   "statementReason": "RELEVE_INTERMEDIAIRE_CALC_FACT"
 },
-[
   {
     "contractNumber": "1234654321",
     "start": "2016-03-01",
@@ -172,7 +171,7 @@
       }
     ],
     "docTypeVersion": "konnectors_edf-0.7.2",
-    "docType": "consumptionstatement",
+    "docType": "consumptionstatement"
   },
   {
     "contractNumber": "1234654321",
@@ -200,7 +199,7 @@
       }
     ],
     "docTypeVersion": "konnectors_edf-0.7.2",
-    "docType": "consumptionstatement",
+    "docType": "consumptionstatement"
   },
   {
     "contractNumber": "1234654321",
@@ -228,7 +227,7 @@
       }
     ],
     "docTypeVersion": "konnectors_edf-0.7.2",
-    "docType": "consumptionstatement",
+    "docType": "consumptionstatement"
   },
   {
     "contractNumber": "1234654321",
@@ -256,7 +255,7 @@
       }
     ],
     "docTypeVersion": "konnectors_edf-0.7.2",
-    "docType": "consumptionstatement",
+    "docType": "consumptionstatement"
   },
   {
     "contractNumber": "1234654321",
@@ -291,7 +290,7 @@
       }
     ],
     "docTypeVersion": "konnectors_edf-0.7.2",
-    "docType": "consumptionstatement",
+    "docType": "consumptionstatement"
   },
   {
     "contractNumber": "1234654321",
@@ -319,7 +318,7 @@
       }
     ],
     "docTypeVersion": "konnectors_edf-0.7.2",
-    "docType": "consumptionstatement",
+    "docType": "consumptionstatement"
   },
   {
     "contractNumber": "1234654321",
@@ -361,7 +360,7 @@
       }
     ],
     "docTypeVersion": "konnectors_edf-0.7.2",
-    "docType": "consumptionstatement",
+    "docType": "consumptionstatement"
   },
   {
     "_id": "81776d78af9ae7dfd7a2e28df70042f3",
@@ -397,7 +396,7 @@
       }
     ],
     "docTypeVersion": "konnectors_edf-0.7.2",
-    "docType": "consumptionstatement",
+    "docType": "consumptionstatement"
   },
   {
     "contractNumber": "1234654321",
@@ -423,6 +422,6 @@
     },
     "releve": [],
     "docTypeVersion": "konnectors_edf-0.7.2",
-    "docType": "consumptionstatement",
+    "docType": "consumptionstatement"
   }
 ]

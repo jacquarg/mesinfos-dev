@@ -53,8 +53,6 @@ Open source, développée par la Fing, sous licence AGPL v3.
 
 ## TODO-list
 
-
-
 ### Bug
 * Afficher les messages, et les messages d'erreur à un lieu approprié.
 * Améliorer affichage des valeurs de type Objet, ou Array.

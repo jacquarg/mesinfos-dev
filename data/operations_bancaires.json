@@ -8,7 +8,7 @@
     "docType": "bankoperation",
     "operationTypeID": "b24a4f14e7f1a2ee3b507b2ba900d6c1",
     "raw": "Paiement carte Hassan Cehef",
-    "title": "ESPA Carte Hassan Cehef",
+    "title": "ESPA Carte Hassan Cehef"
     },
     {
     "_id": "6856feaa86ba14300e550672e400bb6c",
@@ -19,7 +19,7 @@
     "docType": "bankoperation",
     "operationTypeID": "b24a4f14e7f1a2ee3b507b2ba900d6c1",
     "raw": "CB Spotifaille London",
-    "title": "CB Spotifaille",
+    "title": "CB Spotifaille"
     },
     {
     "_id": "6856feaa86ba14300e550672e400c543",
@@ -30,7 +30,7 @@
     "docType": "bankoperation",
     "operationTypeID": "b24a4f14e7f1a2ee3b507b2ba90120a5",
     "raw": "Courses chez Polyprix",
-    "title": "Polyprix CB",
+    "title": "Polyprix CB"
     },
     {
     "_id": "6856feaa86ba14300e550672e400d3e5",
@@ -41,7 +41,7 @@
     "docType": "bankoperation",
     "operationTypeID": "b24a4f14e7f1a2ee3b507b2ba900fb9a",
     "raw": "VIR Pots de vin et magouilles pas claires",
-    "title": "VIR Pots de vin et magouilles pas claires",
+    "title": "VIR Pots de vin et magouilles pas claires"
     },
     {
     "_id": "6856feaa86ba14300e550672e400d4ed",
@@ -52,7 +52,7 @@
     "docType": "bankoperation",
     "operationTypeID": "b24a4f14e7f1a2ee3b507b2ba900eb4c",
     "raw": "Passage par la case depart",
-    "title": "Case départ",
+    "title": "Case départ"
     },
     {
     "_id": "6856feaa86ba14300e550672e400e0b5",
@@ -62,7 +62,7 @@
     "dateImport": "2016-08-11T14:49:47.000Z",
     "docType": "bankoperation",
     "raw": "ESPA Indirect Energie SARL",
-    "title": "Indirect Energie",
+    "title": "Indirect Energie"
     },
     {
     "_id": "6856feaa86ba14300e550672e400e758",
@@ -73,7 +73,7 @@
     "dateImport": "2016-08-11T14:49:47.000Z",
     "docType": "bankoperation",
     "raw": "CB NOGO Sport",
-    "title": "NOGO Sport",
+    "title": "NOGO Sport"
     },
     {
     "_id": "6856feaa86ba14300e550672e400f3e6",
@@ -84,7 +84,7 @@
     "docType": "bankoperation",
     "operationTypeID": "b24a4f14e7f1a2ee3b507b2ba900fb9a",
     "raw": "Paiement carte Hassan Cehef",
-    "title": "ESPA Carte Hassan Cehef",
+    "title": "ESPA Carte Hassan Cehef"
     },
     {
     "_id": "6856feaa86ba14300e550672e4011096",
@@ -95,7 +95,7 @@
     "docType": "bankoperation",
     "operationTypeID": "b24a4f14e7f1a2ee3b507b2ba901071c",
     "raw": "ESPA Digiticable",
-    "title": "Digiticable",
+    "title": "Digiticable"
     },
     {
     "_id": "6856feaa86ba14300e550672e4011b67",
@@ -106,6 +106,6 @@
     "docType": "bankoperation",
     "operationTypeID": "b24a4f14e7f1a2ee3b507b2ba900f5d5",
     "raw": "CB online Sergent Tchoutchou",
-    "title": "Sergent Tchoutchou",
+    "title": "Sergent Tchoutchou"
     }
 ]

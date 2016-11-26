@@ -599,6 +599,19 @@
       "Mise_à_disposition" : "2016-09"
     },
     {
+      "Nom" : "Contrats d'assurance Maif",
+      "Description" : "Désigne le type de contrat d'assurance, son tarif, et les risques assurés.",
+      "Exemple" : "contrat_maif",
+      "Typologie" : "Finance",
+      "DocType" : "Contract",
+      "Nature" : "Subset",
+      "Format" : "if (doc.docTypeVersion.indexOf('Maif') === 0) { emit(doc._id);}",
+      "Détenteur" : "Maif",
+      "Fréquence" : "Rare",
+      "Latence" : "24h",
+      "Mise_à_disposition" : "2016-09"
+    },
+    {
       "Nom" : "societaire",
       "Description" : "Numéro du sociétaire souscripteur du contrat.",
       "Exemple" : "1234567N\n",
@@ -1275,58 +1288,6 @@
       "Mise_à_disposition" : "2016"
     },
     {
-      "Nom" : "Client",
-      "Description" : "Mes informations clients chez mes fournisseurs (Identité, contact, date de début de relation, ...) .",
-      "Exemple" : "--",
-      "Typologie" : "Profil",
-      "DocType" : "Client",
-      "Nature" : "DocType",
-      "Format" : "",
-      "Détenteur" : "AXA",
-      "Fréquence" : "",
-      "Latence" : "",
-      "Mise_à_disposition" : "2013"
-    },
-    {
-      "Nom" : "Home",
-      "Description" : "Mon domicile (individuel ou collectif, taille, jardin ?, ...) ",
-      "Exemple" : "--",
-      "Typologie" : "Domicile",
-      "DocType" : "Home",
-      "Nature" : "DocType",
-      "Format" : "",
-      "Détenteur" : "AXA",
-      "Fréquence" : "",
-      "Latence" : "",
-      "Mise_à_disposition" : "2013"
-    },
-    {
-      "Nom" : "InsuranceClaim",
-      "Description" : "Mes sinistres déclarés à mon assurance.",
-      "Exemple" : "--",
-      "Typologie" : "Finance",
-      "DocType" : "InsuranceClaim",
-      "Nature" : "DocType",
-      "Format" : "",
-      "Détenteur" : "AXA",
-      "Fréquence" : "",
-      "Latence" : "",
-      "Mise_à_disposition" : "2013"
-    },
-    {
-      "Nom" : "Vehicle",
-      "Description" : "Mes véhicules, auto, moto. (immatriculation, puissance, age, kilométrage, marque, ...).",
-      "Exemple" : "--",
-      "Typologie" : "Domicile",
-      "DocType" : "Vehicle",
-      "Nature" : "DocType",
-      "Format" : "",
-      "Détenteur" : "AXA",
-      "Fréquence" : "",
-      "Latence" : "",
-      "Mise_à_disposition" : "2013"
-    },
-    {
       "Nom" : "Client EDF",
       "Description" : "Identification et moyen de contact du souscripteur : adresse, email, téléphone fixe et portable",
       "Exemple" : "client_edf",
@@ -1392,7 +1353,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "telMobile",
+      "Nom" : "cellPhone",
       "Description" : "téléphone mobile du client",
       "Exemple" : "0665022841",
       "Typologie" : "Profil",
@@ -1405,7 +1366,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "telHome",
+      "Nom" : "homePhone",
       "Description" : "téléphone fixe du client",
       "Exemple" : "0123456789",
       "Typologie" : "Profil",
@@ -1574,7 +1535,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "solde",
+      "Nom" : "balance",
       "Description" : "Montant restant dû ou à recevoir",
       "Exemple" : "0.0",
       "Typologie" : "Finance",
@@ -1587,7 +1548,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "typeEncaissement",
+      "Nom" : "paymentMeans",
       "Description" : "Mode d'encaissement (prélèvement, ...)",
       "Exemple" : "TODO",
       "Typologie" : "Finance",
@@ -1600,7 +1561,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "modifRibAutorisee",
+      "Nom" : "modifBankDetailsAllowed",
       "Description" : "Le RIB du client peut-il être modifié ou non.",
       "Exemple" : "true",
       "Typologie" : "Finance",
@@ -1613,7 +1574,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "dernierReglement/date",
+      "Nom" : "lastPayment/date",
       "Description" : "Date du dernier réglement effectué.",
       "Exemple" : "TODO",
       "Typologie" : "Finance",
@@ -1626,7 +1587,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "dernierReglement/montant",
+      "Nom" : "lastPayment/amount",
       "Description" : "Montant du dernier règlement effectué",
       "Exemple" : "TODO",
       "Typologie" : "Finance",
@@ -1639,7 +1600,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "ternierReglement/type",
+      "Nom" : "lastPayment/type",
       "Description" : "Type du dernier réglement",
       "Exemple" : "ENCAISSEMENT_PRELEVEMENT",
       "Typologie" : "Finance",
@@ -1652,7 +1613,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "periodiciteFacture",
+      "Nom" : "billFrequency",
       "Description" : "Périodicité de la facture (mensuelle, annuelle, ...)",
       "Exemple" : "ANNU",
       "Typologie" : "Finance",
@@ -1665,7 +1626,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "dateProchaineFacture",
+      "Nom" : "nextBillDate",
       "Description" : "Date de la prochaine facture",
       "Exemple" : "2015-10-15",
       "Typologie" : "Finance",
@@ -1678,7 +1639,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "idPayeur",
+      "Nom" : "idPayer",
       "Description" : "NumeroBP du payeur",
       "Exemple" : "087609078098",
       "Typologie" : "Finance",
@@ -1691,7 +1652,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "payeurDivergent",
+      "Nom" : "payerDivergent",
       "Description" : "Si le payeur n'est pas le titulaire du contrat.",
       "Exemple" : "false",
       "Typologie" : "Finance",
@@ -2120,7 +2081,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "releve",
+      "Nom" : "statement",
       "Description" : "Releves de consommation (relevés Edelia)",
       "Exemple" : "{\n        \"date\": \"2016-10-01\",\n        \"indexesByLabel\": {\n          \"BASE\": 70800\n        }",
       "Typologie" : "Domicile",
@@ -2393,7 +2354,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "nomOffre",
+      "Nom" : "name",
       "Description" : "Nom de l'offre commerciale",
       "Exemple" : "Tarif Bleu",
       "Typologie" : "Finance",
@@ -2406,7 +2367,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "structureTarifaire",
+      "Nom" : "contractSubcategory1",
       "Description" : "Strucure tarifaire (prix constant, spécifique heures creuses, ...), si ernergoe == Électricité",
       "Exemple" : "OPTION_BASE",
       "Typologie" : "Finance",
@@ -2419,7 +2380,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "optionTarifaire",
+      "Nom" : "contractSubcategory2",
       "Description" : "Option tarifaire (précise la structure)",
       "Exemple" : "",
       "Typologie" : "Finance",
@@ -2432,7 +2393,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "puissance",
+      "Nom" : "power",
       "Description" : "Puissance compteur si energie = Électricité",
       "Exemple" : "6 kVA",
       "Typologie" : "Finance",
@@ -2458,7 +2419,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "compteur/type",
+      "Nom" : "counter/type",
       "Description" : "Caractéristique compteur (TODO)",
       "Exemple" : "BASE",
       "Typologie" : "Finance",
@@ -2471,7 +2432,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "compteur/nombreRoues",
+      "Nom" : "counter/nombreRoues",
       "Description" : "Caractéristique compteur (TODO)",
       "Exemple" : "005",
       "Typologie" : "Finance",
@@ -2484,7 +2445,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "compteur/dernierIndex",
+      "Nom" : "counter/dernierIndex",
       "Description" : "Dernier relevé du compteur",
       "Exemple" : "67481.0",
       "Typologie" : "Finance",
@@ -2497,7 +2458,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "consommationAnnuelle",
+      "Nom" : "annualConsumption",
       "Description" : "Consommation annuelle (kWh)",
       "Exemple" : "2125",
       "Typologie" : "Finance",
@@ -2510,7 +2471,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "compteur/type",
+      "Nom" : "counter/type",
       "Description" : "Type du compteur",
       "Exemple" : "EMC",
       "Typologie" : "Finance",
@@ -2523,7 +2484,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "horrairesHeureCreuses",
+      "Nom" : "peakHours",
       "Description" : "Horraire heures creuses",
       "Exemple" : "?",
       "Typologie" : "Finance",
@@ -2536,7 +2497,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "releve/saisieReleveConfiance",
+      "Nom" : "statement/saisieReleveConfiance",
       "Description" : "Releve.SaisieRc : Statut de la saisie dans le cadre de Suivi Conso",
       "Exemple" : "SAISIE_IMPOSSIBLE_NON_ELIGIBLE_RC",
       "Typologie" : "Finance",
@@ -2549,7 +2510,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "releve/dateFermetureReleveConfiance",
+      "Nom" : "statement/dateFermetureReleveConfiance",
       "Description" : "Date de fermeture de la période de saisie relevé confiance en cours.",
       "Exemple" : "",
       "Typologie" : "Finance",
@@ -2562,7 +2523,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "releve/prochaineDateOuvertureReleveConfiance",
+      "Nom" : "statement/prochaineDateOuvertureReleveConfiance",
       "Description" : "Date d’ouverture de la prochaine période de saisie index en relevé confiance.",
       "Exemple" : "",
       "Typologie" : "Finance",
@@ -2575,7 +2536,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "releve/prochaineDateFermetureReleveConfiance",
+      "Nom" : "statement/prochaineDateFermetureReleveConfiance",
       "Description" : "Date de fermeture de la prochaine période de saisie index en relevé confiance.",
       "Exemple" : "",
       "Typologie" : "Finance",
@@ -2588,7 +2549,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "releve/prochaineDateFermetureReelle",
+      "Nom" : "statement/prochaineDateFermetureReelle",
       "Description" : "Date prévue de la fermeture de la prochaine relève réelle des index.",
       "Exemple" : "",
       "Typologie" : "Finance",
@@ -2601,7 +2562,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "releve/saisieSuiviConso",
+      "Nom" : "statement/saisieSuiviConso",
       "Description" : "Statut de la saisie dans le cadre de Suivi Conso",
       "Exemple" : "SAISIE_IMPOSSIBLE_SC_NON_SOUSCRIT",
       "Typologie" : "Finance",
@@ -2614,7 +2575,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "releve/prochaineDateOuvertureSaisieConso",
+      "Nom" : "statement/prochaineDateOuvertureSaisieConso",
       "Description" : "Date de prochaine saisie possible Suivi Conso",
       "Exemple" : "",
       "Typologie" : "Finance",
@@ -2627,7 +2588,7 @@
       "Mise_à_disposition" : "2016-10"
     },
     {
-      "Nom" : "numeroDepannage",
+      "Nom" : "troubleshootingPhone",
       "Description" : "Numéro de téléphone de dépannage",
       "Exemple" : "09 726 750 75",
       "Typologie" : "Domicile",
@@ -3304,7 +3265,7 @@
     },
     {
       "Nom" : "VOD / IPTV",
-      "Description" : "Les vidéos que j'ai commendées ou visionnée via les services Orange (VoD, replay, ...) (date, prix, titre de la vidéo, ...)",
+      "Description" : "Les vidéos que j'ai commandées ou visionnée via les services Orange (VoD, replay, ...) (date, prix, titre de la vidéo, ...)",
       "Exemple" : "vod_iptv",
       "Typologie" : "Loisir",
       "DocType" : "VideoStream",
@@ -4825,7 +4786,7 @@
     },
     {
       "Nom" : "Opérations bancaires",
-      "Description" : "Mes relevé de comptes bancaires (libellé, date, montant pour chaque opération), que je récupère auprès de ma banque, et visualise grace à l'application Cozy Kresus.",
+      "Description" : "Mes relevés de comptes bancaires (libellé, date, montant pour chaque opération), que je récupère auprès de ma banque, et visualise grace à l'application Cozy Kresus.",
       "Exemple" : "operations_bancaires",
       "Typologie" : "Finance",
       "DocType" : "BankOperation",
@@ -5306,7 +5267,7 @@
     },
     {
       "Nom" : "Traces d'usage",
-      "Description" : "Trace d'usage du Cozy, notamment récolté - avec accord de l'utilisateur - pour la recherche dans le PIlote MesInfos (application utilisée, horodatage, ...)",
+      "Description" : "Trace d'usage du Cozy, notamment récoltée - avec accord de l'utilisateur - pour la recherche dans le Pilote MesInfos (application utilisée, horodatage, ...)",
       "Exemple" : "",
       "Typologie" : "Loisir",
       "DocType" : "UseTracker",
@@ -6213,5 +6174,57 @@
       "Fréquence" : "",
       "Latence" : "",
       "Mise_à_disposition" : "2015"
+    },
+    {
+      "Nom" : "Client",
+      "Description" : "Mes informations clients chez mes fournisseurs (Identité, contact, date de début de relation, ...) .",
+      "Exemple" : "--",
+      "Typologie" : "Profil",
+      "DocType" : "Client",
+      "Nature" : "DocType",
+      "Format" : "",
+      "Détenteur" : "AXA",
+      "Fréquence" : "",
+      "Latence" : "",
+      "Mise_à_disposition" : "2013"
+    },
+    {
+      "Nom" : "Home",
+      "Description" : "Mon domicile (individuel ou collectif, taille, jardin ?, ...) ",
+      "Exemple" : "--",
+      "Typologie" : "Domicile",
+      "DocType" : "Home",
+      "Nature" : "DocType",
+      "Format" : "",
+      "Détenteur" : "AXA",
+      "Fréquence" : "",
+      "Latence" : "",
+      "Mise_à_disposition" : "2013"
+    },
+    {
+      "Nom" : "InsuranceClaim",
+      "Description" : "Mes sinistres déclarés à mon assurance.",
+      "Exemple" : "--",
+      "Typologie" : "Finance",
+      "DocType" : "InsuranceClaim",
+      "Nature" : "DocType",
+      "Format" : "",
+      "Détenteur" : "AXA",
+      "Fréquence" : "",
+      "Latence" : "",
+      "Mise_à_disposition" : "2013"
+    },
+    {
+      "Nom" : "Vehicle",
+      "Description" : "Mes véhicules, auto, moto. (immatriculation, puissance, age, kilométrage, marque, ...).",
+      "Exemple" : "--",
+      "Typologie" : "Domicile",
+      "DocType" : "Vehicle",
+      "Nature" : "DocType",
+      "Format" : "",
+      "Détenteur" : "AXA",
+      "Fréquence" : "",
+      "Latence" : "",
+      "Mise_à_disposition" : "2013"
     }
   ]}
