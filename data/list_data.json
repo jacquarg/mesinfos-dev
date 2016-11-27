@@ -6022,11 +6022,11 @@
     {
       "Nom" : "Factures de téléphone",
       "Description" : "Mes factures de téléphone, scrappées chez Bouygues, SFR, Free, Orange, Sosh, Virgin Mobile.",
-      "Exemple" : "",
+      "Exemple" : "factures_telephone",
       "Typologie" : "Finance",
       "DocType" : "Bill",
       "Nature" : "Subset",
-      "Format" : "if (doc.type && doc.type.toLowerCase() === 'phone') { emit(doc._id); }",
+      "Format" : "emit(doc._id);",
       "Détenteur" : "Cozy",
       "Fréquence" : "Mensuelle",
       "Latence" : "24h",
