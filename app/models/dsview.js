@@ -29,12 +29,12 @@ module.exports = Backbone.Model.extend({
     var self = this;
     var start = Date.now();
     app.trigger('message:display', displayId, 'defineView ' + self.getName());
-    
+
     return cozysdk.defineView(this.getDocType(), this.getName(),
       this.getMapFunction())
     .then(function(err) {
       app.trigger('message:display', displayId, 'initialize ' + self.getName());
-        cozysdk.run(self.getDocType(), self.getName(), { limit: 1 });
+        cozysdk.queryView(self.getDocType(), self.getName(), { limit: 1 });
       })
     .then(function() {
       app.trigger('message:display', displayId, self.getName() + ' màj en '

@@ -1,25 +1,27 @@
-# MesInfosDataPlayground : un outils pour les développeur MesInfos !
+# MesInfos Dev : un outils pour les développeur MesInfos !
 
-![MesInfosDataPlayground Screenshot](img/documentation/screenshot_main.png)
+![MesInfos-Dev Screenshot](img/documentation/screenshot_main.png)
 
 
 ## Pré-requis
 1. Consulter la page [participer au Pilote MesInfos](http://mesinfos.fing.org/participer/).
-2. Avoir suivi [la documentation Cozy](https://dev.cozy.io), et **[installer un environnement de développement Cozy](https://dev.cozy.io/#getting-started)**
-3. Installer l'application dans votre Cozy :
+2. Avoir suivi [la documentation Cozy](https://dev.cozy.io) :
+ 1. **[installer un environnement de développement Cozy](https://dev.cozy.io/#getting-started)**
+ 2. **[créez une application Client-Side sur Cozy](https://dev.cozy.io/clientsideapp.html)**
+3. Installer l'application **MesInfos-Dev** dans votre Cozy :
     * Allez à la page [_store_](http://localhost:9104/#applications)
-    * Copier l'url _https://github.com/jacquarg/mesinfosdataplayground_ dans le champs _installer depuis un dépôt git_ en bas de la page :
+    * Copier l'url _https://github.com/jacquarg/mesinfos-dev_ dans le champs _installer depuis un dépôt git_ en bas de la page :
     ![Installer une application depuis un dépôt git](img/documentation/cozy_install_field_fr.png)
-    * dès que l'installation est terminée, lancez l'application](http://localhost:9104/#apps/mesinfosdataplayground/)
+    * dès que l'installation est terminée, lancez l'[application](http://localhost:9104/#apps/mesinfos-dev/)
 
 
-## Utiliser MesInfosDataPlayground
+## Utiliser MesInfos-Dev
 
 ### Jeux de synthèse
 
 Les jeux de données de synthèse sont des exemples des données MesInfos. Ce sont les données personnelles d'un personnage fictif (Germaine Dupond), qui permettront de visualiser les structures de données, et tester les applications pendant le développement.
 
-Dans MesInfosDataPlayground, vous retrouverez dans la barre de menu, la liste des données, classées par typologies (comme sur la page _[Les données du pilote MesInfos](http://mesinfos.fing.org/cartographies/datapilote/)_). Vous pourrez alors,
+Dans MesInfos-Dev, vous retrouverez dans la barre de menu, la liste des données, classées par typologies (comme sur la page _[Les données du pilote MesInfos](http://mesinfos.fing.org/cartographies/datapilote/)_). Vous pourrez alors,
 * visualiser la documentation générale concernant ce type de données,
 * insérer (ou supprimer) un jeu de donnée de synthèse du Cozy,
 * visualiser les données brutes (json),
@@ -56,11 +58,21 @@ Open source, développée par la Fing, sous licence AGPL v3.
 ### Bug
 * Afficher les messages, et les messages d'erreur à un lieu approprié.
 * Améliorer affichage des valeurs de type Objet, ou Array.
+* Temps de latence, peuvent rendre inutilisable.
+* Pas de màj de la fonction de map ?
+* Readonly si responsive ... ?
 
 ### Nouvelles fonctionnalités
 * Bouton pour ajouter facilement un jeu de donnée custom
 * Détecter les doctypes présents dans le Cozy
 * Gérer de multiples jeux de synthèse par sous-type de données.
+
+### Changelog
+
+#### v1.0.1
+* Modification du nom pour mesinfos-dev
+* Liens vers le tuto 'single page app'
+* Modification des noms des méthodes de cozy-sdk (pour suivre la doc)
 
 
 ### Howto hack this app
