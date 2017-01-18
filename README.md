@@ -60,7 +60,6 @@ Open source, développée par la Fing, sous licence AGPL v3.
 * Améliorer affichage des valeurs de type Objet, ou Array.
 * Temps de latence, peuvent rendre inutilisable.
 * Pas de màj de la fonction de map ?
-* Readonly si responsive ... ?
 
 ### Nouvelles fonctionnalités
 * Bouton pour ajouter facilement un jeu de donnée custom
@@ -68,6 +67,10 @@ Open source, développée par la Fing, sous licence AGPL v3.
 * Gérer de multiples jeux de synthèse par sous-type de données.
 
 ### Changelog
+
+#### v1.0.2
+* Màj des jeux de synthèse EDF.
+* Fix : boutton envoyé inactif sur petits écrans.
 
 #### v1.0.1
 * Modification du nom pour mesinfos-dev
