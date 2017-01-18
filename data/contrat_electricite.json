@@ -3,21 +3,26 @@
     "vendor": "EDF",
     "clientId": "6012345678",
     "number": "1234654321",
+    "name": "Tarif Bleu",
     "start": "2013-03-01",
+    "end": null,
     "status": "CONTRAT_ACTIF",
+    "terminationGrounds": null,
+
     "pdl": "01324654321236",
     "energie": "Électricité",
-    "nomOffre": "Tarif Bleu",
-    "puissance": "6 kVA",
-    "structureTarifaire": "OPTION_BASE",
-    "compteur": {
+    "troubleshootingPhone": "09 726 750 75",
+    "power": "6 kVA",
+    "contractSubcategory1": "OPTION_BASE",
+    "counter": {
       "comptage": "BASE",
       "nombreRoues": "005",
       "dernierIndex": "69988.0",
       "type": "CBE"
     },
-    "consommationAnnuelle": "6006",
-    "releve": {
+    "annualConsumption": "6006",
+    "peakHours": null,
+    "statement": {
       "prochaineReleve": "2017-01-12",
       "saisieReleveConfiance": "SAISIE_IMPOSSIBLE_NON_ELIGIBLE_RC",
       "dateFermetureReleveConfiance": null,
@@ -78,11 +83,7 @@
         "valeurSouscrite": "NON"
       }
     ],
-    "docTypeVersion": "konnectors_edf-0.7.2",
     "docType": "contract",
-    "end": null,
-    "terminationGrounds": null,
-    "numeroDepannage": "09 726 750 75",
-    "horrairesHeureCreuses": null
+    "docTypeVersion": "konnectors_edf-0.7.2"
   }
 ]

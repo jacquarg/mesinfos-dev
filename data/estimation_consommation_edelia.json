@@ -1,0 +1,317 @@
+[
+  {
+    "contractNumber": "1234654321",
+    "start": "2016-03-01",
+    "end": "2016-04-01",
+    "value": 541,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-03",
+    "cost": 88,
+    "costsByCategory": {
+      "BASE": 81,
+      "standing": 7
+    },
+    "valuesByCatergory": {
+      "BASE": 541
+    },
+    "statements": [
+      {
+        "date": "2016-03-01",
+        "type": "FACTURE",
+        "indexesByLabel": {
+          "BASE": 68255
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.9",
+    "docType": "consumptionstatement"
+  },
+  {
+    "contractNumber": "1234654321",
+    "start": "2016-04-01",
+    "end": "2016-05-01",
+    "value": 398,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-04",
+    "cost": 67,
+    "costsByCategory": {
+      "BASE": 60,
+      "standing": 7
+    },
+    "valuesByCatergory": {
+      "BASE": 398
+    },
+    "statements": [
+      {
+        "date": "2016-04-01",
+        "indexesByLabel": {
+          "BASE": 68797
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.9",
+    "docType": "consumptionstatement"
+  },
+  {
+    "_id": "b06d3fc93bfe633d84981d1dd40027a9",
+    "contractNumber": "1234654321",
+    "start": "2016-05-01",
+    "end": "2016-06-01",
+    "value": 319,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-05",
+    "cost": 55,
+    "costsByCategory": {
+      "BASE": 48,
+      "standing": 7
+    },
+    "valuesByCatergory": {
+      "BASE": 319
+    },
+    "statements": [
+      {
+        "date": "2016-05-01",
+        "indexesByLabel": {
+          "BASE": 69197
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.9",
+    "docType": "consumptionstatement"
+  },
+  {
+    "_id": "b06d3fc93bfe633d84981d1dd40028cc",
+    "contractNumber": "1234654321",
+    "start": "2016-06-01",
+    "end": "2016-07-01",
+    "value": 327,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-06",
+    "cost": 56,
+    "costsByCategory": {
+      "BASE": 49,
+      "standing": 7
+    },
+    "valuesByCatergory": {
+      "BASE": 327
+    },
+    "statements": [
+      {
+        "date": "2016-06-01",
+        "indexesByLabel": {
+          "BASE": 69517
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.9",
+    "docType": "consumptionstatement"
+  },
+  {
+    "_id": "b06d3fc93bfe633d84981d1dd400341d",
+    "contractNumber": "1234654321",
+    "start": "2016-07-01",
+    "end": "2016-08-01",
+    "value": 231,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-07",
+    "cost": 42,
+    "costsByCategory": {
+      "BASE": 35,
+      "standing": 7
+    },
+    "valuesByCatergory": {
+      "BASE": 231
+    },
+    "statements": [
+      {
+        "date": "2016-07-01",
+        "indexesByLabel": {
+          "BASE": 69845
+        }
+      },
+      {
+        "date": "2016-07-15",
+        "type": "FACTURE",
+        "indexesByLabel": {
+          "BASE": 69988
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.9",
+    "docType": "consumptionstatement"
+  },
+  {
+    "_id": "b06d3fc93bfe633d84981d1dd4003c80",
+    "contractNumber": "1234654321",
+    "start": "2016-08-01",
+    "end": "2016-09-01",
+    "value": 154,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-08",
+    "cost": 30,
+    "costsByCategory": {
+      "BASE": 22,
+      "standing": 8
+    },
+    "valuesByCatergory": {
+      "BASE": 154
+    },
+    "statements": [
+      {
+        "date": "2016-08-01",
+        "indexesByLabel": {
+          "BASE": 70073
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.9",
+    "docType": "consumptionstatement"
+  },
+  {
+    "_id": "b06d3fc93bfe633d84981d1dd40040e7",
+    "contractNumber": "1234654321",
+    "start": "2016-09-01",
+    "end": "2016-10-01",
+    "value": 174,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-09",
+    "cost": 33,
+    "costsByCategory": {
+      "BASE": 25,
+      "standing": 8
+    },
+    "valuesByCatergory": {
+      "BASE": 174
+    },
+    "statements": [
+      {
+        "date": "2016-09-01",
+        "indexesByLabel": {
+          "BASE": 70228
+        }
+      },
+      {
+        "date": "2016-09-27",
+        "type": "RELEVE_BILAN_CONSO",
+        "indexesByLabel": {
+          "BASE": 70369
+        }
+      },
+      {
+        "date": "2016-09-29",
+        "type": "RELEVE_BILAN_CONSO",
+        "indexesByLabel": {
+          "BASE": 70385
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.9",
+    "docType": "consumptionstatement"
+  },
+  {
+    "_id": "b06d3fc93bfe633d84981d1dd40045b2",
+    "contractNumber": "1234654321",
+    "start": "2016-10-01",
+    "end": "2016-11-01",
+    "value": 341,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-10",
+    "cost": 57,
+    "costsByCategory": {
+      "BASE": 49,
+      "standing": 8
+    },
+    "valuesByCatergory": {
+      "BASE": 341
+    },
+    "statements": [
+      {
+        "date": "2016-10-01",
+        "indexesByLabel": {
+          "BASE": 70405
+        }
+      },
+      {
+        "date": "2016-10-18",
+        "type": "RELEVE_BILAN_CONSO",
+        "indexesByLabel": {
+          "BASE": 70604
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.9",
+    "docType": "consumptionstatement"
+  },
+  {
+    "_id": "b06d3fc93bfe633d84981d1dd4004ae1",
+    "contractNumber": "1234654321",
+    "start": "2016-11-01",
+    "end": "2016-12-01",
+    "value": 433,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaMonthlyElecConsumption",
+    "period": "2016-11",
+    "cost": 71,
+    "costsByCategory": {
+      "BASE": 63,
+      "standing": 8
+    },
+    "valuesByCatergory": {
+      "BASE": 433
+    },
+    "statements": [
+      {
+        "date": "2016-11-01",
+        "indexesByLabel": {
+          "BASE": 70739
+        }
+      }
+    ],
+    "docTypeVersion": "konnectors_edf-0.7.9",
+    "docType": "consumptionstatement"
+  },
+  {
+    "_id": "b06d3fc93bfe633d84981d1dd4005389",
+    "contractNumber": "1234654321",
+    "start": "2016-03-01",
+    "end": "2016-12-01",
+    "value": 2918,
+    "statementType": "estime",
+    "statementCategory": "edelia",
+    "statementReason": "EdeliaYearlyElecConsumption",
+    "period": "2016",
+    "cost": 499,
+    "costsByCategory": {
+      "BASE": 432,
+      "standing": 67
+    },
+    "valuesByCatergory": {
+      "BASE": 2918
+    },
+    "similarHomes": {
+      "site": 2918,
+      "average": 3129,
+      "least": 1374
+    },
+    "statements": [],
+    "docTypeVersion": "konnectors_edf-0.7.9",
+    "docType": "consumptionstatement"
+  }
+]
