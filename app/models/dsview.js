@@ -1,22 +1,21 @@
-var utils = require('lib/utils');
+var CozyModel = require('../lib/backbone_cozymodel');
+var utils = require('../lib/utils');
 
-module.exports = Backbone.Model.extend({
-  docType: 'DSView',
-
-  defaults: {
-    docTypeVersion: utils.appNameNVersion(),
-  },
+module.exports = CozyModel.extend({
+  docType: 'DSView'.toLowerCase(),
 
   getDocType: function() {
     return this.get('docTypeOfView');
   },
 
   getName: function() {
-    return this.get('name');
+    return this.getDocType() + '_' + this.getIndexFields().join('_');
   },
 
-  getMapFunction: function() {
-    return this.get('mapFunction');
+  getIndexFields: function() {
+    // TODO : handle doctype version / migration ?
+    var fields = this.get('indexFields');
+    return Array.isArray(fields) ? fields : [];
   },
 
   getQueryParams: function() {
@@ -30,11 +29,13 @@ module.exports = Backbone.Model.extend({
     var start = Date.now();
     app.trigger('message:display', displayId, 'defineView ' + self.getName());
 
-    return cozysdk.defineView(this.getDocType(), this.getName(),
-      this.getMapFunction())
-    .then(function(err) {
+    return cozy.client.data.defineIndex(this.getDocType(), this.getIndexFields())
+    .then(function(index) {
+      self.index = index;
+
       app.trigger('message:display', displayId, 'initialize ' + self.getName());
-        cozysdk.queryView(self.getDocType(), self.getName(), { limit: 1 });
+      // this is just an prefetch (real query done in collections/documents.)
+      cozy.client.data.query(self.index, self.getQueryParams());
       })
     .then(function() {
       app.trigger('message:display', displayId, self.getName() + ' màj en '
@@ -43,26 +44,4 @@ module.exports = Backbone.Model.extend({
     .catch(utils.generateDisplayError(
       'Erreur pendant updateView ' + self.getName()));
   },
-
-  parse: function(raw) {
-    raw.id = raw._id;
-    return raw;
-  },
-
-  sync: function(method, model, options) {
-    var callback = function(err, res) {
-      if (err) { return options.error(err); }
-      options.success(res);
-    }
-
-    if (method === 'create') {
-      return cozysdk.create('DSView', model.attributes, callback);
-    } else if (method === 'update' || method === 'patch') {
-      return cozysdk.updateAttributes('DSView', model.attributes._id, model.attributes, callback);
-    } else if (method === 'delete') {
-      return cozysdk.destroy('DSView', model.attributes._id, callback);
-    } else if (method === 'read') {
-      return cozysdk.find('DSView', model.attributes._id, callback);
-    }
-  }
 });

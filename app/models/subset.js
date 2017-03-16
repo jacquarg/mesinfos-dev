@@ -16,17 +16,16 @@ module.exports = DSView.extend({
     return utils.slugify(this.get('Nom'));
   },
 
-  getMapFunction: function() {
-    return utils.test2MapFunction(this.get('Format'));
+  getIndexFields: function() {
+    return JSON.parse(this.get('Format')).fields;
   },
-
 
   getQueryParams: function() {
     return {
+      selector: JSON.parse(this.get('Format')).selector,
       limit: 10,
       include_docs: true
     };
-
   },
 
   // Readonly!

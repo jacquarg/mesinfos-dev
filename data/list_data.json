@@ -3088,7 +3088,7 @@
       "Typologie" : "Communication",
       "DocType" : "PhoneCommunicationLog",
       "Nature" : "Subset",
-      "Format" : "emit(doc._id);",
+      "Format" : "{ \"fields\": [\"_id\"], \"selector\": { \"_id\": \"\" }}",
       "Détenteur" : "Orange",
       "Fréquence" : "mensuelle",
       "Latence" : "un mois",

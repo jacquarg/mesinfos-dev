@@ -22,7 +22,6 @@ module.exports = Backbone.Collection.extend({
     return this.map(function(doc) {
       var res = doc.toJSON();
       delete res.fields;
-      delete res._result;
       return res;
     });
   },
@@ -32,9 +31,7 @@ module.exports = Backbone.Collection.extend({
     return resp.map(this._generateFields);
   },
 
-  _generateFields: function(res) {
-    var doc = res.doc;
-
+  _generateFields: function(doc) {
     var fieldsDocumentation = app.fields.filter(function(field) {
       // TODO : origin too ?
       return field.DocType.toLowerCase() === doc.docType.toLowerCase();
@@ -68,8 +65,6 @@ module.exports = Backbone.Collection.extend({
     });
     doc.fields = fields;
 
-    delete res.doc; // avoid circular links
-    doc._result = res;
     return doc;
   },
 
@@ -85,15 +80,7 @@ module.exports = Backbone.Collection.extend({
       return;
     }
 
-    cozysdk.run(this.dsView.getDocType(), this.dsView.getName(), this.dsView.getQueryParams(),
-      function(err, results) {
-        if (err) {
-          if (options.error) { options.error(err); }
-          return;
-        }
-
-        options.success(results);
-      });
+    return cozy.client.data.query(this.dsView.index, this.dsView.getQueryParams())
+    .then(options.success, options.error);
   },
-
 });

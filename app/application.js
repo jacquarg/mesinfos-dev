@@ -58,9 +58,9 @@ var Application = Mn.Application.extend({
     var displayId = 'defineSubsetView';
     var self = this;
     var count = this.subsets.length;
-    
+
     return ap.series(this.subsets, function(subset, index) {
-      self.trigger('message:display', displayId, index + '/' + count + 
+      self.trigger('message:display', displayId, index + '/' + count +
         ' Création de la requète ' + subset.getName());
       return subset.updateDSView();
     })
@@ -95,7 +95,8 @@ var Application = Mn.Application.extend({
       Backbone.history.start({ pushState: false });
     }
     var randomIndex = Math.floor(Math.random() * this.subsets.size());
-    this.trigger('requestform:setView', this.subsets.at(randomIndex));
+    //this.trigger('requestform:setView', this.subsets.at(randomIndex));
+    this.trigger('requestform:setView', this.subsets.find(function(subset) { return subset.get('DocType') === 'PhoneCommunicationLog'; }));
   },
 
 });
@@ -109,4 +110,3 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(function() { application.prepareInBackground();})
     .then(application.start.bind(application));
 });
-

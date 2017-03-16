@@ -15,12 +15,11 @@ module.exports = Backbone.Collection.extend({
 
     var docType = new this.model().docType.toLowerCase();
 
-    cozysdk.defineView(docType, 'all', 'function(doc) { emit(doc._id); }').then(
-    cozysdk.queryView(docType, 'all', { include_docs: true }, function(err, results) {
-      if (err) { return options.error(err); }
-
-      return options.success(results.map(function(res) { return res.doc; }));
-    }));
+    cozy.client.data.defineIndex(docType, ['_id'])
+    .then(function(index) {
+      return cozy.client.data.query(index, { selector: { _id: '' }});
+    })
+    .then(options.success, options.error);
   },
 
 });

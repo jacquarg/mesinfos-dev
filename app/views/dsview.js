@@ -24,8 +24,11 @@ module.exports = Mn.CompositeView.extend({
         this.collection.first());
   },
 
-  serializeModel: function() {
-    return Mn.CompositeView.prototype.serializeModel(this.collection.first());
+  serializeData: function() {
+    var model = this.collection.first();
+    var data = model.toJSON();
+    data.name = model.getName();
+    return data;
   },
 
   onDestroyAll: function() {

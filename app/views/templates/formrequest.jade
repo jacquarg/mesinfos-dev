@@ -1,7 +1,7 @@
 h3 Requêtes au datasystem
 
 .defineview
-  .method cozysdk.
+  .method cozy.client.data.
     b defineView
     |(
   ul
@@ -9,34 +9,23 @@ h3 Requêtes au datasystem
       input#inputdoctype.param(type="text", placeholder="DocType", name="doctype", value="Event")
       span ,
     li
-      input#inputname.param(type="text", placeholder="Name", name="name", value="MyRequest")
-      span ,
-    li
-      //- span "
-      textarea#inputmap(placeholder="", rows="3")
-        | function(doc) {
-        |   emit(doc._id);
-        | }
-      span ");
+      span [
+      input#inputfields.param(type="text", placeholder="MyRequest['field1', 'field2', ...]", name="name", value="'_id'")
+      span ])
 
 .queryview
-  .method cozysdk.
+  .method .then(function(index) { return&nbsp;cozy.client.data.
     b queryView
     |(
   ul
     li
-      input#querydoctype.param(type="text", readonly="readonly")
-      span ,
+      span index,
     li
-      input#queryname.param(type="text", readonly="readonly")
-      span ,
-    li
-      //-span "
       textarea#queryparams(placeholder="", rows="5")
         | {
-        |   include_docs: true,
+        |   selector: { _id: '' },
         |   limit: 5,
         | }
-      span ");
+      span ); });
 
 button.btn.btn-success#inputsend Envoyer →

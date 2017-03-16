@@ -1,6 +1,6 @@
 module.exports = Mn.CompositeView.extend({
   tagName: 'li',
-  className: 'result',
+  className: 'doctype',
   template: require('views/templates/document'),
 
   childView: require('views/field'),
