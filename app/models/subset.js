@@ -76,7 +76,7 @@ module.exports = DSView.extend({
   _insertOneSynthDoc: function(row) {
     delete row._id;
     delete row.id;
-    return cozysdk.create(this.getDocType(), row);
+    return cozy.client.data.create(this.getDocType(), row);
   },
 
   cleanSynthSet: function() {
@@ -88,7 +88,7 @@ module.exports = DSView.extend({
     return ap.series(self.get('synthSetIds'), function(id, index) {
         app.trigger('message:display', displayId, 'Suppression des documents '
          + self.getDocType() + ' de synthèse ' + index + '/' + count);
-        return cozysdk.destroy(self.getDocType(), id);
+        return cozy.client.data.delete(self.getDocType(), { _id: id });
     })
     .then(function() {
       app.trigger('message:display', displayId, 'Màj des paramètres');
