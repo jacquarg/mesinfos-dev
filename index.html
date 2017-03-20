@@ -2,15 +2,17 @@
 <html lang="fr">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{.CozyClientJS}}
   <script src="./public/vendor.js"></script>
   <script src="./public/app.js"></script>
-  <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="//fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="index.js"></script>
+  <!-- <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"> -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet" type="text/css"> -->
   <link href="./styles/app.css"  rel="stylesheet" type="text/css"/>
   <title>MesInfos Data Playground</title>
 </head>
 <body>
-  <div role="application" class="container-fluid" ></div>
-  <script>require('application');</script>
+  <div role="application" data-token="{{.Token}}" data-cozydomain="{{.Domain}}" class="container-fluid" ></div>
+  <!-- <script>require('application');</script> -->
 </body>
 </html>

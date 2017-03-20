@@ -172,6 +172,15 @@ var Application = Mn.Application.extend({
   },
 
   prepare: function() {
+    var app = $('[role=application]')[0];
+
+    cozy.client.init({
+      cozyURL: '//' + app.dataset.cozydomain,
+      token: app.dataset.token,
+    });
+
+    // cozy.client._version = Promise.resolve(false);
+
     return Promise.resolve($.getJSON('data/list_data.json'))
       .then(this._parseMetadata.bind(this))
   },
@@ -179,7 +188,7 @@ var Application = Mn.Application.extend({
   prepareInBackground: function() {
     this.properties.fetch();
 
-    return this._defineViews();
+    //return this._defineViews();
   },
 
   _parseMetadata: function(data) {
@@ -246,7 +255,7 @@ var Application = Mn.Application.extend({
       Backbone.history.start({ pushState: false });
     }
     var randomIndex = Math.floor(Math.random() * this.subsets.size());
-    this.trigger('requestform:setView', this.subsets.at(randomIndex));
+    // this.trigger('requestform:setView', this.subsets.at(randomIndex));
     // this.trigger('requestform:setView', this.subsets.find(function(subset) { return subset.get('DocType') === 'PhoneCommunicationLog'; }));
   },
 
@@ -295,13 +304,16 @@ module.exports = Backbone.Collection.extend({
 
   // Generate fields, with the metadata !
   parse: function(resp, options) {
-    return resp.map(this._generateFields);
+    return resp.map(this._generateFields.bind(this));
   },
 
   _generateFields: function(doc) {
+    var docType = this.dsView.getDocType();
     var fieldsDocumentation = app.fields.filter(function(field) {
       // TODO : origin too ?
-      return field.DocType.toLowerCase() === doc.docType.toLowerCase();
+      // TOOD : update V3
+      // return field.DocType.toLowerCase() === doc.docType.toLowerCase();
+      return field.DocType === docType;
     });
 
     var viewedFields = {};
@@ -458,7 +470,7 @@ module.exports = Backbone.Model.extend({
 
   sync: function (method, model, options) {
     return this.syncPromise(method, model, options)
-    .then(options.success, function(err) {
+    .then(options.success, (err) => {
         console.log(err);
         options.error(err);
       });
@@ -482,8 +494,6 @@ module.exports = Backbone.Model.extend({
   },
 });
 
-cozy.client.init();
-
 });
 
 require.register("lib/backbone_cozysingleton.js", function(exports, require, module) {
@@ -496,10 +506,13 @@ module.exports = CozyModel.extend({
     if (method === 'read' && model.isNew()) {
       return cozy.client.data.defineIndex(this.docType.toLowerCase(), ['_id'])
       .then((index) => {
-        return cozy.client.data.query(index, { selector: { _id: '' }, limit: 1 });
+        return cozy.client.data.query(index, { selector: { _id: { $gt: null } }, limit: 1 });
       })
       .then(res => ((res && res.length !== 0) ? res[0] : {}))
-      .then(options.success, options.error);
+      .then(options.success, function(err) {
+        console.error(err);
+        return options.error(err);
+      });
     }
 
     return CozyModel.prototype.sync.call(this, method, model, options);
@@ -605,7 +618,11 @@ var CozyModel = require('../lib/backbone_cozymodel');
 var utils = require('../lib/utils');
 
 module.exports = CozyModel.extend({
-  docType: 'DSView'.toLowerCase(),
+  docType: 'org.fing.mesinfos.mesinfos-dev.dsview',
+
+  // getQualifiedDocType: function() {
+  //   return 'org.fing.mesinfos.mesinfos-dev.' + this.getDocType();
+  // },
 
   getDocType: function() {
     return this.get('docTypeOfView');
@@ -655,7 +672,7 @@ require.register("models/properties.js", function(exports, require, module) {
 var CozySingleton = require('../lib/backbone_cozysingleton');
 
 var Properties = CozySingleton.extend({
-  docType: 'MesInfosDataPlaygroundProperties'.toLowerCase(),
+  docType: 'org.fing.mesinfos.mesinfos-dev.properties',
   defaults: _.extend({
     synthSets: {},
   }, CozySingleton.defaults),
@@ -716,8 +733,7 @@ module.exports = DSView.extend({
   getQueryParams: function() {
     return {
       selector: JSON.parse(this.get('Format')).selector,
-      limit: 10,
-      include_docs: true
+      limit: 10
     };
   },
 
@@ -769,6 +785,8 @@ module.exports = DSView.extend({
   _insertOneSynthDoc: function(row) {
     delete row._id;
     delete row.id;
+    delete row._rev;
+    delete row.docType;
     return cozy.client.data.create(this.getDocType(), row);
   },
 
@@ -781,7 +799,10 @@ module.exports = DSView.extend({
     return ap.series(self.get('synthSetIds'), function(id, index) {
         app.trigger('message:display', displayId, 'Suppression des documents '
          + self.getDocType() + ' de synthèse ' + index + '/' + count);
-        return cozy.client.data.delete(self.getDocType(), { _id: id });
+        return cozy.client.data.find(self.getDocType(), id)
+        .then(function(doc) {
+          return cozy.client.data.delete(self.getDocType(), doc);
+        });
     })
     .then(function() {
       app.trigger('message:display', displayId, 'Màj des paramètres');
@@ -1487,7 +1508,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<h3>Requêtes au datasystem</h3><div class=\"defineview\"><div class=\"method\">cozy.client.data.<b>defineView</b>(</div><ul><li><input id=\"inputdoctype\" type=\"text\" placeholder=\"DocType\" name=\"doctype\" value=\"Event\" class=\"param\"/><span>,</span></li><li><span>[</span><input id=\"inputfields\" type=\"text\" placeholder=\"MyRequest['field1', 'field2', ...]\" name=\"name\" value=\"'_id'\" class=\"param\"/><span>])</span></li></ul></div><div class=\"queryview\"><div class=\"method\">.then(function(index) { return&nbsp;cozy.client.data.<b>queryView</b>(</div><ul><li><span>index,</span></li><li><textarea id=\"queryparams\" placeholder=\"\" rows=\"5\">{\n  selector: { _id: '' },\n  limit: 5,\n}</textarea><span>); });</span></li></ul></div><button id=\"inputsend\" class=\"btn btn-success\">Envoyer →</button>");;return buf.join("");
+buf.push("<h3>Requêtes au datasystem</h3><div class=\"defineview\"><div class=\"method\">cozy.client.data.<b>defineView</b>(</div><ul><li><input id=\"inputdoctype\" type=\"text\" placeholder=\"DocType\" name=\"doctype\" value=\"Event\" class=\"param\"/><span>,</span></li><li><span>[</span><input id=\"inputfields\" type=\"text\" placeholder=\"MyRequest['field1', 'field2', ...]\" name=\"name\" value=\"'_id'\" class=\"param\"/><span>])</span></li></ul></div><div class=\"queryview\"><div class=\"method\">.then(function(index) { return&nbsp;cozy.client.data.<b>queryView</b>(</div><ul><li><span>index,</span></li><li><textarea id=\"queryparams\" placeholder=\"\" rows=\"5\">{\n  \"selector\": { \"_id\": { \"$gt\": null }},\n  limit: 10,\n}</textarea><span>); });</span></li></ul></div><button id=\"inputsend\" class=\"btn btn-success\">Envoyer →</button>");;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {

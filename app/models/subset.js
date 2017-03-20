@@ -23,8 +23,7 @@ module.exports = DSView.extend({
   getQueryParams: function() {
     return {
       selector: JSON.parse(this.get('Format')).selector,
-      limit: 10,
-      include_docs: true
+      limit: 10
     };
   },
 
@@ -76,6 +75,8 @@ module.exports = DSView.extend({
   _insertOneSynthDoc: function(row) {
     delete row._id;
     delete row.id;
+    delete row._rev;
+    delete row.docType;
     return cozy.client.data.create(this.getDocType(), row);
   },
 
@@ -88,7 +89,10 @@ module.exports = DSView.extend({
     return ap.series(self.get('synthSetIds'), function(id, index) {
         app.trigger('message:display', displayId, 'Suppression des documents '
          + self.getDocType() + ' de synthèse ' + index + '/' + count);
-        return cozy.client.data.delete(self.getDocType(), { _id: id });
+        return cozy.client.data.find(self.getDocType(), id)
+        .then(function(doc) {
+          return cozy.client.data.delete(self.getDocType(), doc);
+        });
     })
     .then(function() {
       app.trigger('message:display', displayId, 'Màj des paramètres');

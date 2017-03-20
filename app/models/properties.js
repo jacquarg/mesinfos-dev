@@ -1,7 +1,7 @@
 var CozySingleton = require('../lib/backbone_cozysingleton');
 
 var Properties = CozySingleton.extend({
-  docType: 'MesInfosDataPlaygroundProperties'.toLowerCase(),
+  docType: 'org.fing.mesinfos.mesinfos-dev.properties',
   defaults: _.extend({
     synthSets: {},
   }, CozySingleton.defaults),

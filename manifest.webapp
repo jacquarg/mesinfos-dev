@@ -1,0 +1,101 @@
+{
+  "name": "MesInfos-dev",
+  "slug": "mesinfos-dev",
+  "icon": "img/icon.svg",
+  "description": "Une application pour les développeurs, pour visualiser et tester l'accès aux données du Pilote MesInfos.",
+  "source": "",
+  "developer": {
+    "name": "Fing",
+    "url": "http://mesinfos.fing.org"
+  },
+  "default_locale": "fr",
+  "locales": {
+    "fr": {
+      "description": "Une application pour les développeurs, pour visualiser et tester l'accès aux données du Pilote MesInfos."
+    }
+  },
+  "routes": {
+    "/": {
+      "folder": "/",
+      "index": "index.html",
+      "public": false
+    }
+  },
+  "version": "3.0.0",
+  "licence": "AGPL-3.0",
+  "permissions": {
+    "properties": {
+      "description": "App properties.",
+      "type": "org.fing.mesinfos.mesinfos-dev.properties"
+    },
+    "dsview": {
+      "description": "Store requests parameters.",
+      "type": "org.fing.mesinfos.mesinfos-dev.dsview"
+    },
+    "io.cozy.file": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "io.cozy.file"
+    },
+    "apps": {
+      "description": "Required by the cozy-bar to display the icons of the apps",
+      "type": "io.cozy.apps",
+      "verbs": ["GET"]
+    },
+    "org.fing.mesinfos.foyer": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.foyer"
+    },
+    "org.fing.mesinfos.paymentterms": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.paymentterms"
+    },
+    "org.fing.mesinfos.consumptionstatement": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.consumptionstatement"
+    },
+    "org.fing.mesinfos.contract": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.contract"
+    },
+    "org.fing.mesinfos.webhistory": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.webhistory"
+    },
+    "org.fing.mesinfos.searchhistory": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.searchhistory"
+    },
+    "org.fing.mesinfos.geopoint": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.geopoint"
+    },
+    "org.fing.mesinfos.phonecommunicationlog": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.phonecommunicationlog"
+    },
+    "org.fing.mesinfos.videostream": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.videostream"
+    },
+    "io.cozy.bill": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "io.cozy.bill"
+    },
+    "org.fing.mesinfos.client": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.client"
+    },
+    "org.fing.mesinfos.home": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.home"
+    },
+    "org.fing.mesinfos.insuranceclaim": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.mesinfos.insuranceclaim"
+    },
+    "org.fing.meisnfos.vehicle": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "org.fing.meisnfos.vehicle"
+    }
+  }
+}

@@ -23,8 +23,8 @@ h3 Requêtes au datasystem
     li
       textarea#queryparams(placeholder="", rows="5")
         | {
-        |   selector: { _id: '' },
-        |   limit: 5,
+        |   "selector": { "_id": { "$gt": null }},
+        |   limit: 10,
         | }
       span ); });
 

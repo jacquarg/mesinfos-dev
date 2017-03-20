@@ -2,7 +2,11 @@ var CozyModel = require('../lib/backbone_cozymodel');
 var utils = require('../lib/utils');
 
 module.exports = CozyModel.extend({
-  docType: 'DSView'.toLowerCase(),
+  docType: 'org.fing.mesinfos.mesinfos-dev.dsview',
+
+  // getQualifiedDocType: function() {
+  //   return 'org.fing.mesinfos.mesinfos-dev.' + this.getDocType();
+  // },
 
   getDocType: function() {
     return this.get('docTypeOfView');

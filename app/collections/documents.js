@@ -28,13 +28,16 @@ module.exports = Backbone.Collection.extend({
 
   // Generate fields, with the metadata !
   parse: function(resp, options) {
-    return resp.map(this._generateFields);
+    return resp.map(this._generateFields.bind(this));
   },
 
   _generateFields: function(doc) {
+    var docType = this.dsView.getDocType();
     var fieldsDocumentation = app.fields.filter(function(field) {
       // TODO : origin too ?
-      return field.DocType.toLowerCase() === doc.docType.toLowerCase();
+      // TOOD : update V3
+      // return field.DocType.toLowerCase() === doc.docType.toLowerCase();
+      return field.DocType === docType;
     });
 
     var viewedFields = {};

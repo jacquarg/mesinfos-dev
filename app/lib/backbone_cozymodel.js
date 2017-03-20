@@ -15,7 +15,7 @@ module.exports = Backbone.Model.extend({
 
   sync: function (method, model, options) {
     return this.syncPromise(method, model, options)
-    .then(options.success, function(err) {
+    .then(options.success, (err) => {
         console.log(err);
         options.error(err);
       });
@@ -38,5 +38,3 @@ module.exports = Backbone.Model.extend({
     }
   },
 });
-
-cozy.client.init();
