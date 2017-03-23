@@ -2,6 +2,8 @@
 @import url("./vendors/bootstrap/bootstrap.min.css");
 @import url("./vendors/bootstrap/bootstrap-theme.min.css");
 
+@import url("./vendors/gfonts.css");
+
 @import url("./vendors/weloveiconfonts/iconicstroke.css");
 
 /* iconicstroke */
@@ -93,7 +95,7 @@ h4 {
 
 /* Typologies */
 .navbar-brand {
-  padding: 0 15px;  
+  padding: 0 15px;
 }
 
 .typologies .dropdown-toggle {
@@ -303,7 +305,7 @@ ul.result {
     display: inline-block;
     overflow: hidden; */
     height: 1.1em;
-    white-space: nowrap;  
+    white-space: nowrap;
   /*! line-height: 1em; */
 }
 
@@ -349,7 +351,7 @@ ul.result {
 }
 
 .doctype .field.expanded .details .comment {
-  display: none;  
+  display: none;
 }
 
 /* Message */

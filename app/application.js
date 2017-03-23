@@ -36,7 +36,7 @@ var Application = Mn.Application.extend({
   prepareInBackground: function() {
     this.properties.fetch();
 
-    //return this._defineViews();
+    return this._defineViews();
   },
 
   _parseMetadata: function(data) {
@@ -103,8 +103,7 @@ var Application = Mn.Application.extend({
       Backbone.history.start({ pushState: false });
     }
     var randomIndex = Math.floor(Math.random() * this.subsets.size());
-    // this.trigger('requestform:setView', this.subsets.at(randomIndex));
-    // this.trigger('requestform:setView', this.subsets.find(function(subset) { return subset.get('DocType') === 'PhoneCommunicationLog'; }));
+    this.trigger('requestform:setView', this.subsets.at(randomIndex));
   },
 
 });
