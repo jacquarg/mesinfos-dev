@@ -87,7 +87,9 @@ h4 {
   content: '▲';
 }
 
-
+[role=application], body {
+  display: block;
+}
 
 /* Typologies */
 .navbar-brand {

@@ -22,13 +22,12 @@ var Application = Mn.Application.extend({
 
   prepare: function() {
     var app = $('[role=application]')[0];
-
     cozy.client.init({
-      cozyURL: '//' + app.dataset.cozydomain,
-      token: app.dataset.token,
+      cozyURL: '//' + app.dataset.cozyDomain,
+      token: app.dataset.cozyToken,
     });
 
-    // cozy.client._version = Promise.resolve(false);
+    cozy.bar.init({appName: "MesInfos-Dev"});
 
     return Promise.resolve($.getJSON('data/list_data.json'))
       .then(this._parseMetadata.bind(this))

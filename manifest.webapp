@@ -1,7 +1,7 @@
 {
   "name": "MesInfos-dev",
-  "slug": "mesinfos-dev",
-  "icon": "img/icon.svg",
+  "slug": "app",
+  "icon": "/img/icon.svg",
   "description": "Une application pour les développeurs, pour visualiser et tester l'accès aux données du Pilote MesInfos.",
   "source": "",
   "developer": {
