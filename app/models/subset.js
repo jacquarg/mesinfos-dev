@@ -117,6 +117,4 @@ module.exports = DSView.extend({
     return this.has('synthSetIds');
   },
 
-
-
 });

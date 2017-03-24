@@ -63,6 +63,7 @@ h3 {
 
 }
 
+/*
 h4 {
   margin: 0;
   margin-top: 15px;
@@ -70,10 +71,11 @@ h4 {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #555;
-  font-size: 16px;
+  font-size: 18px;
   margin: 5px;
   line-height: 22px;
 }
+*/
 
 .toggle {
   cursor: pointer;
@@ -195,6 +197,9 @@ h4 {
 
 /* Historique (dsviews) */
 
+.dsviewshistory {
+  margin-bottom: 20px;
+}
 .dsviewslist>ul {
   list-style: none;
   padding: 0px;

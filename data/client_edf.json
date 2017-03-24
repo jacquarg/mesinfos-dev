@@ -35,6 +35,6 @@
       }
     },
     "docTypeVersion": "konnectors_edf-0.7.2",
-    "docType": "client"
+    "docType": "org.fing.mesinfos.client"
   }
 ]

@@ -825,8 +825,6 @@ module.exports = DSView.extend({
     return this.has('synthSetIds');
   },
 
-
-
 });
 
 });
@@ -848,6 +846,75 @@ module.exports = Backbone.Router.extend({
 
 });
 
+require.register("views/add_synthset_file.js", function(exports, require, module) {
+var app = undefined;
+var template = require('views/templates/add_synthset_file');
+var ap = require('lib/asyncpromise');
+
+module.exports = Mn.ItemView.extend({
+
+  tagName: 'div',
+  template: template,
+  ui: {
+    fileInput: "input",
+  },
+  events: {
+    "change @ui.fileInput": "onFileChange",
+  },
+
+  initialize: function() {
+    app = require('application');
+  },
+
+  onFileChange: function (e) {
+    var reader = new FileReader();
+    var self = this;
+    reader.addEventListener('load', function() {
+      console.log(JSON.parse(reader.result));
+      self.insertSynthSet(JSON.parse(reader.result));
+      //      alert('Contenu du fichier "' + fileInput.files[0].name + '" :\n\n' + reader.result);
+    });
+    console.log(this.ui.fileInput)
+
+    reader.readAsText(this.ui.fileInput[0].files[0]);
+  },
+
+  insertSynthSet: function(raw) {
+    // TODO : use subset to handle destroy ? / remove
+
+    var displayId = 'insertsynthset';
+    var self = this;
+    var count = raw.length;
+    return ap.series(raw, function(doc, index) {
+      app.trigger('message:display', displayId, 'Ajout de documents '
+       + "TODO" + ' de synthèse ' + index + '/' + count);
+      return self._insertOneSynthDoc(doc);
+    })
+    .then(function() {
+      app.trigger('message:hide', displayId);
+      self.trigger('synthsetInserted');
+    })
+    .catch(function(err) {
+      console.error(err);
+      app.trigger('message:error', 'Error while processing data. Retry or check console.');
+    });
+  },
+
+  _insertOneSynthDoc: function(row) {
+    var docType = row.docType;
+    // Clean the document
+    delete row._id;
+    delete row.id;
+    delete row._rev;
+    delete row.docType;
+
+    // and then, insert it !
+    return cozy.client.data.create(docType, row);
+  },
+});
+
+});
+
 require.register("views/app_layout.js", function(exports, require, module) {
 var MessageView = require('views/message');
 var GroupsDSView = require('views/groupsdsviews');
@@ -855,7 +922,7 @@ var RequestForm = require('views/formrequest');
 var Documentation = require('views/documentation');
 var Documents = require('views/documents');
 var Typologies = require('views/typologies');
-
+var AddSynthSetFile = require('views/add_synthset_file');
 var DSView = require('models/dsview');
 
 
@@ -875,6 +942,7 @@ module.exports = Mn.LayoutView.extend({
     documents: '.documents',
     requestForm: '.requestform',
     message: '.message',
+    fileinput: '.fileinput',
   },
 
   initialize: function() {
@@ -889,6 +957,7 @@ module.exports = Mn.LayoutView.extend({
     this.requestForm.show(new RequestForm());
     this.documentation.show(new Documentation());
     this.documents.show(new Documents({ collection: app.documents }));
+    this.fileinput.show(new AddSynthSetFile());
   },
 });
 
@@ -1322,13 +1391,32 @@ module.exports = Mn.ItemView.extend({
 
 });
 
-require.register("views/templates/app_layout.jade", function(exports, require, module) {
+require.register("views/templates/add_synthset_file.jade", function(exports, require, module) {
 var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<nav class=\"typologies navbar navbar-default\"></nav><div class=\"documentation\"></div><div class=\"row\"><div class=\"dsviewshistory col-lg-2 col-sm-4\"></div><div class=\"col-lg-4 col-sm-8\"><div class=\"requestform\"></div><div class=\"message\"></div></div><div class=\"documents col-lg-6 col-sm-12\"></div></div>");;return buf.join("");
+buf.push("<h4>Ajouter des données dans le Cozy</h4><input type=\"file\" id=\"inputsynthsetfile\"/>");;return buf.join("");
+};
+if (typeof define === 'function' && define.amd) {
+  define([], function() {
+    return __templateData;
+  });
+} else if (typeof module === 'object' && module && module.exports) {
+  module.exports = __templateData;
+} else {
+  __templateData;
+}
+});
+
+;require.register("views/templates/app_layout.jade", function(exports, require, module) {
+var __templateData = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<nav class=\"typologies navbar navbar-default\"></nav><div class=\"documentation\"></div><div class=\"row\"><div class=\"col-lg-2 col-sm-4\"><div class=\"dsviewshistory\"></div><div class=\"fileinput\"></div></div><div class=\"col-lg-4 col-sm-8\"><div class=\"requestform\"></div><div class=\"message\"></div></div><div class=\"documents col-lg-6 col-sm-12\"></div></div>");;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {

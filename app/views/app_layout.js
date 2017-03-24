@@ -4,7 +4,7 @@ var RequestForm = require('views/formrequest');
 var Documentation = require('views/documentation');
 var Documents = require('views/documents');
 var Typologies = require('views/typologies');
-
+var AddSynthSetFile = require('views/add_synthset_file');
 var DSView = require('models/dsview');
 
 
@@ -24,6 +24,7 @@ module.exports = Mn.LayoutView.extend({
     documents: '.documents',
     requestForm: '.requestform',
     message: '.message',
+    fileinput: '.fileinput',
   },
 
   initialize: function() {
@@ -38,5 +39,6 @@ module.exports = Mn.LayoutView.extend({
     this.requestForm.show(new RequestForm());
     this.documentation.show(new Documentation());
     this.documents.show(new Documents({ collection: app.documents }));
+    this.fileinput.show(new AddSynthSetFile());
   },
 });
