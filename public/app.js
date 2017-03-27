@@ -1,13 +1,13 @@
 (function() {
   'use strict';
 
-  var globals = typeof window === 'undefined' ? global : window;
+  var globals = typeof global === 'undefined' ? self : global;
   if (typeof globals.require === 'function') return;
 
   var modules = {};
   var cache = {};
   var aliases = {};
-  var has = ({}).hasOwnProperty;
+  var has = {}.hasOwnProperty;
 
   var expRe = /^\.\.?(\/|$)/;
   var expand = function(root, name) {
@@ -36,8 +36,7 @@
   };
 
   var initModule = function(name, definition) {
-    var hot = null;
-    hot = hmr && hmr.createHot(name);
+    var hot = hmr && hmr.createHot(name);
     var module = {id: name, exports: {}, hot: hot};
     cache[name] = module;
     definition(module.exports, localRequire(name), module);
@@ -85,7 +84,7 @@
   };
 
   require.register = require.define = function(bundle, fn) {
-    if (typeof bundle === 'object') {
+    if (bundle && typeof bundle === 'object') {
       for (var key in bundle) {
         if (has.call(bundle, key)) {
           require.register(key, bundle[key]);
@@ -116,7 +115,7 @@
 })();
 
 (function() {
-var global = window;
+var global = typeof window === 'undefined' ? this : window;
 var __makeRelativeRequire = function(require, mappings, pref) {
   var none = {};
   var tryReq = function(name, pref) {
@@ -423,7 +422,7 @@ require.register("lib/appname_version.js", function(exports, require, module) {
 
 const name = 'lamusiquedemesfilms';
 // use brunch-version plugin to populate these.
-const version = '1.0.2';
+const version = '3.0.1';
 
 module.exports = `${name}-${version}`;
 
@@ -1594,7 +1593,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<h3>Requêtes au datasystem</h3><div class=\"defineview\"><div class=\"method\">cozy.client.data.<b>defineView</b>(</div><ul><li><input id=\"inputdoctype\" type=\"text\" placeholder=\"DocType\" name=\"doctype\" value=\"Event\" class=\"param\"/><span>,</span></li><li><span>[</span><input id=\"inputfields\" type=\"text\" placeholder=\"MyRequest['field1', 'field2', ...]\" name=\"name\" value=\"'_id'\" class=\"param\"/><span>])</span></li></ul></div><div class=\"queryview\"><div class=\"method\">.then(function(index) { return&nbsp;cozy.client.data.<b>queryView</b>(</div><ul><li><span>index,</span></li><li><textarea id=\"queryparams\" placeholder=\"\" rows=\"5\">{\n  \"selector\": { \"_id\": { \"$gt\": null }},\n  limit: 10,\n}</textarea><span>); });</span></li></ul></div><button id=\"inputsend\" class=\"btn btn-success\">Envoyer →</button>");;return buf.join("");
+buf.push("<h3>Requêtes au datasystem</h3><div class=\"defineview\"><div class=\"method\">cozy.client.data.<b>defineIndex</b>(</div><ul><li><input id=\"inputdoctype\" type=\"text\" placeholder=\"DocType\" name=\"doctype\" value=\"Event\" class=\"param\"/><span>,</span></li><li><span>[</span><input id=\"inputfields\" type=\"text\" placeholder=\"MyRequest['field1', 'field2', ...]\" name=\"name\" value=\"'_id'\" class=\"param\"/><span>])</span></li></ul></div><div class=\"queryview\"><div class=\"method\">.then(function(index) { return&nbsp;cozy.client.data.<b>query</b>(</div><ul><li><span>index,</span></li><li><textarea id=\"queryparams\" placeholder=\"\" rows=\"5\">{\n  \"selector\": { \"_id\": { \"$gt\": null }},\n  limit: 10,\n}</textarea><span>); });</span></li></ul></div><button id=\"inputsend\" class=\"btn btn-success\">Envoyer →</button>");;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -1760,5 +1759,3 @@ require.register("___globals___", function(exports, require, module) {
   
 });})();require('___globals___');
 
-
-//# sourceMappingURL=app.js.map

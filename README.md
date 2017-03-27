@@ -4,16 +4,6 @@
 
 
 ## Pré-requis
-1. Consulter la page [participer au Pilote MesInfos](http://mesinfos.fing.org/participer/).
-2. Avoir suivi [la documentation Cozy](https://dev.cozy.io) :
- 1. **[installer un environnement de développement Cozy](https://dev.cozy.io/#getting-started)**
- 2. **[créez une application Client-Side sur Cozy](https://dev.cozy.io/clientsideapp.html)**
-3. Installer l'application **MesInfos-Dev** dans votre Cozy :
-    * Allez à la page [_store_](http://localhost:9104/#applications)
-    * Copier l'url _https://github.com/jacquarg/mesinfos-dev_ dans le champs _installer depuis un dépôt git_ en bas de la page :
-    ![Installer une application depuis un dépôt git](img/documentation/cozy_install_field_fr.png)
-    * dès que l'installation est terminée, lancez l'[application](http://localhost:9104/#apps/mesinfos-dev/)
-
 
 ## Utiliser MesInfos-Dev
 
@@ -31,9 +21,9 @@ Dans MesInfos-Dev, vous retrouverez dans la barre de menu, la liste des données
 
 
 ### Faire des requêtes, accèder aux données dans le Cozy
-L'interface _Requêtes au Datasystem_ imite l'interface du [cozysdk](https://github.com/cozy/cozy-browser-sdk) :
+L'interface _Requêtes au Datasystem_ imite l'interface du [cozy-client-js](https://github.com/cozy/cozy-client-js) :
 
-1. créer les requêtes (les vue CouchDB)
+1. créer les index
 2. lancer les requêtes, avec les paramètres adéquats.
 
 L'_Historique des requêtes_ permet de revoir et relancer les tentatives de requêtes précédentes.
@@ -67,6 +57,9 @@ Open source, développée par la Fing, sous licence AGPL v3.
 * Gérer de multiples jeux de synthèse par sous-type de données.
 
 ### Changelog
+
+#### v3.0.0
+* Compatibilité Cozy V3
 
 #### v1.0.2
 * Màj des jeux de synthèse EDF.
