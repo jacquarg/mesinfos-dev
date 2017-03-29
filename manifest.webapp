@@ -21,7 +21,7 @@
       "public": false
     }
   },
-  "version": "3.0.0",
+  "version": "3.0.2",
   "licence": "AGPL-3.0",
   "permissions": {
     "properties": {
@@ -32,9 +32,25 @@
       "description": "Store requests parameters.",
       "type": "org.fing.mesinfos.mesinfos-dev.dsview"
     },
-    "io.cozy.file": {
+    "io.cozy.files": {
       "description": "Try data request and add synthetics datasets.",
-      "type": "io.cozy.file"
+      "type": "io.cozy.files"
+    },
+    "io.cozy.event": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "io.cozy.event"
+    },
+    "io.cozy.contact": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "io.cozy.contact"
+    },
+    "photos.albums": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "io.cozy.photos.albums"
+    },
+    "io.cozy.bankoperation": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "io.cozy.bankoperation"
     },
     "apps": {
       "description": "Required by the cozy-bar to display the icons of the apps",

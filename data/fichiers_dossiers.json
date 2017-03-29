@@ -1,0 +1,76 @@
+[
+  {
+    "_id": "3d7caddfcceb684f140340c8c300041a",
+    "_rev": "1-dde2a21aa1d0f1fb921f568f5c4e918f",
+    "created_at": "2017-03-28T08:54:23.875814982Z",
+    "dir_id": "io.cozy.files.root-dir",
+    "name": "Test folder",
+    "path": "/Test folder",
+    "tags": [],
+    "type": "directory",
+    "updated_at": "2017-03-28T08:54:23.875814982Z"
+  },
+  {
+    "_id": "64f25c948ad10b049c9cad96dd000996",
+    "_rev": "1-a487970b1d4b581fc0c9e1af1971065f",
+    "created_at": "2017-03-27T05:15:07.340383948Z",
+    "dir_id": "io.cozy.files.root-dir",
+    "name": "Workshop Ynov'",
+    "path": "/Workshop Ynov'",
+    "tags": [],
+    "type": "directory",
+    "updated_at": "2017-03-27T05:15:07.340383948Z"
+  },
+  {
+    "_id": "64f25c948ad10b049c9cad96dd000ed3",
+    "_rev": "2-1277c6bfb7ec946664c59b211d0f547d",
+    "created_at": "2017-03-27T05:16:36.961616248Z",
+    "dir_id": "io.cozy.files.trash-dir",
+    "name": "Test",
+    "path": "/.cozy_trash/Test",
+    "restore_path": "/",
+    "tags": [],
+    "type": "directory",
+    "updated_at": "2017-03-27T05:16:36.961616248Z"
+  },
+  {
+    "_id": "6eb6e9a558e07a16485c268b9e002e0f",
+    "_rev": "1-b65e6316da5a8a715023b48b5041183a",
+    "class": "image",
+    "created_at": "2017-03-23T11:21:30.092849275Z",
+    "dir_id": "io.cozy.files.root-dir",
+    "executable": false,
+    "md5sum": "Ps+6bv8+cbR+FAKlIKUTRA==",
+    "metadata": {
+      "extractor_version": 1,
+      "height": 201,
+      "width": 844
+    },
+    "mime": "image/png",
+    "name": "cozy_install_field_fr.png",
+    "size": "21923",
+    "tags": [],
+    "type": "file",
+    "updated_at": "2017-03-23T11:21:30.092849275Z"
+  },
+  {
+    "_id": "6eb6e9a558e07a16485c268b9e003cd8",
+    "_rev": "1-8379dd8b4a72a2ccdff74c7809d03ac1",
+    "class": "image",
+    "created_at": "2017-03-23T11:21:39.278611555Z",
+    "dir_id": "io.cozy.files.root-dir",
+    "executable": false,
+    "md5sum": "4siNFxnP/Sitg2UUBaOx3A==",
+    "metadata": {
+      "extractor_version": 1,
+      "height": 538,
+      "width": 1873
+    },
+    "mime": "image/png",
+    "name": "Sans titre.png",
+    "size": "129558",
+    "tags": [],
+    "type": "file",
+    "updated_at": "2017-03-23T11:21:39.278611555Z"
+  }
+]

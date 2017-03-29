@@ -10,16 +10,7 @@
       "dj"
     ],
     "accounts": [],
-    "docType": "contact",
-    "_attachments": {
-      "picture": {
-        "content_type": "application/octet-stream",
-        "revpos": 2,
-        "digest": "md5-bO+v4EOwN8wvN6SPiDcWEg==",
-        "length": 3451,
-        "stub": true
-      }
-    }
+    "docType": "contact"
   },
   {
     "_id": "5ee6a9147b67b385a2c4abfad501ad4d",
@@ -32,16 +23,7 @@
       "music"
     ],
     "accounts": [],
-    "docType": "contact",
-    "_attachments": {
-      "picture": {
-        "content_type": "application/octet-stream",
-        "revpos": 2,
-        "digest": "md5-MOgRBaZKL8nYpMtDpjRyvw==",
-        "length": 2737,
-        "stub": true
-      }
-    }
+    "docType": "contact"
   },
   {
     "_id": "5ee6a9147b67b385a2c4abfad501b91c",
@@ -54,16 +36,7 @@
       "dj"
     ],
     "accounts": [],
-    "docType": "contact",
-    "_attachments": {
-      "picture": {
-        "content_type": "application/octet-stream",
-        "revpos": 2,
-        "digest": "md5-MHrVtrnc7bkhZVfwAdwBvA==",
-        "length": 3529,
-        "stub": true
-      }
-    }
+    "docType": "contact"
   },
   {
     "_id": "5ee6a9147b67b385a2c4abfad501bda9",
@@ -76,16 +49,7 @@
       "developer"
     ],
     "accounts": [],
-    "docType": "contact",
-    "_attachments": {
-      "picture": {
-        "content_type": "application/octet-stream",
-        "revpos": 2,
-        "digest": "md5-iHmnaMKNiMzf0x47x47DsQ==",
-        "length": 2506,
-        "stub": true
-      }
-    }
+    "docType": "contact"
   },
   {
     "_id": "5ee6a9147b67b385a2c4abfad501c841",
@@ -98,16 +62,7 @@
       "developer"
     ],
     "accounts": [],
-    "docType": "contact",
-    "_attachments": {
-      "picture": {
-        "content_type": "application/octet-stream",
-        "revpos": 2,
-        "digest": "md5-zHnunDPe97+1mQaDgxC6ig==",
-        "length": 3233,
-        "stub": true
-      }
-    }
+    "docType": "contact"
   },
   {
     "_id": "5ee6a9147b67b385a2c4abfad501d2ca",
@@ -120,16 +75,7 @@
       "developer"
     ],
     "accounts": [],
-    "docType": "contact",
-    "_attachments": {
-      "picture": {
-        "content_type": "application/octet-stream",
-        "revpos": 2,
-        "digest": "md5-yPCWRyBQwlU+A5jMcdCGMA==",
-        "length": 3451,
-        "stub": true
-      }
-    }
+    "docType": "contact"
   },
   {
     "_id": "5ee6a9147b67b385a2c4abfad501e293",
@@ -142,16 +88,7 @@
       "developer"
     ],
     "accounts": [],
-    "docType": "contact",
-    "_attachments": {
-      "picture": {
-        "content_type": "application/octet-stream",
-        "revpos": 2,
-        "digest": "md5-XVZoxWm5abIcNtTDK0pBAw==",
-        "length": 3680,
-        "stub": true
-      }
-    }
+    "docType": "contact"
   },
   {
     "_id": "5ee6a9147b67b385a2c4abfad501eecc",
@@ -164,16 +101,7 @@
       "friend"
     ],
     "accounts": [],
-    "docType": "contact",
-    "_attachments": {
-      "picture": {
-        "content_type": "application/octet-stream",
-        "revpos": 2,
-        "digest": "md5-HC+8Y5poRHjp+8LjKu8SUQ==",
-        "length": 2528,
-        "stub": true
-      }
-    }
+    "docType": "contact"
   },
   {
     "_id": "5ee6a9147b67b385a2c4abfad501fb61",
@@ -186,16 +114,7 @@
       "developer"
     ],
     "accounts": [],
-    "docType": "contact",
-    "_attachments": {
-      "picture": {
-        "content_type": "application/octet-stream",
-        "revpos": 2,
-        "digest": "md5-rHqicSx7q6n0ahraN14upg==",
-        "length": 2056,
-        "stub": true
-      }
-    }
+    "docType": "contact"
   },
   {
     "_id": "5ee6a9147b67b385a2c4abfad501fe2d",
@@ -208,16 +127,7 @@
       "dj"
     ],
     "accounts": [],
-    "docType": "contact",
-    "_attachments": {
-      "picture": {
-        "content_type": "application/octet-stream",
-        "revpos": 2,
-        "digest": "md5-d1Y5MxpKKAuUxcPVVuTx/w==",
-        "length": 3424,
-        "stub": true
-      }
-    }
+    "docType": "contact"
   },
   {
     "_id": "5ee6a9147b67b385a2c4abfad501ff19",
@@ -230,15 +140,6 @@
       "developer"
     ],
     "accounts": [],
-    "docType": "contact",
-    "_attachments": {
-      "picture": {
-        "content_type": "application/octet-stream",
-        "revpos": 2,
-        "digest": "md5-VoMKxjQN86Nest9Zmy4AaA==",
-        "length": 4050,
-        "stub": true
-      }
-    }
+    "docType": "contact"
   }
 ]

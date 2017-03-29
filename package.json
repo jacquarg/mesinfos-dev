@@ -2,7 +2,7 @@
   "name": "mesinfos-dev",
   "cozy-type": "static",
   "cozy-displayName": "MesInfos Dev",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Une application pour les développeurs, pour visualiser et tester l'accès aux données du Pilote MesInfos.",
   "icon-path": "img/icon.svg",
   "cozy-permissions": {

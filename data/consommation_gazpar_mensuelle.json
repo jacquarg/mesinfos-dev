@@ -1,0 +1,32 @@
+[
+  {
+    "contractNumber": "1234654321",
+    "start": "2017-01-01T06:00:00",
+    "end": "2017-01-31T06:00:00",
+    "value": 2183,
+    "statementType": "mesure",
+    "statementCategory": "gazpar",
+    "statementReason": "GazparMonthlyGazConsumption",
+    "period": "2017-01",
+    "volume": 197.2,
+    "index": 9041,
+    "volumeToEnergyCoefficient": 11.07,
+    "docTypeVersion": "konnectors_grdf-3.0.0-dev",
+    "docType": "org.fing.mesinfos.consumptionstatement"
+  },
+  {
+    "contractNumber": "1234654321",
+    "start": "2017-02-01T06:00:00",
+    "end": "2017-02-28T06:00:00",
+    "value": 1912,
+    "statementType": "mesure",
+    "statementCategory": "gazpar",
+    "statementReason": "GazparMonthlyGazConsumption",
+    "period": "2017-02",
+    "volume": 172.6,
+    "index": 9214,
+    "volumeToEnergyCoefficient": 11.08,
+    "docTypeVersion": "konnectors_grdf-3.0.0-dev",
+    "docType": "org.fing.mesinfos.consumptionstatement"
+  }
+]
