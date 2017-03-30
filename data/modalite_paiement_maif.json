@@ -1,0 +1,11 @@
+[
+{
+  "vendor": "Maif",
+  "rib": {
+    "bic": "SOGEFRPP",
+    "iban": "FR76300039876087612"
+  },
+  "modePaiement": "Prélèvement (1 fois)",
+  "societaire": "700000"
+},
+]

@@ -1,0 +1,22 @@
+[
+{
+  "name": {
+    "codeTitrePersonne": "1",
+    "prefix": "Mme",
+    "family": "DUPONT",
+    "given": "GERMAINE",
+    "maiden": ""
+  },
+  "email": "germainedupontmesinfos@gmail.com",
+  "telMobile": "+330612345678",
+  "birthdate": "1972-03-18",
+  "birthplace": {},
+  "codeProfessionSocietaire": "13",
+  "profession": "13 Agent, employé",
+  "codeSituationFamiliale": "U",
+  "familySituation": "union libre",
+  "codeActif": "A Actif",
+  "referenceClient": "700000D",
+  "vendor": "Maif"
+}
+]

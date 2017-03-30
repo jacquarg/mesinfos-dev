@@ -1,0 +1,34 @@
+[
+{
+  "name": "1-A5ABCD",
+  "address": {
+    "street": "2 BOULEVARD DES BELGES",
+    "postCode": "69006",
+    "city": "LYON 06",
+    "numeroPays": "000",
+    "country": "FRANCE",
+    "deliveryOffice": "LYON",
+    "inseeCode": "69386",
+    "residence": ""
+  },
+  "membres": [
+    {
+      "name": {
+        "codeTitrePersonne": "1",
+        "prefix": "Mme",
+        "family": "DUPONT",
+        "given": "GERMAINE",
+        "maiden": ""
+      },
+      "email": "germainedupontmesinfos@gmail.com",
+      "telMobile": "+330612345678",
+      "birthdate": "1972-03-18",
+      "birthplace": {},
+      "codeProfessionSocietaire": "13",
+      "profession": "13 Agent, employé",
+      "codeQualitePersonne": "08",
+      "quality": "Membre principal"
+    }
+  ]
+}
+]

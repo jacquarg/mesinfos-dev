@@ -422,7 +422,7 @@ require.register("lib/appname_version.js", function(exports, require, module) {
 
 const name = 'lamusiquedemesfilms';
 // use brunch-version plugin to populate these.
-const version = '3.0.2';
+const version = '3.0.3';
 
 module.exports = `${name}-${version}`;
 

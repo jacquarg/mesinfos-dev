@@ -1,8 +1,8 @@
 [
 {
-  "docType": "Contract",
+  "vendor": "Maif",
   "docTypeVersion": "MaifKonnector-0.0.0-draft",
-  "societaire": "1234567N",
+  "societaire": "700000",
   "name": "VAM",
   "formuleBase": "VAM Assistance panne 0km",
   "startDate": "1989-04-29",
@@ -12,5 +12,27 @@
   		"startDate": "2013-04-12"
   	}
   ]
+},
+{
+  "vendor": "Maif",
+  "societaire": "700000",
+  "name": "NOR",
+  "formuleBase": "RAQVAM Arbitrage",
+  "startDate": "2016-03-01T00:00:00",
+  "montantTarifTtc": 226.72,
+  "objects": {
+    "startDate": "2016-03-01T00:00:00",
+    "lieu": [
+      {
+        "address": {
+          "street": "2 BOULEVARD DES BELGES",
+          "postCode": "69006",
+          "city": "LYON",
+          "numeroPays": "0",
+          "country": "FRANCE",
+        }
+      }
+    ]
+  }
 }
 ]
