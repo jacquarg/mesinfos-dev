@@ -5,6 +5,8 @@
 
 ## Pré-requis
 
+Si vous vous lancez dans le développement d'application MesInfos pour Cozy, suivez ce [tutoriel pas à pas](doc/hellomesinfos.md) pour bien commencer.
+
 ## Utiliser MesInfos-Dev
 
 ### Jeux de synthèse
@@ -57,6 +59,10 @@ Open source, développée par la Fing, sous licence AGPL v3.
 * Gérer de multiples jeux de synthèse par sous-type de données.
 
 ### Changelog
+
+#### v3.0.3
+* Nouveaux jeux de synthèses
+* Corrections de bugs mineurs.
 
 #### v3.0.0
 * Compatibilité Cozy V3
