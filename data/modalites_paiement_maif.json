@@ -1,0 +1,12 @@
+[
+{
+  "docType": "org.fing.mesinfos.paymentterms",
+  "rib": {
+    "bic":"SOGEFRPP",
+    "iban": "FR76300039876087612"
+  },
+  "modePaiement":"Prélèvement (1 fois)",
+  "societaire":"1234567",
+  "vendor": "maif"
+}
+]

@@ -4,12 +4,25 @@
   "docTypeVersion": "MaifKonnector-0.0.0-draft",
   "societaire": "1234567N",
   "name": "VAM",
+  "vendor": "Maif",
   "formuleBase": "VAM Assistance panne 0km",
   "startDate": "1989-04-29",
   "montantTarifTtc": 312,
-  "objets": [
+  "objects": [
   	{
-  		"startDate": "2013-04-12"
+  		"startDate": "2013-04-12T00:00:00",
+      "lieu": [
+        {
+          "address":  {
+            "street": "2 BOULEVARD DES BELGES",
+            "postCode": "69006",
+            "city": "LYON",
+            "country": "FRANCE",
+            "numeroPays":"000"
+          }
+        }
+      ]
+
   	}
   ]
 }

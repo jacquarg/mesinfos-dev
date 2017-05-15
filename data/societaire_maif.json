@@ -1,0 +1,23 @@
+[
+{
+  "docType": "org.fing.mesinfos.client",
+  "vendor": "maif",
+  "name": {
+    "codeTitrePersonne":"2",
+    "prefix":"MME.",
+    "family":"DUPOND",
+    "given":"GERMAINE",
+    "maiden":""
+  },
+  "email":"germainedupondmesinfos@gmail.com",
+  "telMobile":"+33012345678",
+  "birthdate":"1972-03-18",
+  "birthplace":{},
+  "codeProfessionSocietaire":"13",
+  "profession":"13 Agent, employé",
+  "codeSituationFamiliale":"U",
+  "familySituation":"union libre",
+  "codeActif":"A Actif",
+  "referenceClient":"1234567"
+}
+]

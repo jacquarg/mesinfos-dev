@@ -1,0 +1,21 @@
+[
+{
+  "docType": "org.fing.mesinfos.home",
+  "address": {
+    "street": "2 BOULEVARD DES BELGES",
+    "postCode": "69006",
+    "city": "LYON",
+    "country": "FRANCE",
+    "numeroPays":"000"
+  },
+  "codeNatureLieuRisque":"2",
+  "natureLieu":"Appartement",
+  "codeJuridique":"1",
+  "situationJuridiqueLieu":"Locataire ou occupant à  titre gratuit",
+  "codePieceLieuRisque":"2",
+  "nombrePieces":"1 à 2 Pièces (ou 2 Pièces)",
+  "codeTrancheMobilier":"3",
+  "patrimoineMobilier":"3 501 à 6 800 ",
+  "societaire":"1234567"
+}
+]
