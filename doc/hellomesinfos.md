@@ -25,7 +25,7 @@ Placez-vous dans le répertoire `cozy_dev` puis téléchargez l'application mesi
 
 Enfin, pour que l'image Cozy fonctionne sur votre poste en local, vous devez ajouter la ligne suivante à votre fichier `/etc/hosts`
 
-`127.0.0.1    mesinfos-dev.cozy.local app.cozy.local cozy.local`
+`127.0.0.1    mesinfos-dev.cozy.tools app.cozy.tools cozy.tools`
 
 
 ## Testez : démarrer l'app MesINFOS-DEV En local
@@ -36,11 +36,11 @@ Placez vous dans le répertoire cozy_dev, puis lancer la commande suivante pour 
 sudo docker run --rm -it --name=cozydev3 -p 8080:8080 -p 5984:5984 -v "$(pwd)/docker_things/db":/usr/local/couchdb/data -v "$(pwd)/docker_things/storage":/data/cozy-storage -v "$(pwd)/mesinfos-dev3":/data/cozy-app/mesinfos-dev  cozy/cozy-app-dev
 ```
 
-Puis rendez-vous sur http://mesinfos-dev.cozy.local:8080 (mot de passe : cozy )
+Puis rendez-vous sur http://mesinfos-dev.cozy.tools:8080 (mot de passe : cozy )
 
 ## Problèmes courrants :
 
-* _`Page indisponibles` : attention à bien aller sur http://mesinfos-dev.cozy.local:8080 , le navigateur peu vous rediriger automatiquement sur http://files.cozy.local:8080 après le login ..._
+* _`Page indisponibles` : attention à bien aller sur http://mesinfos-dev.cozy.tools:8080 , le navigateur peu vous rediriger automatiquement sur http://files.cozy.tools:8080 après le login ..._
 * _`manifest not found` : vérifiez que cozy_dev/mesinfos-dev3/manifest.webapp existe. Si ce n'est pas le cas, supprimez le dossier, et re-téléchargez là (`git clone http://github.com/jacquarg/mesinfos-dev3`)
 * `Unable to find image 'cozy/cozy-app-dev:latest' locally docker: Error response from daemon`: essayez la commande `sudo docker pull cozy/cozy-app-dev`
 
