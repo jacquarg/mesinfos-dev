@@ -57,21 +57,33 @@
       "type": "io.cozy.apps",
       "verbs": ["GET"]
     },
-    "org.fing.mesinfos.foyer": {
+    "foyer": {
       "description": "Try data request and add synthetics datasets.",
       "type": "org.fing.mesinfos.foyer"
+    },
+    "foyer Maif": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.maif.maifuser.foyer"
     },
     "org.fing.mesinfos.paymentterms": {
       "description": "Try data request and add synthetics datasets.",
       "type": "org.fing.mesinfos.paymentterms"
     },
+    "paymentterms Maif": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.maif.maifuser.paymentterms"
+    },
     "org.fing.mesinfos.consumptionstatement": {
       "description": "Try data request and add synthetics datasets.",
       "type": "org.fing.mesinfos.consumptionstatement"
     },
-    "org.fing.mesinfos.contract": {
+    "contracts": {
       "description": "Try data request and add synthetics datasets.",
       "type": "org.fing.mesinfos.contract"
+    },
+    "contracts Maif": {
+      "description": "Accessing your MAIF contract",
+      "type": "fr.maif.maifuser.contrat"
     },
     "org.fing.mesinfos.webhistory": {
       "description": "Try data request and add synthetics datasets.",
@@ -93,25 +105,41 @@
       "description": "Try data request and add synthetics datasets.",
       "type": "org.fing.mesinfos.videostream"
     },
-    "io.cozy.bill": {
+    "bills": {
       "description": "Try data request and add synthetics datasets.",
-      "type": "io.cozy.bill"
+      "type": "io.cozy.bills"
     },
-    "org.fing.mesinfos.client": {
+    "client": {
       "description": "Try data request and add synthetics datasets.",
       "type": "org.fing.mesinfos.client"
+    },
+    "Maif client": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.maif.maifuser.societaire"
     },
     "org.fing.mesinfos.home": {
       "description": "Try data request and add synthetics datasets.",
       "type": "org.fing.mesinfos.home"
     },
-    "org.fing.mesinfos.insuranceclaim": {
+    "Maif home": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.maif.maifuser.home"
+    },
+    "insuranceclaim": {
       "description": "Try data request and add synthetics datasets.",
       "type": "org.fing.mesinfos.insuranceclaim"
     },
     "org.fing.meisnfos.vehicle": {
       "description": "Try data request and add synthetics datasets.",
       "type": "org.fing.meisnfos.vehicle"
+    },
+    "sinistrehabitation": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.maif.maifuser.sinistrehabitation"
+    },
+    "sinistrevehicule": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.maif.maifuser.sinistrevehicule"
     }
   }
 }
