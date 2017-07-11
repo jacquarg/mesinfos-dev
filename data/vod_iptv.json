@@ -26,7 +26,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e4230ea2",
@@ -55,7 +55,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e4231047",
@@ -84,7 +84,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e4231277",
@@ -113,7 +113,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423169f",
@@ -142,7 +142,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e42321fe",
@@ -171,7 +171,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e4232485",
@@ -200,7 +200,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423272f",
@@ -229,7 +229,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e42328f4",
@@ -258,7 +258,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e4232c1c",
@@ -287,7 +287,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e42333a5",
@@ -316,7 +316,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423365d",
@@ -345,7 +345,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e42338eb",
@@ -374,7 +374,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e42341f5",
@@ -403,7 +403,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e4234265",
@@ -432,7 +432,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e42348f7",
@@ -461,7 +461,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e4235447",
@@ -490,7 +490,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423616b",
@@ -519,7 +519,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e4236dcb",
@@ -548,7 +548,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423792e",
@@ -577,7 +577,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e4237e17",
@@ -607,7 +607,7 @@
     },
     "action": "Visualisation",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e4238893",
@@ -636,7 +636,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e42396f9",
@@ -665,7 +665,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423a58b",
@@ -694,7 +694,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423ad12",
@@ -723,7 +723,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423bc93",
@@ -752,7 +752,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423c9f0",
@@ -781,7 +781,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423cd76",
@@ -810,7 +810,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423d430",
@@ -839,7 +839,7 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   },
   {
     "_id": "ed9df8168abfe0f1b528dec0e423d477",
@@ -868,6 +868,6 @@
     },
     "action": "Commande",
     "clientId": "423456789",
-    "docType": "videostream"
+    "docType": "fr.orange.videostream"
   }
 ]

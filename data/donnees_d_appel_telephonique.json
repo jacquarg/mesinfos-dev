@@ -12,7 +12,7 @@
     "longitude": 2.28508,
     "networkType": "3G",
     "endCause": "0",
-    "docType": "phonecommunicationlog"
+    "docType": "fr.orange.phonecommunicationlog"
   },
   {
     "_id": "63028431fba9e49abdd244e3e20bd975",
@@ -27,7 +27,7 @@
     "longitude": 2.278832,
     "networkType": "4G",
     "endCause": "255",
-    "docType": "phonecommunicationlog"
+    "docType": "fr.orange.phonecommunicationlog"
   },
   {
     "_id": "63028431fba9e49abdd244e3e20bdd87",
@@ -42,7 +42,7 @@
     "longitude": 2.278832,
     "networkType": "4G",
     "endCause": "255",
-    "docType": "phonecommunicationlog"
+    "docType": "fr.orange.phonecommunicationlog"
   },
   {
     "_id": "63028431fba9e49abdd244e3e20be218",
@@ -57,7 +57,7 @@
     "longitude": 2.278832,
     "networkType": "4G",
     "endCause": "255",
-    "docType": "phonecommunicationlog"
+    "docType": "fr.orange.phonecommunicationlog"
   },
   {
     "_id": "63028431fba9e49abdd244e3e20be4fe",
@@ -72,7 +72,7 @@
     "longitude": 2.303413,
     "networkType": "3G",
     "endCause": "0",
-    "docType": "phonecommunicationlog"
+    "docType": "fr.orange.phonecommunicationlog"
   },
   {
     "_id": "63028431fba9e49abdd244e3e20bf251",
@@ -87,7 +87,7 @@
     "longitude": 2.264177,
     "networkType": "3G",
     "endCause": "0",
-    "docType": "phonecommunicationlog"
+    "docType": "fr.orange.phonecommunicationlog"
   },
   {
     "_id": "63028431fba9e49abdd244e3e20bfd7b",
@@ -100,7 +100,7 @@
     "type": "appel entrant renvoyé - vers la boite vocale",
     "networkType": "N/A",
     "endCause": "0",
-    "docType": "phonecommunicationlog"
+    "docType": "fr.orange.phonecommunicationlog"
   },
   {
     "_id": "63028431fba9e49abdd244e3e20bfe21",
@@ -113,6 +113,6 @@
     "type": "appel entrant renvoyé - vers la boite vocale",
     "networkType": "N/A",
     "endCause": "0",
-    "docType": "phonecommunicationlog"
+    "docType": "fr.orange.phonecommunicationlog"
   }
 ]

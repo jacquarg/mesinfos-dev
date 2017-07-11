@@ -95,15 +95,15 @@
     },
     "org.fing.mesinfos.geopoint": {
       "description": "Try data request and add synthetics datasets.",
-      "type": "org.fing.mesinfos.geopoint"
+      "type": "fr.orange.geopoint"
     },
-    "org.fing.mesinfos.phonecommunicationlog": {
+    "phonecommunicationlog": {
       "description": "Try data request and add synthetics datasets.",
-      "type": "org.fing.mesinfos.phonecommunicationlog"
+      "type": "fr.orange.phonecommunicationlog"
     },
-    "org.fing.mesinfos.videostream": {
+    "videostream": {
       "description": "Try data request and add synthetics datasets.",
-      "type": "org.fing.mesinfos.videostream"
+      "type": "fr.orange.videostream"
     },
     "bills": {
       "description": "Try data request and add synthetics datasets.",
