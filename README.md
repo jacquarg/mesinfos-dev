@@ -30,6 +30,27 @@ L'interface _Requêtes au Datasystem_ imite l'interface du [cozy-client-js](http
 
 L'_Historique des requêtes_ permet de revoir et relancer les tentatives de requêtes précédentes.
 
+### Insérer votre propre jeux de synthèse
+La rubrique _Ajouter des données dans le Cozy_ vous permet de réaliser cela, à partir d'un fichier JSON que vous auriez construit. Il suffit de sélectionner un fichier via le bouton _parcourrir_ pour que le fichier soit analysé et les documents ajoutés au Cozy. Du fait du système de sécurité de Cozy, seul les doctypes déjà pris en charge par MesInfos-dev peuvent être insérés.
+
+Ce fichier JSON doit avoir une structure bien précise : c'est une liste de documents (d'objets), et chaque document doit avoir un champ docType, renseigné avec le docType des documents à insérer. Exemple :
+
+```
+[
+  {
+    "docType": "fr.orange.geopoint",
+    "timestamp": "2016-09-01T08:00:45.000Z",
+    "latitude": 48.8661,
+    "longitude": 2.37083
+  },
+  {
+    "docType": "fr.orange.geopoint",
+    "timestamp": "2016-09-01T08:00:30.000Z",
+    "latitude": 48.8661,
+    "longitude": 2.37083
+  }
+]
+```
 
 # Une question, contacter-nous
 
