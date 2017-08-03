@@ -1,0 +1,10 @@
+{
+  "@context": "semantic/context.json",
+  "@id": "q:Q143",
+  "@type": "schema:ItemList",
+  "name": "MesInfosData",
+  "description": "Liste des données MesInfos",
+  "schema:itemListElement": [
+    "q:Q100","q:Q144", "q:Q142", "q:Q138"
+  ]
+}

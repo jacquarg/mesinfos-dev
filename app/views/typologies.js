@@ -6,8 +6,8 @@ module.exports = GroupsView.extend({
   className: 'container-fluid',
   childViewContainer: 'ul.typologies',
 
-  groupBy: 'Typologie',
-  comparator: 'Nom',
+  groupBy: 'typology',
+  comparator: 'name',
 
   childView: Mn.CompositeView.extend({
     tagName: 'li',

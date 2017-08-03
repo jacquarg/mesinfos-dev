@@ -150,6 +150,12 @@ h4 {
   padding-left: 0px;
 }
 
+.documentation ul.properties {
+  list-style: none;
+  padding-left: 20px;
+}
+
+
 .documentation .doctype ul {
   padding-left: 20px;
 }

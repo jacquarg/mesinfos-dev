@@ -1,28 +1,30 @@
-var DSView = require('models/dsview');
-var utils = require('lib/utils');
-var ap = require('lib/asyncpromise');
-var app = null;
+'use-strict'
+
+const DSView = require('models/dsview')
+const utils = require('lib/utils')
+var ap = require('lib/asyncpromise')
 
 module.exports = DSView.extend({
-  initialize: function() {
-    app = require('application');
-  },
+  // parse: function (options) {
+  //   console.log('heyy:  parse !')
+  //
+  // },
 
   getDocType: function() {
-    return this.get('DocType');
+    return this.get('cozyDoctypeName');
   },
 
   getName: function() {
-    return utils.slugify(this.get('Nom'));
+    return utils.slugify(this.get('name'));
   },
 
   getIndexFields: function() {
-    return JSON.parse(this.get('Format')).fields;
+    return JSON.parse(this.get('cozyIndex'));
   },
 
   getQueryParams: function() {
     return {
-      selector: JSON.parse(this.get('Format')).selector,
+      selector: JSON.parse(this.get('cozySelector')),
       limit: 10
     };
   },
@@ -39,15 +41,16 @@ module.exports = DSView.extend({
   },
 
   getSynthSetName: function(){
-    return this.get('Exemple');
+    // We assume her ethat syntheticet is a url like that :
+    //  "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/consommation_electrique.json"
+    return this.has('syntheticSet') ? this.get('syntheticSet').slice(63) : undefined;
   },
 
   insertSynthSet: function() {
     var displayId = 'insertsynthset';
     var self = this;
     if (!this.synthSetAvailable()) { return Promise.resolve(false); }
-
-    return Promise.resolve($.getJSON('data/'+ self.getSynthSetName() +'.json'))
+    return Promise.resolve($.getJSON(self.getSynthSetName()))
     .then(function(raw) {
       var count = raw.length;
       return ap.series(raw, function(doc, index) {

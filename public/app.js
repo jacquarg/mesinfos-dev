@@ -153,6 +153,7 @@ require.register("application.js", function(exports, require, module) {
 
 var utils = require('lib/utils');
 var ap = require('lib/asyncpromise');
+var semutils = require('lib/semantic_utils');
 
 var Router = require('router');
 var AppLayout = require('views/app_layout');
@@ -179,8 +180,7 @@ var Application = Mn.Application.extend({
 
     cozy.bar.init({appName: "MesInfos-Dev"});
 
-    return Promise.resolve($.getJSON('data/list_data.json'))
-      .then(this._parseMetadata.bind(this))
+    return this._fetchDocumentation()
   },
 
   prepareInBackground: function() {
@@ -189,19 +189,49 @@ var Application = Mn.Application.extend({
     return this._defineViews();
   },
 
-  _parseMetadata: function(data) {
-    var metadata = data["export"];
-    this.subsets = new SubsetsCollection(metadata.filter(function(field) {
-      return field.Nature === 'Subset';
-    }));
-    this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
-      return field.Nature === 'DocType';
+  _fetchDocumentation: function(data) {
+    'use-strict'
+    return Promise.all([
+      $.getJSON('data/wikiapi/items.json'),
+      $.getJSON('data/wikiapi/mesinfos_subsets.json'),
+      $.getJSON('data/wikiapi/cozy_doctypes.json'),
+    ])
+    .then((res) => {
+      console.log(res)
+      this.wikiapi = res[0]
 
-    }));
-    this.fields = metadata.filter(function(field) {
-      return field.Nature !== 'Subset' && field.Nature !== 'DocType';
-    });
+      this.subsets = new SubsetsCollection()
+      this.subsets.addByWikidataIds(res[1]['schema:itemListElement'])
+
+      this.doctypes = semutils.mapByProp('cozyDoctypeName', res[2]['schema:itemListElement'], this.wikiapi)
+    })
+
+    // var metadata = data["export"];
+    // this.subsets = new SubsetsCollection(metadata.filter(function(field) {
+    //   return field.Nature === 'Subset';
+    // }));
+    // this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
+    //   return field.Nature === 'DocType';
+    //
+    // }));
+    // this.fields = metadata.filter(function(field) {
+    //   return field.Nature !== 'Subset' && field.Nature !== 'DocType';
+    // });
   },
+
+  // _parseMetadata: function(data) {
+  //   var metadata = data["export"];
+  //   this.subsets = new SubsetsCollection(metadata.filter(function(field) {
+  //     return field.Nature === 'Subset';
+  //   }));
+  //   this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
+  //     return field.Nature === 'DocType';
+  //
+  //   }));
+  //   this.fields = metadata.filter(function(field) {
+  //     return field.Nature !== 'Subset' && field.Nature !== 'DocType';
+  //   });
+  // },
 
   _defineViews: function() {
     // Parallel
@@ -261,6 +291,7 @@ var Application = Mn.Application.extend({
 var application = new Application();
 
 module.exports = application;
+window.app = application;
 
 document.addEventListener('DOMContentLoaded', function() {
   application.prepare()
@@ -271,13 +302,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 require.register("collections/documents.js", function(exports, require, module) {
-var app = undefined;
+var semutils = require('lib/semantic_utils')
 
 module.exports = Backbone.Collection.extend({
 
 
   initialize: function() {
-    app = require('application');
     this.listenTo(app, 'documents:fetch', this.fetchDSView);
   },
 
@@ -305,44 +335,91 @@ module.exports = Backbone.Collection.extend({
   },
 
   _generateFields: function(doc) {
-    var docType = this.dsView.getDocType();
-    var fieldsDocumentation = app.fields.filter(function(field) {
-      // TODO : origin too ?
-      // TOOD : update V3
-      // return field.DocType.toLowerCase() === doc.docType.toLowerCase();
-      return field.DocType === docType;
-    });
+    'use-strict'
+
+    const docType = app.doctypes[this.dsView.getDocType()]
+    let fieldsDocumentation = []
+    if (docType.hasOptionalProperty) {
+      fieldsDocumentation = fieldsDocumentation.concat(docType.hasOptionalProperty)
+    }
+    if (docType.hasProperty) {
+      fieldsDocumentation = fieldsDocumentation.concat(docType.hasProperty)
+    }
+
+    fieldsDocumentation = fieldsDocumentation.map(id => semutils.getItem(id, app.wikiapi))
+    console.log(fieldsDocumentation)
+    // TODO : get fields from subsets.
 
     var viewedFields = {};
     var fields = fieldsDocumentation.reduce(function(agg, field) {
-      if (!doc[field.Nom]) { return agg; }
+      if (!doc[field.name]) { return agg; }
 
-      viewedFields[field.Nom] = true;
+      viewedFields[field.name] = true;
       var f = $.extend({}, field);
-      f.value = doc[field.Nom];
+      f.value = doc[field.name];
       agg.push(f);
       return agg;
     }, []);
 
     for (var k in doc) {
       if (!(k in viewedFields)) {
-        fields.push({ Nom: k, value: doc[k] })
+        fields.push({ name: k, value: doc[k] })
       }
     }
 
     fields.sort(function(a, b) {
-      if (a.Nature === 'Metadata' && b.Nature !== 'Metadata') {
+      if (a.kind === 'Metadata' && b.kind !== 'Metadata') {
           return 1;
-      } else if (a.Nature !== 'Metadata' && b.Nature === 'Metadata') {
+      } else if (a.kind !== 'Metadata' && b.kind === 'Metadata') {
           return -1;
       } else {
-          return a.Nom > b.Nom ? 1 : -1;
+          return a.name > b.name ? 1 : -1;
       }
     });
     doc.fields = fields;
 
     return doc;
   },
+
+  // _generateFields: function(doc) {
+  //   var docType = this.dsView.getDocType();
+  //   var fieldsDocumentation = app.fields.filter(function(field) {
+  //     // TODO : origin too ?
+  //     // TOOD : update V3
+  //     // return field.DocType.toLowerCase() === doc.docType.toLowerCase();
+  //     return field.DocType === docType;
+  //   });
+  //
+  //   var viewedFields = {};
+  //   var fields = fieldsDocumentation.reduce(function(agg, field) {
+  //     if (!doc[field.Nom]) { return agg; }
+  //
+  //     viewedFields[field.Nom] = true;
+  //     var f = $.extend({}, field);
+  //     f.value = doc[field.Nom];
+  //     agg.push(f);
+  //     return agg;
+  //   }, []);
+  //
+  //   for (var k in doc) {
+  //     if (!(k in viewedFields)) {
+  //       fields.push({ Nom: k, value: doc[k] })
+  //     }
+  //   }
+  //
+  //   fields.sort(function(a, b) {
+  //     if (a.Nature === 'Metadata' && b.Nature !== 'Metadata') {
+  //         return 1;
+  //     } else if (a.Nature !== 'Metadata' && b.Nature === 'Metadata') {
+  //         return -1;
+  //     } else {
+  //         return a.Nom > b.Nom ? 1 : -1;
+  //     }
+  //   });
+  //   doc.fields = fields;
+  //
+  //   return doc;
+  // },
 
   // override sync
 
@@ -393,25 +470,34 @@ module.exports = Backbone.Collection.extend({
 });
 
 require.register("collections/subsets.js", function(exports, require, module) {
-var app = null;
+'use-strict'
+
+const Model = require('models/subset')
 
 module.exports = Backbone.Collection.extend({
-  model: require('models/subset'),
+  model: Model,
 
   initialize: function() {
-    app = require('application');
-    this.listenTo(app.properties, 'change', this.updateSynthSetsStatus);
+    app = require('application')
+    this.listenTo(app.properties, 'change', this.updateSynthSetsStatus)
   },
 
   updateSynthSetsStatus: function() {
-    synthSetProperty = app.properties.get('synthSets');
+    synthSetProperty = app.properties.get('synthSets')
 
     this.forEach(function(subset) {
       if (subset.getSynthSetName() in synthSetProperty) {
-        subset.set('synthSetIds', synthSetProperty[subset.getSynthSetName()]);
+        subset.set('synthSetIds', synthSetProperty[subset.getSynthSetName()])
       }
     });
   },
+
+  addByWikidataIds: function (ids) {
+    ids.forEach((id) => {
+      this.add(app.wikiapi[id])
+    })
+  },
+
 
 });
 
@@ -575,13 +661,41 @@ module.exports = Mn.ItemView.extend({
 
     containerEl.append(view.$el);
   },
-
-
 });
 
 });
 
-require.register("lib/utils.js", function(exports, require, module) {
+require.register("lib/semantic_utils.js", function(exports, require, module) {
+'use-strict'
+const M = {}
+
+M.getItem = (item, allItems) => {
+  if (typeof item === 'string') { // it's an id !
+    return allItems[item]
+  }
+  return allItems[item['@id']]
+}
+
+M.idList2ItemMap = (ids, allItems) => {
+  return ids.reduce((agg, id) => {
+    agg[id] = allItems[id]
+    return agg
+  }, {})
+}
+
+M.mapByProp = (prop, items, allItems) => {
+  return items.reduce((agg, id) => {
+    const item = M.getItem(id, allItems)
+    agg[item[prop]] = item
+    return agg
+  }, {})
+}
+
+module.exports = M
+
+});
+
+;require.register("lib/utils.js", function(exports, require, module) {
 module.exports = {
   slugify: function(stringNonNull) {
     return stringNonNull.toLowerCase().replace(/[^\w-]+/g,'');
@@ -705,31 +819,33 @@ module.exports = new Properties();
 });
 
 require.register("models/subset.js", function(exports, require, module) {
-var DSView = require('models/dsview');
-var utils = require('lib/utils');
-var ap = require('lib/asyncpromise');
-var app = null;
+'use-strict'
+
+const DSView = require('models/dsview')
+const utils = require('lib/utils')
+var ap = require('lib/asyncpromise')
 
 module.exports = DSView.extend({
-  initialize: function() {
-    app = require('application');
-  },
+  // parse: function (options) {
+  //   console.log('heyy:  parse !')
+  //
+  // },
 
   getDocType: function() {
-    return this.get('DocType');
+    return this.get('cozyDoctypeName');
   },
 
   getName: function() {
-    return utils.slugify(this.get('Nom'));
+    return utils.slugify(this.get('name'));
   },
 
   getIndexFields: function() {
-    return JSON.parse(this.get('Format')).fields;
+    return JSON.parse(this.get('cozyIndex'));
   },
 
   getQueryParams: function() {
     return {
-      selector: JSON.parse(this.get('Format')).selector,
+      selector: JSON.parse(this.get('cozySelector')),
       limit: 10
     };
   },
@@ -746,15 +862,16 @@ module.exports = DSView.extend({
   },
 
   getSynthSetName: function(){
-    return this.get('Exemple');
+    // We assume her ethat syntheticet is a url like that :
+    //  "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/consommation_electrique.json"
+    return this.has('syntheticSet') ? this.get('syntheticSet').slice(63) : undefined;
   },
 
   insertSynthSet: function() {
     var displayId = 'insertsynthset';
     var self = this;
     if (!this.synthSetAvailable()) { return Promise.resolve(false); }
-
-    return Promise.resolve($.getJSON('data/'+ self.getSynthSetName() +'.json'))
+    return Promise.resolve($.getJSON(self.getSynthSetName()))
     .then(function(raw) {
       var count = raw.length;
       return ap.series(raw, function(doc, index) {
@@ -1023,7 +1140,7 @@ module.exports = Mn.Behavior.extend({
 
 require.register("views/documentation.js", function(exports, require, module) {
 var app = undefined;
-
+var semutils = require('lib/semantic_utils');
 
 module.exports = Mn.ItemView.extend({
   tagName: 'div',
@@ -1055,9 +1172,18 @@ module.exports = Mn.ItemView.extend({
       data = this.model.toJSON();
       data.synthSetInsertable = this.model.synthSetAvailable();
       data.synthSetInDS = this.model.synthSetInDS();
-      data.docType = app.docTypes.findWhere({ 'Nom': this.model.getDocType()}).toJSON();
-      data.subsets = app.subsets.where({'DocType': this.model.getDocType()})
+      data.docType = app.doctypes[this.model.get('cozyDoctypeName')];
+      data.subsets = app.subsets.where({'cozyDoctypeName': this.model.getDocType()})
         .map(function(subset) { return subset.toJSON(); });
+      if (data.hasProperty) {
+        data.hasProperty = data.hasProperty.map(item => semutils.getItem(item, app.wikiapi))
+      }
+      if (data.updateFrequency) {
+        data.updateFrequency = moment.duration(data.updateFrequency).humanize()
+      }
+      if (data.updateLatency) {
+        data.updateLatency = moment.duration(data.updateLatency).humanize()
+      }
     }
     return data;
   },
@@ -1074,6 +1200,7 @@ module.exports = Mn.ItemView.extend({
   },
 
 });
+
 });
 
 require.register("views/documentfields.js", function(exports, require, module) {
@@ -1415,7 +1542,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<nav class=\"typologies navbar navbar-default\"></nav><div class=\"documentation\"></div><div class=\"row\"><div class=\"col-lg-2 col-sm-4\"><div class=\"dsviewshistory\"></div><div class=\"fileinput\"></div></div><div class=\"col-lg-4 col-sm-8\"><div class=\"requestform\"></div><div class=\"message\"></div></div><div class=\"documents col-lg-6 col-sm-12\"></div></div>");;return buf.join("");
+buf.push("<nav class=\"typologies navbar navbar-default\"></nav><div class=\"row\"><div class=\"col-sm-6 col-lg-5\"><div class=\"documentation\"></div><div class=\"dsviewshistory\"></div><div class=\"fileinput\"></div></div><div class=\"col-sm-6 col-lg-7\"><div class=\"requestform\"></div><div class=\"message\"></div></div><div class=\"documents col-lg-6 col-sm-12\"></div></div>");;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -1452,8 +1579,13 @@ var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
-;var locals_for_with = (locals || {});(function (Description, Fréquence, Latence, Nom, Typologie, docType, subsets, synthSetInDS, synthSetInsertable, undefined) {
-buf.push("<div class=\"title\"><span class=\"typologie\">" + (jade.escape(null == (jade_interp = Typologie) ? "" : jade_interp)) + "&nbsp;/&nbsp;</span><h2 class=\"subset\">" + (jade.escape(null == (jade_interp = Nom) ? "" : jade_interp)) + "</h2>");
+;var locals_for_with = (locals || {});(function (description, docType, hasProperty, name, subsets, synthSetInDS, synthSetInsertable, typology, undefined, updateFrequency, updateLatency) {
+buf.push("<div class=\"title\">");
+if ( typology && name)
+{
+buf.push("<span class=\"typologie\">" + (jade.escape(null == (jade_interp = typology) ? "" : jade_interp)) + "&nbsp;/&nbsp;</span><h2 class=\"subset\">" + (jade.escape(null == (jade_interp = name) ? "" : jade_interp)) + "</h2>");
+}
+buf.push("");
 if ( synthSetInsertable)
 {
 buf.push("<button type=\"button\" class=\"insert btn btn-primary\"><span class=\"iconicstroke-cloud-upload\"></span>&nbsp;Insérer dans le Cozy</button>");
@@ -1462,7 +1594,35 @@ if ( synthSetInDS)
 {
 buf.push("<button type=\"button\" class=\"delete btn btn-danger\"><span class=\"iconicstroke-trash-stroke\"></span>&nbsp;Supprimer du Cozy</button>");
 }
-buf.push("</div><div class=\"row\"><div class=\"subset col-sm-6\"><p>" + (jade.escape(null == (jade_interp = Description) ? "" : jade_interp)) + "</p><ul class=\"caracteristiques\"><li><b>Fréquence :&nbsp;</b>" + (jade.escape(null == (jade_interp = Fréquence) ? "" : jade_interp)) + "</li><li><b>Latence :&nbsp;</b>" + (jade.escape(null == (jade_interp = Latence) ? "" : jade_interp)) + "</li></ul></div><div class=\"doctype col-sm-6\"><div class=\"well\">DocType :&nbsp;<b>" + (jade.escape(null == (jade_interp = docType.Nom) ? "" : jade_interp)) + "</b><p>" + (jade.escape(null == (jade_interp = docType.Description) ? "" : jade_interp)) + "</p><div class=\"similaires\">Du même type :<ul>");
+buf.push("</div>");
+if ( name)
+{
+buf.push("<p>" + (jade.escape(null == (jade_interp = description) ? "" : jade_interp)) + "</p><ul class=\"caracteristiques\"><li><b>Fréquence :&nbsp;</b>" + (jade.escape(null == (jade_interp = updateFrequency) ? "" : jade_interp)) + "</li><li><b>Latence :&nbsp;</b>" + (jade.escape(null == (jade_interp = updateLatency) ? "" : jade_interp)) + "</li><li><b>Propriétés :&nbsp;</b><ul class=\"properties\">");
+// iterate hasProperty
+;(function(){
+  var $$obj = hasProperty;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var prop = $$obj[$index];
+
+buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.name) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)) + "</li>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      var prop = $$obj[$index];
+
+buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.name) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)) + "</li>");
+    }
+
+  }
+}).call(this);
+
+buf.push("</ul></li></ul>");
+}
+buf.push("<div class=\"well\">DocType :&nbsp;<b>" + (jade.escape(null == (jade_interp = docType.name) ? "" : jade_interp)) + "</b><p>" + (jade.escape(null == (jade_interp = docType.description) ? "" : jade_interp)) + "</p><div class=\"similaires\">Du même doctype :<ul>");
 // iterate subsets
 ;(function(){
   var $$obj = subsets;
@@ -1471,7 +1631,7 @@ buf.push("</div><div class=\"row\"><div class=\"subset col-sm-6\"><p>" + (jade.e
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var s = $$obj[$index];
 
-buf.push("<li>" + (jade.escape(null == (jade_interp = s.Nom) ? "" : jade_interp)) + "</li>");
+buf.push("<li>" + (jade.escape(null == (jade_interp = s.name) ? "" : jade_interp)) + "</li>");
     }
 
   } else {
@@ -1479,13 +1639,13 @@ buf.push("<li>" + (jade.escape(null == (jade_interp = s.Nom) ? "" : jade_interp)
     for (var $index in $$obj) {
       $$l++;      var s = $$obj[$index];
 
-buf.push("<li>" + (jade.escape(null == (jade_interp = s.Nom) ? "" : jade_interp)) + "</li>");
+buf.push("<li>" + (jade.escape(null == (jade_interp = s.name) ? "" : jade_interp)) + "</li>");
     }
 
   }
 }).call(this);
 
-buf.push("</ul></div></div></div></div>");}.call(this,"Description" in locals_for_with?locals_for_with.Description:typeof Description!=="undefined"?Description:undefined,"Fréquence" in locals_for_with?locals_for_with.Fréquence:typeof Fréquence!=="undefined"?Fréquence:undefined,"Latence" in locals_for_with?locals_for_with.Latence:typeof Latence!=="undefined"?Latence:undefined,"Nom" in locals_for_with?locals_for_with.Nom:typeof Nom!=="undefined"?Nom:undefined,"Typologie" in locals_for_with?locals_for_with.Typologie:typeof Typologie!=="undefined"?Typologie:undefined,"docType" in locals_for_with?locals_for_with.docType:typeof docType!=="undefined"?docType:undefined,"subsets" in locals_for_with?locals_for_with.subsets:typeof subsets!=="undefined"?subsets:undefined,"synthSetInDS" in locals_for_with?locals_for_with.synthSetInDS:typeof synthSetInDS!=="undefined"?synthSetInDS:undefined,"synthSetInsertable" in locals_for_with?locals_for_with.synthSetInsertable:typeof synthSetInsertable!=="undefined"?synthSetInsertable:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
+buf.push("</ul></div></div>");}.call(this,"description" in locals_for_with?locals_for_with.description:typeof description!=="undefined"?description:undefined,"docType" in locals_for_with?locals_for_with.docType:typeof docType!=="undefined"?docType:undefined,"hasProperty" in locals_for_with?locals_for_with.hasProperty:typeof hasProperty!=="undefined"?hasProperty:undefined,"name" in locals_for_with?locals_for_with.name:typeof name!=="undefined"?name:undefined,"subsets" in locals_for_with?locals_for_with.subsets:typeof subsets!=="undefined"?subsets:undefined,"synthSetInDS" in locals_for_with?locals_for_with.synthSetInDS:typeof synthSetInDS!=="undefined"?synthSetInDS:undefined,"synthSetInsertable" in locals_for_with?locals_for_with.synthSetInsertable:typeof synthSetInsertable!=="undefined"?synthSetInsertable:undefined,"typology" in locals_for_with?locals_for_with.typology:typeof typology!=="undefined"?typology:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"updateFrequency" in locals_for_with?locals_for_with.updateFrequency:typeof updateFrequency!=="undefined"?updateFrequency:undefined,"updateLatency" in locals_for_with?locals_for_with.updateLatency:typeof updateLatency!=="undefined"?updateLatency:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -1560,21 +1720,21 @@ var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
-;var locals_for_with = (locals || {});(function (Description, Format, JSON, Nom, value) {
-buf.push("<span class=\"name\">" + (jade.escape(null == (jade_interp = Nom) ? "" : jade_interp)) + "</span>:&nbsp;<span" + (jade.cls(['value',typeof(value)], [null,true])) + ">" + (jade.escape(null == (jade_interp = JSON.stringify(value, null, 2)) ? "" : jade_interp)) + "</span><span>,</span>");
-if ( Description || Format)
+;var locals_for_with = (locals || {});(function (Format, JSON, description, name, value) {
+buf.push("<span class=\"name\">" + (jade.escape(null == (jade_interp = name) ? "" : jade_interp)) + "</span>:&nbsp;<span" + (jade.cls(['value',typeof(value)], [null,true])) + ">" + (jade.escape(null == (jade_interp = JSON.stringify(value, null, 2)) ? "" : jade_interp)) + "</span><span>,</span>");
+if ( description || Format)
 {
 buf.push("<span class=\"toggle\"></span><ul class=\"details\"><span class=\"comment\">//&nbsp;</span>");
-if ( Description)
+if ( description)
 {
-buf.push("<li><b class=\"descriptionLabel\">Description :&nbsp;</b>" + (jade.escape(null == (jade_interp = Description) ? "" : jade_interp)) + "</li>");
+buf.push("<li><b class=\"descriptionLabel\">description :&nbsp;</b>" + (jade.escape(null == (jade_interp = description) ? "" : jade_interp)) + "</li>");
 }
 if ( Format)
 {
 buf.push("<li><b>Format :&nbsp;</b>" + (jade.escape(null == (jade_interp = Format) ? "" : jade_interp)) + "</li>");
 }
 buf.push("</ul>");
-}}.call(this,"Description" in locals_for_with?locals_for_with.Description:typeof Description!=="undefined"?Description:undefined,"Format" in locals_for_with?locals_for_with.Format:typeof Format!=="undefined"?Format:undefined,"JSON" in locals_for_with?locals_for_with.JSON:typeof JSON!=="undefined"?JSON:undefined,"Nom" in locals_for_with?locals_for_with.Nom:typeof Nom!=="undefined"?Nom:undefined,"value" in locals_for_with?locals_for_with.value:typeof value!=="undefined"?value:undefined));;return buf.join("");
+}}.call(this,"Format" in locals_for_with?locals_for_with.Format:typeof Format!=="undefined"?Format:undefined,"JSON" in locals_for_with?locals_for_with.JSON:typeof JSON!=="undefined"?JSON:undefined,"description" in locals_for_with?locals_for_with.description:typeof description!=="undefined"?description:undefined,"name" in locals_for_with?locals_for_with.name:typeof name!=="undefined"?name:undefined,"value" in locals_for_with?locals_for_with.value:typeof value!=="undefined"?value:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -1679,8 +1839,8 @@ var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
-;var locals_for_with = (locals || {});(function (Détenteur, Nom) {
-buf.push("<span class=\"imgcontainer\"><img" + (jade.attr("src", 'img/holders/logo_' + Détenteur.toLowerCase() + '.png', true, false)) + (jade.attr("title", Détenteur, true, false)) + "/></span><span class=\"name\">" + (jade.escape(null == (jade_interp = Nom) ? "" : jade_interp)) + "</span>");}.call(this,"Détenteur" in locals_for_with?locals_for_with.Détenteur:typeof Détenteur!=="undefined"?Détenteur:undefined,"Nom" in locals_for_with?locals_for_with.Nom:typeof Nom!=="undefined"?Nom:undefined));;return buf.join("");
+;var locals_for_with = (locals || {});(function (name, sourceDataController) {
+buf.push("<span class=\"imgcontainer\"><img" + (jade.attr("src", 'img/holders/logo_' + sourceDataController.toLowerCase() + '.png', true, false)) + (jade.attr("title", sourceDataController, true, false)) + "/></span><span class=\"name\">" + (jade.escape(null == (jade_interp = name) ? "" : jade_interp)) + "</span>");}.call(this,"name" in locals_for_with?locals_for_with.name:typeof name!=="undefined"?name:undefined,"sourceDataController" in locals_for_with?locals_for_with.sourceDataController:typeof sourceDataController!=="undefined"?sourceDataController:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -1740,8 +1900,8 @@ module.exports = GroupsView.extend({
   className: 'container-fluid',
   childViewContainer: 'ul.typologies',
 
-  groupBy: 'Typologie',
-  comparator: 'Nom',
+  groupBy: 'typology',
+  comparator: 'name',
 
   childView: Mn.CompositeView.extend({
     tagName: 'li',
@@ -1759,3 +1919,5 @@ require.register("___globals___", function(exports, require, module) {
   
 });})();require('___globals___');
 
+
+//# sourceMappingURL=app.js.map

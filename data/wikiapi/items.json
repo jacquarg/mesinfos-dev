@@ -1,0 +1,548 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "wp": "https://www.wikidata.org/wiki/Property:",
+    "q": "https://wikiapi.org/objects/",
+    "@vocab": "https://wikiapi.org/semantic/properties:",
+    "name": "rdfs:label",
+    "description": {
+      "@id": "rdfs:comment",
+      "@langage": "fr"
+    },
+    "children": {
+      "@reverse": "rdfs:subClassOf"
+    }
+  },
+  "q:Q100": {
+    "@id": "q:Q100",
+    "@type": "q:Q132",
+    "description": "Un relevé de consommation d'électricité, transmis par EDF.",
+    "name": "Consommation d'électricité",
+    "cozyDoctypeName": "org.fing.mesinfos.consumptionstatement",
+    "cozyIndex": "[\"statementReason\"]",
+    "cozySelector": "{\"statementReason\": { \"$nin\":[\"EdeliaYearlyElecConsumption\", \"EdeliaYearlyElecConsumption\"]}}",
+    "generatedBy": "q:Q101",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q110",
+      "q:Q111",
+      "q:Q112",
+      "q:Q113",
+      "q:Q114",
+      "q:Q115",
+      "q:Q117",
+      {
+        "@id": "q:Q136"
+      },
+      {
+        "@id": "q:Q137"
+      },
+      {
+        "@id": "q:Q135"
+      }
+    ],
+    "sourceDataController": "EDF",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/consommation_electrique.json",
+    "typology": "Domicile",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D"
+  },
+  "q:Q102": {
+    "@id": "q:Q102",
+    "@type": "wq:Q1397073",
+    "description": "Doctypes utilisés dans Cozy. Doc en cours ici : https://github.com/cozy/cozy-doctypes",
+    "name": "doctype"
+  },
+  "q:Q104": {
+    "@id": "q:Q104",
+    "@type": "wq:Q937228",
+    "description": "Un champ d'un doctype cozy.",
+    "name": "property"
+  },
+  "q:Q109": {
+    "@id": "q:Q109",
+    "@type": "q:Q104",
+    "description": "Origine du document, et version de format du document, ",
+    "name": "docTypeVersion",
+    "rdfs:subClassOf": {
+      "@id": "q:Q104"
+    },
+    "availability": "2016-10",
+    "exampleValue": "EDFKonnector-0.0.0-draft",
+    "kind": "Metadata"
+  },
+  "q:Q110": {
+    "@id": "q:Q110",
+    "@type": "q:Q104",
+    "description": "Numéro du contrat",
+    "name": "contractNumber",
+    "availability": "2016-10",
+    "exampleValue": "1234654321",
+    "kind": "Metadata"
+  },
+  "q:Q111": {
+    "@id": "q:Q111",
+    "@type": "q:Q104",
+    "description": "Numéro de la facture associé à la consommation",
+    "name": "billNumber",
+    "availability": "2016-10",
+    "exampleValue": "12346897654",
+    "kind": "Metadata"
+  },
+  "q:Q112": {
+    "@id": "q:Q112",
+    "@type": "q:Q104",
+    "description": "Début de période de relevé de consommation",
+    "name": "start",
+    "availability": "2016-10",
+    "exampleValue": "2016-01-08",
+    "kind": "Transaction"
+  },
+  "q:Q113": {
+    "@id": "q:Q113",
+    "@type": "q:Q104",
+    "description": "Fin de période de relevé de consommation",
+    "name": "end",
+    "availability": "2016-10",
+    "exampleValue": "2016-07-01",
+    "kind": "Transaction"
+  },
+  "q:Q114": {
+    "@id": "q:Q114",
+    "@type": "q:Q104",
+    "description": "Consommation estimée ou réelle",
+    "name": "value",
+    "availability": "2016-10",
+    "exampleValue": "648.0",
+    "kind": "Transaction"
+  },
+  "q:Q115": {
+    "@id": "q:Q115",
+    "@type": "q:Q104",
+    "description": "Type de relève associé à la consommation (réelle ou estimée)",
+    "name": "statementType",
+    "availability": "2016-10",
+    "exampleValue": "REEL",
+    "kind": "Metadata"
+  },
+  "q:Q116": {
+    "@id": "q:Q116",
+    "@type": "q:Q104",
+    "description": "Catégorie de relève associée à la consommation (complète statementType)",
+    "name": "statementCategory",
+    "availability": "2016-10",
+    "exampleValue": "RELEVE_REEL_PAR_ERD_GRD",
+    "kind": "Metadata"
+  },
+  "q:Q117": {
+    "@id": "q:Q117",
+    "@type": "q:Q104",
+    "description": "Motif de relève associé à la consommation",
+    "name": "statementReason",
+    "availability": "2016-10",
+    "exampleValue": "RELEVE_PERIODIQUE",
+    "kind": "Metadata"
+  },
+  "q:Q118": {
+    "@id": "q:Q118",
+    "@type": "q:Q104",
+    "description": "Désignation de la période de consommation : mois de la consommation mensuelle, année de la consommation annuelle. (pour clients edelia)",
+    "name": "period",
+    "availability": "2016-10",
+    "exampleValue": "",
+    "kind": "Metadata"
+  },
+  "q:Q122": {
+    "@id": "q:Q122",
+    "@type": "q:Q104",
+    "description": "Coût total de la période. (relevés Edelia)",
+    "name": "cost",
+    "availability": "2016-10",
+    "exampleValue": "",
+    "kind": "Transaction"
+  },
+  "q:Q123": {
+    "@id": "q:Q123",
+    "@type": "q:Q104",
+    "description": "Coût sur la période, par catégory (BASE, Heures creuses,abonnement ...)  (relevés Edelia)",
+    "name": "costByCategory",
+    "availability": "2016-10",
+    "exampleValue": "{\n      \"BASE\": 350,\n      \"standing\": 55\n    }",
+    "kind": "Transaction"
+  },
+  "q:Q124": {
+    "@id": "q:Q124",
+    "@type": "q:Q104",
+    "description": "Coût sur la période, par catégory (BASE, Heures creuses, ...)  (relevés Edelia)",
+    "name": "costByCategory/BASE",
+    "availability": "2016-10",
+    "exampleValue": "",
+    "kind": "Transaction"
+  },
+  "q:Q125": {
+    "@id": "q:Q125",
+    "@type": "q:Q104",
+    "description": "Part abonnement de la période en euros  (relevés Edelia)",
+    "name": "costByCategory/standing",
+    "availability": "2016-10",
+    "exampleValue": "",
+    "kind": "Transaction"
+  },
+  "q:Q126": {
+    "@id": "q:Q126",
+    "@type": "q:Q104",
+    "description": "Consommation sur la période, par catégory (BASE, Heures creuses, ...)  (relevés Edelia)",
+    "name": "valuesByCatergory/BASE",
+    "availability": "2016-10",
+    "exampleValue": "",
+    "kind": "Transaction"
+  },
+  "q:Q127": {
+    "@id": "q:Q127",
+    "@type": "q:Q104",
+    "description": "Comparaison avec des habitations similaires (relevé annuels Edelia)",
+    "name": "similarHomes",
+    "availability": "2016-10",
+    "exampleValue": "{\n      \"site\": 2144,\n      \"average\": 2335,\n      \"least\": 1030\n    }",
+    "kind": "Transaction"
+  },
+  "q:Q128": {
+    "@id": "q:Q128",
+    "@type": "q:Q104",
+    "description": "Comparaison avec des habitations similaires : moyenne (relevé annuels Edelia)",
+    "name": "similarHomes/average",
+    "availability": "2016-10",
+    "exampleValue": "2335",
+    "kind": "Transaction"
+  },
+  "q:Q129": {
+    "@id": "q:Q129",
+    "@type": "q:Q104",
+    "description": "Comparaison avec des habitations similaires : le moins consommateur (relevé annuels Edelia)",
+    "name": "similarHomes/least",
+    "availability": "2016-10",
+    "exampleValue": "1030",
+    "kind": "Transaction"
+  },
+  "q:Q130": {
+    "@id": "q:Q130",
+    "@type": "q:Q104",
+    "description": "Comparaison avec des habitations similaires : cette habitation (relevé annuels Edelia)",
+    "name": "similarHomes/site",
+    "availability": "2016-10",
+    "exampleValue": "2144",
+    "kind": "Transaction"
+  },
+  "q:Q131": {
+    "@id": "q:Q131",
+    "@type": "q:Q104",
+    "description": "Releves de consommation (relevés Edelia)",
+    "name": "statements",
+    "availability": "2016-10",
+    "exampleValue": "{\n        \"date\": \"2016-10-01\",\n        \"indexesByLabel\": {\n          \"BASE\": 70800\n        }",
+    "kind": "Transaction"
+  },
+  "q:Q132": {
+    "@id": "q:Q132",
+    "@type": "q:Q102",
+    "name": "ConsumptionStatement",
+    "cozyDoctypeName": "org.fing.mesinfos.consumptionstatement",
+    "hasOptionalProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q109",
+      {
+        "@id": "q:Q110"
+      },
+      {
+        "@id": "q:Q111"
+      },
+      {
+        "@id": "q:Q112"
+      },
+      {
+        "@id": "q:Q113"
+      },
+      {
+        "@id": "q:Q114"
+      },
+      {
+        "@id": "q:Q115"
+      },
+      {
+        "@id": "q:Q116"
+      },
+      {
+        "@id": "q:Q117"
+      },
+      {
+        "@id": "q:Q118"
+      },
+      {
+        "@id": "q:Q122"
+      },
+      {
+        "@id": "q:Q123"
+      },
+      {
+        "@id": "q:Q124"
+      },
+      {
+        "@id": "q:Q125"
+      },
+      {
+        "@id": "q:Q126"
+      },
+      {
+        "@id": "q:Q127"
+      },
+      {
+        "@id": "q:Q128"
+      },
+      {
+        "@id": "q:Q129"
+      },
+      {
+        "@id": "q:Q130"
+      },
+      {
+        "@id": "q:Q131"
+      }
+    ]
+  },
+  "q:Q133": {
+    "@id": "q:Q133",
+    "@type": "q:Q104",
+    "description": "id dans la base CouchDB de Cozy",
+    "name": "_id",
+    "rdfs:subClassOf": {
+      "@id": "q:Q104"
+    },
+    "exampleValue": "118e185e102c69fecea6f8404c2a5e0b",
+    "kind": "Metadata"
+  },
+  "q:Q134": {
+    "@id": "q:Q134",
+    "@type": "q:Q104",
+    "description": "Revision dans la base CouchDB de Cozy",
+    "name": "_rev",
+    "rdfs:subClassOf": {
+      "@id": "q:Q104"
+    },
+    "exampleValue": "2-b4d36d1b7d8e56b63afeaf3ce71de0cf",
+    "kind": "Metadata"
+  },
+  "q:Q135": {
+    "@id": "q:Q135",
+    "@type": "q:Q116",
+    "description": "Type de relève associé à la consommation (réelle ou estimée) d'un relevé vourni par EDF.",
+    "name": "statementCategory",
+    "exampleValue": "RELEVE_REEL_PAR_ERD_GRD",
+    "values": [
+      "RELEVE_EPTD",
+      "RELEVE_CLIENT",
+      "ESTIMATION_AUTO",
+      "RELEVE_DERIVE",
+      "NOUVELLE_ESTIM_APRES_SURESTIM_SAP",
+      "RELEVE_INTERNET_SAP",
+      "TELECH_RESULTATS_RELEVE_FACT_FOURN",
+      "RELEVE_ESTIME_POUR_FACTURATION_COMMUNE",
+      "RELEVE_ESTIME_POUR_FACTU_COMMUNE_HCS",
+      "RELEVE_ESTIME_PAR_ERD_GRD",
+      "A_NE_PAS_UTILISER_RELEVE_ESTIME_EDF",
+      "RELEVE_REEL_PAR_GOOPIL",
+      "RELEVE_REEL_Z1_INACTIF_DISCO",
+      "RELEVE_REEL_Z3_INACTIF_DISCO",
+      "RELEVE_REEL_Z4_INACTIF_DISCO",
+      "RELEVE_REEL_Z7_INACTIF_DISCO",
+      "RELEVE_REEL_Z8_INACTIF_DISCO",
+      "RELEVE_REEL_Z9_INACTIF_DISCO",
+      "RELEVE_REEL_Z1_POUR_FACTURATION_COMMUNE",
+      "RELEVE_REEL_Z3_POUR_FACTURATION_COMMUNE",
+      "RELEVÉ_REEL_Z4_POUR_FACTURATION_COMMUNE",
+      "RELEVE_REEL_Z6_POUR_FACTURATION_COMMUNE",
+      "RELEVE_REEL_Z7_POUR_FACTURATION_COMMUNE",
+      "RELEVE_REEL_Z8_POUR_FACTURATION_COMMUNE",
+      "RELEVE_REEL_MODIFIE_DE_TYPE_Z1",
+      "RELEVE_REEL_MODIFIE_DE_TYPE_Z3",
+      "RELEVE_REEL_MODIFIE_DE_TYPE_Z4",
+      "RELEVE_REEL_PAR_ERD_GRD",
+      "RELEVE_REEL_POUR_AJUSTEMENT_MENSU_MANUEL",
+      "RELEVE_REEL_ZG_POUR_FACTURATION_COMMUNE",
+      "AUTO_RELEVE_PAR_ERD_GRD",
+      "AUTO_RELEVE_PAR_EDF",
+      "AUTO_RELEVE_PAR_INTERNET",
+      "RELEVE_CONFIANCE_ELEC",
+      "AUTO_RELEVE_GAZ",
+      "RELEVE_CONFIANCE_GAZ",
+      "SUIVI_CONSO_ELEC"
+    ]
+  },
+  "q:Q136": {
+    "@id": "q:Q136",
+    "@type": "q:Q115",
+    "description": "Type de relève associé à la consommation (réelle ou estimée), consommation d'électricité EDF.",
+    "name": "statementType",
+    "exampleValue": "REEL",
+    "values": "REEL"
+  },
+  "q:Q137": {
+    "@id": "q:Q137",
+    "@type": "q:Q117",
+    "description": "Motif de relève associé à la consommation, consommation d'électricité EDF.",
+    "name": "statementReason",
+    "exampleValue": "RELEVE_PERIODIQUE",
+    "values": [
+      "RELEVE_PERIODIQUE",
+      "RELEVE_INTERMEDIAIRE_CALC_FACT"
+    ]
+  },
+  "q:Q138": {
+    "@id": "q:Q138",
+    "@type": "q:Q132",
+    "description": "Éstimations de consommation d'électricité, du service e.quilibre, transmises par Edelia.",
+    "name": "Éstimations de consommation d'électricité",
+    "cozyDoctypeName": "org.fing.mesinfos.consumptionstatement",
+    "cozyIndex": "[\"statementReason\"]",
+    "cozySelector": "{\"statementReason\": { \"$in\":[\"EdeliaYearlyElecConsumption\", \"EdeliaYearlyElecConsumption\"]}}",
+    "generatedBy": "q:Q101",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q110",
+      "q:Q112",
+      "q:Q113",
+      "q:Q114",
+      "q:Q115",
+      "q:Q117",
+      {
+        "@id": "q:Q139"
+      },
+      {
+        "@id": "q:Q140"
+      },
+      {
+        "@id": "q:Q141"
+      },
+      "q:Q118",
+      "q:Q122",
+      "q:Q123",
+      "q:Q124",
+      "q:Q125",
+      "q:Q126",
+      "q:Q131",
+      "q:Q127",
+      "q:Q128",
+      "q:Q129",
+      "q:Q130"
+    ],
+    "help": "'similarHomes' seulement sur les relevés 'EdeliaYearlyElecConsumption'. 'statements', seulement sur les relevés EdeliaMonthlyElecConsumption.",
+    "sourceDataController": "EDF",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/estimation_consommation_edelia.json",
+    "typology": "Domicile",
+    "updateFrequency": "P1M",
+    "updateLatency": "P1D"
+  },
+  "q:Q139": {
+    "@id": "q:Q139",
+    "@type": "q:Q115",
+    "description": "Type de relève associé à la consommation, edelia.",
+    "name": "statementType",
+    "exampleValue": "estime",
+    "values": "estime"
+  },
+  "q:Q140": {
+    "@id": "q:Q140",
+    "@type": "q:Q117",
+    "description": "Motif de relève associé à la consommation.",
+    "name": "statementReason",
+    "exampleValue": "EdeliaMonthlyGasConsumption",
+    "values": [
+      "EdeliaMonthlyGasConsumption",
+      "EdeliaYearlyGasConsumption"
+    ]
+  },
+  "q:Q141": {
+    "@id": "q:Q141",
+    "@type": "q:Q116",
+    "description": "Type de relève associé à la consommation.",
+    "name": "statementCategory",
+    "exampleValue": "edelia",
+    "values": "edelia"
+  },
+  "q:Q142": {
+    "@id": "q:Q142",
+    "@type": "q:Q132",
+    "description": "Éstimations de consommation de gaz, du service e.quilibre, transmises par Edelia.",
+    "name": "Éstimations de consommation de gaz",
+    "cozyDoctypeName": "org.fing.mesinfos.consumptionstatement",
+    "cozyIndex": "[\"statementReason\"]",
+    "cozySelector": "{\"statementReason\": { \"$in\":[\"EdeliaYearlyGazConsumption\", \"EdeliaYearlyGazConsumption\"]}}",
+    "generatedBy": "q:Q101",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q110",
+      "q:Q112",
+      "q:Q113",
+      "q:Q114",
+      "q:Q115",
+      "q:Q117",
+      {
+        "@id": "q:Q139"
+      },
+      {
+        "@id": "q:Q140"
+      },
+      {
+        "@id": "q:Q141"
+      },
+      "q:Q118",
+      "q:Q122",
+      "q:Q123",
+      "q:Q124",
+      "q:Q125",
+      "q:Q126",
+      "q:Q131",
+      "q:Q127",
+      "q:Q128",
+      "q:Q129",
+      "q:Q130"
+    ],
+    "help": "'similarHomes' seulement sur les relevés 'EdeliaYearlyGasConsumption'. 'statements', seulement sur les relevés EdeliaMonthlyGasConsumption.",
+    "sourceDataController": "EDF",
+    "typology": "Domicile",
+    "updateFrequency": "P1M",
+    "updateLatency": "P1D"
+  },
+  "q:Q144": {
+    "@id": "q:Q144",
+    "@type": "q:Q132",
+    "description": "Un relevé de consommation de gaz, transmis par EDF.",
+    "name": "Consommation de gaz",
+    "cozyDoctypeName": "org.fing.mesinfos.consumptionstatement",
+    "cozyIndex": "[\"statementReason\"]",
+    "cozySelector": "{\"statementReason\": { \"$nin\":[\"EdeliaYearlyElecConsumption\", \"EdeliaYearlyElecConsumption\"]}}",
+    "generatedBy": "q:Q101",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q110",
+      "q:Q111",
+      "q:Q112",
+      "q:Q113",
+      "q:Q114",
+      "q:Q115",
+      "q:Q117",
+      "q:Q136",
+      "q:Q137",
+      "q:Q135"
+    ],
+    "sourceDataController": "EDF",
+    "typology": "Domicile",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D"
+  }
+}

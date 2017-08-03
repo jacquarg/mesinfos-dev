@@ -19898,3 +19898,5 @@ this.activeTarget=b,this.clear();var c=this.selector+'[data-target="'+b+'"],'+th
     return Backbone.SubRoute;
 }));
 
+
+//# sourceMappingURL=vendor.js.map

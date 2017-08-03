@@ -1,15 +1,15 @@
-span.name= Nom
+span.name= name
 |:&nbsp;
 span.value(class=typeof(value))= JSON.stringify(value, null, 2)
 span ,
-if Description || Format
+if description || Format
   span.toggle
   ul.details
     span.comment //&nbsp;
-    if Description
+    if description
       li
-        b.descriptionLabel Description :&nbsp;
-        = Description
+        b.descriptionLabel description :&nbsp;
+        = description
     if Format
       li
         b Format :&nbsp;

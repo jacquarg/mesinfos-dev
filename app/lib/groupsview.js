@@ -30,6 +30,4 @@ module.exports = Mn.ItemView.extend({
 
     containerEl.append(view.$el);
   },
-
-
 });

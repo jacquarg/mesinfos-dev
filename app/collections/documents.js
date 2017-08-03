@@ -1,10 +1,9 @@
-var app = undefined;
+var semutils = require('lib/semantic_utils')
 
 module.exports = Backbone.Collection.extend({
 
 
   initialize: function() {
-    app = require('application');
     this.listenTo(app, 'documents:fetch', this.fetchDSView);
   },
 
@@ -32,44 +31,91 @@ module.exports = Backbone.Collection.extend({
   },
 
   _generateFields: function(doc) {
-    var docType = this.dsView.getDocType();
-    var fieldsDocumentation = app.fields.filter(function(field) {
-      // TODO : origin too ?
-      // TOOD : update V3
-      // return field.DocType.toLowerCase() === doc.docType.toLowerCase();
-      return field.DocType === docType;
-    });
+    'use-strict'
+
+    const docType = app.doctypes[this.dsView.getDocType()]
+    let fieldsDocumentation = []
+    if (docType.hasOptionalProperty) {
+      fieldsDocumentation = fieldsDocumentation.concat(docType.hasOptionalProperty)
+    }
+    if (docType.hasProperty) {
+      fieldsDocumentation = fieldsDocumentation.concat(docType.hasProperty)
+    }
+
+    fieldsDocumentation = fieldsDocumentation.map(id => semutils.getItem(id, app.wikiapi))
+    console.log(fieldsDocumentation)
+    // TODO : get fields from subsets.
 
     var viewedFields = {};
     var fields = fieldsDocumentation.reduce(function(agg, field) {
-      if (!doc[field.Nom]) { return agg; }
+      if (!doc[field.name]) { return agg; }
 
-      viewedFields[field.Nom] = true;
+      viewedFields[field.name] = true;
       var f = $.extend({}, field);
-      f.value = doc[field.Nom];
+      f.value = doc[field.name];
       agg.push(f);
       return agg;
     }, []);
 
     for (var k in doc) {
       if (!(k in viewedFields)) {
-        fields.push({ Nom: k, value: doc[k] })
+        fields.push({ name: k, value: doc[k] })
       }
     }
 
     fields.sort(function(a, b) {
-      if (a.Nature === 'Metadata' && b.Nature !== 'Metadata') {
+      if (a.kind === 'Metadata' && b.kind !== 'Metadata') {
           return 1;
-      } else if (a.Nature !== 'Metadata' && b.Nature === 'Metadata') {
+      } else if (a.kind !== 'Metadata' && b.kind === 'Metadata') {
           return -1;
       } else {
-          return a.Nom > b.Nom ? 1 : -1;
+          return a.name > b.name ? 1 : -1;
       }
     });
     doc.fields = fields;
 
     return doc;
   },
+
+  // _generateFields: function(doc) {
+  //   var docType = this.dsView.getDocType();
+  //   var fieldsDocumentation = app.fields.filter(function(field) {
+  //     // TODO : origin too ?
+  //     // TOOD : update V3
+  //     // return field.DocType.toLowerCase() === doc.docType.toLowerCase();
+  //     return field.DocType === docType;
+  //   });
+  //
+  //   var viewedFields = {};
+  //   var fields = fieldsDocumentation.reduce(function(agg, field) {
+  //     if (!doc[field.Nom]) { return agg; }
+  //
+  //     viewedFields[field.Nom] = true;
+  //     var f = $.extend({}, field);
+  //     f.value = doc[field.Nom];
+  //     agg.push(f);
+  //     return agg;
+  //   }, []);
+  //
+  //   for (var k in doc) {
+  //     if (!(k in viewedFields)) {
+  //       fields.push({ Nom: k, value: doc[k] })
+  //     }
+  //   }
+  //
+  //   fields.sort(function(a, b) {
+  //     if (a.Nature === 'Metadata' && b.Nature !== 'Metadata') {
+  //         return 1;
+  //     } else if (a.Nature !== 'Metadata' && b.Nature === 'Metadata') {
+  //         return -1;
+  //     } else {
+  //         return a.Nom > b.Nom ? 1 : -1;
+  //     }
+  //   });
+  //   doc.fields = fields;
+  //
+  //   return doc;
+  // },
 
   // override sync
 

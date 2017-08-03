@@ -1,7 +1,8 @@
 .title
-  span.typologie= Typologie
-    | &nbsp;/&nbsp;
-  h2.subset= Nom
+  if typology && name
+    span.typologie= typology
+      | &nbsp;/&nbsp;
+    h2.subset= name
 
   //- img(src="img/holders/logo_" + Détenteur.toLowerCase() + ".png", title=Détenteur)
 
@@ -14,26 +15,33 @@
       span.iconicstroke-trash-stroke
       | &nbsp;Supprimer du Cozy
 
-.row
-  .subset.col-sm-6
-    p= Description
+if name
+  p=description
 
-    ul.caracteristiques
-      li
-        b Fréquence :&nbsp;
-        = Fréquence
-      li
-        b Latence :&nbsp;
-        = Latence
-  .doctype.col-sm-6
-    .well
-      | DocType :&nbsp;
-      b= docType.Nom
+  ul.caracteristiques
+    li
+      b Fréquence :&nbsp;
+      = updateFrequency
+    li
+      b Latence :&nbsp;
+      = updateLatency
+    li
+      b Propriétés :&nbsp;
+      ul.properties
+        each prop in hasProperty
+          li
+            b= prop.name
+            | &ensp;:&ensp;
+            = prop.description
 
-      p= docType.Description
+.well
+  | DocType :&nbsp;
+  b= docType.name
 
-      .similaires
-        | Du même type :
-        ul
-          each s in subsets
-            li= s.Nom
+  p= docType.description
+
+  .similaires
+    | Du même doctype :
+    ul
+      each s in subsets
+        li= s.name

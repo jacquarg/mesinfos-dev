@@ -1,0 +1,10 @@
+{
+  "@context": "semantic/context.json",
+  "@id": "q:Q145",
+  "@type": "schema:ItemList",
+  "name": "CozyDoctypes",
+  "description": "Liste des doctypes que l'on peut croiser dans un Cozy.",
+  "schema:itemListElement": [
+    "q:Q132"
+  ]
+}
