@@ -35,4 +35,23 @@ M.isType = (item, type) => {
   return  typeProp === type || (typeProp instanceof Array && typeProp.indexOf(type) !== -1)
 }
 
+M.mapOnPropValue = (propValue, fun) => {
+  if (propValue instanceof Array) {
+    return propValue.map(fun)
+  }
+  return fun(propValue)
+}
+
+M.fillTreeForProps = (item, props, allItems) => {
+
+  item = M.getItem(item, allItems)
+  props.forEach((prop) => {
+    if (item[prop]) {
+      item[prop] = M.mapOnPropValue(item[prop], (value) => M.fillTreeForProps(value, props, allItems))
+    }
+  })
+
+  return item
+}
+
 module.exports = M

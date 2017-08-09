@@ -21,7 +21,7 @@
       "public": false
     }
   },
-  "version": "3.0.2",
+  "version": "4.0.0-dev",
   "licence": "AGPL-3.0",
   "permissions": {
     "properties": {
@@ -55,7 +55,9 @@
     "apps": {
       "description": "Required by the cozy-bar to display the icons of the apps",
       "type": "io.cozy.apps",
-      "verbs": ["GET"]
+      "verbs": [
+        "GET"
+      ]
     },
     "foyer": {
       "description": "Try data request and add synthetics datasets.",

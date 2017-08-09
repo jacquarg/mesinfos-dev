@@ -30,5 +30,8 @@ module.exports = {
     jade: {
       globals: ['moment', '_']
     },
+    version: {
+      fileVersionField: 'manifest.webapp'
+    }
   }
 }

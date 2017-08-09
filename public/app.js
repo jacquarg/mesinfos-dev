@@ -508,7 +508,7 @@ require.register("lib/appname_version.js", function(exports, require, module) {
 
 const name = 'lamusiquedemesfilms';
 // use brunch-version plugin to populate these.
-const version = '3.0.2';
+const version = '4.0.0';
 
 module.exports = `${name}-${version}`;
 
@@ -701,6 +701,25 @@ M.isType = (item, type) => {
 
   const typeProp = item['@type']
   return  typeProp === type || (typeProp instanceof Array && typeProp.indexOf(type) !== -1)
+}
+
+M.mapOnPropValue = (propValue, fun) => {
+  if (propValue instanceof Array) {
+    return propValue.map(fun)
+  }
+  return fun(propValue)
+}
+
+M.fillTreeForProps = (item, props, allItems) => {
+
+  item = M.getItem(item, allItems)
+  props.forEach((prop) => {
+    if (item[prop]) {
+      item[prop] = M.mapOnPropValue(item[prop], (value) => M.fillTreeForProps(value, props, allItems))
+    }
+  })
+
+  return item
 }
 
 module.exports = M
@@ -1206,10 +1225,13 @@ module.exports = Mn.ItemView.extend({
       data.synthSetInDS = this.model.synthSetInDS();
       data.docType = app.doctypes[this.model.get('cozyDoctypeName')];
       data.subsets = app.subsets.where({'cozyDoctypeName': this.model.getDocType()})
+
         .map(function(subset) { return subset.toJSON(); });
-      if (data.hasProperty) {
-        data.hasProperty = data.hasProperty.map(item => semutils.getItem(item, app.wikiapi))
-      }
+
+      data = $.extend(data, semutils.fillTreeForProps(data, ['hasProperty', 'hasOptionalProperty', 'items'], app.wikiapi))
+      // if (data.hasProperty) {
+      //   data.hasProperty = data.hasProperty.map(item => semutils.getItem(item, app.wikiapi))
+      // }
       if (data.updateFrequency) {
         data.updateFrequency = moment.duration(data.updateFrequency).humanize()
       }
@@ -1218,6 +1240,10 @@ module.exports = Mn.ItemView.extend({
       }
     }
     return data;
+  },
+
+  _buildPlainDocTree: function () {
+
   },
 
   insertSynthSet: function() {
@@ -1673,7 +1699,52 @@ var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
-;var locals_for_with = (locals || {});(function (description, docType, hasProperty, name, subsets, synthSetInDS, synthSetInsertable, typology, undefined, updateFrequency, updateLatency) {
+;var locals_for_with = (locals || {});(function (description, docType, hasProperty, help, name, subsets, synthSetInDS, synthSetInsertable, typology, undefined, updateFrequency, updateLatency) {
+jade_mixins["properties"] = jade_interp = function(props){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<ul class=\"properties\">");
+// iterate props
+;(function(){
+  var $$obj = props;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var prop = $$obj[$index];
+
+buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.name) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)));
+if ( prop.hasProperty)
+{
+jade_mixins["properties"](prop.hasProperty);
+}
+if ( prop.items)
+{
+jade_mixins["properties"](prop.items.hasProperty);
+}
+buf.push("</li>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      var prop = $$obj[$index];
+
+buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.name) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)));
+if ( prop.hasProperty)
+{
+jade_mixins["properties"](prop.hasProperty);
+}
+if ( prop.items)
+{
+jade_mixins["properties"](prop.items.hasProperty);
+}
+buf.push("</li>");
+    }
+
+  }
+}).call(this);
+
+buf.push("</ul>");
+};
 buf.push("<div class=\"title\">");
 if ( typology && name)
 {
@@ -1691,30 +1762,14 @@ buf.push("<button type=\"button\" class=\"delete btn btn-danger\"><span class=\"
 buf.push("</div>");
 if ( name)
 {
-buf.push("<p>" + (jade.escape(null == (jade_interp = description) ? "" : jade_interp)) + "</p><ul class=\"caracteristiques\"><li><b>Fréquence :&nbsp;</b>" + (jade.escape(null == (jade_interp = updateFrequency) ? "" : jade_interp)) + "</li><li><b>Latence :&nbsp;</b>" + (jade.escape(null == (jade_interp = updateLatency) ? "" : jade_interp)) + "</li><li><b>Propriétés :&nbsp;</b><ul class=\"properties\">");
-// iterate hasProperty
-;(function(){
-  var $$obj = hasProperty;
-  if ('number' == typeof $$obj.length) {
-
-    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
-      var prop = $$obj[$index];
-
-buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.name) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)) + "</li>");
-    }
-
-  } else {
-    var $$l = 0;
-    for (var $index in $$obj) {
-      $$l++;      var prop = $$obj[$index];
-
-buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.name) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)) + "</li>");
-    }
-
-  }
-}).call(this);
-
-buf.push("</ul></li></ul>");
+buf.push("<p>" + (jade.escape(null == (jade_interp = description) ? "" : jade_interp)) + "</p>");
+if ( help)
+{
+buf.push("<p><b>Informations pour la ré-utilisation :&ensp;</b>" + (jade.escape(null == (jade_interp = help) ? "" : jade_interp)) + "</p>");
+}
+buf.push("<ul class=\"caracteristiques\"><li><b>Fréquence :&nbsp;</b>" + (jade.escape(null == (jade_interp = updateFrequency) ? "" : jade_interp)) + "</li><li><b>Latence :&nbsp;</b>" + (jade.escape(null == (jade_interp = updateLatency) ? "" : jade_interp)) + "</li><li><b>Propriétés :&nbsp;</b>");
+jade_mixins["properties"](hasProperty);
+buf.push("</li></ul>");
 }
 buf.push("<div class=\"well\">DocType :&nbsp;<b>" + (jade.escape(null == (jade_interp = docType.name) ? "" : jade_interp)) + "</b><p>" + (jade.escape(null == (jade_interp = docType.description) ? "" : jade_interp)) + "</p><div class=\"similaires\">Du même doctype :<ul>");
 // iterate subsets
@@ -1739,7 +1794,7 @@ buf.push("<li>" + (jade.escape(null == (jade_interp = s.name) ? "" : jade_interp
   }
 }).call(this);
 
-buf.push("</ul></div></div>");}.call(this,"description" in locals_for_with?locals_for_with.description:typeof description!=="undefined"?description:undefined,"docType" in locals_for_with?locals_for_with.docType:typeof docType!=="undefined"?docType:undefined,"hasProperty" in locals_for_with?locals_for_with.hasProperty:typeof hasProperty!=="undefined"?hasProperty:undefined,"name" in locals_for_with?locals_for_with.name:typeof name!=="undefined"?name:undefined,"subsets" in locals_for_with?locals_for_with.subsets:typeof subsets!=="undefined"?subsets:undefined,"synthSetInDS" in locals_for_with?locals_for_with.synthSetInDS:typeof synthSetInDS!=="undefined"?synthSetInDS:undefined,"synthSetInsertable" in locals_for_with?locals_for_with.synthSetInsertable:typeof synthSetInsertable!=="undefined"?synthSetInsertable:undefined,"typology" in locals_for_with?locals_for_with.typology:typeof typology!=="undefined"?typology:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"updateFrequency" in locals_for_with?locals_for_with.updateFrequency:typeof updateFrequency!=="undefined"?updateFrequency:undefined,"updateLatency" in locals_for_with?locals_for_with.updateLatency:typeof updateLatency!=="undefined"?updateLatency:undefined));;return buf.join("");
+buf.push("</ul></div></div>");}.call(this,"description" in locals_for_with?locals_for_with.description:typeof description!=="undefined"?description:undefined,"docType" in locals_for_with?locals_for_with.docType:typeof docType!=="undefined"?docType:undefined,"hasProperty" in locals_for_with?locals_for_with.hasProperty:typeof hasProperty!=="undefined"?hasProperty:undefined,"help" in locals_for_with?locals_for_with.help:typeof help!=="undefined"?help:undefined,"name" in locals_for_with?locals_for_with.name:typeof name!=="undefined"?name:undefined,"subsets" in locals_for_with?locals_for_with.subsets:typeof subsets!=="undefined"?subsets:undefined,"synthSetInDS" in locals_for_with?locals_for_with.synthSetInDS:typeof synthSetInDS!=="undefined"?synthSetInDS:undefined,"synthSetInsertable" in locals_for_with?locals_for_with.synthSetInsertable:typeof synthSetInsertable!=="undefined"?synthSetInsertable:undefined,"typology" in locals_for_with?locals_for_with.typology:typeof typology!=="undefined"?typology:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"updateFrequency" in locals_for_with?locals_for_with.updateFrequency:typeof updateFrequency!=="undefined"?updateFrequency:undefined,"updateLatency" in locals_for_with?locals_for_with.updateLatency:typeof updateLatency!=="undefined"?updateLatency:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {

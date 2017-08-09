@@ -1,15 +1,7 @@
 {
   "name": "mesinfos-dev",
-  "cozy-type": "static",
-  "cozy-displayName": "MesInfos Dev",
-  "version": "3.0.2",
+  "version": "4.0.0-dev",
   "description": "Une application pour les développeurs, pour visualiser et tester l'accès aux données du Pilote MesInfos.",
-  "icon-path": "img/icon.svg",
-  "cozy-permissions": {
-    "all": {
-      "description": "Visualize all the data format, and test request on the datasystem."
-    }
-  },
   "scripts": {
     "watch": "brunch watch",
     "build": "brunch build --production"
@@ -21,6 +13,6 @@
     "css-brunch": "^2.0.0",
     "jade-brunch": "2.8.0",
     "javascript-brunch": "^2.0.0",
-    "version-brunch": "^1.0.1"
+    "version-brunch": "git+https://github.com/jacquarg/version-brunch.git"
   }
 }
