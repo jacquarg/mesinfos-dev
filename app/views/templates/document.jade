@@ -1,3 +1,55 @@
-span.openBrace {
+mixin obj(fieldList)
+  span.openBrace {
   .fields
-span.closeBrace },
+    each field in fieldList
+      +field(field)
+  span.closeBrace }
+
+mixin field(f)
+  .field.compact(class=f.kind)
+    span.name= f.name
+    |:&nbsp;
+    case f.displayType
+      when 'array'
+        span.openBracket [
+        .array
+          each o in f.value
+            +obj(o)
+            |,
+
+        span.closeBracket ]
+
+      when 'object'
+        +obj(f.value)
+
+      default
+        span.value(class=typeof(f.value))= JSON.stringify(f.value, null, 2)
+
+    span ,
+    if f.description || f.values || f.Format
+      span.toggle
+      ul.details
+        span.comment //&nbsp;
+
+        if f.description
+          li
+            b.descriptionLabel description :&nbsp;
+            = f.description
+
+        if f.values
+          li
+            b.valuesLabel valeurs possibles :&nbsp;
+              if f.values instanceof Array
+                = f.values.map(JSON.stringify).join(', ')
+              else
+                = JSON.stringify(f.values)
+
+          //- obsolete ! todo !
+        if f.Format
+          li
+            b Format :&nbsp;
+            = f.Format
+
+
++obj(fields)
+| ,

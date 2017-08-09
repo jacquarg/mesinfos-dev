@@ -28,7 +28,7 @@ var Application = Mn.Application.extend({
       token: app.dataset.cozyToken,
     });
 
-    cozy.bar.init({appName: "MesInfos-Dev"});
+    // cozy.bar.init({appName: "MesInfos-Dev"});
 
     return this._fetchDocumentation()
   },
@@ -36,7 +36,7 @@ var Application = Mn.Application.extend({
   prepareInBackground: function() {
     this.properties.fetch();
 
-    return this._defineViews();
+    // return this._defineViews();
   },
 
   _fetchDocumentation: function(data) {
@@ -47,7 +47,6 @@ var Application = Mn.Application.extend({
       $.getJSON('data/wikiapi/cozy_doctypes.json'),
     ])
     .then((res) => {
-      console.log(res)
       this.wikiapi = res[0]
 
       this.subsets = new SubsetsCollection()
@@ -133,7 +132,7 @@ var Application = Mn.Application.extend({
       Backbone.history.start({ pushState: false });
     }
     var randomIndex = Math.floor(Math.random() * this.subsets.size());
-    this.trigger('requestform:setView', this.subsets.at(randomIndex));
+    // this.trigger('requestform:setView', this.subsets.at(randomIndex));
   },
 
 });

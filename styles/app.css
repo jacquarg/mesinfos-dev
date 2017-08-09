@@ -277,10 +277,6 @@ ul.result {
   min-height: 1.2em;
 }
 
-.doctype .field.compact {
-  white-space: nowrap;
-}
-
 .doctype .field .toggle {
   position: absolute;
   right: 0px;
@@ -306,11 +302,19 @@ ul.result {
   color: #444;
 }
 
-.doctype .field.expanded .value.object {
-  white-space: pre;
+.doctype .field.compact.Metadata {
+  opacity: 0.6;
 }
 
-.doctype .field.compact .value {
+.doctype .field.compact {
+  white-space: nowrap;
+}
+
+.doctype .field.compact > .details {
+  color: #999;
+}
+
+.doctype .field.compact > .value {
     /* text-overflow: ellipsis;
     max-width: 70%;
     display: inline-block;
@@ -320,16 +324,7 @@ ul.result {
   /*! line-height: 1em; */
 }
 
-/*
-.doctype .field .toggle:after {
-  position: relative;
-  left: 8px;
-  bottom: 1px;
-}*/
-
-.doctype .field.expanded .details {}
-
-.doctype .field.compact ul.details {
+.doctype .field.compact > ul.details {
   padding-left: 1em;
   display: inline;
   height: 1.1em;
@@ -337,33 +332,56 @@ ul.result {
   overflow: hidden;
 }
 
-.doctype .field.compact .details li  {
+.doctype .field.compact > .details li  {
   display: inline;
   margin-left: 5px;
 }
 
-.doctype .field.compact .details .descriptionLabel  {
+.doctype .field.compact > .details .descriptionLabel  {
   display: none;
 }
 
 
-.doctype .field.expanded .details {
+/*
+.doctype .field .toggle:after {
+  position: relative;
+  left: 8px;
+  bottom: 1px;
+}*/
+
+.doctype .field.expanded > .value.object {
+  white-space: pre;
+}
+
+
+.doctype .field.expanded > .details {}
+
+
+
+.doctype .field.expanded > .details {
+  /*! display: block; */
+
+  /* position: absolute;
+  left: 0px; */
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   background: #ddd;
   padding: 5px;
 }
 
-.doctype .field.expanded ul.details {
+.doctype .field.expanded > ul.details {
   padding-left: 25px;
   margin-bottom: 20px;
 }
-.doctype .field.expanded .details li {
+.doctype .field.expanded > .details li {
   margin: 5px 0px;
 }
 
-.doctype .field.expanded .details .comment {
+.doctype .field.expanded > .details .comment {
   display: none;
 }
+
+
+
 
 /* Message */
 .message {

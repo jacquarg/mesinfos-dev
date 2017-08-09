@@ -129,7 +129,7 @@
       "description": "Try data request and add synthetics datasets.",
       "type": "org.fing.mesinfos.insuranceclaim"
     },
-    "org.fing.meisnfos.vehicle": {
+    "org.fing.mesinfos.vehicle": {
       "description": "Try data request and add synthetics datasets.",
       "type": "org.fing.meisnfos.vehicle"
     },

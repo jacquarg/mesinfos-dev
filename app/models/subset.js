@@ -5,11 +5,6 @@ const utils = require('lib/utils')
 var ap = require('lib/asyncpromise')
 
 module.exports = DSView.extend({
-  // parse: function (options) {
-  //   console.log('heyy:  parse !')
-  //
-  // },
-
   getDocType: function() {
     return this.get('cozyDoctypeName');
   },

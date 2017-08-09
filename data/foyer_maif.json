@@ -1,33 +1,33 @@
-[
-{
-  "docType": "org.fing.mesinfos.foyer",
-  "name":"1-A3ZICCA",
-  "address":{
-    "street": "2 BOULEVARD DES BELGES",
-    "postCode": "69006",
-    "city": "LYON 06",
-    "country": "FRANCE",
-    "numeroPays":"000",
-    "deliveryOffice":"LYON",
-    "inseeCode":"69386",
-    "residence":""
-  },
-  "membres":[
-    {
-      "name": {
-        "codeTitrePersonne":"2",
-        "prefix":"MME.",
-        "family":"DUPOND",
-        "given":"GERMAINE"
-      },
-      "email":"germainedupondmesinfos@gmail.com",
-      "telMobile":"+33012345678",
-      "birthdate":"1972-03-18",
-      "birthplace":{},
-      "codeProfessionSocietaire":"13",
-      "profession":"13 Agent, employé",
-      "codeQualitePersonne":"08","quality": "Membre principal"
-    }
-  ]
-}
-]
+[{
+  "foyer": {
+    "name":"1-A3ZICCA",
+    "address":  {
+      "street": "2 BOULEVARD DES BELGES",
+      "postCode": "69006",
+      "city": "LYON",
+      "country": "FRANCE",
+      "numeroPays":"0",
+      "deliveryOffice":"LYON",
+      "inseeCode":"69386",
+      "residence":""
+    },
+    "membres": [
+      {
+        "name": {
+          "codeTitrePersonne":"2",
+          "prefix":"MME.",
+          "family":"DUPOND",
+          "given":"GERMAINE"
+        },
+        "email":"germainedupondmesinfos@gmail.com",
+        "telMobile":"+33012345678",
+        "birthdate":"1972-03-18",
+        "birthplace":{},
+        "codeProfessionSocietaire":"13",
+        "profession":"13 Agent, employé",
+        "codeQualitePersonne":"08",
+        "quality": "Membre principal"
+      }
+    ]
+  }
+}]

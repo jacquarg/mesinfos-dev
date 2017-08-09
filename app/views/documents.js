@@ -4,7 +4,7 @@ module.exports = Mn.CompositeView.extend({
   tagName: 'div',
   template: require('views/templates/documents'),
 
-  childView: require('views/documentfields'),
+  childView: require('views/document'),
   childViewContainer: 'ul.documentslist',
 
   ui: {

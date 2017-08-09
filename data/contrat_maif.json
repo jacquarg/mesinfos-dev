@@ -1,29 +1,42 @@
 [
-{
-  "docType": "Contract",
-  "docTypeVersion": "MaifKonnector-0.0.0-draft",
-  "societaire": "1234567N",
-  "name": "VAM",
-  "vendor": "Maif",
-  "formuleBase": "VAM Assistance panne 0km",
-  "startDate": "1989-04-29",
-  "montantTarifTtc": 312,
-  "objects": [
-  	{
-  		"startDate": "2013-04-12T00:00:00",
-      "lieu": [
-        {
-          "address":  {
-            "street": "2 BOULEVARD DES BELGES",
-            "postCode": "69006",
-            "city": "LYON",
-            "country": "FRANCE",
-            "numeroPays":"000"
-          }
+  {
+    "contrat": [
+      {
+        "formuleBase":"RAQVAM Arbitrage",
+        "montantTarifTtc":226.74,
+        "name":"NOR",
+        "objects": {
+          "startDate": "1989-04-29T00:00:00",
+          "lieu": [
+            {
+              "address":  {
+                "street": "2 BOULEVARD DES BELGES",
+                "postCode": "69006",
+                "city": "LYON",
+                "country": "FRANCE",
+                "numeroPays":"0"
+              }
+            }
+          ]
+        },
+        "societaire":"1234567",
+        "startDate": "1989-04-29T00:00:00"
+      },
+      {
+        "societaire": "1234567",
+        "name": "VAM",
+        "formuleBase": "VAM Assistance panne 0km",
+        "startDate": "2013-04-12T00:00:00",
+        "montantTarifTtc": 312,
+        "objects": {
+          "startDate": "2013-04-12T00:00:00",
+          "vehicule": [
+            {
+              "immatriculationVehicule": "AA-123-XD"
+            }
+          ]
         }
-      ]
-
-  	}
-  ]
-}
+      }
+    ]
+  }
 ]

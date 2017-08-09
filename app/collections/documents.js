@@ -30,40 +30,37 @@ module.exports = Backbone.Collection.extend({
     return resp.map(this._generateFields.bind(this));
   },
 
-  _generateFields: function(doc) {
+  _generateFieldsOfObject: function (obj, metaObject) {
     'use-strict'
-
-    const docType = app.doctypes[this.dsView.getDocType()]
-    let fieldsDocumentation = []
-    if (docType.hasOptionalProperty) {
-      fieldsDocumentation = fieldsDocumentation.concat(docType.hasOptionalProperty)
+    let metaProps = []
+    if (metaObject.hasOptionalProperty) {
+      metaProps = metaProps.concat(metaObject.hasOptionalProperty)
     }
-    if (docType.hasProperty) {
-      fieldsDocumentation = fieldsDocumentation.concat(docType.hasProperty)
+    if (metaObject.hasProperty) {
+      metaProps = metaProps.concat(metaObject.hasProperty)
     }
+    const metaPropByName = semutils.mapByProp('name', metaProps, app.wikiapi)
 
-    fieldsDocumentation = fieldsDocumentation.map(id => semutils.getItem(id, app.wikiapi))
-    console.log(fieldsDocumentation)
-    // TODO : get fields from subsets.
-
-    var viewedFields = {};
-    var fields = fieldsDocumentation.reduce(function(agg, field) {
-      if (!doc[field.name]) { return agg; }
-
-      viewedFields[field.name] = true;
-      var f = $.extend({}, field);
-      f.value = doc[field.name];
-      agg.push(f);
-      return agg;
-    }, []);
-
-    for (var k in doc) {
-      if (!(k in viewedFields)) {
-        fields.push({ name: k, value: doc[k] })
+    return Object.keys(obj).map((prop) => {
+      const metaProp = metaPropByName[prop]
+      let field = { name: prop, value: obj[prop] }
+      if (metaProp) {
+        field = $.extend(field, metaProp)
       }
-    }
 
-    fields.sort(function(a, b) {
+      if (semutils.isType(metaProp, 'object')) {
+        field.displayType = 'object'
+        field.value = this._generateFieldsOfObject(obj[prop], metaProp)
+      } else if (semutils.isType(metaProp, 'array')) {
+        field.displayType = 'array'
+        // TODO : metaProps.items may be a array (in the future)
+        field.value = obj[prop].map((propItem) => this._generateFieldsOfObject(propItem, semutils.getItem(metaProp.items, app.wikiapi)))
+      } else {
+        field.value = obj[prop]
+      }
+
+      return field
+    }).sort(function(a, b) {
       if (a.kind === 'Metadata' && b.kind !== 'Metadata') {
           return 1;
       } else if (a.kind !== 'Metadata' && b.kind === 'Metadata') {
@@ -71,9 +68,13 @@ module.exports = Backbone.Collection.extend({
       } else {
           return a.name > b.name ? 1 : -1;
       }
-    });
-    doc.fields = fields;
+    })
+  },
 
+  _generateFields: function(doc) {
+    'use-strict'
+    const docType = app.doctypes[this.dsView.getDocType()]
+    doc.fields = this._generateFieldsOfObject(doc, docType)
     return doc;
   },
 

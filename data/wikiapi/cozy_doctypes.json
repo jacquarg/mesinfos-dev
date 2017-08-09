@@ -5,6 +5,7 @@
   "name": "CozyDoctypes",
   "description": "Liste des doctypes que l'on peut croiser dans un Cozy.",
   "schema:itemListElement": [
-    "q:Q132"
+    "q:Q132",
+    "q:Q155", "q:Q231", "q:Q179", "q:Q265", "q:Q295", "q:Q226"
   ]
 }

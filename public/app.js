@@ -178,7 +178,7 @@ var Application = Mn.Application.extend({
       token: app.dataset.cozyToken,
     });
 
-    cozy.bar.init({appName: "MesInfos-Dev"});
+    // cozy.bar.init({appName: "MesInfos-Dev"});
 
     return this._fetchDocumentation()
   },
@@ -186,7 +186,7 @@ var Application = Mn.Application.extend({
   prepareInBackground: function() {
     this.properties.fetch();
 
-    return this._defineViews();
+    // return this._defineViews();
   },
 
   _fetchDocumentation: function(data) {
@@ -197,7 +197,6 @@ var Application = Mn.Application.extend({
       $.getJSON('data/wikiapi/cozy_doctypes.json'),
     ])
     .then((res) => {
-      console.log(res)
       this.wikiapi = res[0]
 
       this.subsets = new SubsetsCollection()
@@ -283,7 +282,7 @@ var Application = Mn.Application.extend({
       Backbone.history.start({ pushState: false });
     }
     var randomIndex = Math.floor(Math.random() * this.subsets.size());
-    this.trigger('requestform:setView', this.subsets.at(randomIndex));
+    // this.trigger('requestform:setView', this.subsets.at(randomIndex));
   },
 
 });
@@ -334,40 +333,37 @@ module.exports = Backbone.Collection.extend({
     return resp.map(this._generateFields.bind(this));
   },
 
-  _generateFields: function(doc) {
+  _generateFieldsOfObject: function (obj, metaObject) {
     'use-strict'
-
-    const docType = app.doctypes[this.dsView.getDocType()]
-    let fieldsDocumentation = []
-    if (docType.hasOptionalProperty) {
-      fieldsDocumentation = fieldsDocumentation.concat(docType.hasOptionalProperty)
+    let metaProps = []
+    if (metaObject.hasOptionalProperty) {
+      metaProps = metaProps.concat(metaObject.hasOptionalProperty)
     }
-    if (docType.hasProperty) {
-      fieldsDocumentation = fieldsDocumentation.concat(docType.hasProperty)
+    if (metaObject.hasProperty) {
+      metaProps = metaProps.concat(metaObject.hasProperty)
     }
+    const metaPropByName = semutils.mapByProp('name', metaProps, app.wikiapi)
 
-    fieldsDocumentation = fieldsDocumentation.map(id => semutils.getItem(id, app.wikiapi))
-    console.log(fieldsDocumentation)
-    // TODO : get fields from subsets.
-
-    var viewedFields = {};
-    var fields = fieldsDocumentation.reduce(function(agg, field) {
-      if (!doc[field.name]) { return agg; }
-
-      viewedFields[field.name] = true;
-      var f = $.extend({}, field);
-      f.value = doc[field.name];
-      agg.push(f);
-      return agg;
-    }, []);
-
-    for (var k in doc) {
-      if (!(k in viewedFields)) {
-        fields.push({ name: k, value: doc[k] })
+    return Object.keys(obj).map((prop) => {
+      const metaProp = metaPropByName[prop]
+      let field = { name: prop, value: obj[prop] }
+      if (metaProp) {
+        field = $.extend(field, metaProp)
       }
-    }
 
-    fields.sort(function(a, b) {
+      if (semutils.isType(metaProp, 'object')) {
+        field.displayType = 'object'
+        field.value = this._generateFieldsOfObject(obj[prop], metaProp)
+      } else if (semutils.isType(metaProp, 'array')) {
+        field.displayType = 'array'
+        // TODO : metaProps.items may be a array (in the future)
+        field.value = obj[prop].map((propItem) => this._generateFieldsOfObject(propItem, semutils.getItem(metaProp.items, app.wikiapi)))
+      } else {
+        field.value = obj[prop]
+      }
+
+      return field
+    }).sort(function(a, b) {
       if (a.kind === 'Metadata' && b.kind !== 'Metadata') {
           return 1;
       } else if (a.kind !== 'Metadata' && b.kind === 'Metadata') {
@@ -375,9 +371,13 @@ module.exports = Backbone.Collection.extend({
       } else {
           return a.name > b.name ? 1 : -1;
       }
-    });
-    doc.fields = fields;
+    })
+  },
 
+  _generateFields: function(doc) {
+    'use-strict'
+    const docType = app.doctypes[this.dsView.getDocType()]
+    doc.fields = this._generateFieldsOfObject(doc, docType)
     return doc;
   },
 
@@ -685,10 +685,22 @@ M.idList2ItemMap = (ids, allItems) => {
 
 M.mapByProp = (prop, items, allItems) => {
   return items.reduce((agg, id) => {
-    const item = M.getItem(id, allItems)
-    agg[item[prop]] = item
-    return agg
+    try {
+      const item = M.getItem(id, allItems)
+      agg[item[prop]] = item
+      return agg
+    } catch (e) {
+      console.error(`semantic_utils : Error in map by prop on id: ${id}`, e)
+      throw e
+    }
   }, {})
+}
+
+M.isType = (item, type) => {
+  if (!(item && item['@type'])) { return false }
+
+  const typeProp = item['@type']
+  return  typeProp === type || (typeProp instanceof Array && typeProp.indexOf(type) !== -1)
 }
 
 module.exports = M
@@ -826,11 +838,6 @@ const utils = require('lib/utils')
 var ap = require('lib/asyncpromise')
 
 module.exports = DSView.extend({
-  // parse: function (options) {
-  //   console.log('heyy:  parse !')
-  //
-  // },
-
   getDocType: function() {
     return this.get('cozyDoctypeName');
   },
@@ -1138,6 +1145,31 @@ module.exports = Mn.Behavior.extend({
 
 });
 
+require.register("views/document.js", function(exports, require, module) {
+'use-strict'
+
+const semutils = require('../lib/semantic_utils')
+const template = require('views/templates/document')
+
+module.exports = Mn.ItemView.extend({
+  tagName: 'li',
+  template: template,
+  className: 'doctype',
+
+  events: {
+    'click .toggle': 'toggleDetails',
+  },
+
+  toggleDetails: function (ev) {
+    const fieldElem = $(ev.currentTarget).parent()
+    fieldElem.toggleClass('compact')
+    fieldElem.toggleClass('expanded')
+  },
+
+});
+
+});
+
 require.register("views/documentation.js", function(exports, require, module) {
 var app = undefined;
 var semutils = require('lib/semantic_utils');
@@ -1203,24 +1235,6 @@ module.exports = Mn.ItemView.extend({
 
 });
 
-require.register("views/documentfields.js", function(exports, require, module) {
-module.exports = Mn.CompositeView.extend({
-  tagName: 'li',
-  className: 'doctype',
-  template: require('views/templates/document'),
-
-  childView: require('views/field'),
-
-  childViewContainer: '.fields',
-
-  initialize: function() {
-    this.collection = new Backbone.Collection(this.model.get('fields'));
-  },
-
-});
-
-});
-
 require.register("views/documents.js", function(exports, require, module) {
 var app = null;
 
@@ -1228,7 +1242,7 @@ module.exports = Mn.CompositeView.extend({
   tagName: 'div',
   template: require('views/templates/documents'),
 
-  childView: require('views/documentfields'),
+  childView: require('views/document'),
   childViewContainer: 'ul.documentslist',
 
   ui: {
@@ -1311,22 +1325,6 @@ module.exports = Mn.ItemView.extend({
     setDSView: function() {
       require('application').trigger('requestform:setView', this.model);
     },
-});
-
-});
-
-require.register("views/field.js", function(exports, require, module) {
-module.exports = Mn.ItemView.extend({
-  tagName: 'div',
-  className: function() {
-    return 'field compact ' + this.model.get('Nature');
-  },
-  template: require('views/templates/field'),
-
-  behaviors: {
-    Toggle: {},
-  }
-
 });
 
 });
@@ -1560,8 +1558,104 @@ var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
+;var locals_for_with = (locals || {});(function (Array, JSON, fields) {
+jade_mixins["obj"] = jade_interp = function(fieldList){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<span class=\"openBrace\">{</span><div class=\"fields\">");
+// iterate fieldList
+;(function(){
+  var $$obj = fieldList;
+  if ('number' == typeof $$obj.length) {
 
-buf.push("<span class=\"openBrace\">{<div class=\"fields\"></div></span><span class=\"closeBrace\">},</span>");;return buf.join("");
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var field = $$obj[$index];
+
+jade_mixins["field"](field);
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      var field = $$obj[$index];
+
+jade_mixins["field"](field);
+    }
+
+  }
+}).call(this);
+
+buf.push("</div><span class=\"closeBrace\">}</span>");
+};
+jade_mixins["field"] = jade_interp = function(f){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+buf.push("<div" + (jade.cls(['field','compact',f.kind], [null,null,true])) + "><span class=\"name\">" + (jade.escape(null == (jade_interp = f.name) ? "" : jade_interp)) + "</span>:&nbsp;");
+switch (f.displayType){
+case 'array':
+buf.push("<span class=\"openBracket\">[</span><div class=\"array\">");
+// iterate f.value
+;(function(){
+  var $$obj = f.value;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var o = $$obj[$index];
+
+jade_mixins["obj"](o);
+buf.push(",");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      var o = $$obj[$index];
+
+jade_mixins["obj"](o);
+buf.push(",");
+    }
+
+  }
+}).call(this);
+
+buf.push("</div><span class=\"closeBracket\">]</span>");
+  break;
+case 'object':
+jade_mixins["obj"](f.value);
+  break;
+default:
+buf.push("<span" + (jade.cls(['value',typeof(f.value)], [null,true])) + ">" + (jade.escape(null == (jade_interp = JSON.stringify(f.value, null, 2)) ? "" : jade_interp)) + "</span>");
+  break;
+}
+buf.push("<span>,</span>");
+if ( f.description || f.values || f.Format)
+{
+buf.push("<span class=\"toggle\"></span><ul class=\"details\"><span class=\"comment\">//&nbsp;</span>");
+if ( f.description)
+{
+buf.push("<li><b class=\"descriptionLabel\">description :&nbsp;</b>" + (jade.escape(null == (jade_interp = f.description) ? "" : jade_interp)) + "</li>");
+}
+if ( f.values)
+{
+buf.push("<li><b class=\"valuesLabel\">valeurs possibles :&nbsp;");
+if ( f.values instanceof Array)
+{
+buf.push(jade.escape(null == (jade_interp = f.values.map(JSON.stringify).join(', ')) ? "" : jade_interp));
+}
+else
+{
+buf.push(jade.escape(null == (jade_interp = JSON.stringify(f.values)) ? "" : jade_interp));
+}
+buf.push("</b></li>");
+}
+if ( f.Format)
+{
+buf.push("<li><b>Format :&nbsp;</b>" + (jade.escape(null == (jade_interp = f.Format) ? "" : jade_interp)) + "</li>");
+}
+buf.push("</ul>");
+}
+buf.push("</div>");
+};
+jade_mixins["obj"](fields);
+buf.push(",");}.call(this,"Array" in locals_for_with?locals_for_with.Array:typeof Array!=="undefined"?Array:undefined,"JSON" in locals_for_with?locals_for_with.JSON:typeof JSON!=="undefined"?JSON:undefined,"fields" in locals_for_with?locals_for_with.fields:typeof fields!=="undefined"?fields:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -1703,38 +1797,6 @@ var jade_mixins = {};
 var jade_interp;
 ;var locals_for_with = (locals || {});(function (createdAt) {
 buf.push("<span" + (jade.attr("title", createdAt, true, false)) + ">" + (jade.escape(null == (jade_interp = moment(createdAt).fromNow()) ? "" : jade_interp)) + "</span><span title=\"Supprimer du Cozy\" class=\"iconicstroke-trash-stroke delete\"></span>");}.call(this,"createdAt" in locals_for_with?locals_for_with.createdAt:typeof createdAt!=="undefined"?createdAt:undefined));;return buf.join("");
-};
-if (typeof define === 'function' && define.amd) {
-  define([], function() {
-    return __templateData;
-  });
-} else if (typeof module === 'object' && module && module.exports) {
-  module.exports = __templateData;
-} else {
-  __templateData;
-}
-});
-
-;require.register("views/templates/field.jade", function(exports, require, module) {
-var __templateData = function template(locals) {
-var buf = [];
-var jade_mixins = {};
-var jade_interp;
-;var locals_for_with = (locals || {});(function (Format, JSON, description, name, value) {
-buf.push("<span class=\"name\">" + (jade.escape(null == (jade_interp = name) ? "" : jade_interp)) + "</span>:&nbsp;<span" + (jade.cls(['value',typeof(value)], [null,true])) + ">" + (jade.escape(null == (jade_interp = JSON.stringify(value, null, 2)) ? "" : jade_interp)) + "</span><span>,</span>");
-if ( description || Format)
-{
-buf.push("<span class=\"toggle\"></span><ul class=\"details\"><span class=\"comment\">//&nbsp;</span>");
-if ( description)
-{
-buf.push("<li><b class=\"descriptionLabel\">description :&nbsp;</b>" + (jade.escape(null == (jade_interp = description) ? "" : jade_interp)) + "</li>");
-}
-if ( Format)
-{
-buf.push("<li><b>Format :&nbsp;</b>" + (jade.escape(null == (jade_interp = Format) ? "" : jade_interp)) + "</li>");
-}
-buf.push("</ul>");
-}}.call(this,"Format" in locals_for_with?locals_for_with.Format:typeof Format!=="undefined"?Format:undefined,"JSON" in locals_for_with?locals_for_with.JSON:typeof JSON!=="undefined"?JSON:undefined,"description" in locals_for_with?locals_for_with.description:typeof description!=="undefined"?description:undefined,"name" in locals_for_with?locals_for_with.name:typeof name!=="undefined"?name:undefined,"value" in locals_for_with?locals_for_with.value:typeof value!=="undefined"?value:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -1919,5 +1981,3 @@ require.register("___globals___", function(exports, require, module) {
   
 });})();require('___globals___');
 
-
-//# sourceMappingURL=app.js.map

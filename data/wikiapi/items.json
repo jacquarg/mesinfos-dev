@@ -3,8 +3,9 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "schema": "http://schema.org/",
     "wp": "https://www.wikidata.org/wiki/Property:",
+    "wq": "https://www.wikidata.org/wiki/",
     "q": "https://wikiapi.org/objects/",
-    "@vocab": "https://wikiapi.org/semantic/properties:",
+    "@vocab": "https://wikiapi.org/semantic/vocab:",
     "name": "rdfs:label",
     "description": {
       "@id": "rdfs:comment",
@@ -20,8 +21,8 @@
     "description": "Un relevé de consommation d'électricité, transmis par EDF.",
     "name": "Consommation d'électricité",
     "cozyDoctypeName": "org.fing.mesinfos.consumptionstatement",
-    "cozyIndex": "[\"statementReason\"]",
-    "cozySelector": "{\"statementReason\": { \"$nin\":[\"EdeliaYearlyElecConsumption\", \"EdeliaYearlyElecConsumption\"]}}",
+    "cozyIndex": "[\"_id\", \"statementCategory\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null }, \"statementCategory\": { \"$ne\": \"edelia\" } }",
     "generatedBy": "q:Q101",
     "hasProperty": [
       "q:Q133",
@@ -31,7 +32,6 @@
       "q:Q112",
       "q:Q113",
       "q:Q114",
-      "q:Q115",
       "q:Q117",
       {
         "@id": "q:Q136"
@@ -51,7 +51,10 @@
   },
   "q:Q102": {
     "@id": "q:Q102",
-    "@type": "wq:Q1397073",
+    "@type": [
+      "object",
+      "wq:Q1397073"
+    ],
     "description": "Doctypes utilisés dans Cozy. Doc en cours ici : https://github.com/cozy/cozy-doctypes",
     "name": "doctype"
   },
@@ -94,7 +97,7 @@
   "q:Q112": {
     "@id": "q:Q112",
     "@type": "q:Q104",
-    "description": "Début de période de relevé de consommation",
+    "description": "Instant de début de période.",
     "name": "start",
     "availability": "2016-10",
     "exampleValue": "2016-01-08",
@@ -103,7 +106,7 @@
   "q:Q113": {
     "@id": "q:Q113",
     "@type": "q:Q104",
-    "description": "Fin de période de relevé de consommation",
+    "description": "Instant de fin de période.",
     "name": "end",
     "availability": "2016-10",
     "exampleValue": "2016-07-01",
@@ -405,8 +408,8 @@
     "description": "Éstimations de consommation d'électricité, du service e.quilibre, transmises par Edelia.",
     "name": "Éstimations de consommation d'électricité",
     "cozyDoctypeName": "org.fing.mesinfos.consumptionstatement",
-    "cozyIndex": "[\"statementReason\"]",
-    "cozySelector": "{\"statementReason\": { \"$in\":[\"EdeliaYearlyElecConsumption\", \"EdeliaYearlyElecConsumption\"]}}",
+    "cozyIndex": "[\"_id\", \"statementReason\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null }, \"statementReason\": { \"$in\":[\"EdeliaYearlyElecConsumption\", \"EdeliaYearlyElecConsumption\"]}}",
     "generatedBy": "q:Q101",
     "hasProperty": [
       "q:Q133",
@@ -478,8 +481,8 @@
     "description": "Éstimations de consommation de gaz, du service e.quilibre, transmises par Edelia.",
     "name": "Éstimations de consommation de gaz",
     "cozyDoctypeName": "org.fing.mesinfos.consumptionstatement",
-    "cozyIndex": "[\"statementReason\"]",
-    "cozySelector": "{\"statementReason\": { \"$in\":[\"EdeliaYearlyGazConsumption\", \"EdeliaYearlyGazConsumption\"]}}",
+    "cozyIndex": "[\"_id\", \"statementReason\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null }, \"statementReason\": { \"$in\":[\"EdeliaYearlyGazConsumption\", \"EdeliaYearlyGazConsumption\"]}}",
     "generatedBy": "q:Q101",
     "hasProperty": [
       "q:Q133",
@@ -544,5 +547,1229 @@
     "typology": "Domicile",
     "updateFrequency": "P6M",
     "updateLatency": "P1D"
+  },
+  "q:Q146": {
+    "@id": "q:Q146",
+    "wq:Q3133368": "https://github.com/cozy/cozy-konnector-maif"
+  },
+  "q:Q148": {
+    "@id": "q:Q148",
+    "@type": "q:Q161",
+    "description": "Numéro du sociétaire souscripteur du contrat.",
+    "name": "societaire",
+    "availability": "2016-09",
+    "exampleValue": "1234567",
+    "kind": "Caractérisation"
+  },
+  "q:Q149": {
+    "@id": "q:Q149",
+    "@type": "q:Q162",
+    "description": "Nom du produit.",
+    "name": "name",
+    "availability": "2016-09",
+    "exampleValue": "VAM",
+    "kind": "Caractérisation"
+  },
+  "q:Q150": {
+    "@id": "q:Q150",
+    "@type": "q:Q104",
+    "description": "Formule souscrite dans le contrat",
+    "name": "formuleBase",
+    "availability": "2016-09",
+    "exampleValue": "VAM Assistance panne 0km",
+    "kind": "Caractérisation"
+  },
+  "q:Q151": {
+    "@id": "q:Q151",
+    "@type": "q:Q104",
+    "description": "Date de souscription au contrat",
+    "name": "startDate",
+    "availability": "2016-09",
+    "exampleValue": "1989-04-29",
+    "kind": "Caractérisation"
+  },
+  "q:Q152": {
+    "@id": "q:Q152",
+    "@type": "q:Q104",
+    "description": "Tarif annuel TTC",
+    "name": "montantTarifTtc",
+    "availability": "2017-01",
+    "exampleValue": 233.21,
+    "kind": "Caractérisation"
+  },
+  "q:Q154": {
+    "@id": "q:Q154",
+    "@type": "object",
+    "description": "Adresse postale du lieu assuré.",
+    "name": "address",
+    "hasProperty": [
+      {
+        "@id": "q:Q167"
+      },
+      {
+        "@id": "q:Q168"
+      },
+      {
+        "@id": "q:Q169"
+      },
+      {
+        "@id": "q:Q170"
+      },
+      {
+        "@id": "q:Q171"
+      }
+    ]
+  },
+  "q:Q155": {
+    "@id": "q:Q155",
+    "@type": "q:Q102",
+    "description": "Désigne le type de contrat d'assurance, son tarif, et les risques assurés.",
+    "name": "Contrat d'assurance Maif",
+    "cozyDoctypeName": "fr.maif.maifuser.contrat",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q146",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      {
+        "@id": "q:Q157"
+      }
+    ],
+    "help": "Un seul document pour tous les contract Maif d'un sociétaire. Il y a un sous-objet contrat par objet assuré. Donc la liste objects contient toujours un et un seul élément.",
+    "sourceDataController": "Maif",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/contrat_maif.json",
+    "typology": "Finance",
+    "updateFrequency": "P1Y",
+    "updateLatency": "P1D",
+    "usedBy": "https://github.com/jacquarg/monlogis"
+  },
+  "q:Q157": {
+    "@id": "q:Q157",
+    "@type": [
+      "q:Q159",
+      "array"
+    ],
+    "description": "Liste des contrats du sociétaire",
+    "name": "contrat",
+    "items": {
+      "@id": "q:Q305"
+    }
+  },
+  "q:Q158": {
+    "@id": "q:Q158",
+    "@type": "q:Q102",
+    "description": "Qualifie l'habitat assuré (nombre de pièces, standing).",
+    "name": "homeItem",
+    "hasProperty": [
+      "q:Q154",
+      "q:Q148",
+      {
+        "@id": "q:Q308"
+      },
+      {
+        "@id": "q:Q185"
+      },
+      {
+        "@id": "q:Q190"
+      },
+      {
+        "@id": "q:Q186"
+      },
+      {
+        "@id": "q:Q191"
+      },
+      {
+        "@id": "q:Q187"
+      },
+      {
+        "@id": "q:Q192"
+      },
+      {
+        "@id": "q:Q188"
+      }
+    ]
+  },
+  "q:Q159": {
+    "@id": "q:Q159",
+    "@type": [
+      "q:Q104",
+      "array"
+    ],
+    "description": "Cette propriété porte un tableau. Élément de structuration de l'arbre du doctype.",
+    "name": "arrayProperty",
+    "rdfs:subClassOf": {
+      "@id": "q:Q104"
+    },
+    "kind": "Metadata"
+  },
+  "q:Q160": {
+    "@id": "q:Q160",
+    "@type": "q:Q104",
+    "name": "Contract",
+    "cozyDoctypeName": "org.fing.mesinfos.contract",
+    "hasOptionalProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q109",
+      {
+        "@id": "q:Q161"
+      },
+      {
+        "@id": "q:Q162"
+      }
+    ]
+  },
+  "q:Q161": {
+    "@id": "q:Q161",
+    "@type": "q:Q104",
+    "description": "Numéro du client, chez le fournisseur.",
+    "name": "clientId",
+    "exampleValue": "1234567",
+    "kind": "Caractérisation"
+  },
+  "q:Q162": {
+    "@id": "q:Q162",
+    "@type": "q:Q104",
+    "description": "Nom.",
+    "name": "name",
+    "kind": "Caractérisation"
+  },
+  "q:Q163": {
+    "@id": "q:Q163",
+    "@type": [
+      "q:Q102",
+      "object"
+    ],
+    "description": "Objet du contrat d'assurance (véhicule, domicile ou bateau",
+    "name": "objects",
+    "hasOptionalProperty": [
+      {
+        "@id": "q:Q173"
+      },
+      {
+        "@id": "q:Q176"
+      },
+      {
+        "@id": "q:Q165"
+      }
+    ],
+    "hasProperty": [
+      {
+        "@id": "q:Q306"
+      },
+      "q:Q148"
+    ]
+  },
+  "q:Q165": {
+    "@id": "q:Q165",
+    "@type": [
+      "q:Q159",
+      "array"
+    ],
+    "description": "Habitation assurée (toujours un élément).",
+    "name": "lieu",
+    "items": {
+      "@id": "q:Q166"
+    }
+  },
+  "q:Q166": {
+    "@id": "q:Q166",
+    "@type": "object",
+    "description": "Décrit le lieu assuré.",
+    "name": "lieuItem",
+    "hasProperty": {
+      "@id": "q:Q154"
+    }
+  },
+  "q:Q167": {
+    "@id": "q:Q167",
+    "@type": "q:Q104",
+    "description": "Ville",
+    "name": "city",
+    "availability": "2016-09",
+    "exampleValue": "LYON",
+    "kind": "Caractérisation"
+  },
+  "q:Q168": {
+    "@id": "q:Q168",
+    "@type": "q:Q104",
+    "description": "Pays",
+    "name": "country",
+    "availability": "2016-09",
+    "exampleValue": "FRANCE",
+    "kind": "Caractérisation"
+  },
+  "q:Q169": {
+    "@id": "q:Q169",
+    "@type": "q:Q104",
+    "description": "Code postal",
+    "name": "postCode",
+    "availability": "2016-09",
+    "exampleValue": "69006",
+    "kind": "Caractérisation"
+  },
+  "q:Q170": {
+    "@id": "q:Q170",
+    "@type": "q:Q104",
+    "description": "Numéro de voie, voie.",
+    "name": "street",
+    "availability": "2016-09",
+    "exampleValue": "2 BOULEVARD DES BELGES",
+    "kind": "Caractérisation"
+  },
+  "q:Q171": {
+    "@id": "q:Q171",
+    "@type": "q:Q104",
+    "description": "Numéro du pays, dans un référentiel interne Maif.",
+    "name": "numeroPays",
+    "availability": "2016-09",
+    "exampleValue": "0",
+    "kind": "Metadata"
+  },
+  "q:Q172": {
+    "@id": "q:Q172",
+    "@type": "q:Q104",
+    "description": "Code interne Maif de la formule de référence du contrat.",
+    "name": "codeFormuleReference",
+    "availability": "2016-09",
+    "kind": "Metadata"
+  },
+  "q:Q173": {
+    "@id": "q:Q173",
+    "@type": [
+      "q:Q159",
+      "array"
+    ],
+    "description": "Véhicule assurée (toujours un élément).",
+    "name": "vehicule",
+    "items": {
+      "@id": "q:Q174"
+    }
+  },
+  "q:Q174": {
+    "@id": "q:Q174",
+    "@type": "object",
+    "description": "Décrit le véhicule assuré.",
+    "name": "vehiculeItem",
+    "hasProperty": {
+      "@id": "q:Q175"
+    }
+  },
+  "q:Q175": {
+    "@id": "q:Q175",
+    "@type": "q:A104",
+    "description": "Immatriculation du véhicule assuré.",
+    "name": "immatriculationVehicule",
+    "exampleValue": "AA-123-XD"
+  },
+  "q:Q176": {
+    "@id": "q:Q176",
+    "@type": [
+      "q:Q159",
+      "array"
+    ],
+    "description": "Bateau assurée (toujours un élément).",
+    "name": "bateau",
+    "items": {
+      "@id": "q:Q177"
+    }
+  },
+  "q:Q177": {
+    "@id": "q:Q177",
+    "@type": "object",
+    "description": "Décrit le bateau assuré.",
+    "name": "bateauItem",
+    "hasProperty": {
+      "@id": "q:Q178"
+    }
+  },
+  "q:Q178": {
+    "@id": "q:Q178",
+    "@type": "q:A104",
+    "description": "Immatriculation du bateau assuré.",
+    "name": "immatriculationBateau"
+  },
+  "q:Q179": {
+    "@id": "q:Q179",
+    "@type": "q:Q102",
+    "description": "Qualifie l'habitat assuré (nombre de pièces, standing).",
+    "name": "Habitations assurées",
+    "cozyDoctypeName": "fr.maif.maifuser.home",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q146",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      {
+        "@id": "q:Q307"
+      }
+    ],
+    "help": "Un seul document pour tous les habitats Maif d'un sociétaire. Il y a un sous-objet home par habitat.",
+    "sourceDataController": "Maif",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/domicile_maif.json",
+    "typology": "Domicile",
+    "updateFrequency": "P1Y",
+    "updateLatency": "P1D",
+    "usedBy": "https://github.com/jacquarg/monlogis"
+  },
+  "q:Q185": {
+    "@id": "q:Q185",
+    "@type": "q:Q104",
+    "description": "Nature lieu : appartement, maison, ...",
+    "name": "natureLieu",
+    "availability": "2017-01",
+    "exampleValue": "Appartement",
+    "kind": "Caractérisation"
+  },
+  "q:Q186": {
+    "@id": "q:Q186",
+    "@type": "q:Q104",
+    "description": "Situation juridique lieu assuré.",
+    "name": "situationJuridiqueLieu",
+    "availability": "2017-01",
+    "exampleValue": "Locataire ou occupant à  titre gratuit",
+    "kind": "Caractérisation"
+  },
+  "q:Q187": {
+    "@id": "q:Q187",
+    "@type": "q:Q104",
+    "description": "Tranche nombre de pièces lieu",
+    "name": "nombrePieces",
+    "availability": "2017-01",
+    "exampleValue": "1 à 2 Pièces (ou 2 Pièces)",
+    "kind": "Caractérisation"
+  },
+  "q:Q188": {
+    "@id": "q:Q188",
+    "@type": "q:Q104",
+    "description": "Tranche patrimoine mobilier lieu",
+    "name": "patrimoineMobilier",
+    "availability": "2017-01",
+    "exampleValue": "3 501 à 6 800 ",
+    "kind": "Caractérisation"
+  },
+  "q:Q189": {
+    "@id": "q:Q189",
+    "@type": "object",
+    "description": "Identification et moyen de contact du souscripteur : Nom, prénom, adresse, date de naissance, ...",
+    "name": "societaire",
+    "hasProperty": [
+      {
+        "@id": "q:Q225"
+      },
+      {
+        "@id": "q:Q198"
+      },
+      {
+        "@id": "q:Q199"
+      },
+      {
+        "@id": "q:Q200"
+      },
+      {
+        "@id": "q:Q201"
+      },
+      {
+        "@id": "q:Q202"
+      },
+      {
+        "@id": "q:Q203"
+      },
+      {
+        "@id": "q:Q204"
+      },
+      {
+        "@id": "q:Q228"
+      },
+      {
+        "@id": "q:Q211"
+      },
+      {
+        "@id": "q:Q229"
+      },
+      {
+        "@id": "q:Q212"
+      },
+      {
+        "@id": "q:Q208"
+      },
+      {
+        "@id": "q:Q209"
+      },
+      {
+        "@id": "q:Q210"
+      },
+      {
+        "@id": "q:Q213"
+      },
+      {
+        "@id": "q:Q214"
+      }
+    ]
+  },
+  "q:Q190": {
+    "@id": "q:Q190",
+    "@type": "q:Q104",
+    "description": "Code interne Maif : situation juridique lieu assuré.",
+    "name": "codeJuridique",
+    "availability": "2017-01",
+    "exampleValue": "1",
+    "kind": "Caractérisation"
+  },
+  "q:Q191": {
+    "@id": "q:Q191",
+    "@type": "q:Q104",
+    "description": "Code interne Maif : tranche nombre de pièces lieu",
+    "name": "codePieceLieuRisque",
+    "availability": "2017-01",
+    "exampleValue": "2",
+    "kind": "Caractérisation"
+  },
+  "q:Q192": {
+    "@id": "q:Q192",
+    "@type": "q:Q104",
+    "description": "Code interne Maif : tranche patrimoine mobilier lieu",
+    "name": "codeTrancheMobilier",
+    "availability": "2017-01",
+    "exampleValue": "3",
+    "kind": "Caractérisation"
+  },
+  "q:Q194": {
+    "@id": "q:Q194",
+    "@type": "q:Q104",
+    "description": "Civilités de la personne",
+    "name": "prefix",
+    "availability": "2016-09",
+    "exampleValue": "MME.",
+    "kind": "Caractérisation"
+  },
+  "q:Q195": {
+    "@id": "q:Q195",
+    "@type": "q:Q104",
+    "description": "Nom de famille de la personne",
+    "name": "family",
+    "availability": "2016-09",
+    "exampleValue": "DUPOND",
+    "kind": "Caractérisation"
+  },
+  "q:Q196": {
+    "@id": "q:Q196",
+    "@type": "q:Q104",
+    "description": "Prénom de la personne",
+    "name": "given",
+    "availability": "2016-09",
+    "exampleValue": "GERMAINE",
+    "kind": "Caractérisation"
+  },
+  "q:Q197": {
+    "@id": "q:Q197",
+    "@type": "q:Q104",
+    "description": "Nom de Jeune Fille",
+    "name": "maiden",
+    "availability": "2016-09",
+    "exampleValue": "MARTIN",
+    "kind": "Caractérisation"
+  },
+  "q:Q198": {
+    "@id": "q:Q198",
+    "@type": "q:Q104",
+    "description": "Email",
+    "name": "email",
+    "availability": "2016-09",
+    "exampleValue": "germainedupondmesinfos@gmail.com",
+    "kind": "Caractérisation"
+  },
+  "q:Q199": {
+    "@id": "q:Q199",
+    "@type": "q:Q104",
+    "description": "NumeroTelephonePortable",
+    "name": "telMobile",
+    "availability": "2016-09",
+    "exampleValue": "+330723456789",
+    "kind": "Caractérisation"
+  },
+  "q:Q200": {
+    "@id": "q:Q200",
+    "@type": "q:Q104",
+    "description": "Numero de Telephone Domicile",
+    "name": "telHome",
+    "availability": "2016-09",
+    "exampleValue": "+330123456789",
+    "kind": "Caractérisation"
+  },
+  "q:Q201": {
+    "@id": "q:Q201",
+    "@type": "q:Q104",
+    "description": "NumeroTelephoneProfessionnel",
+    "name": "telPro",
+    "availability": "2016-09",
+    "exampleValue": "+330123456789",
+    "kind": "Caractérisation"
+  },
+  "q:Q202": {
+    "@id": "q:Q202",
+    "@type": "q:Q104",
+    "description": "NumeroFax",
+    "name": "telFax",
+    "availability": "2016-09",
+    "exampleValue": "+330123456789",
+    "kind": "Caractérisation"
+  },
+  "q:Q203": {
+    "@id": "q:Q203",
+    "@type": "q:Q104",
+    "description": "Date de naissance de la personne",
+    "name": "birthdate",
+    "availability": "2016-09",
+    "exampleValue": "1972-03-18",
+    "kind": "Caractérisation"
+  },
+  "q:Q204": {
+    "@id": "q:Q204",
+    "@type": [
+      "q:Q154",
+      "object"
+    ],
+    "description": "Commune de naissance",
+    "name": "birthplace",
+    "availability": "2016-09",
+    "hasProperty": [
+      "q:Q167",
+      "q:Q168",
+      "q:Q171",
+      {
+        "@id": "q:Q205"
+      }
+    ],
+    "kind": "Caractérisation"
+  },
+  "q:Q205": {
+    "@id": "q:Q205",
+    "@type": "q:Q104",
+    "description": "Departement de Naissance",
+    "name": "region",
+    "availability": "2016-09",
+    "kind": "Caractérisation"
+  },
+  "q:Q208": {
+    "@id": "q:Q208",
+    "@type": "q:Q104",
+    "description": "actif / retraité",
+    "name": "codeActif",
+    "availability": "2016-09",
+    "exampleValue": "A Actif",
+    "kind": "Metadata"
+  },
+  "q:Q209": {
+    "@id": "q:Q209",
+    "@type": "q:Q104",
+    "description": "décédé / vide",
+    "name": "codeEtat",
+    "availability": "2016-09",
+    "kind": "Metadata"
+  },
+  "q:Q210": {
+    "@id": "q:Q210",
+    "@type": "q:Q104",
+    "description": "Date du décès, le cas échéant.",
+    "name": "dateEtat",
+    "availability": "2016-09",
+    "exampleValue": "",
+    "kind": "Metadata"
+  },
+  "q:Q211": {
+    "@id": "q:Q211",
+    "@type": "q:Q104",
+    "description": "Profession",
+    "name": "profession",
+    "availability": "2016-09",
+    "exampleValue": "13 Agent, employé",
+    "kind": "Caractérisation"
+  },
+  "q:Q212": {
+    "@id": "q:Q212",
+    "@type": "q:Q104",
+    "description": "SituationFamiliale",
+    "name": "familySituation",
+    "availability": "2016-09",
+    "exampleValue": "union libre",
+    "kind": "Caractérisation"
+  },
+  "q:Q213": {
+    "@id": "q:Q213",
+    "@type": "q:Q148",
+    "description": "Numéro de sociétaire",
+    "name": "referenceClient",
+    "availability": "2016-09",
+    "exampleValue": "1234567",
+    "kind": "Metadata"
+  },
+  "q:Q214": {
+    "@id": "q:Q214",
+    "@type": "q:Q230",
+    "description": "Horodatage de dernière modification",
+    "name": "timestampModification",
+    "availability": "2016-09",
+    "exampleValue": "10/04/2011",
+    "kind": "Metadata"
+  },
+  "q:Q225": {
+    "@id": "q:Q225",
+    "@type": "object",
+    "description": "Nom de la personne",
+    "name": "name",
+    "hasProperty": [
+      {
+        "@id": "q:Q227"
+      },
+      {
+        "@id": "q:Q194"
+      },
+      {
+        "@id": "q:Q195"
+      },
+      {
+        "@id": "q:Q196"
+      },
+      {
+        "@id": "q:Q197"
+      }
+    ]
+  },
+  "q:Q226": {
+    "@id": "q:Q226",
+    "@type": "q:Q102",
+    "description": "Identification et moyen de contact du souscripteur : Nom, prénom, adresse, date de naissance, ...",
+    "name": "Sociétaire Maif",
+    "cozyDoctypeName": "fr.maif.maifuser.societaire",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q146",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      {
+        "@id": "q:Q189"
+      }
+    ],
+    "help": "Un seul document par sociétaire Maif, le tableau *societaire* comporte toujours un élément.",
+    "sourceDataController": "Maif",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/societaire_maif.json",
+    "typology": "Profil",
+    "updateFrequency": "P1Y",
+    "updateLatency": "P1D",
+    "usedBy": "https://github.com/jacquarg/monlogis"
+  },
+  "q:Q227": {
+    "@id": "q:Q227",
+    "@type": "q:Q104",
+    "description": "Code interne Maif : civilités de la personne",
+    "name": "codeTitrePersonne",
+    "availability": "2016-09",
+    "exampleValue": "2",
+    "kind": "Metadata"
+  },
+  "q:Q228": {
+    "@id": "q:Q228",
+    "@type": "q:Q104",
+    "description": "Code interne Maif : profession",
+    "name": "codeProfessionSocietaire",
+    "availability": "2016-09",
+    "exampleValue": "13",
+    "kind": "Metadata"
+  },
+  "q:Q229": {
+    "@id": "q:Q229",
+    "@type": "q:Q104",
+    "description": "Code interne Maif : SituationFamiliale",
+    "name": "codeFamilySituation",
+    "availability": "2016-09",
+    "exampleValue": "U",
+    "kind": "Metadata"
+  },
+  "q:Q230": {
+    "@id": "q:Q230",
+    "@type": "q:Q104",
+    "description": "Instant de dernière modification du document.",
+    "name": "lastModified",
+    "rdfs:subClassOf": {
+      "@id": "q:Q104"
+    },
+    "exampleValue": "2016-02-25T01:06:12Z",
+    "kind": "Metadata"
+  },
+  "q:Q231": {
+    "@id": "q:Q231",
+    "@type": "q:Q102",
+    "description": "Désigne les membres du foyer et leur rôle dans le foyer",
+    "name": "Foyer",
+    "cozyDoctypeName": "fr.maif.maifuser.foyer",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q146",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      {
+        "@id": "q:Q262"
+      }
+    ],
+    "help": "Un seul document par sociétaire Maif, le tableau *societaire* comporte toujours un élément.",
+    "sourceDataController": "Maif",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/foyer_maif.json",
+    "typology": "Profil",
+    "updateFrequency": "P1Y",
+    "updateLatency": "P1D",
+    "usedBy": "https://github.com/jacquarg/monlogis"
+  },
+  "q:Q236": {
+    "@id": "q:Q236",
+    "@type": "q:Q104",
+    "description": "Nom du foyer (nom de famille + nom de la comune)",
+    "name": "name",
+    "availability": "2016-09",
+    "exampleValue": "DUPOND LYON",
+    "kind": "Caractérisation"
+  },
+  "q:Q243": {
+    "@id": "q:Q243",
+    "@type": [
+      "q:Q104",
+      "array"
+    ],
+    "description": "Personnes composant le foyer",
+    "name": "membres",
+    "availability": "2016-09",
+    "items": {
+      "@id": "q:Q244"
+    },
+    "kind": "Caractérisation"
+  },
+  "q:Q244": {
+    "@id": "q:Q244",
+    "@type": "q:Q104",
+    "description": "Personne composant le foyer",
+    "name": "membresItem",
+    "availability": "2016-09",
+    "hasOptionalProperty": [
+      "q:Q198",
+      "q:Q199",
+      "q:Q200",
+      "q:Q201",
+      "q:Q202",
+      "q:Q203",
+      "q:Q204",
+      "q:Q228",
+      "q:Q211",
+      {
+        "@id": "q:Q264"
+      },
+      {
+        "@id": "q:Q261"
+      }
+    ],
+    "hasProperty": "q:Q225",
+    "kind": "Caractérisation"
+  },
+  "q:Q261": {
+    "@id": "q:Q261",
+    "@type": "q:Q104",
+    "description": "Rôle du membre dans le foyer (enfant, ...)",
+    "name": "quality",
+    "availability": "2016-09",
+    "exampleValue": "Membre principal",
+    "kind": "Caractérisation"
+  },
+  "q:Q262": {
+    "@id": "q:Q262",
+    "@type": "object",
+    "description": "Désigne les membres du foyer et leur rôle dans le foyer.",
+    "name": "foyer",
+    "hasProperty": [
+      {
+        "@id": "q:Q236"
+      },
+      {
+        "@id": "q:Q301"
+      },
+      {
+        "@id": "q:Q243"
+      }
+    ]
+  },
+  "q:Q264": {
+    "@id": "q:Q264",
+    "@type": "q:Q104",
+    "description": "Code interne Maif : Rôle du membre dans le foyer (enfant, ...)",
+    "name": "codeQualityPersonne",
+    "availability": "2016-09",
+    "exampleValue": "08",
+    "kind": "Caractérisation"
+  },
+  "q:Q265": {
+    "@id": "q:Q265",
+    "@type": "q:Q102",
+    "description": "Qualifie le mode de paiement pour l'assuré (mensualité, RIB, échéancier, ...).",
+    "name": "Modalités de paiement Maif",
+    "cozyDoctypeName": "fr.maif.maifuser.paymentterms",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q146",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      {
+        "@id": "q:Q302"
+      }
+    ],
+    "sourceDataController": "Maif",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/modalites_paiement_maif.json",
+    "typology": "Finance",
+    "updateFrequency": "P1Y",
+    "updateLatency": "P1D",
+    "usedBy": "https://github.com/jacquarg/monlogis"
+  },
+  "q:Q267": {
+    "@id": "q:Q267",
+    "@type": "q:Q104",
+    "description": "Code BIC",
+    "name": "bic",
+    "availability": "2017-01",
+    "exampleValue": "SOGEFRPP",
+    "kind": "Caractérisation"
+  },
+  "q:Q268": {
+    "@id": "q:Q268",
+    "@type": "q:Q104",
+    "description": "Code IBAN",
+    "name": "iban",
+    "availability": "2017-01",
+    "exampleValue": "FR76300039876087612",
+    "kind": "Caractérisation"
+  },
+  "q:Q269": {
+    "@id": "q:Q269",
+    "@type": "q:Q104",
+    "description": "Mode de paiement",
+    "name": "modePaiement",
+    "availability": "2017-01",
+    "exampleValue": "Prélèvement (1 fois)",
+    "kind": "Caractérisation"
+  },
+  "q:Q270": {
+    "@id": "q:Q270",
+    "@type": "object",
+    "description": "Relevé d'identité bancaire",
+    "name": "rib",
+    "availability": "2017-01",
+    "hasProperty": [
+      {
+        "@id": "q:Q267"
+      },
+      {
+        "@id": "q:Q268"
+      }
+    ],
+    "kind": "Caractérisation"
+  },
+  "q:Q273": {
+    "@id": "q:Q273",
+    "@type": "q:Q104",
+    "description": "Type du sinistre (véhicule, habitation, ...)",
+    "name": "type",
+    "availability": "2016-09",
+    "exampleValue": "Vehicule",
+    "kind": "Metadata",
+    "values": [
+      "Vehicule",
+      "Habitation"
+    ]
+  },
+  "q:Q275": {
+    "@id": "q:Q275",
+    "@type": "q:Q296",
+    "description": "Date et heure de survenance du sinistre.",
+    "name": "horodatage",
+    "availability": "2016-09",
+    "exampleValue": "2015-07-20T19:00",
+    "kind": "Transaction"
+  },
+  "q:Q278": {
+    "@id": "q:Q278",
+    "@type": "q:Q104",
+    "description": "Lieu de survenance (champ libre : une commune, un numéro d’autoroute, …)",
+    "name": "lieuSurvenance",
+    "availability": "2016-09",
+    "exampleValue": "LYON 06",
+    "kind": "Transaction"
+  },
+  "q:Q279": {
+    "@id": "q:Q279",
+    "@type": "q:Q104",
+    "description": "Référence de l’événement, communiquée au sociétaire pour les relations avec la MAIF (appels, documents …)",
+    "name": "referenceSinistre",
+    "availability": "2016-09",
+    "exampleValue": "F150181177B",
+    "kind": "Metadata"
+  },
+  "q:Q280": {
+    "@id": "q:Q280",
+    "@type": "q:Q104",
+    "description": "Code interne Maif : type du lieu de survenance.",
+    "name": "typeLieuSurvenance",
+    "availability": "2016-09",
+    "kind": "Metadata"
+  },
+  "q:Q286": {
+    "@id": "q:Q286",
+    "@type": "q:Q104",
+    "description": "Immatriculation du véhicule assurée.",
+    "name": "immatriculationVehicule",
+    "availability": "2016-09",
+    "exampleValue": "AA-123-XD",
+    "kind": "Transaction"
+  },
+  "q:Q288": {
+    "@id": "q:Q288",
+    "@type": "q:Q225",
+    "description": "Nom du conducteur, lors du sinistre.",
+    "name": "driver",
+    "hasProperty": [
+      "q:Q194",
+      "q:Q195",
+      "q:Q196"
+    ]
+  },
+  "q:Q293": {
+    "@id": "q:Q293",
+    "@type": "q:Q104",
+    "description": "TODO",
+    "name": "driverNumber",
+    "kind": "Metadata"
+  },
+  "q:Q295": {
+    "@id": "q:Q295",
+    "@type": "q:Q102",
+    "description": "Les sinistres sur mon habitation, ou mon véchiule (date, lieu, immatriculation, conducteur, ...)",
+    "name": "Sinistre Maif",
+    "cozyDoctypeName": "fr.maif.maifuser.sinistre",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q146",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      {
+        "@id": "q:Q299"
+      }
+    ],
+    "help": "Les deux types de sinistre présentent des propriétées propres : _Vehicule_ présente les propriété immatriculationVehicule, driver et driverNumber ; alors que _Habitation_ présente address.",
+    "sourceDataController": "Maif",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/sinistre_maif.json",
+    "typology": "Finance",
+    "updateFrequency": "P1Y",
+    "updateLatency": "P1D"
+  },
+  "q:Q296": {
+    "@id": "q:Q296",
+    "@type": "q:Q104",
+    "description": "Instant de création du document.",
+    "name": "createdAt",
+    "rdfs:subClassOf": {
+      "@id": "q:Q104"
+    },
+    "exampleValue": "2016-02-25T01:06:12Z",
+    "kind": "Metadata"
+  },
+  "q:Q297": {
+    "@id": "q:Q297",
+    "@type": "q:Q296",
+    "description": "Instant de création du document.",
+    "name": "timestamp",
+    "rdfs:subClassOf": {
+      "@id": "q:Q104"
+    },
+    "exampleValue": "2016-02-25T01:06:12Z",
+    "kind": "Metadata"
+  },
+  "q:Q298": {
+    "@id": "q:Q298",
+    "@type": "q:Q104",
+    "description": "Type du lieu de survenance.",
+    "name": "libelleTypeLieuSurvenance",
+    "availability": "2016-09",
+    "exampleValue": "Agglomération",
+    "kind": "Transaction",
+    "values": [
+      "Sans information",
+      "Agglomération",
+      "Rase campagne"
+    ]
+  },
+  "q:Q299": {
+    "@id": "q:Q299",
+    "@type": [
+      "q:Q159",
+      "array"
+    ],
+    "description": "Liste des sinistres du sociétaire.",
+    "name": "insuranceClaim",
+    "items": {
+      "@id": "q:Q300"
+    }
+  },
+  "q:Q300": {
+    "@id": "q:Q300",
+    "@type": "q:Q160",
+    "description": "Un sinistre sur mon habitation, ou mon véchiule (date, lieu, immatriculation, conducteur, ...).",
+    "name": "insuranceClaimItem",
+    "hasOptionalProperty": [
+      "q:Q154",
+      {
+        "@id": "q:Q286"
+      },
+      {
+        "@id": "q:Q293"
+      },
+      {
+        "@id": "q:Q288"
+      }
+    ],
+    "hasProperty": [
+      {
+        "@id": "q:Q273"
+      },
+      "q:Q148",
+      {
+        "@id": "q:Q275"
+      },
+      {
+        "@id": "q:Q278"
+      },
+      {
+        "@id": "q:Q279"
+      },
+      {
+        "@id": "q:Q280"
+      },
+      {
+        "@id": "q:Q298"
+      }
+    ]
+  },
+  "q:Q301": {
+    "@id": "q:Q301",
+    "@type": "object",
+    "description": "Adresse postale du foyer.",
+    "name": "address",
+    "hasProperty": [
+      "q:Q167",
+      "q:Q168",
+      "q:Q169",
+      "q:Q170",
+      "q:Q171",
+      {
+        "@id": "q:Q302"
+      },
+      {
+        "@id": "q:Q303"
+      },
+      {
+        "@id": "q:Q304"
+      }
+    ]
+  },
+  "q:Q302": {
+    "@id": "q:Q302",
+    "@type": "object",
+    "description": "Qualifie le mode de paiement pour l'assuré (mensualité, RIB, échéancier, ...).",
+    "name": "paymentterms",
+    "hasProperty": [
+      {
+        "@id": "q:Q270"
+      },
+      {
+        "@id": "q:Q269"
+      },
+      "q:Q148"
+    ]
+  },
+  "q:Q303": {
+    "@id": "q:Q303",
+    "@type": "q:Q104",
+    "description": "Code INSEE de la commune.",
+    "name": "inseeCode",
+    "availability": "2016-09",
+    "exampleValue": "69386",
+    "kind": "Metadata"
+  },
+  "q:Q304": {
+    "@id": "q:Q304",
+    "@type": "q:Q104",
+    "description": "Complément d'adresse, dans la propriété privé.",
+    "name": "residence",
+    "availability": "2016-09",
+    "kind": "Metadata"
+  },
+  "q:Q305": {
+    "@id": "q:Q305",
+    "@type": "q:Q160",
+    "description": "Désigne le type de contrat d'assurance, son tarif, et les risques assurés.",
+    "name": "contratItem",
+    "hasProperty": [
+      {
+        "@id": "q:Q148"
+      },
+      {
+        "@id": "q:Q149"
+      },
+      {
+        "@id": "q:Q150"
+      },
+      {
+        "@id": "q:Q172"
+      },
+      {
+        "@id": "q:Q151"
+      },
+      {
+        "@id": "q:Q152"
+      },
+      {
+        "@id": "q:Q163"
+      }
+    ]
+  },
+  "q:Q306": {
+    "@id": "q:Q306",
+    "@type": "q:Q112",
+    "description": "Date d'ajout, pour chaque nouvel objet (véhicule ou habitation) ajouté au contrat.",
+    "name": "startDate",
+    "availability": "2016-09",
+    "exampleValue": "2016-02-22T00:00:00",
+    "kind": "Caractérisation"
+  },
+  "q:Q307": {
+    "@id": "q:Q307",
+    "@type": [
+      "q:Q159",
+      "array"
+    ],
+    "description": "Liste des habitats assurés.",
+    "name": "home",
+    "items": {
+      "@id": "q:Q158"
+    }
+  },
+  "q:Q308": {
+    "@id": "q:Q308",
+    "@type": "q:Q104",
+    "description": "Code interne Maif : nature lieu",
+    "name": "codeNatureLieuRisque",
+    "availability": "2017-01",
+    "exampleValue": "2",
+    "kind": "Caractérisation"
   }
 }
