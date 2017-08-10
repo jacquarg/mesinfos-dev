@@ -5,8 +5,11 @@
   "name": "MesInfosData",
   "description": "Liste des données MesInfos",
   "schema:itemListElement": [
-    "q:Q100","q:Q144", "q:Q142", "q:Q138",
-    "q:Q155", "q:Q231", "q:Q179", "q:Q265", "q:Q295", "q:Q226"
+    "q:Q155", "q:Q231", "q:Q179", "q:Q265", "q:Q295", "q:Q226",
+
+    "q:Q310", "q:Q377", "q:Q370", "q:Q330", "q:Q435",
+    "q:Q100","q:Q144", "q:Q142", "q:Q138"
+
 
   ]
 }

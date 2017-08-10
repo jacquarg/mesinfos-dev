@@ -33,8 +33,6 @@
         "postcode": "41975",
         "city": "BLOIS CEDEX 9"
       }
-    },
-    "docTypeVersion": "konnectors_edf-0.7.2",
-    "docType": "org.fing.mesinfos.client"
+    }
   }
 ]

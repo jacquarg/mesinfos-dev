@@ -6,6 +6,6 @@
   "description": "Liste des doctypes que l'on peut croiser dans un Cozy.",
   "schema:itemListElement": [
     "q:Q132",
-    "q:Q155", "q:Q231", "q:Q179", "q:Q265", "q:Q295", "q:Q226"
+    "q:Q155", "q:Q231", "q:Q179", "q:Q265", "q:Q295", "q:Q226", "q:Q310", "q:Q377", "q:Q370", "q:Q330", "q:Q435"
   ]
 }

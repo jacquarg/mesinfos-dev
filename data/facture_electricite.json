@@ -1,13 +1,15 @@
 [
 {
-  "docTypeVersion": "konnectors_edf-0.7.2",
-  "docType": "bill",
   "vendor": "EDF",
+  "balanceBeforeInvoice": "-690.0",
   "clientId": "6012345678",
   "number": "12346897654",
-  "date": "2016-03-03",
-  "amount": 30.21,
-  "fileId": "b8f5547a6ce775b04ee7ea101b011ce9",
-  "binaryId": "b8f5547a6ce775b04ee7ea101b011cd2"
+  "date": "2016-03-033T00:00:00.000Z",
+  "paymentDueDate": "2016-04-01",
+  "pdfurl": "72ea620f51048b222fa165dcc228c6df",
+  "scheduledPaymentDate": "2016-04-01",
+  "title": "FACTURE_REGUL_ECHEANCIER",
+  "totalPaymentDue": "720.21",
+  "value": "30.21"
 }
 ]

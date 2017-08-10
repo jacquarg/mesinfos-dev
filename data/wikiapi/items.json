@@ -461,10 +461,10 @@
     "@type": "q:Q117",
     "description": "Motif de relève associé à la consommation.",
     "name": "statementReason",
-    "exampleValue": "EdeliaMonthlyGasConsumption",
+    "exampleValue": "EdeliaMonthlyElecConsumption",
     "values": [
-      "EdeliaMonthlyGasConsumption",
-      "EdeliaYearlyGasConsumption"
+      "EdeliaMonthlyElecConsumption",
+      "EdeliaYearlyElecConsumption"
     ]
   },
   "q:Q141": {
@@ -493,15 +493,9 @@
       "q:Q114",
       "q:Q115",
       "q:Q117",
-      {
-        "@id": "q:Q139"
-      },
-      {
-        "@id": "q:Q140"
-      },
-      {
-        "@id": "q:Q141"
-      },
+      "q:Q139",
+      "q:Q140",
+      "q:Q141",
       "q:Q118",
       "q:Q122",
       "q:Q123",
@@ -599,22 +593,17 @@
   },
   "q:Q154": {
     "@id": "q:Q154",
-    "@type": "object",
+    "@type": [
+      "object",
+      "q:Q314"
+    ],
     "description": "Adresse postale du lieu assuré.",
     "name": "address",
     "hasProperty": [
-      {
-        "@id": "q:Q167"
-      },
-      {
-        "@id": "q:Q168"
-      },
-      {
-        "@id": "q:Q169"
-      },
-      {
-        "@id": "q:Q170"
-      },
+      "q:Q167",
+      "q:Q168",
+      "q:Q169",
+      "q:Q170",
       {
         "@id": "q:Q171"
       }
@@ -1217,22 +1206,19 @@
   },
   "q:Q225": {
     "@id": "q:Q225",
-    "@type": "object",
+    "@type": [
+      "object",
+      "q:Q315"
+    ],
     "description": "Nom de la personne",
     "name": "name",
     "hasProperty": [
       {
         "@id": "q:Q227"
       },
-      {
-        "@id": "q:Q194"
-      },
-      {
-        "@id": "q:Q195"
-      },
-      {
-        "@id": "q:Q196"
-      },
+      "q:Q194",
+      "q:Q195",
+      "q:Q196",
       {
         "@id": "q:Q197"
       }
@@ -1421,7 +1407,7 @@
       "q:Q133",
       "q:Q134",
       {
-        "@id": "q:Q302"
+        "@id": "q:Q309"
       }
     ],
     "sourceDataController": "Maif",
@@ -1683,18 +1669,12 @@
   },
   "q:Q302": {
     "@id": "q:Q302",
-    "@type": "object",
-    "description": "Qualifie le mode de paiement pour l'assuré (mensualité, RIB, échéancier, ...).",
-    "name": "paymentterms",
-    "hasProperty": [
-      {
-        "@id": "q:Q270"
-      },
-      {
-        "@id": "q:Q269"
-      },
-      "q:Q148"
-    ]
+    "@type": "q:Q104",
+    "description": "Commune, du bureau de poste de livraison.",
+    "name": "deliveryOffice",
+    "availability": "2016-09",
+    "exampleValue": "LYON",
+    "kind": "Metadata"
   },
   "q:Q303": {
     "@id": "q:Q303",
@@ -1771,5 +1751,1312 @@
     "availability": "2017-01",
     "exampleValue": "2",
     "kind": "Caractérisation"
+  },
+  "q:Q309": {
+    "@id": "q:Q309",
+    "@type": "object",
+    "description": "Qualifie le mode de paiement pour l'assuré (mensualité, RIB, échéancier, ...).",
+    "name": "paymentterms",
+    "hasProperty": [
+      {
+        "@id": "q:Q270"
+      },
+      {
+        "@id": "q:Q269"
+      },
+      "q:Q148"
+    ]
+  },
+  "q:Q310": {
+    "@id": "q:Q310",
+    "@type": "q:Q132",
+    "description": "Identification et moyen de contact du souscripteur : adresse, email, téléphone fixe et portable ...",
+    "name": "Client EDF",
+    "cozyDoctypeName": "org.fing.mesinfos.client",
+    "cozyIndex": "[\"_id\", \"vendor\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null }, \"vendor\": \"EDF\" }",
+    "generatedBy": "q:Q101",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q329",
+      {
+        "@id": "q:Q312"
+      },
+      "q:Q161",
+      "q:Q314",
+      "q:Q315",
+      "q:Q198",
+      {
+        "@id": "q:Q317"
+      },
+      {
+        "@id": "q:Q318"
+      },
+      {
+        "@id": "q:Q320"
+      },
+      {
+        "@id": "q:Q321"
+      },
+      {
+        "@id": "q:Q327"
+      }
+    ],
+    "sourceDataController": "EDF",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/client_edf.json",
+    "typology": "Profil",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D"
+  },
+  "q:Q311": {
+    "@id": "q:Q311",
+    "@type": "q:Q104",
+    "name": "Client",
+    "cozyDoctypeName": "org.fing.mesinfos.client",
+    "hasOptionalProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q109",
+      "q:Q161",
+      {
+        "@id": "q:Q314"
+      },
+      {
+        "@id": "q:Q315"
+      }
+    ]
+  },
+  "q:Q312": {
+    "@id": "q:Q312",
+    "@type": "q:Q104",
+    "description": "Numéro d'accord commercial (~numéro de contrat)",
+    "name": "numeroAcc",
+    "availability": "2016-10",
+    "exampleValue": "00123456879",
+    "kind": "Metadata"
+  },
+  "q:Q314": {
+    "@id": "q:Q314",
+    "@type": "object",
+    "description": "Adresse postale du lieu assuré.",
+    "name": "address",
+    "hasProperty": [
+      {
+        "@id": "q:Q167"
+      },
+      {
+        "@id": "q:Q168"
+      },
+      {
+        "@id": "q:Q169"
+      },
+      {
+        "@id": "q:Q170"
+      },
+      {
+        "@id": "q:Q328"
+      }
+    ]
+  },
+  "q:Q315": {
+    "@id": "q:Q315",
+    "@type": "object",
+    "description": "Nom de la personne",
+    "name": "name",
+    "hasProperty": [
+      {
+        "@id": "q:Q194"
+      },
+      {
+        "@id": "q:Q195"
+      },
+      {
+        "@id": "q:Q196"
+      },
+      {
+        "@id": "q:Q326"
+      }
+    ]
+  },
+  "q:Q317": {
+    "@id": "q:Q317",
+    "@type": "q:Q199",
+    "description": "téléphone mobile du client",
+    "name": "cellPhone",
+    "availability": "2016-10",
+    "exampleValue": "0665022841",
+    "kind": "Caractérisation"
+  },
+  "q:Q318": {
+    "@id": "q:Q318",
+    "@type": "q:Q200",
+    "description": "téléphone fixe du client",
+    "name": "homePhone",
+    "availability": "2016-10",
+    "exampleValue": "0123456789",
+    "kind": "Caractérisation"
+  },
+  "q:Q320": {
+    "@id": "q:Q320",
+    "@type": "q:Q198",
+    "description": "Email de connexion à l'interface client EDF",
+    "name": "loginEmail",
+    "availability": "2016-10",
+    "exampleValue": "germainedupondmesinfos@gmail.com",
+    "kind": "Caractérisation"
+  },
+  "q:Q321": {
+    "@id": "q:Q321",
+    "@type": [
+      "q:Q315",
+      "object"
+    ],
+    "description": "Co-titulaire du contrat",
+    "name": "coHolder",
+    "availability": "2016-10",
+    "hasProperty": [
+      "q:Q195",
+      "q:Q196",
+      "q:Q326"
+    ],
+    "kind": "Caractérisation"
+  },
+  "q:Q322": {
+    "@id": "q:Q322",
+    "@type": "q:Q104",
+    "description": "Nom du contact EDF (commercial), nom du groupe régional duquel dépend le client.",
+    "name": "title",
+    "availability": "2016-10",
+    "exampleValue": "Paris Pyramide",
+    "kind": "Caractérisation"
+  },
+  "q:Q324": {
+    "@id": "q:Q324",
+    "@type": "q:Q104",
+    "description": "Numéro de téléphone du contact EDF (commercial)",
+    "name": "phone",
+    "availability": "2016-10",
+    "exampleValue": "09 69 32 15 15",
+    "kind": "Caractérisation"
+  },
+  "q:Q326": {
+    "@id": "q:Q326",
+    "@type": "q:Q104",
+    "description": "Nom complet de la personne.",
+    "name": "formated",
+    "availability": "2016-09",
+    "exampleValue": "GERMAINE DUPOND",
+    "kind": "Caractérisation"
+  },
+  "q:Q327": {
+    "@id": "q:Q327",
+    "@type": "object",
+    "description": "Contact EDF (commercial).",
+    "name": "commercialContat",
+    "availability": "2016-10",
+    "hasProperty": [
+      {
+        "@id": "q:Q322"
+      },
+      "q:Q314",
+      {
+        "@id": "q:Q324"
+      }
+    ],
+    "kind": "Caractérisation"
+  },
+  "q:Q328": {
+    "@id": "q:Q328",
+    "@type": "q:Q104",
+    "description": "Adresse complète.",
+    "name": "formated",
+    "availability": "2016-09",
+    "exampleValue": "24 RUE PAUL BERT\n75011 PARIS",
+    "kind": "Caractérisation"
+  },
+  "q:Q329": {
+    "@id": "q:Q329",
+    "@type": "q:Q104",
+    "description": "Fournisseur, source du document",
+    "name": "vendor",
+    "rdfs:subClassOf": {
+      "@id": "q:Q104"
+    },
+    "exampleValue": "EDF",
+    "kind": "Metadata"
+  },
+  "q:Q330": {
+    "@id": "q:Q330",
+    "@type": "q:Q102",
+    "description": "Mode de paiement : mensualités, échéancier, RIB, date de paiement.",
+    "name": "Modalités de paiement EDF",
+    "cozyDoctypeName": "org.fing.mesinfos.paymentterms",
+    "cozyIndex": "[\"_id\", \"vendor\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null }, \"vendor\": \"EDF\" }",
+    "generatedBy": "q:Q101",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q161",
+      {
+        "@id": "q:Q343"
+      },
+      {
+        "@id": "q:Q349"
+      },
+      {
+        "@id": "q:Q360"
+      },
+      {
+        "@id": "q:Q335"
+      },
+      {
+        "@id": "q:Q350"
+      },
+      {
+        "@id": "q:Q351"
+      },
+      {
+        "@id": "q:Q345"
+      },
+      {
+        "@id": "q:Q344"
+      },
+      {
+        "@id": "q:Q352"
+      },
+      {
+        "@id": "q:Q361"
+      }
+    ],
+    "sourceDataController": "EDF",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/modalites_paiement_edf.json",
+    "typology": "Finance",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D",
+    "usedBy": "https://github.com/jacquarg/monlogis"
+  },
+  "q:Q335": {
+    "@id": "q:Q335",
+    "@type": "q:Q270",
+    "description": "Les informations bancaires du client : nom de la banque, numéro de compte, code guichet...",
+    "name": "encryptedBankDetails",
+    "availability": "2016-10",
+    "exampleValue": "{\"bank\": \"STE GENERALE\", \"bankAddress\": { \"street\": \"1 BD DES BROTTEAUX\", \"city\": \"LYON 69006\", \"country\": \"France\", \"formated\": \"1 BD DES BROTTEAUX\nLYON 69006 France\" }, \"iban\": \"FR76300039876087612\", \"holder\": \"Mme GERMAINE DUPOND\" }",
+    "kind": "Caractérisation"
+  },
+  "q:Q343": {
+    "@id": "q:Q343",
+    "@type": "q:Q104",
+    "description": "Montant restant dû ou à recevoir",
+    "name": "balance",
+    "availability": "2016-10",
+    "exampleValue": "0.0",
+    "kind": "Caractérisation"
+  },
+  "q:Q344": {
+    "@id": "q:Q344",
+    "@type": "q:Q269",
+    "description": "Mode d'encaissement (prélèvement, ...)",
+    "name": "paymentMeans",
+    "availability": "2016-10",
+    "exampleValue": "PRELEVEMENT",
+    "kind": "Caractérisation"
+  },
+  "q:Q345": {
+    "@id": "q:Q345",
+    "@type": "q:Q104",
+    "description": "Le RIB du client peut-il être modifié ou non.",
+    "name": "modifBankDetailsAllowed",
+    "availability": "2016-10",
+    "exampleValue": "true",
+    "kind": "Caractérisation"
+  },
+  "q:Q346": {
+    "@id": "q:Q346",
+    "@type": "q:Q104",
+    "description": "Date du dernier réglement effectué.",
+    "name": "date",
+    "availability": "2016-10",
+    "exampleValue": "2017-06-12T00:00:00.000+02:00",
+    "kind": "Transaction"
+  },
+  "q:Q347": {
+    "@id": "q:Q347",
+    "@type": "q:Q104",
+    "description": "Montant du dernier règlement effectué",
+    "name": "amount",
+    "availability": "2016-10",
+    "exampleValue": "39.26",
+    "kind": "Transaction"
+  },
+  "q:Q348": {
+    "@id": "q:Q348",
+    "@type": "q:Q104",
+    "description": "Type du dernier règlement",
+    "name": "type",
+    "availability": "2016-10",
+    "exampleValue": "ENCAISSEMENT_PRELEVEMENT",
+    "kind": "Transaction"
+  },
+  "q:Q349": {
+    "@id": "q:Q349",
+    "@type": "q:Q104",
+    "description": "Périodicité de la facture (mensuel, bimestriel, semestriel, annuelle, ...)",
+    "name": "billFrequency",
+    "availability": "2016-10",
+    "exampleValue": "ANNU",
+    "kind": "Transaction",
+    "values": [
+      "MENS",
+      "BIME",
+      "SEME",
+      "ANNU"
+    ]
+  },
+  "q:Q350": {
+    "@id": "q:Q350",
+    "@type": "q:Q104",
+    "description": "Date de la prochaine facture",
+    "name": "nextBillDate",
+    "availability": "2016-10",
+    "kind": "Transaction"
+  },
+  "q:Q351": {
+    "@id": "q:Q351",
+    "@type": "q:Q104",
+    "description": "NumeroBP du payeur",
+    "name": "idPayer",
+    "availability": "2016-10",
+    "exampleValue": "087609078098",
+    "kind": "Transaction"
+  },
+  "q:Q352": {
+    "@id": "q:Q352",
+    "@type": "q:Q104",
+    "description": "Si le payeur n'est pas le titulaire du contrat.",
+    "name": "payerDivergent",
+    "availability": "2016-10",
+    "exampleValue": "false",
+    "kind": "Transaction"
+  },
+  "q:Q353": {
+    "@id": "q:Q353",
+    "@type": "q:Q104",
+    "description": "Numéro dans l'échéancier",
+    "name": "number",
+    "availability": "2016-10",
+    "exampleValue": "1",
+    "kind": "Metadata"
+  },
+  "q:Q354": {
+    "@id": "q:Q354",
+    "@type": "q:Q104",
+    "description": "Date d'encaissement de l'échéance",
+    "name": "receiptDate",
+    "availability": "2016-10",
+    "exampleValue": "2016-04-11",
+    "kind": "Metadata"
+  },
+  "q:Q355": {
+    "@id": "q:Q355",
+    "@type": "q:Q104",
+    "description": "Date de l'échance",
+    "name": "scheduleDate",
+    "availability": "2016-10",
+    "exampleValue": "2016-04-11",
+    "kind": "Transaction"
+  },
+  "q:Q356": {
+    "@id": "q:Q356",
+    "@type": "q:Q104",
+    "description": "Déjà payée",
+    "name": "paid",
+    "availability": "2016-10",
+    "exampleValue": "true",
+    "kind": "Transaction"
+  },
+  "q:Q357": {
+    "@id": "q:Q357",
+    "@type": "q:Q104",
+    "description": "Montant total de l'échéance (amountElectricity + amountGas)",
+    "name": "amount",
+    "availability": "2016-10",
+    "exampleValue": "69",
+    "kind": "Metadata"
+  },
+  "q:Q358": {
+    "@id": "q:Q358",
+    "@type": "q:Q104",
+    "description": "Montant pour l'electricité",
+    "name": "amountElectricity",
+    "availability": "2016-10",
+    "exampleValue": "69",
+    "kind": "Transaction"
+  },
+  "q:Q359": {
+    "@id": "q:Q359",
+    "@type": "q:Q104",
+    "description": "Montant pour le gaz",
+    "name": "amountGas",
+    "availability": "2016-10",
+    "exampleValue": "0",
+    "kind": "Transaction"
+  },
+  "q:Q360": {
+    "@id": "q:Q360",
+    "@type": "object",
+    "description": "Dernier réglement effectué.",
+    "name": "dernierReglement",
+    "availability": "2016-10",
+    "hasProperty": [
+      {
+        "@id": "q:Q346"
+      },
+      {
+        "@id": "q:Q347"
+      },
+      {
+        "@id": "q:Q348"
+      }
+    ],
+    "kind": "Transaction"
+  },
+  "q:Q361": {
+    "@id": "q:Q361",
+    "@type": "array",
+    "description": "Échéancier, liste des acomptes.",
+    "name": "paymentSchedules",
+    "availability": "2016-10",
+    "items": {
+      "@id": "q:Q362"
+    }
+  },
+  "q:Q362": {
+    "@id": "q:Q362",
+    "@type": "object",
+    "description": "Détails d'un acompte EDF.",
+    "name": "paymentSchedulesItem",
+    "availability": "2016-10",
+    "hasProperty": [
+      {
+        "@id": "q:Q357"
+      },
+      {
+        "@id": "q:Q358"
+      },
+      {
+        "@id": "q:Q359"
+      },
+      {
+        "@id": "q:Q353"
+      },
+      {
+        "@id": "q:Q354"
+      },
+      {
+        "@id": "q:Q355"
+      },
+      {
+        "@id": "q:Q356"
+      }
+    ]
+  },
+  "q:Q365": {
+    "@id": "q:Q365",
+    "@type": "q:Q104",
+    "description": "Solde du compte client, avant la facture.",
+    "name": "balanceBeforeInvoice",
+    "availability": "2016-10",
+    "exampleValue": "-690.0",
+    "kind": "Transaction"
+  },
+  "q:Q366": {
+    "@id": "q:Q366",
+    "@type": "q:Q104",
+    "description": "Numéro de facture",
+    "name": "number",
+    "availability": "2016-10",
+    "exampleValue": "12346897654",
+    "kind": "Transaction"
+  },
+  "q:Q367": {
+    "@id": "q:Q367",
+    "@type": "q:Q104",
+    "description": "Date de la facture",
+    "name": "date",
+    "availability": "2016-10",
+    "exampleValue": "2016-03-03T00:00:00.000Z",
+    "kind": "Transaction"
+  },
+  "q:Q368": {
+    "@id": "q:Q368",
+    "@type": "q:Q104",
+    "description": "Montant de la facture, à payer.",
+    "name": "value",
+    "availability": "2016-10",
+    "exampleValue": "30.21",
+    "kind": "Transaction"
+  },
+  "q:Q370": {
+    "@id": "q:Q370",
+    "@type": "q:Q102",
+    "description": "Mes factures EDF (notamment de régularisation annuelle).",
+    "name": "Factures EDF",
+    "cozyDoctypeName": "io.cozy.bills",
+    "cozyIndex": "[\"_id\", \"vendor\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null }, \"vendor\": \"EDF\" }",
+    "generatedBy": "q:Q101",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q161",
+      "q:Q329",
+      {
+        "@id": "q:Q365"
+      },
+      {
+        "@id": "q:Q367"
+      },
+      {
+        "@id": "q:Q366"
+      },
+      {
+        "@id": "q:Q371"
+      },
+      {
+        "@id": "q:Q372"
+      },
+      {
+        "@id": "q:Q373"
+      },
+      {
+        "@id": "q:Q374"
+      },
+      {
+        "@id": "q:Q375"
+      },
+      {
+        "@id": "q:Q368"
+      }
+    ],
+    "sourceDataController": "EDF",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/facture_electricite.json",
+    "typology": "Finance",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D",
+    "usedBy": "https://github.com/jacquarg/monlogis"
+  },
+  "q:Q371": {
+    "@id": "q:Q371",
+    "@type": "q:Q104",
+    "description": "Date limite de paiement de la facture",
+    "name": "paymentDueDate",
+    "availability": "2016-10",
+    "exampleValue": "2016-04-01T00:00:00.000Z",
+    "kind": "Transaction"
+  },
+  "q:Q372": {
+    "@id": "q:Q372",
+    "@type": "q:Q104",
+    "description": "URL de la facture.",
+    "name": "pdfurl",
+    "availability": "2016-10",
+    "exampleValue": "2016-04-01",
+    "kind": "Metadata"
+  },
+  "q:Q373": {
+    "@id": "q:Q373",
+    "@type": "q:Q104",
+    "description": "Date prévue du paimeent.",
+    "name": "scheduledPaymentDate",
+    "availability": "2016-10",
+    "exampleValue": "2016-04-01",
+    "kind": "Transaction"
+  },
+  "q:Q374": {
+    "@id": "q:Q374",
+    "@type": "q:Q104",
+    "description": "Titre de la facture.",
+    "name": "title",
+    "availability": "2016-10",
+    "exampleValue": "FACTURE_REGUL_ECHEANCIER",
+    "kind": "Metadata",
+    "values": [
+      "FACTURE_CYCLIQUE",
+      "FACTURE_INTERMEDIAIRE",
+      "FACTURE_RESILIATION",
+      "FACTURE_REDRESSEMENT",
+      "FACTURE_RECTIVICATIVE",
+      "FACTURE_ANNULATION",
+      "FACTURE_SOUSCRIPTION",
+      "FACTURE_REGUL_ECHEANCIER",
+      "FACTURE_SERVICES",
+      "FACTURE_DEMENSUALISATION"
+    ]
+  },
+  "q:Q375": {
+    "@id": "q:Q375",
+    "@type": "q:Q104",
+    "description": "Montant total de la facture, y compris le solde avant facture.",
+    "name": "totalPaymentDue",
+    "availability": "2016-10",
+    "exampleValue": "720.21",
+    "kind": "Transaction"
+  },
+  "q:Q377": {
+    "@id": "q:Q377",
+    "@type": "q:Q102",
+    "description": "Les caractéristiques principales de contrat d'électricité chez EDF.",
+    "name": "Contrats électricité EDF",
+    "cozyDoctypeName": "org.fing.mesinfos.contract",
+    "cozyIndex": "[\"_id\", \"vendor\", \"energie\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null }, \"vendor\": \"EDF\", \"energie\": \"Électricité\" }",
+    "generatedBy": "q:Q146",
+    "hasOptionalProperty": [
+      {
+        "@id": "q:Q384"
+      },
+      {
+        "@id": "q:Q385"
+      }
+    ],
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q329",
+      {
+        "@id": "q:Q379"
+      },
+      {
+        "@id": "q:Q381"
+      },
+      {
+        "@id": "q:Q382"
+      },
+      {
+        "@id": "q:Q383"
+      },
+      {
+        "@id": "q:Q386"
+      },
+      {
+        "@id": "q:Q387"
+      },
+      {
+        "@id": "q:Q388"
+      },
+      {
+        "@id": "q:Q389"
+      },
+      {
+        "@id": "q:Q391"
+      },
+      {
+        "@id": "q:Q393"
+      },
+      {
+        "@id": "q:Q400"
+      },
+      {
+        "@id": "q:Q409"
+      },
+      {
+        "@id": "q:Q416"
+      }
+    ],
+    "sourceDataController": "EDF",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/contrat_electricite.json",
+    "typology": "Finance",
+    "updateFrequency": "P1Y",
+    "updateLatency": "P1D",
+    "usedBy": "https://github.com/jacquarg/monlogis"
+  },
+  "q:Q379": {
+    "@id": "q:Q379",
+    "@type": "q:Q161",
+    "description": "Numéro client",
+    "name": "clientId",
+    "availability": "2016-10",
+    "exampleValue": "6012345678",
+    "kind": "Metadata"
+  },
+  "q:Q381": {
+    "@id": "q:Q381",
+    "@type": "q:Q104",
+    "description": "Numéro de contrat (différent numéroAcc, numéro d'accord commercial)",
+    "name": "number",
+    "availability": "2016-10",
+    "exampleValue": "1234654321",
+    "kind": "Caractérisation"
+  },
+  "q:Q382": {
+    "@id": "q:Q382",
+    "@type": "q:Q104",
+    "description": "Date de début de contrat",
+    "name": "start",
+    "availability": "2016-10",
+    "exampleValue": "2013-03-01",
+    "kind": "Caractérisation"
+  },
+  "q:Q383": {
+    "@id": "q:Q383",
+    "@type": "q:Q104",
+    "description": "Status du contrat",
+    "name": "status",
+    "availability": "2016-10",
+    "exampleValue": "CONTRAT_ACTIF",
+    "kind": "Metadata"
+  },
+  "q:Q384": {
+    "@id": "q:Q384",
+    "@type": "q:Q104",
+    "description": "Fin du contrat (le cas échéant)",
+    "name": "end",
+    "availability": "2016-10",
+    "exampleValue": "2016-10-01",
+    "kind": "Metadata"
+  },
+  "q:Q385": {
+    "@id": "q:Q385",
+    "@type": "q:Q104",
+    "description": "Motif de résiliation (le cas échéant)",
+    "name": "terminationGrounds",
+    "availability": "2016-10",
+    "exampleValue": "TODO",
+    "kind": "Metadata"
+  },
+  "q:Q386": {
+    "@id": "q:Q386",
+    "@type": "q:Q104",
+    "description": "Point de livraison",
+    "name": "pdl",
+    "availability": "2016-10",
+    "exampleValue": "1324654321",
+    "kind": "Caractérisation"
+  },
+  "q:Q387": {
+    "@id": "q:Q387",
+    "@type": "q:Q104",
+    "description": "Electricité ou Gaz",
+    "name": "energie",
+    "availability": "2016-10",
+    "exampleValue": "Électricité",
+    "kind": "Caractérisation",
+    "values": [
+      "Électricit",
+      "Gaz"
+    ]
+  },
+  "q:Q388": {
+    "@id": "q:Q388",
+    "@type": "q:Q104",
+    "description": "Nom de l'offre commerciale",
+    "name": "name",
+    "availability": "2016-10",
+    "exampleValue": "Tarif Bleu",
+    "kind": "Caractérisation",
+    "values": [
+      "Electricite Pro",
+      "Mon Contrat Electricite",
+      "Electricite Pro a Prix Fixe",
+      "Essentiel Pro",
+      "Heures Creuses Souples",
+      "Presence Pro",
+      "Souplesse Pro",
+      "Tarif Bleu",
+      "Offre Gaz naturel",
+      "Mon Contrat gaz naturel",
+      "Mon Contrat Gaz Naturel a prix fixe",
+      "Essentiel Gaz",
+      "Gaz Naturel a Prix Fixe",
+      "Presence Gaz",
+      "Souplesse Gaz",
+      "Gaz Naturel",
+      "EJP",
+      "TPN"
+    ]
+  },
+  "q:Q389": {
+    "@id": "q:Q389",
+    "@type": "q:Q104",
+    "description": "Strucure tarifaire (prix constant, spécifique heures creuses, ...), si ernergie == Électricité",
+    "name": "contractSubcategory1",
+    "availability": "2016-10",
+    "exampleValue": "OPTION_BASE",
+    "kind": "Caractérisation",
+    "values": [
+      "OPTION_BASE",
+      "OPTION_EJP",
+      "OPTION_HEURES_CREUSES",
+      "OPTION_HC_LE_WE",
+      "OPTION_LIBERTE_WE",
+      "OPTION_TEMPO"
+    ]
+  },
+  "q:Q391": {
+    "@id": "q:Q391",
+    "@type": "q:Q104",
+    "description": "Puissance compteur si energie = Électricité",
+    "name": "power",
+    "availability": "2016-10",
+    "exampleValue": "6 kVA",
+    "kind": "Caractérisation",
+    "values": [
+      "0 kVA",
+      "3 kVA",
+      "6 kVA",
+      "9 kVA",
+      "12 kVA",
+      "15 kVA",
+      "18 kVA",
+      "24 kVA",
+      "30 kVA",
+      "36 kVA"
+    ]
+  },
+  "q:Q393": {
+    "@id": "q:Q393",
+    "@type": "object",
+    "description": "Caractéristiques du compteur.",
+    "name": "counter",
+    "availability": "2016-10",
+    "hasOptionalProperty": {
+      "@id": "q:Q399"
+    },
+    "hasProperty": [
+      {
+        "@id": "q:Q398"
+      },
+      {
+        "@id": "q:Q395"
+      },
+      {
+        "@id": "q:Q396"
+      },
+      {
+        "@id": "q:Q397"
+      }
+    ],
+    "kind": "Caractérisation"
+  },
+  "q:Q395": {
+    "@id": "q:Q395",
+    "@type": "q:Q104",
+    "description": "Caractéristique compteur (TODO)",
+    "name": "nombreRoues",
+    "availability": "2016-10",
+    "exampleValue": "005",
+    "kind": "Metadata"
+  },
+  "q:Q396": {
+    "@id": "q:Q396",
+    "@type": "q:Q104",
+    "description": "Dernier relevé du compteur",
+    "name": "dernierIndex",
+    "availability": "2016-10",
+    "exampleValue": "67481.0",
+    "kind": "Metadata"
+  },
+  "q:Q397": {
+    "@id": "q:Q397",
+    "@type": "q:Q104",
+    "description": "Consommation annuelle (kWh)",
+    "name": "annualConsumption",
+    "availability": "2016-10",
+    "exampleValue": "2125",
+    "kind": "Caractérisation"
+  },
+  "q:Q398": {
+    "@id": "q:Q398",
+    "@type": "q:Q104",
+    "description": "Type du compteur (ÉlectroMéCanique, ...)",
+    "name": "type",
+    "availability": "2016-10",
+    "exampleValue": "EMC",
+    "kind": "Metadata"
+  },
+  "q:Q399": {
+    "@id": "q:Q399",
+    "@type": "q:Q104",
+    "description": "Horraire heures creuses",
+    "name": "peakHours",
+    "availability": "2016-10",
+    "kind": "Caractérisation"
+  },
+  "q:Q400": {
+    "@id": "q:Q400",
+    "@type": "object",
+    "description": "Caractéristiques des relevés",
+    "name": "statement",
+    "availability": "2016-10",
+    "exampleValue": "",
+    "hasOptionalProperty": [
+      {
+        "@id": "q:Q403"
+      },
+      {
+        "@id": "q:Q404"
+      },
+      {
+        "@id": "q:Q405"
+      },
+      {
+        "@id": "q:Q408"
+      }
+    ],
+    "hasProperty": [
+      {
+        "@id": "q:Q401"
+      },
+      {
+        "@id": "q:Q402"
+      },
+      {
+        "@id": "q:Q406"
+      },
+      {
+        "@id": "q:Q407"
+      }
+    ],
+    "kind": "Caractérisation"
+  },
+  "q:Q401": {
+    "@id": "q:Q401",
+    "@type": "q:Q104",
+    "description": "Date de prochain relevé",
+    "name": "prochainReleve",
+    "availability": "2016-10",
+    "exampleValue": "2017-01-11",
+    "kind": "Metadata"
+  },
+  "q:Q402": {
+    "@id": "q:Q402",
+    "@type": "q:Q104",
+    "description": "Releve.SaisieRc : Statut de la saisie dans le cadre de Suivi Conso",
+    "name": "saisieReleveConfiance",
+    "availability": "2016-10",
+    "exampleValue": "SAISIE_IMPOSSIBLE_NON_ELIGIBLE_RC",
+    "kind": "Metadata"
+  },
+  "q:Q403": {
+    "@id": "q:Q403",
+    "@type": "q:Q104",
+    "description": "Date de fermeture de la période de saisie relevé confiance en cours.",
+    "name": "dateFermetureReleveConfiance",
+    "availability": "2016-10",
+    "kind": "Metadata"
+  },
+  "q:Q404": {
+    "@id": "q:Q404",
+    "@type": "q:Q104",
+    "description": "Date d’ouverture de la prochaine période de saisie index en relevé confiance.",
+    "name": "prochaineDateOuvertureReleveConfiance",
+    "availability": "2016-10",
+    "kind": "Metadata"
+  },
+  "q:Q405": {
+    "@id": "q:Q405",
+    "@type": "q:Q104",
+    "description": "Date de fermeture de la prochaine période de saisie index en relevé confiance.",
+    "name": "prochaineDateFermetureReleveConfiance",
+    "availability": "2016-10",
+    "kind": "Metadata"
+  },
+  "q:Q406": {
+    "@id": "q:Q406",
+    "@type": "q:Q104",
+    "description": "Date prévue de la fermeture de la prochaine relève réelle des index.",
+    "name": "prochaineDateFermetureReelle",
+    "availability": "2016-10",
+    "exampleValue": "2017-01-11",
+    "kind": "Metadata"
+  },
+  "q:Q407": {
+    "@id": "q:Q407",
+    "@type": "q:Q104",
+    "description": "Statut de la saisie dans le cadre de Suivi Conso",
+    "name": "saisieSuiviConso",
+    "availability": "2016-10",
+    "exampleValue": "SAISIE_IMPOSSIBLE_SC_NON_SOUSCRIT",
+    "kind": "Metadata"
+  },
+  "q:Q408": {
+    "@id": "q:Q408",
+    "@type": "q:Q104",
+    "description": "Date de prochaine saisie possible Suivi Conso",
+    "name": "prochaineDateOuvertureSaisieConso",
+    "availability": "2016-10",
+    "exampleValue": "",
+    "kind": "Metadata"
+  },
+  "q:Q409": {
+    "@id": "q:Q409",
+    "@type": "array",
+    "description": "Liste des services inscrits au contrat.",
+    "name": "services",
+    "items": {
+      "@id": "q:Q421"
+    },
+    "kind": "Caractérisation"
+  },
+  "q:Q410": {
+    "@id": "q:Q410",
+    "@type": "q:Q104",
+    "description": "Nom du service",
+    "name": "name",
+    "availability": "asbent",
+    "exampleValue": "SER_BILANCONSO",
+    "kind": "Metadata"
+  },
+  "q:Q411": {
+    "@id": "q:Q411",
+    "@type": "q:Q104",
+    "description": "En cours",
+    "name": "status",
+    "availability": "asbent",
+    "exampleValue": "true",
+    "kind": "Metadata"
+  },
+  "q:Q412": {
+    "@id": "q:Q412",
+    "@type": "q:Q104",
+    "description": "En cours",
+    "name": "activ",
+    "availability": "asbent",
+    "exampleValue": "true",
+    "kind": "Metadata"
+  },
+  "q:Q413": {
+    "@id": "q:Q413",
+    "@type": "q:Q104",
+    "description": "Début de mise en service",
+    "name": "start",
+    "availability": "asbent",
+    "exampleValue": "2016-05-18T00:00:00+02:00",
+    "kind": "Metadata"
+  },
+  "q:Q414": {
+    "@id": "q:Q414",
+    "@type": "q:Q104",
+    "description": "Indique si le service est souscrit, et avec quelle option.",
+    "name": "valueSubscribed",
+    "availability": "asbent",
+    "exampleValue": "OUI",
+    "kind": "Metadata"
+  },
+  "q:Q415": {
+    "@id": "q:Q415",
+    "@type": "q:Q104",
+    "description": "Valeurs possible pour ce services.",
+    "name": "valueAvailable",
+    "availability": "asbent",
+    "exampleValue": "",
+    "kind": "Metadata"
+  },
+  "q:Q416": {
+    "@id": "q:Q416",
+    "@type": "q:Q104",
+    "description": "Numéro de téléphone de dépannage",
+    "name": "troubleshootingPhone",
+    "availability": "2016-10",
+    "exampleValue": "09 726 750 75",
+    "kind": "Caractérisation"
+  },
+  "q:Q421": {
+    "@id": "q:Q421",
+    "@type": "object",
+    "description": "Un service inscrit au contrat.",
+    "name": "servicesItem",
+    "hasOptionalProperty": [
+      {
+        "@id": "q:Q410"
+      },
+      {
+        "@id": "q:Q411"
+      },
+      {
+        "@id": "q:Q412"
+      },
+      {
+        "@id": "q:Q413"
+      },
+      {
+        "@id": "q:Q414"
+      },
+      {
+        "@id": "q:Q415"
+      }
+    ],
+    "kind": "Caractérisation"
+  },
+  "q:Q423": {
+    "@id": "q:Q423",
+    "@type": "q:Q296",
+    "description": "Horodatage de début de validité du profil.",
+    "name": "beginTs",
+    "availability": "2016-10",
+    "exampleValue": "2016-09-27T12:30:14Z",
+    "kind": "Metadata"
+  },
+  "q:Q424": {
+    "@id": "q:Q424",
+    "@type": "q:Q104",
+    "description": "Determine si le profil a déjà été validé par l'utilisateur.",
+    "name": "isProfileValidated",
+    "availability": "2016-10",
+    "exampleValue": "true",
+    "kind": "Metadata"
+  },
+  "q:Q425": {
+    "@id": "q:Q425",
+    "@type": "q:Q104",
+    "description": "Type de logement parmi : Appartement, Maison",
+    "name": "housingType",
+    "availability": "2016-10",
+    "exampleValue": "Appartement",
+    "kind": "Caractérisation"
+  },
+  "q:Q426": {
+    "@id": "q:Q426",
+    "@type": "q:Q104",
+    "description": "Type de résidence parmi : Principale, Secondaire",
+    "name": "residenceType",
+    "availability": "2016-10",
+    "exampleValue": "Principale",
+    "kind": "Caractérisation"
+  },
+  "q:Q427": {
+    "@id": "q:Q427",
+    "@type": "q:Q104",
+    "description": "Type d'occupation parmi : Proprietaire, Locataire",
+    "name": "occupationType",
+    "availability": "2016-10",
+    "exampleValue": "Locataire",
+    "kind": "Caractérisation",
+    "values": [
+      "Proprietaire",
+      "Locataire"
+    ]
+  },
+  "q:Q428": {
+    "@id": "q:Q428",
+    "@type": "q:Q104",
+    "description": "Année de construction.",
+    "name": "constructionDate",
+    "availability": "2016-10",
+    "exampleValue": "2001",
+    "kind": "Caractérisation"
+  },
+  "q:Q429": {
+    "@id": "q:Q429",
+    "@type": "q:Q104",
+    "description": "Bâtiment basse consommation  ",
+    "name": "isBBC",
+    "availability": "2016-10",
+    "exampleValue": "true",
+    "kind": "Caractérisation"
+  },
+  "q:Q430": {
+    "@id": "q:Q430",
+    "@type": "q:Q104",
+    "description": "Surface du logement en m².",
+    "name": "surface",
+    "availability": "2016-10",
+    "exampleValue": "69",
+    "kind": "Caractérisation"
+  },
+  "q:Q431": {
+    "@id": "q:Q431",
+    "@type": "q:Q104",
+    "description": "Nombre d'occupants du logement.",
+    "name": "occupantsCount",
+    "availability": "2016-10",
+    "exampleValue": "4",
+    "kind": "Caractérisation"
+  },
+  "q:Q432": {
+    "@id": "q:Q432",
+    "@type": "q:Q104",
+    "description": "Energie de chauffage principal",
+    "name": "principalHeatingSystemType",
+    "availability": "2016-10",
+    "exampleValue": "Electricite",
+    "kind": "Caractérisation"
+  },
+  "q:Q433": {
+    "@id": "q:Q433",
+    "@type": "q:Q104",
+    "description": "Type d'eau chaude sanitaire parmi",
+    "name": "sanitoryHotWaterType",
+    "availability": "2016-10",
+    "exampleValue": "Electricite",
+    "kind": "Caractérisation"
+  },
+  "q:Q434": {
+    "@id": "q:Q434",
+    "@type": "q:Q329",
+    "description": "Fournisseur, source du document",
+    "name": "origin",
+    "exampleValue": "EDF",
+    "kind": "Metadata"
+  },
+  "q:Q435": {
+    "@id": "q:Q435",
+    "@type": "q:Q102",
+    "description": "Profil de consommation Edelia (EDF) de l'habitation. L'utilisateur doit avoir activer le service Edelia auprès d'EDF pour obtenir ces données.",
+    "name": "Profil énergétique d'habitation",
+    "cozyDoctypeName": "fr.maif.maifuser.home",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q101",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      {
+        "@id": "q:Q423"
+      },
+      {
+        "@id": "q:Q424"
+      },
+      {
+        "@id": "q:Q425"
+      },
+      {
+        "@id": "q:Q426"
+      },
+      {
+        "@id": "q:Q427"
+      },
+      {
+        "@id": "q:Q428"
+      },
+      {
+        "@id": "q:Q429"
+      },
+      {
+        "@id": "q:Q430"
+      },
+      {
+        "@id": "q:Q431"
+      },
+      {
+        "@id": "q:Q432"
+      },
+      {
+        "@id": "q:Q433"
+      },
+      {
+        "@id": "q:Q434"
+      }
+    ],
+    "help": "Pas de moyen fiable de relier l'habitat à un lieu !",
+    "sourceDataController": "Maif",
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/profile_energetique_habitat.json",
+    "typology": "Domicile",
+    "updateFrequency": "P1Y",
+    "updateLatency": "P1D",
+    "usedBy": "https://github.com/jacquarg/monlogis"
   }
 }

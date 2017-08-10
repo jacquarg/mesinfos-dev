@@ -2,10 +2,16 @@
 const M = {}
 
 M.getItem = (item, allItems) => {
+  // TODO : clean this !
+  const MetaObject = require('../models/metaobject')
+  let attrs = {}
   if (typeof item === 'string') { // it's an id !
-    return allItems[item]
+    attrs = allItems[item]
+  } else {
+    attrs = allItems[item['@id']]
   }
-  return allItems[item['@id']]
+
+  return new MetaObject(attrs)
 }
 
 M.idList2ItemMap = (ids, allItems) => {

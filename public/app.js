@@ -670,10 +670,16 @@ require.register("lib/semantic_utils.js", function(exports, require, module) {
 const M = {}
 
 M.getItem = (item, allItems) => {
+  // TODO : clean this !
+  const MetaObject = require('../models/metaobject')
+  let attrs = {}
   if (typeof item === 'string') { // it's an id !
-    return allItems[item]
+    attrs = allItems[item]
+  } else {
+    attrs = allItems[item['@id']]
   }
-  return allItems[item['@id']]
+
+  return new MetaObject(attrs)
 }
 
 M.idList2ItemMap = (ids, allItems) => {
@@ -810,7 +816,33 @@ module.exports = CozyModel.extend({
 
 });
 
-require.register("models/properties.js", function(exports, require, module) {
+require.register("models/metaobject.js", function(exports, require, module) {
+'use-strict'
+
+semutils = require('../lib/semantic_utils')
+
+// prototype for metaobject deserialized from json-ld read-only data.
+module.exports = class MetaObject {
+  constructor(attrs) {
+    $.extend(this, attrs)
+  }
+
+  get allProperties () {
+    let props = []
+    if (this.hasProperty) {
+      semutils.mapOnPropValue(this.hasProperty, (prop) => props.push(prop))
+    }
+
+    if (this.hasOptionalProperty) {
+      semutils.mapOnPropValue(this.hasOptionalProperty, (prop) => props.push(prop))
+    }
+    return props
+  }
+}
+
+});
+
+;require.register("models/properties.js", function(exports, require, module) {
 var CozySingleton = require('../lib/backbone_cozysingleton');
 
 var Properties = CozySingleton.extend({
@@ -1714,11 +1746,11 @@ buf.push("<ul class=\"properties\">");
 buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.name) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)));
 if ( prop.hasProperty)
 {
-jade_mixins["properties"](prop.hasProperty);
+jade_mixins["properties"](prop.allProperties);
 }
 if ( prop.items)
 {
-jade_mixins["properties"](prop.items.hasProperty);
+jade_mixins["properties"](prop.items.allProperties);
 }
 buf.push("</li>");
     }
@@ -1731,11 +1763,11 @@ buf.push("</li>");
 buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.name) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)));
 if ( prop.hasProperty)
 {
-jade_mixins["properties"](prop.hasProperty);
+jade_mixins["properties"](prop.allProperties);
 }
 if ( prop.items)
 {
-jade_mixins["properties"](prop.items.hasProperty);
+jade_mixins["properties"](prop.items.allProperties);
 }
 buf.push("</li>");
     }

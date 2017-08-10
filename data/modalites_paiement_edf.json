@@ -1,18 +1,18 @@
 [
 {
-  "docType": "paymentterms",
-  "docTypeVersion": "konnectors_edf-0.7.2",
   "vendor": "EDF",
   "clientId": "6012345678",
   "encryptedBankDetails": "{\"bank\": \"STE GENERALE\", \"bankAddress\": { \"street\": \"1 BD DES BROTTEAUX\", \"city\": \"LYON 69006\", \"country\": \"France\", \"formated\": \"1 BD DES BROTTEAUX\nLYON 69006 France\" }, \"iban\": \"FR76300039876087612\", \"holder\": \"Mme GERMAINE DUPOND\" }",
   "balance": 0.0,
-  "modifBankDetailsAllowed": true,
+  "modifBankDetailsAllowed": "true",
   "paymentMeans": "PRELEVEMENT",
   "dernierReglement": {
+    "amount": "80.33",
+    "date": "2016-10-10T00:00:00.000+02:00",
   	"type": "ENCAISSEMENT_PRELEVEMENT"
   },
   "billFrequency": "ANNU",
-  "nextBillDate": "2015-10-15",
+  "nextBillDate": "",
   "idPayer": "6012345678",
   "payerDivergent": false,
   "paymentSchedules": [

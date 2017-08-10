@@ -18,10 +18,10 @@
       "comptage": "BASE",
       "nombreRoues": "005",
       "dernierIndex": "69988.0",
-      "type": "CBE"
+      "type": "CBE",
+      "annualConsumption": "6006",
+      "peakHours": null
     },
-    "annualConsumption": "6006",
-    "peakHours": null,
     "statement": {
       "prochaineReleve": "2017-01-12",
       "saisieReleveConfiance": "SAISIE_IMPOSSIBLE_NON_ELIGIBLE_RC",
@@ -45,8 +45,8 @@
       {
         "name": "PRELEVEMENT_AUTOMATIQUE",
         "status": "true",
-        "valeurSouscrite": "10",
-        "valeurPossibles": [
+        "valueSubscribed": "10",
+        "valuesAvailable": [
           "04",
           "05",
           "06",
@@ -60,30 +60,28 @@
       {
         "name": "FACTURE_ELECTRONIQUE",
         "status": "true",
-        "valeurSouscrite": null
+        "valueSubscribed": null
       },
       {
         "name": "MENS_ANNUELLE",
         "status": "true",
-        "valeurSouscrite": null
+        "valueSubscribed": null
       },
       {
         "name": "MENS_MENSUELLE",
         "status": "false",
-        "valeurSouscrite": null
+        "valueSubscribed": null
       },
       {
         "name": "MENS_ELECTRICITE",
         "status": "true",
-        "valeurSouscrite": "OUI"
+        "valueSubscribed": "OUI"
       },
       {
         "name": "MENS_GAZ",
         "status": "false",
-        "valeurSouscrite": "NON"
+        "valueSubscribed": "NON"
       }
-    ],
-    "docType": "contract",
-    "docTypeVersion": "konnectors_edf-0.7.2"
+    ]
   }
 ]

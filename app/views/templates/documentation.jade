@@ -7,10 +7,10 @@ mixin properties(props)
         = prop.description
 
         if prop.hasProperty
-          +properties(prop.hasProperty)
+          +properties(prop.allProperties)
 
         if prop.items
-          +properties(prop.items.hasProperty)
+          +properties(prop.items.allProperties)
 
 .title
   if typology && name
