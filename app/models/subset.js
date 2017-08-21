@@ -10,7 +10,7 @@ module.exports = DSView.extend({
   },
 
   getName: function() {
-    return utils.slugify(this.get('name'));
+    return utils.slugify(this.get('label'));
   },
 
   getIndexFields: function() {

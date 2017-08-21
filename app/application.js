@@ -43,7 +43,7 @@ var Application = Mn.Application.extend({
     'use-strict'
     return Promise.all([
       $.getJSON('data/wikiapi/items.json'),
-      $.getJSON('data/wikiapi/mesinfos_subsets.json'),
+      $.getJSON('data/wikiapi/mesinfos_datasets.json'),
       $.getJSON('data/wikiapi/cozy_doctypes.json'),
     ])
     .then((res) => {

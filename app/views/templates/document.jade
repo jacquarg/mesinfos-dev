@@ -7,7 +7,7 @@ mixin obj(fieldList)
 
 mixin field(f)
   .field.compact(class=f.kind)
-    span.name= f.name
+    span.name= f.propName
     |:&nbsp;
     case f.displayType
       when 'array'

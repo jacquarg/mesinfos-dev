@@ -4,7 +4,9 @@
   "description": "Une application pour les développeurs, pour visualiser et tester l'accès aux données du Pilote MesInfos.",
   "scripts": {
     "watch": "brunch watch",
-    "build": "brunch build --production"
+    "build": "brunch build --production",
+
+    "build:fetchdep": "sh scripts/fetch_dependencies.sh"
   },
   "dependencies": {},
   "devDependencies": {

@@ -193,7 +193,7 @@ var Application = Mn.Application.extend({
     'use-strict'
     return Promise.all([
       $.getJSON('data/wikiapi/items.json'),
-      $.getJSON('data/wikiapi/mesinfos_subsets.json'),
+      $.getJSON('data/wikiapi/mesinfos_datasets.json'),
       $.getJSON('data/wikiapi/cozy_doctypes.json'),
     ])
     .then((res) => {
@@ -342,7 +342,7 @@ module.exports = Backbone.Collection.extend({
     if (metaObject.hasProperty) {
       metaProps = metaProps.concat(metaObject.hasProperty)
     }
-    const metaPropByName = semutils.mapByProp('name', metaProps, app.wikiapi)
+    const metaPropByName = semutils.mapByProp('propName', metaProps, app.wikiapi)
 
     return Object.keys(obj).map((prop) => {
       const metaProp = metaPropByName[prop]
@@ -894,7 +894,7 @@ module.exports = DSView.extend({
   },
 
   getName: function() {
-    return utils.slugify(this.get('name'));
+    return utils.slugify(this.get('label'));
   },
 
   getIndexFields: function() {
@@ -1646,7 +1646,7 @@ buf.push("</div><span class=\"closeBrace\">}</span>");
 };
 jade_mixins["field"] = jade_interp = function(f){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-buf.push("<div" + (jade.cls(['field','compact',f.kind], [null,null,true])) + "><span class=\"name\">" + (jade.escape(null == (jade_interp = f.name) ? "" : jade_interp)) + "</span>:&nbsp;");
+buf.push("<div" + (jade.cls(['field','compact',f.kind], [null,null,true])) + "><span class=\"name\">" + (jade.escape(null == (jade_interp = f.propName) ? "" : jade_interp)) + "</span>:&nbsp;");
 switch (f.displayType){
 case 'array':
 buf.push("<span class=\"openBracket\">[</span><div class=\"array\">");
@@ -1731,7 +1731,7 @@ var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
-;var locals_for_with = (locals || {});(function (description, docType, hasProperty, help, name, subsets, synthSetInDS, synthSetInsertable, typology, undefined, updateFrequency, updateLatency) {
+;var locals_for_with = (locals || {});(function (description, docType, hasProperty, help, label, subsets, synthSetInDS, synthSetInsertable, typology, undefined, updateFrequency, updateLatency) {
 jade_mixins["properties"] = jade_interp = function(props){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 buf.push("<ul class=\"properties\">");
@@ -1778,9 +1778,9 @@ buf.push("</li>");
 buf.push("</ul>");
 };
 buf.push("<div class=\"title\">");
-if ( typology && name)
+if ( typology && label)
 {
-buf.push("<span class=\"typologie\">" + (jade.escape(null == (jade_interp = typology) ? "" : jade_interp)) + "&nbsp;/&nbsp;</span><h2 class=\"subset\">" + (jade.escape(null == (jade_interp = name) ? "" : jade_interp)) + "</h2>");
+buf.push("<span class=\"typologie\">" + (jade.escape(null == (jade_interp = typology) ? "" : jade_interp)) + "&nbsp;/&nbsp;</span><h2 class=\"subset\">" + (jade.escape(null == (jade_interp = label) ? "" : jade_interp)) + "</h2>");
 }
 buf.push("");
 if ( synthSetInsertable)
@@ -1792,7 +1792,7 @@ if ( synthSetInDS)
 buf.push("<button type=\"button\" class=\"delete btn btn-danger\"><span class=\"iconicstroke-trash-stroke\"></span>&nbsp;Supprimer du Cozy</button>");
 }
 buf.push("</div>");
-if ( name)
+if ( label)
 {
 buf.push("<p>" + (jade.escape(null == (jade_interp = description) ? "" : jade_interp)) + "</p>");
 if ( help)
@@ -1803,7 +1803,7 @@ buf.push("<ul class=\"caracteristiques\"><li><b>Fréquence :&nbsp;</b>" + (jade.
 jade_mixins["properties"](hasProperty);
 buf.push("</li></ul>");
 }
-buf.push("<div class=\"well\">DocType :&nbsp;<b>" + (jade.escape(null == (jade_interp = docType.name) ? "" : jade_interp)) + "</b><p>" + (jade.escape(null == (jade_interp = docType.description) ? "" : jade_interp)) + "</p><div class=\"similaires\">Du même doctype :<ul>");
+buf.push("<div class=\"well\">DocType :&nbsp;<b>" + (jade.escape(null == (jade_interp = docType.label) ? "" : jade_interp)) + "</b><p>" + (jade.escape(null == (jade_interp = docType.description) ? "" : jade_interp)) + "</p><div class=\"similaires\">Du même doctype :<ul>");
 // iterate subsets
 ;(function(){
   var $$obj = subsets;
@@ -1812,7 +1812,7 @@ buf.push("<div class=\"well\">DocType :&nbsp;<b>" + (jade.escape(null == (jade_i
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var s = $$obj[$index];
 
-buf.push("<li>" + (jade.escape(null == (jade_interp = s.name) ? "" : jade_interp)) + "</li>");
+buf.push("<li>" + (jade.escape(null == (jade_interp = s.label) ? "" : jade_interp)) + "</li>");
     }
 
   } else {
@@ -1820,13 +1820,13 @@ buf.push("<li>" + (jade.escape(null == (jade_interp = s.name) ? "" : jade_interp
     for (var $index in $$obj) {
       $$l++;      var s = $$obj[$index];
 
-buf.push("<li>" + (jade.escape(null == (jade_interp = s.name) ? "" : jade_interp)) + "</li>");
+buf.push("<li>" + (jade.escape(null == (jade_interp = s.label) ? "" : jade_interp)) + "</li>");
     }
 
   }
 }).call(this);
 
-buf.push("</ul></div></div>");}.call(this,"description" in locals_for_with?locals_for_with.description:typeof description!=="undefined"?description:undefined,"docType" in locals_for_with?locals_for_with.docType:typeof docType!=="undefined"?docType:undefined,"hasProperty" in locals_for_with?locals_for_with.hasProperty:typeof hasProperty!=="undefined"?hasProperty:undefined,"help" in locals_for_with?locals_for_with.help:typeof help!=="undefined"?help:undefined,"name" in locals_for_with?locals_for_with.name:typeof name!=="undefined"?name:undefined,"subsets" in locals_for_with?locals_for_with.subsets:typeof subsets!=="undefined"?subsets:undefined,"synthSetInDS" in locals_for_with?locals_for_with.synthSetInDS:typeof synthSetInDS!=="undefined"?synthSetInDS:undefined,"synthSetInsertable" in locals_for_with?locals_for_with.synthSetInsertable:typeof synthSetInsertable!=="undefined"?synthSetInsertable:undefined,"typology" in locals_for_with?locals_for_with.typology:typeof typology!=="undefined"?typology:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"updateFrequency" in locals_for_with?locals_for_with.updateFrequency:typeof updateFrequency!=="undefined"?updateFrequency:undefined,"updateLatency" in locals_for_with?locals_for_with.updateLatency:typeof updateLatency!=="undefined"?updateLatency:undefined));;return buf.join("");
+buf.push("</ul></div></div>");}.call(this,"description" in locals_for_with?locals_for_with.description:typeof description!=="undefined"?description:undefined,"docType" in locals_for_with?locals_for_with.docType:typeof docType!=="undefined"?docType:undefined,"hasProperty" in locals_for_with?locals_for_with.hasProperty:typeof hasProperty!=="undefined"?hasProperty:undefined,"help" in locals_for_with?locals_for_with.help:typeof help!=="undefined"?help:undefined,"label" in locals_for_with?locals_for_with.label:typeof label!=="undefined"?label:undefined,"subsets" in locals_for_with?locals_for_with.subsets:typeof subsets!=="undefined"?subsets:undefined,"synthSetInDS" in locals_for_with?locals_for_with.synthSetInDS:typeof synthSetInDS!=="undefined"?synthSetInDS:undefined,"synthSetInsertable" in locals_for_with?locals_for_with.synthSetInsertable:typeof synthSetInsertable!=="undefined"?synthSetInsertable:undefined,"typology" in locals_for_with?locals_for_with.typology:typeof typology!=="undefined"?typology:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined,"updateFrequency" in locals_for_with?locals_for_with.updateFrequency:typeof updateFrequency!=="undefined"?updateFrequency:undefined,"updateLatency" in locals_for_with?locals_for_with.updateLatency:typeof updateLatency!=="undefined"?updateLatency:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -1988,8 +1988,8 @@ var __templateData = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
-;var locals_for_with = (locals || {});(function (name, sourceDataController) {
-buf.push("<span class=\"imgcontainer\"><img" + (jade.attr("src", 'img/holders/logo_' + sourceDataController.toLowerCase() + '.png', true, false)) + (jade.attr("title", sourceDataController, true, false)) + "/></span><span class=\"name\">" + (jade.escape(null == (jade_interp = name) ? "" : jade_interp)) + "</span>");}.call(this,"name" in locals_for_with?locals_for_with.name:typeof name!=="undefined"?name:undefined,"sourceDataController" in locals_for_with?locals_for_with.sourceDataController:typeof sourceDataController!=="undefined"?sourceDataController:undefined));;return buf.join("");
+;var locals_for_with = (locals || {});(function (label, sourceDataController) {
+buf.push("<span class=\"imgcontainer\"><img" + (jade.attr("src", 'img/holders/logo_' + sourceDataController.toLowerCase() + '.png', true, false)) + (jade.attr("title", sourceDataController, true, false)) + "/></span><span class=\"name\">" + (jade.escape(null == (jade_interp = label) ? "" : jade_interp)) + "</span>");}.call(this,"label" in locals_for_with?locals_for_with.label:typeof label!=="undefined"?label:undefined,"sourceDataController" in locals_for_with?locals_for_with.sourceDataController:typeof sourceDataController!=="undefined"?sourceDataController:undefined));;return buf.join("");
 };
 if (typeof define === 'function' && define.amd) {
   define([], function() {

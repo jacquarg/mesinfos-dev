@@ -39,7 +39,7 @@ module.exports = Backbone.Collection.extend({
     if (metaObject.hasProperty) {
       metaProps = metaProps.concat(metaObject.hasProperty)
     }
-    const metaPropByName = semutils.mapByProp('name', metaProps, app.wikiapi)
+    const metaPropByName = semutils.mapByProp('propName', metaProps, app.wikiapi)
 
     return Object.keys(obj).map((prop) => {
       const metaProp = metaPropByName[prop]

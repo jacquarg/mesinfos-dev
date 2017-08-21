@@ -13,12 +13,12 @@ mixin properties(props)
           +properties(prop.items.allProperties)
 
 .title
-  if typology && name
+  if typology && label
     span.typologie= typology
       | &nbsp;/&nbsp;
-    h2.subset= name
+    h2.subset= label
 
-  //- img(src="img/holders/logo_" + Détenteur.toLowerCase() + ".png", title=Détenteur)
+  //- img(src="img/holders/logo_" + sourceDataController.toLowerCase() + ".png", title=Détenteur)
 
   if synthSetInsertable
     button.insert.btn.btn-primary(type="button")
@@ -29,7 +29,7 @@ mixin properties(props)
       span.iconicstroke-trash-stroke
       | &nbsp;Supprimer du Cozy
 
-if name
+if label
   p=description
 
   if help
@@ -50,7 +50,7 @@ if name
 
 .well
   | DocType :&nbsp;
-  b= docType.name
+  b= docType.label
 
   p= docType.description
 
@@ -58,4 +58,4 @@ if name
     | Du même doctype :
     ul
       each s in subsets
-        li= s.name
+        li= s.label
