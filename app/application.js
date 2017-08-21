@@ -3,7 +3,8 @@
 
 var utils = require('lib/utils');
 var ap = require('lib/asyncpromise');
-var semutils = require('lib/semantic_utils');
+
+var MetaObject = require('models/metaobject');
 
 var Router = require('router');
 var AppLayout = require('views/app_layout');
@@ -47,40 +48,17 @@ var Application = Mn.Application.extend({
       $.getJSON('data/wikiapi/cozy_doctypes.json'),
     ])
     .then((res) => {
-      this.wikiapi = res[0]
+      PLD.allItems = res[0]
 
       this.subsets = new SubsetsCollection()
       this.subsets.addByWikidataIds(res[1]['schema:itemListElement'])
 
-      this.doctypes = semutils.mapByProp('cozyDoctypeName', res[2]['schema:itemListElement'], this.wikiapi)
+      this.doctypes = PLD.mapByPredicate('cozyDoctypeName', res[2]['schema:itemListElement'])
+
+      PLD.mapClassOnType['q:Q102'] = MetaObject
+      PLD.mapClassOnType['object'] = MetaObject
     })
-
-    // var metadata = data["export"];
-    // this.subsets = new SubsetsCollection(metadata.filter(function(field) {
-    //   return field.Nature === 'Subset';
-    // }));
-    // this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
-    //   return field.Nature === 'DocType';
-    //
-    // }));
-    // this.fields = metadata.filter(function(field) {
-    //   return field.Nature !== 'Subset' && field.Nature !== 'DocType';
-    // });
   },
-
-  // _parseMetadata: function(data) {
-  //   var metadata = data["export"];
-  //   this.subsets = new SubsetsCollection(metadata.filter(function(field) {
-  //     return field.Nature === 'Subset';
-  //   }));
-  //   this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
-  //     return field.Nature === 'DocType';
-  //
-  //   }));
-  //   this.fields = metadata.filter(function(field) {
-  //     return field.Nature !== 'Subset' && field.Nature !== 'DocType';
-  //   });
-  // },
 
   _defineViews: function() {
     // Parallel
@@ -126,13 +104,8 @@ var Application = Mn.Application.extend({
 
   onStart: function() {
     this.layout.render();
-    // prohibit pushState because URIs mapped from cozy-home
-    // rely on fragment
-    if (Backbone.history) {
-      Backbone.history.start({ pushState: false });
-    }
     var randomIndex = Math.floor(Math.random() * this.subsets.size());
-    // this.trigger('requestform:setView', this.subsets.at(randomIndex));
+    this.trigger('requestform:setView', this.subsets.at(randomIndex));
   },
 
 });

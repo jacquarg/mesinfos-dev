@@ -1,8 +1,4 @@
-var semutils = require('lib/semantic_utils')
-
 module.exports = Backbone.Collection.extend({
-
-
   initialize: function() {
     this.listenTo(app, 'documents:fetch', this.fetchDSView);
   },
@@ -39,7 +35,7 @@ module.exports = Backbone.Collection.extend({
     if (metaObject.hasProperty) {
       metaProps = metaProps.concat(metaObject.hasProperty)
     }
-    const metaPropByName = semutils.mapByProp('propName', metaProps, app.wikiapi)
+    const metaPropByName = PLD.mapByPredicate('propName', metaProps)
 
     return Object.keys(obj).map((prop) => {
       const metaProp = metaPropByName[prop]
@@ -48,13 +44,13 @@ module.exports = Backbone.Collection.extend({
         field = $.extend(field, metaProp)
       }
 
-      if (semutils.isType(metaProp, 'object')) {
+      if (PLD.isType(metaProp, 'object')) {
         field.displayType = 'object'
         field.value = this._generateFieldsOfObject(obj[prop], metaProp)
-      } else if (semutils.isType(metaProp, 'array')) {
+      } else if (PLD.isType(metaProp, 'array')) {
         field.displayType = 'array'
         // TODO : metaProps.items may be a array (in the future)
-        field.value = obj[prop].map((propItem) => this._generateFieldsOfObject(propItem, semutils.getItem(metaProp.items, app.wikiapi)))
+        field.value = obj[prop].map((propItem) => this._generateFieldsOfObject(propItem, PLD.getItem(metaProp.items)))
       } else {
         field.value = obj[prop]
       }

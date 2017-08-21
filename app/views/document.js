@@ -1,6 +1,5 @@
 'use-strict'
 
-const semutils = require('../lib/semantic_utils')
 const template = require('views/templates/document')
 
 module.exports = Mn.ItemView.extend({

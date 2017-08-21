@@ -6,7 +6,7 @@
     "watch": "brunch watch",
     "build": "brunch build --production",
 
-    "build:fetchdep": "sh scripts/fetch_dependencies.sh"
+    "update:fetch": "sh scripts/fetch_dependencies.sh"
   },
   "dependencies": {},
   "devDependencies": {

@@ -22,7 +22,7 @@ module.exports = Backbone.Collection.extend({
 
   addByWikidataIds: function (ids) {
     ids.forEach((id) => {
-      this.add(app.wikiapi[id])
+      this.add(PLD.getItem(id))
     })
   },
 

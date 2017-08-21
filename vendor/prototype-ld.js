@@ -63,8 +63,7 @@ PLD.forEachOnTreeOfPredicates = (fun , item, props) => {
 }
 
 PLD.fillTreeForPredicates = (item, props) => {
-  PLD.forEachOnTreeOfPredicates(() => undefined, item, props)
-  return item
+  return PLD.forEachOnTreeOfPredicates(i => i, item, props)
 }
 
 PLD.idList2ItemMap = (ids) => {

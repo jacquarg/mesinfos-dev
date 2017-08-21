@@ -153,7 +153,8 @@ require.register("application.js", function(exports, require, module) {
 
 var utils = require('lib/utils');
 var ap = require('lib/asyncpromise');
-var semutils = require('lib/semantic_utils');
+
+var MetaObject = require('models/metaobject');
 
 var Router = require('router');
 var AppLayout = require('views/app_layout');
@@ -197,40 +198,17 @@ var Application = Mn.Application.extend({
       $.getJSON('data/wikiapi/cozy_doctypes.json'),
     ])
     .then((res) => {
-      this.wikiapi = res[0]
+      PLD.allItems = res[0]
 
       this.subsets = new SubsetsCollection()
       this.subsets.addByWikidataIds(res[1]['schema:itemListElement'])
 
-      this.doctypes = semutils.mapByProp('cozyDoctypeName', res[2]['schema:itemListElement'], this.wikiapi)
+      this.doctypes = PLD.mapByPredicate('cozyDoctypeName', res[2]['schema:itemListElement'])
+
+      PLD.mapClassOnType['q:Q102'] = MetaObject
+      PLD.mapClassOnType['object'] = MetaObject
     })
-
-    // var metadata = data["export"];
-    // this.subsets = new SubsetsCollection(metadata.filter(function(field) {
-    //   return field.Nature === 'Subset';
-    // }));
-    // this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
-    //   return field.Nature === 'DocType';
-    //
-    // }));
-    // this.fields = metadata.filter(function(field) {
-    //   return field.Nature !== 'Subset' && field.Nature !== 'DocType';
-    // });
   },
-
-  // _parseMetadata: function(data) {
-  //   var metadata = data["export"];
-  //   this.subsets = new SubsetsCollection(metadata.filter(function(field) {
-  //     return field.Nature === 'Subset';
-  //   }));
-  //   this.docTypes = new Backbone.Collection(metadata.filter(function(field) {
-  //     return field.Nature === 'DocType';
-  //
-  //   }));
-  //   this.fields = metadata.filter(function(field) {
-  //     return field.Nature !== 'Subset' && field.Nature !== 'DocType';
-  //   });
-  // },
 
   _defineViews: function() {
     // Parallel
@@ -276,13 +254,8 @@ var Application = Mn.Application.extend({
 
   onStart: function() {
     this.layout.render();
-    // prohibit pushState because URIs mapped from cozy-home
-    // rely on fragment
-    if (Backbone.history) {
-      Backbone.history.start({ pushState: false });
-    }
     var randomIndex = Math.floor(Math.random() * this.subsets.size());
-    // this.trigger('requestform:setView', this.subsets.at(randomIndex));
+    this.trigger('requestform:setView', this.subsets.at(randomIndex));
   },
 
 });
@@ -301,11 +274,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 require.register("collections/documents.js", function(exports, require, module) {
-var semutils = require('lib/semantic_utils')
-
 module.exports = Backbone.Collection.extend({
-
-
   initialize: function() {
     this.listenTo(app, 'documents:fetch', this.fetchDSView);
   },
@@ -342,7 +311,7 @@ module.exports = Backbone.Collection.extend({
     if (metaObject.hasProperty) {
       metaProps = metaProps.concat(metaObject.hasProperty)
     }
-    const metaPropByName = semutils.mapByProp('propName', metaProps, app.wikiapi)
+    const metaPropByName = PLD.mapByPredicate('propName', metaProps)
 
     return Object.keys(obj).map((prop) => {
       const metaProp = metaPropByName[prop]
@@ -351,13 +320,13 @@ module.exports = Backbone.Collection.extend({
         field = $.extend(field, metaProp)
       }
 
-      if (semutils.isType(metaProp, 'object')) {
+      if (PLD.isType(metaProp, 'object')) {
         field.displayType = 'object'
         field.value = this._generateFieldsOfObject(obj[prop], metaProp)
-      } else if (semutils.isType(metaProp, 'array')) {
+      } else if (PLD.isType(metaProp, 'array')) {
         field.displayType = 'array'
         // TODO : metaProps.items may be a array (in the future)
-        field.value = obj[prop].map((propItem) => this._generateFieldsOfObject(propItem, semutils.getItem(metaProp.items, app.wikiapi)))
+        field.value = obj[prop].map((propItem) => this._generateFieldsOfObject(propItem, PLD.getItem(metaProp.items)))
       } else {
         field.value = obj[prop]
       }
@@ -494,7 +463,7 @@ module.exports = Backbone.Collection.extend({
 
   addByWikidataIds: function (ids) {
     ids.forEach((id) => {
-      this.add(app.wikiapi[id])
+      this.add(PLD.getItem(id))
     })
   },
 
@@ -819,8 +788,6 @@ module.exports = CozyModel.extend({
 require.register("models/metaobject.js", function(exports, require, module) {
 'use-strict'
 
-semutils = require('../lib/semantic_utils')
-
 // prototype for metaobject deserialized from json-ld read-only data.
 module.exports = class MetaObject {
   constructor(attrs) {
@@ -830,11 +797,11 @@ module.exports = class MetaObject {
   get allProperties () {
     let props = []
     if (this.hasProperty) {
-      semutils.mapOnPropValue(this.hasProperty, (prop) => props.push(prop))
+      PLD.mapOnObject(this.hasProperty, (prop) => props.push(prop))
     }
 
     if (this.hasOptionalProperty) {
-      semutils.mapOnPropValue(this.hasOptionalProperty, (prop) => props.push(prop))
+      PLD.mapOnObject(this.hasOptionalProperty, (prop) => props.push(prop))
     }
     return props
   }
@@ -1199,7 +1166,6 @@ module.exports = Mn.Behavior.extend({
 require.register("views/document.js", function(exports, require, module) {
 'use-strict'
 
-const semutils = require('../lib/semantic_utils')
 const template = require('views/templates/document')
 
 module.exports = Mn.ItemView.extend({
@@ -1223,7 +1189,6 @@ module.exports = Mn.ItemView.extend({
 
 require.register("views/documentation.js", function(exports, require, module) {
 var app = undefined;
-var semutils = require('lib/semantic_utils');
 
 module.exports = Mn.ItemView.extend({
   tagName: 'div',
@@ -1257,13 +1222,10 @@ module.exports = Mn.ItemView.extend({
       data.synthSetInDS = this.model.synthSetInDS();
       data.docType = app.doctypes[this.model.get('cozyDoctypeName')];
       data.subsets = app.subsets.where({'cozyDoctypeName': this.model.getDocType()})
-
         .map(function(subset) { return subset.toJSON(); });
 
-      data = $.extend(data, semutils.fillTreeForProps(data, ['hasProperty', 'hasOptionalProperty', 'items'], app.wikiapi))
-      // if (data.hasProperty) {
-      //   data.hasProperty = data.hasProperty.map(item => semutils.getItem(item, app.wikiapi))
-      // }
+      data = $.extend(data, PLD.fillTreeForPredicates(data, ['hasProperty', 'hasOptionalProperty', 'items']))
+
       if (data.updateFrequency) {
         data.updateFrequency = moment.duration(data.updateFrequency).humanize()
       }
@@ -1743,7 +1705,7 @@ buf.push("<ul class=\"properties\">");
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var prop = $$obj[$index];
 
-buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.name) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)));
+buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.propName) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)));
 if ( prop.hasProperty)
 {
 jade_mixins["properties"](prop.allProperties);
@@ -1760,7 +1722,7 @@ buf.push("</li>");
     for (var $index in $$obj) {
       $$l++;      var prop = $$obj[$index];
 
-buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.name) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)));
+buf.push("<li><b>" + (jade.escape(null == (jade_interp = prop.propName) ? "" : jade_interp)) + "</b>&ensp;:&ensp;" + (jade.escape(null == (jade_interp = prop.description) ? "" : jade_interp)));
 if ( prop.hasProperty)
 {
 jade_mixins["properties"](prop.allProperties);

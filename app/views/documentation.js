@@ -1,5 +1,4 @@
 var app = undefined;
-var semutils = require('lib/semantic_utils');
 
 module.exports = Mn.ItemView.extend({
   tagName: 'div',
@@ -33,13 +32,10 @@ module.exports = Mn.ItemView.extend({
       data.synthSetInDS = this.model.synthSetInDS();
       data.docType = app.doctypes[this.model.get('cozyDoctypeName')];
       data.subsets = app.subsets.where({'cozyDoctypeName': this.model.getDocType()})
-
         .map(function(subset) { return subset.toJSON(); });
 
-      data = $.extend(data, semutils.fillTreeForProps(data, ['hasProperty', 'hasOptionalProperty', 'items'], app.wikiapi))
-      // if (data.hasProperty) {
-      //   data.hasProperty = data.hasProperty.map(item => semutils.getItem(item, app.wikiapi))
-      // }
+      data = $.extend(data, PLD.fillTreeForPredicates(data, ['hasProperty', 'hasOptionalProperty', 'items']))
+
       if (data.updateFrequency) {
         data.updateFrequency = moment.duration(data.updateFrequency).humanize()
       }
