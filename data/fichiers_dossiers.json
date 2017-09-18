@@ -1,5 +1,33 @@
 [
   {
+    "_id": "5b3327cf2f0c54c43f79eab6930160af",
+    "_rev": "2-f4953101abcf04df54c3e10011daf996",
+    "type": "file",
+    "name": "image_1.jpg",
+    "dir_id": "5b3327cf2f0c54c43f79eab693015d4b",
+    "created_at": "2017-05-12T16:54:44.267023555Z",
+    "updated_at": "2017-05-12T16:54:44.267023555Z",
+    "size": "380432",
+    "md5sum": "sG+D0LkCnIPH03/LaFj61g==",
+    "mime": "image/jpeg",
+    "class": "image",
+    "executable": false,
+    "trashed": false,
+    "tags": [],
+    "metadata": {
+      "datetime": "2017-05-12T16:54:44.279476854Z",
+      "extractor_version": 2,
+      "height": 800,
+      "width": 588
+    },
+    "referenced_by": [
+      {
+        "id": "636b9e7a5022de164cf5714102000f8c",
+        "type": "io.cozy.photos.albums"
+      }
+    ]
+  }
+  {
     "_id": "3d7caddfcceb684f140340c8c300041a",
     "_rev": "1-dde2a21aa1d0f1fb921f568f5c4e918f",
     "created_at": "2017-03-28T08:54:23.875814982Z",

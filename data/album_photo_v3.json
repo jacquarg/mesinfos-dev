@@ -1,7 +1,10 @@
 [
-  {
-    "_id": "c20b5225cf6911574bf8bc0f000008e4",
-    "_rev": "1-010d3b5411cfaa113a6eb4376ed1c68c",
-    "name": "screenshots"
+ {
+  "_id": "636b9e7a5022de164cf5714102000f8c",
+  "_rev": "2-8c6416622bf7d4d2560d52ba662f335e",
+  "created_at": "2017-09-12T07:26:45.571Z",
+  "id": "636b9e7a5022de164cf5714102000f8c",
+  "name": "Album of the year !",
+  "type": "io.cozy.photos.albums"
   }
 ]

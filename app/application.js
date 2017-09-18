@@ -29,7 +29,7 @@ var Application = Mn.Application.extend({
       token: app.dataset.cozyToken,
     });
 
-    // cozy.bar.init({appName: "MesInfos-Dev"});
+    cozy.bar.init({appName: "MesInfos-Dev"});
 
     return this._fetchDocumentation()
   },
