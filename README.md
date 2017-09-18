@@ -84,6 +84,11 @@ Open source, développée par la Fing, sous licence AGPL v3.
 
 ### Changelog
 
+#### v4.0.0
+* Nouvelles srouces et formats de méta-données
+* Affichage hiérarchique de la documentation
+* Affichage static du format de données.
+
 #### v3.0.3
 * Nouveaux jeux de synthèses
 * Corrections de bugs mineurs.
@@ -122,4 +127,3 @@ You should be aware of the app libraries in use:
 TODO
 ##### App WorkFlow
 TODO
-

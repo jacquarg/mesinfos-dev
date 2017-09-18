@@ -28,15 +28,14 @@ var Application = Mn.Application.extend({
       cozyURL: '//' + app.dataset.cozyDomain,
       token: app.dataset.cozyToken,
     });
-
-    cozy.bar.init({appName: "MesInfos-Dev"});
-
     return this._fetchDocumentation()
   },
 
   prepareInBackground: function() {
     this.properties.fetch();
-
+    return cozyUsetracker()
+      .catch(err => console.warn('Error while initializing tracking.', err))
+      .then(() => cozy.bar.init({ appName: 'MesInfos-Dev' }))
     // return this._defineViews();
   },
 

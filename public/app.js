@@ -178,15 +178,14 @@ var Application = Mn.Application.extend({
       cozyURL: '//' + app.dataset.cozyDomain,
       token: app.dataset.cozyToken,
     });
-
-    // cozy.bar.init({appName: "MesInfos-Dev"});
-
     return this._fetchDocumentation()
   },
 
   prepareInBackground: function() {
     this.properties.fetch();
-
+    return cozyUsetracker()
+      .catch(err => console.warn('Error while initializing tracking.', err))
+      .then(() => cozy.bar.init({ appName: 'MesInfos-Dev' }))
     // return this._defineViews();
   },
 
@@ -634,74 +633,7 @@ module.exports = Mn.ItemView.extend({
 
 });
 
-require.register("lib/semantic_utils.js", function(exports, require, module) {
-'use-strict'
-const M = {}
-
-M.getItem = (item, allItems) => {
-  // TODO : clean this !
-  const MetaObject = require('../models/metaobject')
-  let attrs = {}
-  if (typeof item === 'string') { // it's an id !
-    attrs = allItems[item]
-  } else {
-    attrs = allItems[item['@id']]
-  }
-
-  return new MetaObject(attrs)
-}
-
-M.idList2ItemMap = (ids, allItems) => {
-  return ids.reduce((agg, id) => {
-    agg[id] = allItems[id]
-    return agg
-  }, {})
-}
-
-M.mapByProp = (prop, items, allItems) => {
-  return items.reduce((agg, id) => {
-    try {
-      const item = M.getItem(id, allItems)
-      agg[item[prop]] = item
-      return agg
-    } catch (e) {
-      console.error(`semantic_utils : Error in map by prop on id: ${id}`, e)
-      throw e
-    }
-  }, {})
-}
-
-M.isType = (item, type) => {
-  if (!(item && item['@type'])) { return false }
-
-  const typeProp = item['@type']
-  return  typeProp === type || (typeProp instanceof Array && typeProp.indexOf(type) !== -1)
-}
-
-M.mapOnPropValue = (propValue, fun) => {
-  if (propValue instanceof Array) {
-    return propValue.map(fun)
-  }
-  return fun(propValue)
-}
-
-M.fillTreeForProps = (item, props, allItems) => {
-
-  item = M.getItem(item, allItems)
-  props.forEach((prop) => {
-    if (item[prop]) {
-      item[prop] = M.mapOnPropValue(item[prop], (value) => M.fillTreeForProps(value, props, allItems))
-    }
-  })
-
-  return item
-}
-
-module.exports = M
-
-});
-
-;require.register("lib/utils.js", function(exports, require, module) {
+require.register("lib/utils.js", function(exports, require, module) {
 module.exports = {
   slugify: function(stringNonNull) {
     return stringNonNull.toLowerCase().replace(/[^\w-]+/g,'');

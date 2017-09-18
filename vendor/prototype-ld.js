@@ -86,6 +86,38 @@ PLD.mapByPredicate = (prop, items) => {
   }, {})
 }
 
+PLD.where = (queries, items) => {
+  items = items || Object.keys(PLD.allItems).map(id => PLD.allItems[id])
+
+  return items.filter(item =>
+    Object.keys(queries).every(predicate => item[predicate] == queries[predicate])
+  )
+}
+
+PLD.isSubclassOf = (item, classId) => {
+  try {
+    item = PLD.getItem(item)
+  } catch(e) {
+    console.info(`Can't find item: ${item} locally, abort`)
+    // or fallback to 'schema:Thing' ?
+    return false
+  }
+  // if (PLD.isType(item, 'schema:Thing')) return false
+
+  if (!PLD.isType(item, classId)) {
+    const res = PLD.mapOnObject(item['@type'], upperClass => PLD.isSubclassOf(upperClass, classId))
+
+    return res === true || res instanceof Array && res.some(v => v)
+  }
+
+  return true
+}
+
+PLD.listInstanceOf = (classId, items) => {
+  items = items || Object.keys(PLD.allItems).map(id => PLD.allItems[id])
+  return items.filter((item) => PLD.isSubclassOf(item, classId))
+}
+
 typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = PLD :
 // typeof define === 'function' && define.aPLDd ? define(factory) :
 this.PLD = PLD // put on window.

@@ -3807,5 +3807,764 @@
     "typology": "Domicile",
     "updateFrequency": "PT1H",
     "updateLatency": "PT1H"
+  },
+  "q:Q495": {
+    "@id": "q:Q495",
+    "@type": "q:Q102",
+    "description": "Point de livraison (raccordement au réseau) d'un client Enedis.",
+    "label": "Compteur Enedis",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.customers.usage_points",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q494",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "Enedis",
+    "typology": "Domicile",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D"
+  },
+  "q:Q496": {
+    "@id": "q:Q496",
+    "@type": "q:Q102",
+    "description": "Adresse où se situe le compteur électrique Enedis du client.",
+    "label": "Adresse du compteur électrique",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.customers.usagepointaddress",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q494",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "Enedis",
+    "typology": "Domicile",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D"
+  },
+  "q:Q497": {
+    "@id": "q:Q497",
+    "@type": "q:Q102",
+    "description": "Identification et catégorisation du client.",
+    "label": "Identité du client Enedis",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.customers.identity",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q494",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "Enedis",
+    "typology": "Profil",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D"
+  },
+  "q:Q498": {
+    "@id": "q:Q498",
+    "@type": "q:Q102",
+    "description": "Informations sur le client, et sur le point de livraison (compteur) Enedis.",
+    "label": "Client et compteur Enedis",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.customers",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q494",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "Enedis",
+    "typology": "Profil",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D"
+  },
+  "q:Q499": {
+    "@id": "q:Q499",
+    "@type": "q:Q102",
+    "description": "Consommation d'électricité, au pas de 30 minutes.",
+    "label": "Courbe de charge journalière",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.meteringdata.percustomer.loadcurve",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q494",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "Enedis",
+    "typology": "Domicile",
+    "updateFrequency": "P1D",
+    "updateLatency": "P1D"
+  },
+  "q:Q500": {
+    "@id": "q:Q500",
+    "@type": "q:Q102",
+    "description": "Consommation d'électricité sur 24 heurs.",
+    "label": "Électricité cosommée en 1 jour.",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.meteringdata.percustomer.energy",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q494",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "Enedis",
+    "typology": "Domicile",
+    "updateFrequency": "P1D",
+    "updateLatency": "P1D"
+  },
+  "q:Q501": {
+    "@id": "q:Q501",
+    "@type": "q:Q102",
+    "description": "Puissance maximale atteinte sur un jour.",
+    "label": "Pic de puissance",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.meteringdata.percustomer.maxpower",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q494",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "Enedis",
+    "typology": "Domicile",
+    "updateFrequency": "P1D",
+    "updateLatency": "P1D"
+  },
+  "q:Q502": {
+    "@id": "q:Q502",
+    "@type": "q:Q102",
+    "description": "Courbe de charge (pas 30'), énergie consommée et puissance maximale journalière.",
+    "label": "Relevé de consommation électrique journalier",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.meteringdata.percustomer",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "q:Q494",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "Enedis",
+    "typology": "Domicile",
+    "updateFrequency": "P1D",
+    "updateLatency": "P1D"
+  },
+  "q:Q503": {
+    "@id": "q:Q503",
+    "@type": "q:Q102",
+    "description": "Identification d'un client Eau du Gradn Lyon (adresse, numéro de contrat ...",
+    "label": "Client Eau du Grand Lyon",
+    "availability": "soon",
+    "cozyDoctypeName": "org.fing.mesinfos.client",
+    "generatedBy": "q:Q504",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "GrandLyon",
+    "typology": "Profil",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D"
+  },
+  "q:Q505": {
+    "@id": "q:Q505",
+    "@type": "q:Q102",
+    "description": "Litres d'eau consommés par jour.",
+    "label": "Consommation d'eau",
+    "availability": "soon",
+    "cozyDoctypeName": "org.mesinfos.fing.consumptionstatement",
+    "generatedBy": "q:Q504",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "GrandLyon",
+    "typology": "Domicile",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D"
+  },
+  "q:Q506": {
+    "@id": "q:Q506",
+    "@type": "q:Q102",
+    "description": "Identification d'un client GrDF, infos sur le compteur Gazpar ...",
+    "label": "Client GrDF",
+    "availability": "soon",
+    "cozyDoctypeName": "org.fing.mesinfos.client",
+    "generatedBy": "q:Q507",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "GRDF",
+    "typology": "Profil",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D"
+  },
+  "q:Q508": {
+    "@id": "q:Q508",
+    "@type": "q:Q102",
+    "description": "Consommation de gaz, relevé par le compteur connecté Gazpar.",
+    "label": "Consommation de Gaz",
+    "availability": "soon",
+    "cozyDoctypeName": "org.mesinfos.fing.consumptionstatement",
+    "generatedBy": "q:Q507",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134"
+    ],
+    "sourceDataController": "GRDF",
+    "typology": "Domicile",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D"
+  },
+  "q:Q509": {
+    "@id": "q:Q509",
+    "@type": "q:Q133",
+    "description": "id dans la base CouchDB de Cozy. Specific value for trash: 'io.cozy.files.root-dir' and root dir: 'io.cozy.files.trash-dir'.",
+    "label": "_id",
+    "exampleValue": "118e185e102c69fecea6f8404c2a5e0b",
+    "kind": "Metadata",
+    "propName": "_id",
+    "values": [
+      "io.cozy.files.root-dir",
+      "io.cozy.files.trash-dir"
+    ]
+  },
+  "q:Q511": {
+    "@id": "q:Q511",
+    "@type": "q:Q104",
+    "description": "Is it metadata of a file or a directory.",
+    "label": "type",
+    "exampleValue": "file",
+    "kind": "Metadata",
+    "propName": "type",
+    "values": [
+      "file",
+      "directory"
+    ]
+  },
+  "q:Q513": {
+    "@id": "q:Q513",
+    "@type": "q:Q104",
+    "description": "Id of the files documents of the directory conaining this file.",
+    "label": "dir_id",
+    "exampleValue": "118e185e102c69fecea6f8404c2a5e0b",
+    "kind": "Metadata",
+    "propName": "dir_id"
+  },
+  "q:Q514": {
+    "@id": "q:Q514",
+    "@type": "q:Q296",
+    "description": "Instant de création du document.",
+    "label": "created_at",
+    "exampleValue": "2016-02-25T01:06:12Z",
+    "kind": "Metadata",
+    "propName": "created_at"
+  },
+  "q:Q515": {
+    "@id": "q:Q515",
+    "@type": "q:Q230",
+    "description": "Instant de dernière modification du document.",
+    "label": "updated_at",
+    "exampleValue": "2016-02-25T01:06:12Z",
+    "kind": "Metadata",
+    "propName": "updated_at"
+  },
+  "q:Q516": {
+    "@id": "q:Q516",
+    "@type": "q:Q104",
+    "description": "Chemin d'accès du répertoire (seulement type: directory)",
+    "label": "Chemin d'accès",
+    "exampleValue": "/Administrative",
+    "kind": "Metadata",
+    "propName": "path",
+    "values": [
+      "/Administrative",
+      "/Photos",
+      "/Photos/Uploaded from Cozy Photos",
+      "/Photos/Backed up from my mobile",
+      "/",
+      "/.cozy_trash"
+    ]
+  },
+  "q:Q517": {
+    "@id": "q:Q517",
+    "@type": "q:Q104",
+    "description": "Liste des tags",
+    "label": "tags",
+    "rdfs:subClassOf": {
+      "@id": "q:Q104"
+    },
+    "exampleValue": "[ \"Perso\"]",
+    "kind": "Metadata",
+    "propName": "tags"
+  },
+  "q:Q518": {
+    "@id": "q:Q518",
+    "@type": "q:Q104",
+    "description": "Hash du fichier (seulement pour type: file)",
+    "label": "Somme de contrôle",
+    "exampleValue": "sG+D0LkCnIPH03/LaFj61g==",
+    "kind": "Metadata",
+    "propName": "md5sum"
+  },
+  "q:Q519": {
+    "@id": "q:Q519",
+    "@type": "q:Q104",
+    "description": "Type mime du fichier (seulement pour type: file)",
+    "label": "mime",
+    "exampleValue": "image/jpeg",
+    "kind": "Metadata",
+    "propName": "mime",
+    "values": "image/jpeg"
+  },
+  "q:Q520": {
+    "@id": "q:Q520",
+    "@type": "q:Q104",
+    "description": "Categorie de fichier (seulement pour type: file)",
+    "label": "Classe",
+    "exampleValue": "image",
+    "kind": "Metadata",
+    "propName": "class",
+    "values": "image"
+  },
+  "q:Q521": {
+    "@id": "q:Q521",
+    "@type": "q:Q104",
+    "description": "Flag fichier exécutable ou non (seulement pour les type: file)",
+    "label": "flag executable",
+    "exampleValue": false,
+    "kind": "Metadata",
+    "propName": "executable",
+    "values": [
+      true,
+      false
+    ]
+  },
+  "q:Q522": {
+    "@id": "q:Q522",
+    "@type": "q:Q104",
+    "description": "Drapeau, indiquant si un fichier est supprimé (corbeille), seulement pour les type: file",
+    "label": "supprimé",
+    "exampleValue": false,
+    "kind": "Metadata",
+    "propName": "trashed",
+    "values": [
+      true,
+      false
+    ]
+  },
+  "q:Q523": {
+    "@id": "q:Q523",
+    "@type": "q:Q102",
+    "description": "Doctype des fichiers et dossier dans Cozy.",
+    "label": "Fichier ou dossier",
+    "cozyDoctypeName": "io.cozy.files",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "hasOptionalProperty": [
+      {
+        "@id": "q:Q529"
+      },
+      {
+        "@id": "q:Q518"
+      },
+      {
+        "@id": "q:Q519"
+      },
+      {
+        "@id": "q:Q520"
+      },
+      {
+        "@id": "q:Q521"
+      },
+      {
+        "@id": "q:Q522"
+      },
+      {
+        "@id": "q:Q516"
+      },
+      {
+        "@id": "q:Q530"
+      },
+      {
+        "@id": "q:Q524"
+      }
+    ],
+    "hasProperty": [
+      {
+        "@id": "q:Q509"
+      },
+      "q:Q134",
+      {
+        "@id": "q:Q511"
+      },
+      "q:Q162",
+      {
+        "@id": "q:Q513"
+      },
+      {
+        "@id": "q:Q514"
+      },
+      {
+        "@id": "q:Q515"
+      }
+    ],
+    "typology": "Loisir",
+    "usedBy": [
+      "https://github.com/cozy/cozy-drive",
+      "https://github.com/jacquarg/monlogis"
+    ]
+  },
+  "q:Q524": {
+    "@id": "q:Q524",
+    "@type": "object",
+    "description": "Metadonnées d'un fichier (seulement type: file)",
+    "label": "metadata",
+    "hasOptionalProperty": [
+      {
+        "@id": "q:Q525"
+      },
+      {
+        "@id": "q:Q526"
+      },
+      {
+        "@id": "q:Q527"
+      },
+      {
+        "@id": "q:Q528"
+      }
+    ],
+    "hasProperty": [],
+    "kind": "Metadata",
+    "propName": "metadata"
+  },
+  "q:Q525": {
+    "@id": "q:Q525",
+    "@type": "q:Q296",
+    "description": "Date de création de l'image",
+    "label": "datetime",
+    "exampleValue": "2017-07-25T13:20:33.833629543+02:00",
+    "kind": "Metadata",
+    "propName": "datetime"
+  },
+  "q:Q526": {
+    "@id": "q:Q526",
+    "@type": "q:Q104",
+    "description": "TODO",
+    "label": "extractor_version",
+    "exampleValue": 2,
+    "kind": "Metadata",
+    "propName": "extractor_version"
+  },
+  "q:Q527": {
+    "@id": "q:Q527",
+    "@type": "q:Q104",
+    "description": "Hauteur de l'image en pixels. Seulement pour les type: file et classe: image",
+    "label": "height",
+    "exampleValue": 800,
+    "kind": "Metadata",
+    "propName": "height"
+  },
+  "q:Q528": {
+    "@id": "q:Q528",
+    "@type": "q:Q104",
+    "description": "Hauteur de l'image en pixels. Seulement pour les type: file et classe: image",
+    "label": "width",
+    "exampleValue": 588,
+    "kind": "Metadata",
+    "propName": "width"
+  },
+  "q:Q529": {
+    "@id": "q:Q529",
+    "@type": "q:Q104",
+    "description": "Taille du fichier, en octets (seulement pour les type: file)",
+    "label": "taille",
+    "exampleValue": "380432",
+    "kind": "Metadata",
+    "propName": "size"
+  },
+  "q:Q530": {
+    "@id": "q:Q530",
+    "@type": [
+      "q:Q104",
+      "array"
+    ],
+    "description": "Une référence à un autre document dans Cozy (ex : album photo).",
+    "label": "Référencer par",
+    "items": {
+      "@id": "q:Q531"
+    },
+    "kind": "Caractérisation",
+    "propName": "referenced_by"
+  },
+  "q:Q531": {
+    "@id": "q:Q531",
+    "@type": "object",
+    "description": "Une référence à un autre document dans Cozy.",
+    "label": "referenceItem",
+    "hasProperty": [
+      {
+        "@id": "q:Q532"
+      },
+      {
+        "@id": "q:Q533"
+      }
+    ],
+    "kind": "Caractérisation",
+    "propName": "referenceItem"
+  },
+  "q:Q532": {
+    "@id": "q:Q532",
+    "@type": "q:Q539",
+    "description": "id d'un autre document",
+    "label": "id",
+    "exampleValue": "118e185e102c69fecea6f8404c2a5e0b",
+    "kind": "Metadata",
+    "propName": "id"
+  },
+  "q:Q533": {
+    "@id": "q:Q533",
+    "@type": "q:Q541",
+    "description": "Doctype d'un document en référence.",
+    "label": "doctype",
+    "exampleValue": "io.cozy.photos.albums",
+    "kind": "Metadata",
+    "propName": "type"
+  },
+  "q:Q539": {
+    "@id": "q:Q539",
+    "@type": "q:Q133",
+    "description": "Duplication de l'id CouchDB",
+    "label": "id",
+    "exampleValue": "636b9e7a5022de164cf5714102000f8c",
+    "kind": "Metadata",
+    "propName": "id"
+  },
+  "q:Q541": {
+    "@id": "q:Q541",
+    "@type": "q:Q104",
+    "description": "Doctype du document.",
+    "label": "doctype",
+    "exampleValue": "io.cozy.photos.albums",
+    "kind": "Metadata",
+    "propName": "type",
+    "values": "io.cozy.photos.albums"
+  },
+  "q:Q542": {
+    "@id": "q:Q542",
+    "@type": "q:Q102",
+    "description": "Un album photos : titre et objet de références des photos qui le compose.",
+    "label": "Album photos",
+    "cozyDoctypeName": "io.cozy.photos.albums",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q514",
+      {
+        "@id": "q:Q539"
+      },
+      {
+        "@id": "q:Q541"
+      },
+      "q:Q162"
+    ],
+    "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/album_photo_v3.json",
+    "typology": "Loisir",
+    "updateFrequency": "T0S",
+    "updateLatency": "T0S",
+    "usedBy": "https://github.com/cozy/cozy-photos-v3"
+  },
+  "q:Q545": {
+    "@id": "q:Q545",
+    "@type": "q:Q104",
+    "description": "Fournisseur, slug du connecteur permettant de récupérer les données auprès du fournisseur.",
+    "label": "account_type",
+    "exampleValue": "free",
+    "kind": "Caractérisation",
+    "propName": "account_type"
+  },
+  "q:Q546": {
+    "@id": "q:Q546",
+    "@type": "object",
+    "description": "Données permettant au connceteur de s'identifier et s'authentifier sur le compte.",
+    "label": "ident/authentification",
+    "hasOptionalProperty": [
+      {
+        "@id": "q:Q547"
+      },
+      {
+        "@id": "q:Q550"
+      },
+      {
+        "@id": "q:Q553"
+      },
+      {
+        "@id": "q:Q555"
+      }
+    ],
+    "kind": "Metadata",
+    "propName": "auth"
+  },
+  "q:Q547": {
+    "@id": "q:Q547",
+    "@type": "q:Q104",
+    "description": "access_token, notamment dans le cas d'une API OAuth 2.0",
+    "label": "access_token",
+    "exampleValue": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1OTZlMTg4MjhmNjgzZjA1MmI3NTUwYzMiLCJ0b2tlbl90eXBlIjoiZml4ZSJ9.44pmloBX_7r01N3h2lcROpSiWTqGPC73uZ_1BxWMbZs",
+    "kind": "Metadata",
+    "propName": "access_token"
+  },
+  "q:Q549": {
+    "@id": "q:Q549",
+    "@type": "q:Q104",
+    "description": "TODO",
+    "label": "status",
+    "exampleValue": "PENDING",
+    "kind": "Metadata",
+    "propName": "status"
+  },
+  "q:Q550": {
+    "@id": "q:Q550",
+    "@type": "q:Q104",
+    "description": "Mot de passe du compte.",
+    "label": "Mot de passe",
+    "exampleValue": "toto1234",
+    "kind": "Metadata",
+    "propName": "password"
+  },
+  "q:Q551": {
+    "@id": "q:Q551",
+    "@type": "q:Q532",
+    "description": "Id du dossier lié.",
+    "label": "folderId",
+    "exampleValue": "a3df0082d08e1d09c75ec0b7dc001573",
+    "kind": "Metadata",
+    "propName": "folderId"
+  },
+  "q:Q553": {
+    "@id": "q:Q553",
+    "@type": "q:Q104",
+    "description": "Identifiant du compte.",
+    "label": "login",
+    "exampleValue": "toto@example.com",
+    "kind": "Metadata",
+    "propName": "login"
+  },
+  "q:Q554": {
+    "@id": "q:Q554",
+    "@type": "q:Q104",
+    "description": "Derninère erreur à l'exécution du connecteur.",
+    "label": "error",
+    "kind": "Metadata",
+    "propName": "error"
+  },
+  "q:Q555": {
+    "@id": "q:Q555",
+    "@type": "q:Q104",
+    "description": "Connecteur Flag de souscription au service de géolocalisation du mobile, proposé par Orange dans le cadre du pilote MesInfos.",
+    "label": "orangeGeolocOptin",
+    "exampleValue": true,
+    "kind": "Metadata",
+    "propName": "orangeGeolocOptin",
+    "usedBy": "cozy-konnector-orangemobile",
+    "values": [
+      true,
+      false
+    ]
+  },
+  "q:Q556": {
+    "@id": "q:Q556",
+    "@type": "object",
+    "description": "Données de travail du connecteur.",
+    "label": "remember",
+    "hasOptionalProperty": [
+      {
+        "@id": "q:Q557"
+      },
+      {
+        "@id": "q:Q558"
+      }
+    ],
+    "hasProperty": [],
+    "kind": "Metadata",
+    "propName": "remember"
+  },
+  "q:Q557": {
+    "@id": "q:Q557",
+    "@type": "q:Q230",
+    "description": "Date du dernier document phonecommunication log récupéré.",
+    "label": "lastPhoneCommunicationLog",
+    "exampleValue": "2016-10-02T10:49:25Z",
+    "kind": "Metadata",
+    "propName": "lastPhoneCommunicationLog",
+    "usedBy": "cozy-konnector-orangemobile"
+  },
+  "q:Q558": {
+    "@id": "q:Q558",
+    "@type": "q:Q555",
+    "description": "État du flag de souscription au service de géolocalisation.",
+    "label": "orangeGeolocOptinPreviousState",
+    "exampleValue": true,
+    "kind": "Metadata",
+    "propName": "orangeGeolocOptinPreviousState",
+    "usedBy": "cozy-konnector-orangemobile",
+    "values": [
+      true,
+      false
+    ]
+  },
+  "q:Q585": {
+    "@id": "q:Q585",
+    "@type": "q:Q102",
+    "description": "Descripteur de compte en ligne pour un connecteur.",
+    "label": "Compte en ligne",
+    "cozyDoctypeName": "io.cozy.accounts",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "hasOptionalProperty": [
+      {
+        "@id": "q:Q551"
+      },
+      {
+        "@id": "q:Q556"
+      },
+      {
+        "@id": "q:Q554"
+      }
+    ],
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      {
+        "@id": "q:Q545"
+      },
+      {
+        "@id": "q:Q546"
+      },
+      {
+        "@id": "q:Q549"
+      }
+    ],
+    "typology": "Profil",
+    "updateFrequency": "T0S",
+    "updateLatency": "T0S",
+    "usedBy": [
+      "https://github.com/cozy/cozy-collect",
+      "https://github.com/jacquarg/monlogis"
+    ]
   }
 }
