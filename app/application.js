@@ -2,7 +2,6 @@
 // exposes it.
 
 var utils = require('lib/utils');
-var ap = require('lib/asyncpromise');
 
 var MetaObject = require('models/metaobject');
 
@@ -73,7 +72,7 @@ var Application = Mn.Application.extend({
     var self = this;
     var count = this.subsets.length;
 
-    return ap.series(this.subsets, function(subset, index) {
+    return funpromise.series(this.subsets, function(subset, index) {
       self.trigger('message:display', displayId, index + '/' + count +
         ' Création de la requète ' + subset.getName());
       return subset.updateDSView();

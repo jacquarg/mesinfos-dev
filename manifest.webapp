@@ -21,7 +21,7 @@
       "public": false
     }
   },
-  "version": "4.0.0-dev",
+  "version": "4.0.1-dev",
   "licence": "AGPL-3.0",
   "permissions": {
     "properties": {

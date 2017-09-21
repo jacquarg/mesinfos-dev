@@ -2,7 +2,6 @@
 
 const DSView = require('models/dsview')
 const utils = require('lib/utils')
-var ap = require('lib/asyncpromise')
 
 module.exports = DSView.extend({
   getDocType: function() {
@@ -48,7 +47,7 @@ module.exports = DSView.extend({
     return Promise.resolve($.getJSON(self.getSynthSetName()))
     .then(function(raw) {
       var count = raw.length;
-      return ap.series(raw, function(doc, index) {
+      return funpromise.series(raw, function(doc, index) {
         app.trigger('message:display', displayId, 'Ajout de documents '
          + self.getDocType() + ' de synthèse ' + index + '/' + count);
         return self._insertOneSynthDoc(doc);
@@ -84,7 +83,7 @@ module.exports = DSView.extend({
 
     var count = self.get('synthSetIds').length;
 
-    return ap.series(self.get('synthSetIds'), function(id, index) {
+    return funpromise.series(self.get('synthSetIds'), function(id, index) {
         app.trigger('message:display', displayId, 'Suppression des documents '
          + self.getDocType() + ' de synthèse ' + index + '/' + count);
         return cozy.client.data.find(self.getDocType(), id)
@@ -93,17 +92,17 @@ module.exports = DSView.extend({
         });
     })
     .then(function() {
-      app.trigger('message:display', displayId, 'Màj des paramètres');
+      app.trigger('message:display', displayId, 'Màj des paramètres')
       self.unset('synthSetIds');
-      return app.properties.cleanSynthSetIds(self.getSynthSetName());
+      return app.properties.cleanSynthSetIds(self.getSynthSetName())
     })
     .then(function() {
-      app.trigger('message:hide', displayId);
+      app.trigger('message:hide', displayId)
     })
     .catch(function(err) {
-      console.error(err);
+      console.error(err)
       app.trigger('message:error', 'Erreur pendant la suppression de données de synthèse. Réessayer, ou consultez la console pour en savoir plus.')
-    });
+    })
 
     // return Promise.all(self.get('synthSetIds').map(
     //   function(id) { return cozysdk.destroy(self.getDocType(), id); })
