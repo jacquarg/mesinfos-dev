@@ -9,8 +9,8 @@ Afin de pouvoir développer votre application, en ayant accès aux données ; vo
 
 ## Installez les dépendances
 
-* git : utilisez la version de votre distribution (linux :  apt install git), ou via  Git SCM
-* Docker : utilisez la version de votre distribution (linux : apt install docker.io ), ou via   installation | get started
+* git : utilisez la version de votre distribution (linux :  apt install git), ou via  [Git SCM](https://git-scm.com/downloads)
+* Docker : [www.docker.com](https://www.docker.com/) --> _Get Docker_ et suiver les instructions correspondant à votre environment.
 
 
 ## Préparer l'environement
@@ -21,7 +21,7 @@ Dans le répertoire qui vous plaît, créer les dossier
 * `cozy_dev/docker_things`
 
 Placez-vous dans le répertoire `cozy_dev` puis téléchargez l'application mesinfos-dev :
-`git clone http://github.com/jacquarg/mesinfos-dev3`
+`git clone http://github.com/jacquarg/mesinfos-dev`
 
 Enfin, pour que l'image Cozy fonctionne sur votre poste en local, vous devez ajouter la ligne suivante à votre fichier `/etc/hosts`
 
@@ -33,7 +33,7 @@ Enfin, pour que l'image Cozy fonctionne sur votre poste en local, vous devez ajo
 Placez vous dans le répertoire cozy_dev, puis lancer la commande suivante pour démarrer l'app files avec la stack Cozy :
 
 ```bash
-sudo docker run --rm -it --name=cozydev3 -p 8080:8080 -p 5984:5984 -v "$(pwd)/docker_things/db":/usr/local/couchdb/data -v "$(pwd)/docker_things/storage":/data/cozy-storage -v "$(pwd)/mesinfos-dev3":/data/cozy-app/mesinfos-dev  cozy/cozy-app-dev
+sudo docker run --rm -it --name=cozydev -p 8080:8080 -p 5984:5984 -v "$(pwd)/docker_things/db":/usr/local/couchdb/data -v "$(pwd)/docker_things/storage":/data/cozy-storage -v "$(pwd)/mesinfos-dev3":/data/cozy-app/mesinfos-dev  cozy/cozy-app-dev
 ```
 
 Puis rendez-vous sur http://mesinfos-dev.cozy.tools:8080 (mot de passe : cozy )
@@ -41,7 +41,7 @@ Puis rendez-vous sur http://mesinfos-dev.cozy.tools:8080 (mot de passe : cozy )
 ## Problèmes courrants :
 
 * _`Page indisponibles` : attention à bien aller sur http://mesinfos-dev.cozy.tools:8080 , le navigateur peu vous rediriger automatiquement sur http://files.cozy.tools:8080 après le login ..._
-* _`manifest not found` : vérifiez que cozy_dev/mesinfos-dev3/manifest.webapp existe. Si ce n'est pas le cas, supprimez le dossier, et re-téléchargez là (`git clone http://github.com/jacquarg/mesinfos-dev3`)
+* _`manifest not found` : vérifiez que cozy_dev/mesinfos-dev/manifest.webapp existe. Si ce n'est pas le cas, supprimez le dossier, et re-téléchargez là (`git clone http://github.com/jacquarg/mesinfos-dev`)
 * `Unable to find image 'cozy/cozy-app-dev:latest' locally docker: Error response from daemon`: essayez la commande `sudo docker pull cozy/cozy-app-dev`
 
 # 2 - B-A-BA sur Cozy
@@ -119,17 +119,17 @@ Puis, ajouter app à `/etc/hosts` : `127.0.0.1    app.cozy.local`
 Vous pouvez maintenant tester votre application, en la lançant dans l'environement docker :
 
 ```bash
-sudo docker run --rm -it --name=cozydev3 -p 8080:8080 -p 5984:5984 -v "$(pwd)/docker_things/db":/usr/local/couchdb/data -v "$(pwd)/docker_things/storage":/data/cozy-storage -v "$(pwd)/mesinfos-dev3":/data/cozy-app/mesinfos-dev -v "$(pwd)/hellomesinfos":/data/cozy-app/app  cozy/cozy-app-dev
+sudo docker run --rm -it --name=cozydev -p 8080:8080 -p 5984:5984 -v "$(pwd)/docker_things/db":/usr/local/couchdb/data -v "$(pwd)/docker_things/storage":/data/cozy-storage -v "$(pwd)/mesinfos-dev":/data/cozy-app/mesinfos-dev -v "$(pwd)/hellomesinfos":/data/cozy-app/app  cozy/cozy-app-dev
 ```
 
-En suivant le lien http://app.cozy.local , vous découvrirez votre application !
+En suivant le lien [http://app.cozy.tools:8080](http://app.cozy.tools:8080) , vous découvrirez votre application !
 
 
 # 3 - Manipuler les données MesInfos
 
 ## Utiliser MesInfos-dev
 
-Rendez-vous sur http://mesinfos-dev.cozy.local:8080
+Rendez-vous sur [http://mesinfos-dev.cozy.tools:8080](http://mesinfos-dev.cozy.tools:8080)
 
 Avec cette application, vous pourrez :
 
@@ -213,7 +213,7 @@ c - Ajouter le script, et les éléments d'interface dans hellomesinfos/index.ht
 ...
 <body>
   <div role="application" data-cozy-token="{{.Token}}" data-cozy-domain="{{.Domain}}" class="container-fluid" data-cozy-app-name="{{.AppName}}" >
-    <H1>Hello Ynov'</H1>
+    <H1>Hello MesInfos</H1>
 
     <p>J'habite au <span id='address'>...</span></p>
 
@@ -223,7 +223,7 @@ c - Ajouter le script, et les éléments d'interface dans hellomesinfos/index.ht
 ...
 ```
 
-d - Testez ! http://app.cozy.local (rafraichissez la page ci-besoin : F5)
+d - Testez ! [http://app.cozy.tools:8080](http://app.cozy.tools:8080) (rafraichissez la page ci-besoin : F5)
 
 
 _That's all folks !_
