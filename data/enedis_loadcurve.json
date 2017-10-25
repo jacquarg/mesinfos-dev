@@ -1,0 +1,218 @@
+[
+  {
+    "contract_power": "6",
+    "fee_schedule": "Base",
+    "INSEE_code": "69386",
+    "business_step": "comptage brut",
+    "usage_point": [
+      {
+        "usage_point_id": "01324654321",
+        "meter_reading": {
+          "reading_type": {
+            "measurement_kind": "CDC",
+            "start_measurement_period": "2017-08-17",
+            "end_measurement_period": "2017-08-18",
+            "interval_length": "",
+            "time_attribute": "30mn",
+            "unit": "W",
+            "flow_direction": "forward"
+          },
+          "interval_block": [
+            {
+              "value": "230",
+              "reading_number": "1"
+            },
+            {
+              "value": "258",
+              "reading_number": "2"
+            },
+            {
+              "value": "192",
+              "reading_number": "3"
+            },
+            {
+              "value": "306",
+              "reading_number": "4"
+            },
+            {
+              "value": "328",
+              "reading_number": "5"
+            },
+            {
+              "value": "294",
+              "reading_number": "6"
+            },
+            {
+              "value": "366",
+              "reading_number": "7"
+            },
+            {
+              "value": "196",
+              "reading_number": "8"
+            },
+            {
+              "value": "242",
+              "reading_number": "9"
+            },
+            {
+              "value": "264",
+              "reading_number": "10"
+            },
+            {
+              "value": "306",
+              "reading_number": "11"
+            },
+            {
+              "value": "332",
+              "reading_number": "12"
+            },
+            {
+              "value": "286",
+              "reading_number": "13"
+            },
+            {
+              "value": "254",
+              "reading_number": "14"
+            },
+            {
+              "value": "486",
+              "reading_number": "15"
+            },
+            {
+              "value": "340",
+              "reading_number": "16"
+            },
+            {
+              "value": "366",
+              "reading_number": "17"
+            },
+            {
+              "value": "434",
+              "reading_number": "18"
+            },
+            {
+              "value": "2042",
+              "reading_number": "19"
+            },
+            {
+              "value": "328",
+              "reading_number": "20"
+            },
+            {
+              "value": "392",
+              "reading_number": "21"
+            },
+            {
+              "value": "358",
+              "reading_number": "22"
+            },
+            {
+              "value": "318",
+              "reading_number": "23"
+            },
+            {
+              "value": "390",
+              "reading_number": "24"
+            },
+            {
+              "value": "400",
+              "reading_number": "25"
+            },
+            {
+              "value": "408",
+              "reading_number": "26"
+            },
+            {
+              "value": "312",
+              "reading_number": "27"
+            },
+            {
+              "value": "288",
+              "reading_number": "28"
+            },
+            {
+              "value": "324",
+              "reading_number": "29"
+            },
+            {
+              "value": "2962",
+              "reading_number": "30"
+            },
+            {
+              "value": "648",
+              "reading_number": "31"
+            },
+            {
+              "value": "350",
+              "reading_number": "32"
+            },
+            {
+              "value": "238",
+              "reading_number": "33"
+            },
+            {
+              "value": "222",
+              "reading_number": "34"
+            },
+            {
+              "value": "270",
+              "reading_number": "35"
+            },
+            {
+              "value": "348",
+              "reading_number": "36"
+            },
+            {
+              "value": "776",
+              "reading_number": "37"
+            },
+            {
+              "value": "2728",
+              "reading_number": "38"
+            },
+            {
+              "value": "2690",
+              "reading_number": "39"
+            },
+            {
+              "value": "2328",
+              "reading_number": "40"
+            },
+            {
+              "value": "1214",
+              "reading_number": "41"
+            },
+            {
+              "value": "566",
+              "reading_number": "42"
+            },
+            {
+              "value": "1252",
+              "reading_number": "43"
+            },
+            {
+              "value": "662",
+              "reading_number": "44"
+            },
+            {
+              "value": "378",
+              "reading_number": "45"
+            },
+            {
+              "value": "238",
+              "reading_number": "46"
+            },
+            {
+              "value": "290",
+              "reading_number": "47"
+            },
+            {
+              "value": "284",
+              "reading_number": "48"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

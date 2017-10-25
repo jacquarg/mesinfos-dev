@@ -21,7 +21,7 @@
       "public": false
     }
   },
-  "version": "4.0.0-dev",
+  "version": "4.1.0",
   "licence": "AGPL-3.0",
   "permissions": {
     "properties": {
@@ -142,6 +142,30 @@
     "sinistrevehicule": {
       "description": "Try data request and add synthetics datasets.",
       "type": "fr.maif.maifuser.sinistrevehicule"
+    },
+    "loadcurve": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.enedis.api.meteringdata.loadcurve"
+    },
+    "max power": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.enedis.api.meteringdata.maxpower"
+    },
+    "energy": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.enedis.api.meteringdata.energy"
+    },
+    "identity": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.enedis.api.customers.identity"
+    },
+    "usagepoints": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.enedis.api.customers.usagepoints"
+    },
+    "usage point address": {
+      "description": "Try data request and add synthetics datasets.",
+      "type": "fr.enedis.api.customers.usagepointaddress"
     }
   }
 }

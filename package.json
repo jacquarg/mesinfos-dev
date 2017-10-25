@@ -1,6 +1,6 @@
 {
   "name": "mesinfos-dev",
-  "version": "4.0.0-dev",
+  "version": "4.1.0",
   "description": "Une application pour les développeurs, pour visualiser et tester l'accès aux données du Pilote MesInfos.",
   "scripts": {
     "watch": "brunch watch",

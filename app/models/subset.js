@@ -38,7 +38,10 @@ module.exports = DSView.extend({
   getSynthSetName: function(){
     // We assume her ethat syntheticet is a url like that :
     //  "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/consommation_electrique.json"
-    return this.has('syntheticSet') ? this.get('syntheticSet').slice(63) : undefined;
+    if (!this.has('syntheticSet')) { return; }
+
+    let name = this.get('syntheticSet');
+    return `/data/${name.slice(name.lastIndexOf('/') + 1)}`;
   },
 
   insertSynthSet: function() {

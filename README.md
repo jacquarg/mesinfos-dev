@@ -68,12 +68,8 @@ Open source, développée par la Fing, sous licence AGPL v3.
 
 ## TODO-list
 
-### En cours
-* traces d'usage
-
 ### Bug
 * Afficher les messages, et les messages d'erreur à un lieu approprié.
-* Améliorer affichage des valeurs de type Objet, ou Array.
 * Temps de latence, peuvent rendre inutilisable.
 * Pas de màj de la fonction de map ?
 
@@ -81,8 +77,17 @@ Open source, développée par la Fing, sous licence AGPL v3.
 * Bouton pour ajouter facilement un jeu de donnée custom
 * Détecter les doctypes présents dans le Cozy
 * Gérer de multiples jeux de synthèse par sous-type de données.
+* Script pour rapatrier les jeux de synthèse depuis les données wikiapi.
+* Script pour mettre à jour les permission à partir des données Wikiapi.
 
-### Changelog
+### En cours
+ --
+
+## Changelog
+
+#### v4.1.0
+* Ajout des traces d'usage (si l'utilisateur l'a activé dans son Cozy)
+* Ajout des données Linky d'Enedis.
 
 #### v4.0.0
 * Nouvelles srouces et formats de méta-données

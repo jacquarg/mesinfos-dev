@@ -15,6 +15,814 @@
       "@reverse": "rdfs:subClassOf"
     }
   },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q101": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q101",
+    "@type": "q:Q161",
+    "description": "Numéro client chez Enedis",
+    "label": "Id client",
+    "exampleValue": "12346579878",
+    "propName": "customer_id"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q102": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q102",
+    "@type": "q:Q104",
+    "description": "Catégorie, segment du client",
+    "label": "Segment client",
+    "exampleValue": "C5",
+    "propName": "segment"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q103": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q103",
+    "@type": "object",
+    "description": "Objet encapsulant les informations sur l'identité du client.",
+    "label": "identityItem",
+    "hasOptionalProperty": {
+      "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q104"
+    },
+    "propName": "identity"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q104": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q104",
+    "@type": "object",
+    "description": "Objet encapsulant les informations sur l'identité d'un client personne physique.",
+    "label": "Personne physique",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q105"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q106"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q107"
+      }
+    ],
+    "propName": "natural_person"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q105": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q105",
+    "@type": "q:Q194",
+    "description": "Catégorie, segment du client",
+    "label": "Civilité",
+    "exampleValue": "Mme",
+    "propName": "title",
+    "values": [
+      "Mme",
+      "M"
+    ]
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q106": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q106",
+    "@type": "q:Q196",
+    "description": "Prénom de la personne",
+    "label": "Prénom",
+    "exampleValue": "GERMAINE",
+    "propName": "name"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q107": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q107",
+    "@type": "q:Q195",
+    "description": "Nom de famille de la personne.",
+    "label": "Nom",
+    "exampleValue": "DUPOND",
+    "propName": "last_name"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q108": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q108",
+    "@type": "q:Q102",
+    "description": "Adresse du compteur.",
+    "label": "Adresse du point de livraison",
+    "cozyDoctypeName": "fr.enedis.api.customers.usagepointaddress",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnecteor-enedis/master/software",
+    "hasProperty": [
+      {
+        "@id": "q:Q133"
+      },
+      {
+        "@id": "q:Q134"
+      },
+      {
+        "@id": "q:Q109"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q101"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q102"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q109"
+      }
+    ],
+    "sourceDataController": "Enedis",
+    "syntheticSet": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/doc/synthetic_dataset/enedis_customer_usagepointaddress.json",
+    "typology": "Domicile",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D",
+    "usedBy": []
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q109": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q109",
+    "@type": "object",
+    "description": "Adresse postale du compteur.",
+    "label": "addressItem",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q110"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q111"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q112"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q113"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q114"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q115"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q116"
+      },
+      "q:Q167",
+      "q:Q168"
+    ],
+    "propName": "usage_point_address",
+    "sameAs": "q:Q166"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q110": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q110",
+    "@type": "q:Q104",
+    "description": "Complément d'adresse.",
+    "label": "Complément d'adresse 1",
+    "exampleValue": "",
+    "propName": "additional_adress1"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q111": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q111",
+    "@type": "q:Q104",
+    "description": "Complément d'adresse.",
+    "label": "Complément d'adresse 2",
+    "exampleValue": "",
+    "propName": "additional_adress2"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q112": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q112",
+    "@type": "q:Q104",
+    "description": "Numéro dans la rue.",
+    "label": "Numéro de rue",
+    "exampleValue": "2",
+    "propName": "street_number"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q113": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q113",
+    "@type": "q:Q104",
+    "description": "Nom de la rue, sans le numéro.",
+    "label": "Nom de la rue",
+    "exampleValue": "BOULEVARD DES BELGES",
+    "propName": "street"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q114": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q114",
+    "@type": "q:Q104",
+    "description": "Localité.",
+    "label": "Localité",
+    "exampleValue": "",
+    "propName": "locality"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q115": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q115",
+    "@type": "q:Q104",
+    "description": "Code postal",
+    "label": "Code postal",
+    "exampleValue": "69006",
+    "propName": "zip",
+    "sameAs": "q:Q169"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q116": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q116",
+    "@type": "q:Q104",
+    "description": "Code INSEE de la commune.",
+    "label": "Code INSEE",
+    "exampleValue": "69386",
+    "propName": "geo_point",
+    "sameAs": "q:Q303"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q117": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q117",
+    "@type": "object",
+    "description": "Informations sur le point de livraison.",
+    "label": "Point de livraison",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q118"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q119"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q120"
+      }
+    ],
+    "propName": "usage_points"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q118": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q118",
+    "@type": "q:Q104",
+    "description": "Numéro du point de livraison.",
+    "label": "Numéro PDL",
+    "exampleValue": "1324654321",
+    "propName": "usage_point_id",
+    "sameAs": "q:Q386"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q119": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q119",
+    "@type": "q:Q104",
+    "description": "Puissance maximale du compteur.",
+    "label": "Puissance souscrite",
+    "exampleValue": "6",
+    "propName": "power_subscribed",
+    "sameAs": "q:Q391"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q120": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q120",
+    "@type": "q:Q104",
+    "description": "time_slot",
+    "label": "time_slot",
+    "exampleValue": "",
+    "kind": "Metadata",
+    "propName": "time_slot"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q121": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q121",
+    "@type": "q:Q102",
+    "description": "Identification et catégorisation du client. (nom, prénom, segment, ...)",
+    "label": "Identité du client Enedis",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.customers.identity",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnecteor-enedis/master/software",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q109",
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q101"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q102"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q103"
+      }
+    ],
+    "sourceDataController": "Enedis",
+    "syntheticSet": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/doc/synthetic_dataset/enedis_customer_usagepointaddress.json",
+    "typology": "Domicile",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D",
+    "usedBy": []
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q122": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q122",
+    "@type": "q:Q102",
+    "description": "Consommation d'électricité, au pas de 30 minutes.",
+    "label": "Courbe de charge journalière",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.meteringdata.loadcurve",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": {
+      "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/software"
+    },
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q109",
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q123"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q124"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q125"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q126"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q127"
+      }
+    ],
+    "sourceDataController": "Enedis",
+    "syntheticSet": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/doc/synthetic_dataset/enedis_loadcurve.json",
+    "typology": "Domicile",
+    "updateFrequency": "P1D",
+    "updateLatency": "P1D",
+    "usedBy": []
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q123": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q123",
+    "@type": "q:Q104",
+    "description": "Puissance maximale du compteur.",
+    "label": "Puissance souscrite",
+    "exampleValue": "6",
+    "kind": "Metadata",
+    "propName": "contract_power",
+    "sameAs": "l:Q119"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q124": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q124",
+    "@type": "q:Q104",
+    "description": "Type de tarif (base, heure creuse, ...).",
+    "label": "Type de tarif",
+    "exampleValue": "Base",
+    "kind": "Caracterisation",
+    "propName": "fee_schedule"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q125": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q125",
+    "@type": "q:Q104",
+    "description": "Code INSEE de la commune.",
+    "label": "Code insee",
+    "exampleValue": "69386",
+    "kind": "Metadata",
+    "propName": "INSEE_code",
+    "sameAs": "l:Q116"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q126": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q126",
+    "@type": "q:Q104",
+    "description": "business_step",
+    "label": "business_step",
+    "exampleValue": "comptage brut",
+    "kind": "Metadata",
+    "propName": "business_step",
+    "sameAs": "l:Q116",
+    "values": "comptage brut"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q127": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q127",
+    "@type": "array",
+    "description": "Liste des mesures (un seul élément)",
+    "label": "Mesures",
+    "items": {
+      "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q128"
+    },
+    "propName": "usage_point"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q128": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q128",
+    "@type": "object",
+    "description": "Une mesure.",
+    "label": "Mesure",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q118"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q129"
+      }
+    ]
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q129": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q129",
+    "@type": "object",
+    "description": "Une mesure.",
+    "label": "Mesure",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q130"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q138"
+      }
+    ],
+    "propName": "meter_reading"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q130": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q130",
+    "@type": "object",
+    "description": "Caractéristiques de la mesure.",
+    "label": "Caractéristiques.",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q131"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q132"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q133"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q134"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q135"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q136"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q137"
+      }
+    ],
+    "propName": "reading_type"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q131": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q131",
+    "@type": "q:Q104",
+    "description": "Type de mesure.",
+    "label": "Type de mesure",
+    "exampleValue": "CDC",
+    "kind": "Metadata",
+    "propName": "measurement_kind",
+    "values": "CDC"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q132": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q132",
+    "@type": "q:Q104",
+    "description": "Début de la mesure (première valeur à 00h30, du jour indiqué).",
+    "label": "Début",
+    "exampleValue": "2017-08-17",
+    "propName": "start_measurement_period",
+    "sameAs": "q:Q112"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q133": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q133",
+    "@type": "q:Q104",
+    "description": "Fin de la mesure (dernière valeur à 00h00, du jour indiqué, donc portant sur les 30 dernière minute du jour précédent).",
+    "label": "Fin",
+    "exampleValue": "2017-08-18",
+    "propName": "end_measurement_period",
+    "sameAs": "q:Q113"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q134": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q134",
+    "@type": "q:Q104",
+    "description": "interval_length",
+    "label": "interval_length",
+    "exampleValue": "",
+    "kind": "Metadata",
+    "propName": "interval_length"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q135": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q135",
+    "@type": "q:Q104",
+    "description": "Intervale de temps entre chaque point de mesure. Ici, toujours 30mn.",
+    "label": "Période de mesure",
+    "exampleValue": "30mn",
+    "kind": "Metadata",
+    "propName": "time_attribute",
+    "values": [
+      "30mn",
+      "month",
+      "day",
+      "hour"
+    ]
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q136": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q136",
+    "@type": "q:Q104",
+    "description": "Unité de mesure de la grandeur physique.",
+    "label": "Unité.",
+    "exampleValue": "W",
+    "kind": "Metadata",
+    "propName": "unit",
+    "values": "W"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q137": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q137",
+    "@type": "q:Q104",
+    "description": "Direction du flux d'énergie : forward, consommation par le point de livraison. Reverse : production par le point de livraison.",
+    "label": "Production - consommation",
+    "exampleValue": "forward",
+    "kind": "Metadata",
+    "propName": "flow_direction",
+    "values": [
+      "forward",
+      "reverse"
+    ]
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q138": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q138",
+    "@type": "array",
+    "description": "Liste des points de mesures.",
+    "label": "Points de mesure",
+    "items": {
+      "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q139"
+    },
+    "propName": "interval_block"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q139": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q139",
+    "@type": "object",
+    "description": "Un point de mesure.",
+    "label": "Point de mesure",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q140"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q141"
+      }
+    ]
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q140": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q140",
+    "@type": "q:Q104",
+    "description": "Valeur mesurée.",
+    "label": "Valeur",
+    "exampleValue": "230",
+    "propName": "value"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q141": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q141",
+    "@type": "q:Q104",
+    "description": "Indice de la mesure, dans la liste des mesures.",
+    "label": "Indice",
+    "exampleValue": "3",
+    "propName": "reading_number"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q142": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q142",
+    "@type": "q:Q102",
+    "description": "Puissance maximale atteinte sur un jour.",
+    "label": "Pic de puissance",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.meteringdata.maxpower",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/software",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q109",
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q123"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q124"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q125"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q126"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q143"
+      }
+    ],
+    "sourceDataController": "Enedis",
+    "syntheticSet": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/doc/synthetic_dataset/enedis_maxpower.json",
+    "typology": "Domicile",
+    "updateFrequency": "P1D",
+    "updateLatency": "P1D",
+    "usedBy": []
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q143": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q143",
+    "@type": "array",
+    "description": "Liste des mesures (un seul élément)",
+    "label": "Mesures",
+    "items": {
+      "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q144"
+    },
+    "propName": "usage_point"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q144": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q144",
+    "@type": "object",
+    "description": "Une mesure.",
+    "label": "Mesure",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q118"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q145"
+      }
+    ]
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q145": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q145",
+    "@type": "object",
+    "description": "Une mesure.",
+    "label": "Mesure",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q146"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q138"
+      }
+    ],
+    "propName": "meter_reading"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q146": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q146",
+    "@type": "object",
+    "description": "Caractéristiques de la mesure.",
+    "label": "Caractéristiques.",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q147"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q132"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q133"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q134"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q135"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q136"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q137"
+      }
+    ],
+    "propName": "reading_type"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q147": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q147",
+    "@type": "q:Q104",
+    "description": "Type de mesure.",
+    "label": "Type de mesure",
+    "exampleValue": "PMAX",
+    "kind": "Metadata",
+    "propName": "measurement_kind",
+    "values": "PMAX"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q148": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q148",
+    "@type": "q:Q102",
+    "description": "Consommation d'électricité sur 24 heures.",
+    "label": "Électricité cosommée en 1 jour.",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.meteringdata.energy",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/software",
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q109",
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q123"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q124"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q125"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q126"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q149"
+      }
+    ],
+    "sourceDataController": "Enedis",
+    "syntheticSet": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/doc/synthetic_dataset/enedis_energy.json",
+    "typology": "Domicile",
+    "updateFrequency": "P1D",
+    "updateLatency": "P1D",
+    "usedBy": []
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q149": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q149",
+    "@type": "array",
+    "description": "Liste des mesures (un seul élément)",
+    "label": "Mesures",
+    "items": {
+      "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q150"
+    },
+    "propName": "usage_point"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q150": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q150",
+    "@type": "object",
+    "description": "Une mesure.",
+    "label": "Mesure",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q118"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q151"
+      }
+    ]
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q151": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q151",
+    "@type": "object",
+    "description": "Une mesure.",
+    "label": "Mesure",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q152"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q138"
+      }
+    ],
+    "propName": "meter_reading"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q152": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q152",
+    "@type": "object",
+    "description": "Caractéristiques de la mesure.",
+    "label": "Caractéristiques.",
+    "hasProperty": [
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q153"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q154"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q132"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q133"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q134"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q135"
+      },
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q137"
+      }
+    ],
+    "propName": "reading_type"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q153": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q153",
+    "@type": "q:Q104",
+    "description": "Type de mesure.",
+    "label": "Type de mesure",
+    "exampleValue": "ENERGIEGLO",
+    "kind": "Metadata",
+    "propName": "measurement_kind",
+    "values": "ENERGIEGLO"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q154": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q154",
+    "@type": "q:Q104",
+    "description": "Unité de mesure de la grandeur physique.",
+    "label": "Unité.",
+    "exampleValue": "Wh",
+    "kind": "Metadata",
+    "propName": "unit",
+    "sameAs": "l:Q136",
+    "values": "Wh"
+  },
+  "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q160": {
+    "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q160",
+    "@type": "q:Q102",
+    "description": "Point de livraison (raccordement au réseau) d'un client Enedis.",
+    "label": "Compteur Enedis",
+    "availability": "soon",
+    "cozyDoctypeName": "fr.enedis.api.customers.usagepoints",
+    "cozyIndex": "[\"_id\"]",
+    "cozySelector": "{\"_id\": { \"$gte\": null } }",
+    "generatedBy": {
+      "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/software"
+    },
+    "hasProperty": [
+      "q:Q133",
+      "q:Q134",
+      "q:Q109",
+      {
+        "@id": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q117"
+      }
+    ],
+    "sourceDataController": "Enedis",
+    "syntheticSet": "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/doc/synthetic_dataset/enedis_customer_usagepointaddress.json",
+    "typology": "Domicile",
+    "updateFrequency": "P6M",
+    "updateLatency": "P1D",
+    "usedBy": []
+  },
   "q:Q100": {
     "@id": "q:Q100",
     "@type": [
@@ -663,7 +1471,7 @@
         "@id": "q:Q157"
       }
     ],
-    "help": "Un seul document pour tous les contract Maif d'un sociétaire. Il y a un sous-objet contrat par objet assuré. Donc la liste objects contient toujours un et un seul élément.",
+    "help": "Un seul document pour tous les contrats Maif d'un sociétaire. Il y a un sous-objet contrat par objet assuré. Donc la liste objects contient toujours un et un seul élément.",
     "sourceDataController": "Maif",
     "syntheticSet": "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/contrat_maif.json",
     "typology": "Finance",
@@ -3807,158 +4615,6 @@
     "typology": "Domicile",
     "updateFrequency": "PT1H",
     "updateLatency": "PT1H"
-  },
-  "q:Q495": {
-    "@id": "q:Q495",
-    "@type": "q:Q102",
-    "description": "Point de livraison (raccordement au réseau) d'un client Enedis.",
-    "label": "Compteur Enedis",
-    "availability": "soon",
-    "cozyDoctypeName": "fr.enedis.api.customers.usage_points",
-    "cozyIndex": "[\"_id\"]",
-    "cozySelector": "{\"_id\": { \"$gte\": null } }",
-    "generatedBy": "q:Q494",
-    "hasProperty": [
-      "q:Q133",
-      "q:Q134"
-    ],
-    "sourceDataController": "Enedis",
-    "typology": "Domicile",
-    "updateFrequency": "P6M",
-    "updateLatency": "P1D"
-  },
-  "q:Q496": {
-    "@id": "q:Q496",
-    "@type": "q:Q102",
-    "description": "Adresse où se situe le compteur électrique Enedis du client.",
-    "label": "Adresse du compteur électrique",
-    "availability": "soon",
-    "cozyDoctypeName": "fr.enedis.api.customers.usagepointaddress",
-    "cozyIndex": "[\"_id\"]",
-    "cozySelector": "{\"_id\": { \"$gte\": null } }",
-    "generatedBy": "q:Q494",
-    "hasProperty": [
-      "q:Q133",
-      "q:Q134"
-    ],
-    "sourceDataController": "Enedis",
-    "typology": "Domicile",
-    "updateFrequency": "P6M",
-    "updateLatency": "P1D"
-  },
-  "q:Q497": {
-    "@id": "q:Q497",
-    "@type": "q:Q102",
-    "description": "Identification et catégorisation du client.",
-    "label": "Identité du client Enedis",
-    "availability": "soon",
-    "cozyDoctypeName": "fr.enedis.api.customers.identity",
-    "cozyIndex": "[\"_id\"]",
-    "cozySelector": "{\"_id\": { \"$gte\": null } }",
-    "generatedBy": "q:Q494",
-    "hasProperty": [
-      "q:Q133",
-      "q:Q134"
-    ],
-    "sourceDataController": "Enedis",
-    "typology": "Profil",
-    "updateFrequency": "P6M",
-    "updateLatency": "P1D"
-  },
-  "q:Q498": {
-    "@id": "q:Q498",
-    "@type": "q:Q102",
-    "description": "Informations sur le client, et sur le point de livraison (compteur) Enedis.",
-    "label": "Client et compteur Enedis",
-    "availability": "soon",
-    "cozyDoctypeName": "fr.enedis.api.customers",
-    "cozyIndex": "[\"_id\"]",
-    "cozySelector": "{\"_id\": { \"$gte\": null } }",
-    "generatedBy": "q:Q494",
-    "hasProperty": [
-      "q:Q133",
-      "q:Q134"
-    ],
-    "sourceDataController": "Enedis",
-    "typology": "Profil",
-    "updateFrequency": "P6M",
-    "updateLatency": "P1D"
-  },
-  "q:Q499": {
-    "@id": "q:Q499",
-    "@type": "q:Q102",
-    "description": "Consommation d'électricité, au pas de 30 minutes.",
-    "label": "Courbe de charge journalière",
-    "availability": "soon",
-    "cozyDoctypeName": "fr.enedis.api.meteringdata.percustomer.loadcurve",
-    "cozyIndex": "[\"_id\"]",
-    "cozySelector": "{\"_id\": { \"$gte\": null } }",
-    "generatedBy": "q:Q494",
-    "hasProperty": [
-      "q:Q133",
-      "q:Q134"
-    ],
-    "sourceDataController": "Enedis",
-    "typology": "Domicile",
-    "updateFrequency": "P1D",
-    "updateLatency": "P1D"
-  },
-  "q:Q500": {
-    "@id": "q:Q500",
-    "@type": "q:Q102",
-    "description": "Consommation d'électricité sur 24 heurs.",
-    "label": "Électricité cosommée en 1 jour.",
-    "availability": "soon",
-    "cozyDoctypeName": "fr.enedis.api.meteringdata.percustomer.energy",
-    "cozyIndex": "[\"_id\"]",
-    "cozySelector": "{\"_id\": { \"$gte\": null } }",
-    "generatedBy": "q:Q494",
-    "hasProperty": [
-      "q:Q133",
-      "q:Q134"
-    ],
-    "sourceDataController": "Enedis",
-    "typology": "Domicile",
-    "updateFrequency": "P1D",
-    "updateLatency": "P1D"
-  },
-  "q:Q501": {
-    "@id": "q:Q501",
-    "@type": "q:Q102",
-    "description": "Puissance maximale atteinte sur un jour.",
-    "label": "Pic de puissance",
-    "availability": "soon",
-    "cozyDoctypeName": "fr.enedis.api.meteringdata.percustomer.maxpower",
-    "cozyIndex": "[\"_id\"]",
-    "cozySelector": "{\"_id\": { \"$gte\": null } }",
-    "generatedBy": "q:Q494",
-    "hasProperty": [
-      "q:Q133",
-      "q:Q134"
-    ],
-    "sourceDataController": "Enedis",
-    "typology": "Domicile",
-    "updateFrequency": "P1D",
-    "updateLatency": "P1D"
-  },
-  "q:Q502": {
-    "@id": "q:Q502",
-    "@type": "q:Q102",
-    "description": "Courbe de charge (pas 30'), énergie consommée et puissance maximale journalière.",
-    "label": "Relevé de consommation électrique journalier",
-    "availability": "soon",
-    "cozyDoctypeName": "fr.enedis.api.meteringdata.percustomer",
-    "cozyIndex": "[\"_id\"]",
-    "cozySelector": "{\"_id\": { \"$gte\": null } }",
-    "generatedBy": "q:Q494",
-    "hasProperty": [
-      "q:Q133",
-      "q:Q134"
-    ],
-    "sourceDataController": "Enedis",
-    "typology": "Domicile",
-    "updateFrequency": "P1D",
-    "updateLatency": "P1D"
   },
   "q:Q503": {
     "@id": "q:Q503",

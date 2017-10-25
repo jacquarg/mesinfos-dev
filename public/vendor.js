@@ -19956,12 +19956,15 @@ PLD.allItems = {}
 PLD.mapClassOnType = {}
 
 PLD.getItem = (item) => {
+
   let attrs = {}
   if (typeof item === 'string') { // it's an id !
     attrs = PLD.allItems[item]
   } else {
     attrs = PLD.allItems[item['@id']]
   }
+
+  if (!attrs) { console.warn(`item ${ item } is missing`) }
 
   let type = attrs['@type']
   if (type instanceof Array) {

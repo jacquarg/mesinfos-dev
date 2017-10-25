@@ -476,7 +476,7 @@ require.register("lib/appname_version.js", function(exports, require, module) {
 
 const name = 'lamusiquedemesfilms';
 // use brunch-version plugin to populate these.
-const version = '4.0.0';
+const version = '4.1.0';
 
 module.exports = `${name}-${version}`;
 
@@ -821,7 +821,10 @@ module.exports = DSView.extend({
   getSynthSetName: function(){
     // We assume her ethat syntheticet is a url like that :
     //  "https://raw.githubusercontent.com/jacquarg/mesinfos-dev3/master/data/consommation_electrique.json"
-    return this.has('syntheticSet') ? this.get('syntheticSet').slice(63) : undefined;
+    if (!this.has('syntheticSet')) { return; }
+
+    let name = this.get('syntheticSet');
+    return `/data/${name.slice(name.lastIndexOf('/') + 1)}`;
   },
 
   insertSynthSet: function() {
@@ -1459,6 +1462,9 @@ module.exports = Mn.ItemView.extend({
       'click': 'setDSView',
     },
 
+    initialize: function() {
+      console.log(this.model)
+    },
     setDSView: function() {
       require('application').trigger('requestform:setView', this.model);
     },

@@ -1,0 +1,13 @@
+[
+  {
+    "customer_id": "12346579878",
+    "segment": "C5",
+    "identity": {
+      "natural_person": {
+        "title": "Mme",
+        "name": "GERMAINE",
+        "last_name": "DUPOND"
+      }
+    }
+  }
+]

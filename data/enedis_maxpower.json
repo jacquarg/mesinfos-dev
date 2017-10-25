@@ -1,0 +1,30 @@
+[
+  {
+    "contract_power": "6",
+    "fee_schedule": "Base",
+    "INSEE_code": "69386",
+    "business_step": "comptage brut",
+    "usage_point": [
+      {
+        "usage_point_id": "01324654321",
+        "meter_reading": {
+          "reading_type": {
+            "measurement_kind": "PMAX",
+            "start_measurement_period": "2017-08-17",
+            "end_measurement_period": "2017-08-18",
+            "interval_length": "",
+            "time_attribute": "day",
+            "unit": "W",
+            "flow_direction": "forward"
+          },
+          "interval_block": [
+            {
+              "value": "5047",
+              "reading_number": "1"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

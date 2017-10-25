@@ -9,9 +9,14 @@
     "q:Q155", "q:Q231", "q:Q179", "q:Q265", "q:Q295", "q:Q226", "q:Q310", "q:Q377", "q:Q370", "q:Q330", "q:Q435",
     "q:Q492", "q:Q445", "q:Q436",
 
-    "q:Q498", "q:Q495", "q:Q496", "q:Q497", "q:Q499", "q:Q500", "q:Q501", "q:Q502",
+     "q:Q506", "q:Q508",
 
-     "q:Q506", "q:Q508"
+     "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q108",
+     "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q121",
+     "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q122",
+     "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q142",
+     "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q148",
+     "https://raw.githubusesrcontent.com/jacquarg/cozy-konnector-enedis/master/Q160"
 
   ]
 }

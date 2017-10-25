@@ -1,0 +1,17 @@
+[
+  {
+    "customer_id": "12346579878",
+    "segment": "C5",
+    "usage_point_address": {
+      "additional_adress1": "",
+      "additional_adress2": "",
+      "street_number": "2",
+      "street": "BOULEVARD DES BELGES",
+      "locality": "",
+      "zip": "69006",
+      "city": "LYON",
+      "country": "FRANCE",
+      "geo_point": "69386"
+    }
+  }
+]
