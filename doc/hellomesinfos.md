@@ -105,6 +105,13 @@ Et copiez également le manifest.webapp ci-dessous dans `cozy_dev/hellomesinfos/
   "version": "3.0.0",
   "licence": "AGPL-3.0",
   "permissions": {
+    "settings": {
+      "description": "Required by the cozy-bar to display Claudy and know which applications are coming soon",
+      "type": "io.cozy.settings",
+      "verbs": [
+        "GET"
+      ]
+    },
     "apps": {
     "description": "Required by the cozy-bar to display the icons of the apps",
     "type": "io.cozy.apps",
